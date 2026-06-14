@@ -1,0 +1,16 @@
+---
+import '../styles/global.css';
+import { SITE_TITLE } from '../consts';
+import HeaderLink from './HeaderLink.astro';
+---
+
+<header>
+    <nav class="flex items-center justify-evenly p-6 bg-green-500">
+        <div class="flex justify-center items-center">
+            <HeaderLink href="/">Home</HeaderLink>
+            <HeaderLink href="/especies">Especies</HeaderLink>
+            <HeaderLink href="/etnobotanica">Etnobotánica</HeaderLink>
+            <HeaderLink href="/blog">Blog</HeaderLink>
+        </div>
+    </nav>
+</header>
