@@ -1,0 +1,67 @@
+---
+import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const posts: CollectionEntry<"blog">[] = await getCollection("blog");
+
+  return posts.map((post: CollectionEntry<"blog">) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout
+  title={`${post.data.title} | Ecotec Flora Médica`}
+  description={post.data.description}
+>
+  <article class="mx-auto max-w-4xl px-6 py-16 lg:px-8">
+    <div class="space-y-4">
+      <p
+        class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700"
+      >
+        Blog
+      </p>
+      <h1
+        class="text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl"
+      >
+        {post.data.title}
+      </h1>
+      <p class="text-lg leading-8 text-slate-700">{post.data.description}</p>
+    </div>
+
+    <div class="mt-6 flex flex-wrap gap-3 text-sm text-slate-500">
+      <time datetime={post.data.pubDate.toISOString()}>
+        {
+          post.data.pubDate.toLocaleDateString("es-EC", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        }
+      </time>
+      {
+        post.data.tags.map((tag: string) => (
+          <span class="rounded-full bg-emerald-50 px-3 py-1 text-emerald-800">
+            {tag}
+          </span>
+        ))
+      }
+    </div>
+
+    <div
+      class="prose prose-slate mt-12 max-w-none prose-headings:tracking-tight prose-a:text-emerald-700 prose-a:no-underline hover:prose-a:underline"
+    >
+      <Content />
+    </div>
+  </article>
+</Layout>

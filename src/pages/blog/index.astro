@@ -1,0 +1,74 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+const posts = (await getCollection("blog")) as CollectionEntry<"blog">[];
+posts.sort(
+  (left: CollectionEntry<"blog">, right: CollectionEntry<"blog">) =>
+    right.data.pubDate.valueOf() - left.data.pubDate.valueOf(),
+);
+---
+
+<Layout
+  title="Blog | Ecotec Flora Médica"
+  description="Artículos sobre flora médica, etnobotánica y uso responsable de especies."
+>
+  <section class="mx-auto max-w-6xl px-6 py-16 lg:px-8">
+    <div class="max-w-3xl space-y-4">
+      <p
+        class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700"
+      >
+        Blog
+      </p>
+      <h1
+        class="text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl"
+      >
+        Artículos y guías sobre flora médica
+      </h1>
+      <p class="text-lg leading-8 text-slate-700">
+        Una sección pensada para buscadores y lectores: cada post tiene una URL
+        estable, metadatos y una plantilla reutilizable.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-6">
+      {
+        posts.map((post: CollectionEntry<"blog">) => (
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+            <div class="flex flex-wrap items-center gap-3 text-sm text-slate-500">
+              <time datetime={post.data.pubDate.toISOString()}>
+                {post.data.pubDate.toLocaleDateString("es-EC", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>
+              {post.data.tags.map((tag: string) => (
+                <span class="rounded-full bg-emerald-50 px-3 py-1 text-emerald-800">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <h2 class="mt-4 text-2xl font-semibold tracking-tight text-slate-950">
+              <a class="hover:text-emerald-700" href={`/blog/${post.id}`}>
+                {post.data.title}
+              </a>
+            </h2>
+            <p class="mt-3 max-w-3xl text-base leading-7 text-slate-700">
+              {post.data.description}
+            </p>
+            <div class="mt-5">
+              <a
+                class="text-sm font-semibold text-emerald-700 hover:text-emerald-600"
+                href={`/blog/${post.id}`}
+              >
+                Leer artículo
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
