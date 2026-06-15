@@ -11,9 +11,9 @@ const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
 <a 
     href={href} 
     class:list={[
-        'inline-block no-underline hover:text-[#1B6D24]',
+        'inline-block no-underline text-[#40493D] hover:text-[#1B6D24]',
         className, 
-        isActive && 'font-bold',]} 
+        isActive && 'font-semibold',]} 
         {...props}>
     <slot />
 </a>

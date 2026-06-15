@@ -5,17 +5,17 @@ import HeaderLink from "./HeaderLink.astro";
 ---
 
 <header class="fixed top-0 left-0 w-full z-50">
-  <nav class="flex items-center justify-between p-5 bg-blur backdrop-blur-xl bg-white/60 shadow-sm px-90">
-    <HeaderLink href="/" class="logo-font">
+  <nav class="flex items-center justify-between py-6 bg-blur backdrop-blur-xl bg-white/60 shadow-sm px-80">
+    <a href="/" class="logo-font">
       {SITE_TITLE}
-    </HeaderLink>
+    </a>
     <div class="flex justify-between gap-8 items-center">
         <HeaderLink href="/especies">Especies</HeaderLink>
         <HeaderLink href="/etnobotanica">Etnobotánica</HeaderLink>
         <HeaderLink href="/blog">Blog</HeaderLink>
     </div>
-    <HeaderLink href="/suscribirse" class="border border-[#1B6D24] text-[12px] text-[#1B6D24] rounded-4xl px-7 py-1.5 transition-colors duration-300 ease-in-out hover:bg-[#1B6D24] hover:text-white">
+    <button class="border border-[#1B6D24] text-[12px] tracking-[0.1rem] leading-3 font-semibold text-[#1B6D24] rounded-4xl px-6 py-2.5 transition-colors duration-300 ease-in-out hover:bg-[#1B6D24] hover:text-white hover:cursor-pointer">
       SUSCRIBIRME
-    </HeaderLink>
+    </button>
   </nav>
 </header>
