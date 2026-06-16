@@ -5,17 +5,97 @@ import HeaderLink from "./HeaderLink.astro";
 ---
 
 <header class="fixed top-0 left-0 w-full z-50">
-  <nav class="flex items-center justify-between py-6 bg-blur backdrop-blur-xl bg-white/60 shadow-sm px-80">
+  <nav
+    class="flex items-center justify-between py-5.5 bg-blur backdrop-blur-xl bg-white/60 shadow-sm px-80"
+  >
     <a href="/" class="logo-font">
       {SITE_TITLE}
     </a>
     <div class="flex justify-between gap-8 items-center">
-        <HeaderLink href="/especies">Especies</HeaderLink>
-        <HeaderLink href="/etnobotanica">Etnobotánica</HeaderLink>
-        <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="/especies">Especies</HeaderLink>
+      <HeaderLink href="/etnobotanica">Etnobotánica</HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
     </div>
-    <button class="border border-[#1B6D24] text-[12px] tracking-[0.1rem] leading-3 font-semibold text-[#1B6D24] rounded-4xl px-6 py-2.5 transition-colors duration-300 ease-in-out hover:bg-[#1B6D24] hover:text-white hover:cursor-pointer">
+    <button
+      class="border border-[#1B6D24] text-[12px] tracking-[0.1rem] leading-3 font-semibold text-[#1B6D24] rounded-4xl px-6 py-2.5 transition-colors duration-300 ease-in-out hover:bg-[#1B6D24] hover:text-white hover:cursor-pointer"
+    >
       SUSCRIBIRME
     </button>
   </nav>
 </header>
+
+<script>
+  import gsap from "gsap";
+
+  const initHeaderLinkUnderlines = () => {
+    const links = document.querySelectorAll(".js-header-link");
+
+    links.forEach((link) => {
+      if (!(link instanceof HTMLElement)) {
+        return;
+      }
+
+      if (link.dataset.underlineBound === "true") {
+        return;
+      }
+
+      link.dataset.underlineBound = "true";
+
+      const underline = link.querySelector(".js-header-link-underline");
+
+      if (!(underline instanceof HTMLElement)) {
+        return;
+      }
+
+      const isCurrentPage = link.getAttribute("aria-current") === "page";
+
+      gsap.set(underline, {
+        transformOrigin: "left center",
+        scaleX: isCurrentPage ? 1 : 0,
+        xPercent: 0,
+      });
+
+      if (isCurrentPage) {
+        return;
+      }
+
+      const timeline = gsap.timeline({ paused: true });
+
+      timeline
+        .fromTo(
+          underline,
+          { scaleX: 0, xPercent: 0 },
+          {
+            scaleX: 1,
+            xPercent: 0,
+            duration: 0.35,
+            ease: "power2.out",
+          },
+        )
+        .add("midway")
+        .fromTo(
+          underline,
+          { scaleX: 1, xPercent: 0 },
+          {
+            scaleX: 0,
+            xPercent: 100,
+            duration: 0.35,
+            ease: "power2.in",
+            immediateRender: false,
+          },
+        )
+        .add("end");
+
+      link.addEventListener("mouseenter", () => {
+        timeline.tweenFromTo(0, "midway");
+      });
+
+      link.addEventListener("mouseleave", () => {
+        timeline.tweenTo("end");
+      });
+    });
+  };
+
+  initHeaderLinkUnderlines();
+  document.addEventListener("astro:page-load", initHeaderLinkUnderlines);
+</script>

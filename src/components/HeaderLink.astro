@@ -8,12 +8,19 @@ const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
 const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
 ---
-<a 
-    href={href} 
+<a
+    href={href}
+    aria-current={isActive ? 'page' : undefined}
     class:list={[
-        'inline-block no-underline text-[#40493D] hover:text-[#1B6D24]',
-        className, 
-        isActive && 'font-semibold',]} 
-        {...props}>
+        'js-header-link relative inline-flex items-center pb-1 no-underline text-[#40493D] transition-colors duration-300 hover:text-[#1B6D24]',
+        className,
+        isActive && 'font-semibold text-green-800',
+    ]}
+    {...props}
+>
     <slot />
+    <span
+        aria-hidden="true"
+        class="js-header-link-underline pointer-events-none absolute inset-x-0 bottom-1 h-0.5 origin-left scale-x-0 bg-current will-change-transform"
+    ></span>
 </a>
