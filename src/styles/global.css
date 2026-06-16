@@ -8,10 +8,11 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
     font-family: 'Hanken Grotesk', sans-serif;
+    background-color: #FAFCFA;
 }
 
 .logo-font {
     font-family: 'EB Garamond', serif;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.5rem;
 }
