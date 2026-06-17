@@ -40,7 +40,7 @@ const { Content } = await render(post);
     </div>
 
     <div class="mt-6 flex flex-wrap gap-3 text-sm text-slate-500">
-      <time datetime={post.data.pubDate.toISOString()}>
+      <time datetime={post.data.pubDate.toISOString()} class="flex items-center">
         {
           post.data.pubDate.toLocaleDateString("es-EC", {
             year: "numeric",
