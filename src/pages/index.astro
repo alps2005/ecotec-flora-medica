@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import homeGridImage1 from "../assets/home_images/home_image_grid_test.webp";
 
 const posts = (await getCollection("blog")) as CollectionEntry<"blog">[];
 posts.sort(
@@ -14,74 +15,84 @@ const featuredPost = posts[0];
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <section
-    class="relative overflow-hidden border-b border-emerald-950/10"
-  >
-    <div
-      class="mx-auto grid min-h-[82vh] max-w-6xl items-center gap-14 px-6 pt-34 pb-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-0"
-    >
+  <section class="relative overflow-hidden border-b border-emerald-950/10">
+    <div class="flex min-h-screen max-w-full justify-evenly items-center gap-14 pt-24 pb-20 mx-30">
       <div class="space-y-8">
-        <span
-          class="inline-flex items-center rounded-full border border-emerald-900/10 bg-white/80 px-4 py-1 text-sm font-medium text-emerald-900 shadow-sm backdrop-blur"
-        >
-          Flora médica de Ecotec
+        <span class="inline-flex items-center text-xs font-medium text-[#2E7D32] border-b" >
+          HERBARIUM DIGITAL
         </span>
         <div class="space-y-5">
-          <h1
-            class="max-w-3xl text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl lg:text-7xl"
-          >
-            {SITE_TITLE}
+          <h1 class="max-w-3xl text-5xl font-medium tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
+            El saber ancestral
           </h1>
-          <p class="max-w-2xl text-lg leading-8 text-slate-700 sm:text-xl">
-            {SITE_DESCRIPTION} Encuentra especies, contexto etnobotánico y lecturas
-            claras para entender la relación entre plantas, salud y territorio.
-          </p>
+          <h1 class="max-w-3xl text-5xl font-medium italic tracking-tight text-[#2E7D32] sm:text-6xl lg:text-7xl">
+            en la lente científica.
+          </h1>
+          <div class="flex flex-col gap-4">
+            <p class="max-w-2xl text-lg leading-8 text-slate-700 sm:text-xl">
+              {SITE_DESCRIPTION}
+            </p>
+            <p class="max-w-2xl text-lg leading-8 text-slate-700 sm:text-xl">
+              Encuentra especies, contexto etnobotánico y lecturas claras para
+              entender la relación entre plantas, salud y territorio.
+            </p>
+          </div>
         </div>
         <div class="flex flex-wrap gap-4">
           <a
-            class="inline-flex items-center justify-center rounded-full bg-emerald-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600"
-            href="/blog"
-          >
-            Leer el blog
-          </a>
-          <a
-            class="inline-flex items-center justify-center rounded-full border border-emerald-900/15 bg-white/80 px-6 py-3 text-sm font-semibold text-emerald-950 transition hover:border-emerald-900/25 hover:bg-white"
+            class="inline-flex items-center justify-center rounded-full bg-[#0D631B] px-6 py-3 text-sm font-semibold text-white transition hover:bg-green-700"
             href="/especies"
           >
             Explorar especies
           </a>
+          <a
+            class="inline-flex items-center justify-center rounded-full border border-emerald-900/15 bg-white/80 px-6 py-3 text-sm font-semibold text-emerald-950 transition hover:border-emerald-900/25 hover:bg-white"
+            href="/blog"
+          >
+            Leer blogs
+          </a>
         </div>
-        <dl class="grid gap-4 pt-4 sm:grid-cols-3">
-          <div
-            class="rounded-2xl border border-emerald-900/10 bg-white/75 p-4 shadow-sm backdrop-blur"
-          >
-            <dt class="text-sm text-slate-500">Contenido claro</dt>
-            <dd class="mt-1 text-lg font-semibold text-slate-950">
-              Lectura rápida
-            </dd>
-          </div>
-          <div
-            class="rounded-2xl border border-emerald-900/10 bg-white/75 p-4 shadow-sm backdrop-blur"
-          >
-            <dt class="text-sm text-slate-500">Enfoque útil</dt>
-            <dd class="mt-1 text-lg font-semibold text-slate-950">
-              Especies y blog
-            </dd>
-          </div>
-          <div
-            class="rounded-2xl border border-emerald-900/10 bg-white/75 p-4 shadow-sm backdrop-blur"
-          >
-            <dt class="text-sm text-slate-500">SEO listo</dt>
-            <dd class="mt-1 text-lg font-semibold text-slate-950">
-              Meta y sitemap
-            </dd>
-          </div>
-        </dl>
       </div>
 
-      <div
-        class="rounded-4xl border border-emerald-900/10 bg-slate-950 p-6 text-white shadow-2xl shadow-emerald-950/10 lg:p-8"
-      >
+      <div class="grid grid-cols-2 grid-rows-3 gap-4 h-150">
+        <div class="rounded-xl overflow-hidden shadow-sm relative group">
+          <img
+            src={homeGridImage1.src}
+            alt="Imagen de plantas medicinales"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-sm relative group">
+          <img
+            src={homeGridImage1.src}
+            alt="Imagen de plantas medicinales"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-sm relative group row-span-2">
+          <img
+          src={homeGridImage1.src}
+          alt="Imagen de plantas medicinales"
+          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-sm relative group">
+          <img
+            src={homeGridImage1.src}
+            alt="Imagen de plantas medicinales"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-sm relative group">
+          <img
+            src={homeGridImage1.src}
+            alt="Imagen de plantas medicinales"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      </div>
+      
+      <!-- <div class="rounded-4xl border border-emerald-900/10 bg-slate-950 p-6 text-white shadow-2xl shadow-emerald-950/10 lg:p-8">
         <div
           class="flex items-center justify-between border-b border-white/10 pb-4"
         >
@@ -92,8 +103,9 @@ const featuredPost = posts[0];
           </p>
           <span
             class="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/80"
-            >Blog</span
           >
+            Blog
+          </span>
         </div>
         {
           featuredPost ? (
@@ -125,11 +137,13 @@ const featuredPost = posts[0];
             </p>
           )
         }
-      </div>
+      </div> -->
     </div>
   </section>
 
-  <section class="mx-auto max-w-6xl px-6 py-20 lg:px-8">
+  <section
+    class="flex min-h-screen max-w-full justify-center items-center gap-14 pt-34 pb-20 mx-30"
+  >
     <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
       <div class="space-y-4">
         <p
