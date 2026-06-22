@@ -1,0 +1,54 @@
+---
+import SpeciesCard from './SpeciesCard.astro';
+
+interface Props {
+  species: Array<{
+    id: string;
+    data: {
+      commonName: string;
+      scientificName: string;
+      family: string;
+      description: string;
+      image: string;
+    };
+  }>;
+}
+
+const { species } = Astro.props;
+
+const familyAccentMap = new Map<string, string>([
+  ['Rutaceae', 'bg-primary/10 text-primary'],
+  ['Lamiaceae', 'bg-secondary/10 text-secondary'],
+  ['Asteraceae', 'bg-tertiary/10 text-tertiary'],
+]);
+
+const getAccent = (family: string) => {
+  const index = Array.from(new Set(species.map((item) => item.data.family))).indexOf(family);
+  const palette = [
+    'bg-primary/10 text-primary',
+    'bg-secondary/10 text-secondary',
+    'bg-tertiary/10 text-tertiary',
+  ];
+  return familyAccentMap.get(family) ?? palette[index % palette.length] ?? palette[0];
+};
+---
+
+<div data-species-root class="space-y-6">
+  <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-2">
+    {species.map((entry) => (
+      <SpeciesCard
+        commonName={entry.data.commonName}
+        scientificName={entry.data.scientificName}
+        family={entry.data.family}
+        description={entry.data.description}
+        image={entry.data.image}
+        accent={getAccent(entry.data.family)}
+      />
+    ))}
+  </div>
+
+  <div data-species-empty class="hidden rounded-[1.5rem] border border-dashed border-slate-300 bg-white/70 p-10 text-center text-slate-600">
+    <p class="text-lg font-semibold text-slate-900">No se encontraron especies</p>
+    <p class="mt-2 text-sm">Prueba con otra búsqueda o cambia el filtro por familia.</p>
+  </div>
+</div>

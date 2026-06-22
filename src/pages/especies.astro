@@ -1,23 +1,121 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import SearchBar from '../components/species/SearchBar.astro';
+import SpeciesGrid from '../components/species/SpeciesGrid.astro';
+import TaxonomyFilter from '../components/species/TaxonomyFilter.astro';
+import Pagination from '../components/species/Pagination.astro';
+
+const species = (await getCollection('species')).sort((a, b) =>
+  a.data.commonName.localeCompare(b.data.commonName),
+);
+const families = [...new Set(species.map((entry) => entry.data.family))];
 ---
 
 <Layout
   title="Especies | Ecotec Flora Médica"
-  description="Catálogo inicial de especies medicinales para ampliar el sitio en el futuro."
+  description="Catálogo editorial de especies medicinales con búsquedas y filtros taxonómicos."
 >
-  <section class="mx-auto max-w-6xl px-6 pt-32 pb-16 lg:px-0">
-    <p
-      class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700"
-    >
-      Especies
-    </p>
-    <h1 class="mt-4 text-4xl font-semibold tracking-tight text-slate-950">
-      Catálogo de especies
-    </h1>
-    <p class="mt-4 text-lg leading-8 text-slate-700">
-      Esta sección queda lista para incorporar fichas taxonómicas, usos
-      tradicionales y advertencias de uso responsable.
-    </p>
+  <section class="mx-auto max-w-6xl px-6 pb-16 pt-32 lg:px-8">
+    <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+          Especies
+        </p>
+        <h1 class="mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
+          Catálogo de especies
+        </h1>
+        <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-700">
+          Una mirada editorial y minimalista a las especies medicinales que
+          acompañan la narrativa del proyecto, preparada para sustituir su
+          contenido por una API real sin reestructurar la experiencia.
+        </p>
+      </div>
+
+      <div class="rounded-[2rem] border border-slate-200/80 bg-white/80 p-8 shadow-[0_20px_60px_-24px_rgba(27,109,36,0.2)] backdrop-blur-sm">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+          Exposición
+        </p>
+        <div class="mt-4 flex flex-wrap gap-3">
+          {families.map((family) => (
+            <span class="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+              {family}
+            </span>
+          ))}
+        </div>
+        <p class="mt-4 text-sm leading-7 text-slate-600">
+          El catálogo combina búsqueda libre y filtros por familia taxonómica
+          para ofrecer una navegación más cercana a un museo botánico.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-12 rounded-[2rem] border border-slate-200/80 bg-[#F7FAF6]/80 p-6 shadow-sm backdrop-blur-sm">
+      <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <SearchBar placeholder="Buscar por nombre, familia o descripción" />
+        <TaxonomyFilter families={families} />
+      </div>
+
+      <div class="mt-6">
+        <SpeciesGrid species={species} />
+      </div>
+
+      <div class="mt-6">
+        <Pagination currentPage={1} totalPages={1} />
+      </div>
+    </div>
   </section>
 </Layout>
+
+<script>
+  const initSpeciesFilters = () => {
+    const root = document.querySelector('[data-species-root]');
+
+    if (!(root instanceof HTMLElement) || root.dataset.speciesBound === 'true') {
+      return;
+    }
+
+    root.dataset.speciesBound = 'true';
+
+    const searchField = document.querySelector('[data-species-search]');
+    const familyField = document.querySelector('[data-species-family]');
+    const cards = Array.from(root.querySelectorAll('[data-species-card]'));
+    const emptyState = root.querySelector('[data-species-empty]');
+
+    const applyFilters = () => {
+      const query =
+        searchField instanceof HTMLInputElement ? searchField.value.trim().toLowerCase() : '';
+      const family = familyField instanceof HTMLSelectElement ? familyField.value : 'all';
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        if (!(card instanceof HTMLElement)) {
+          return;
+        }
+
+        const searchText = card.dataset.searchText ?? '';
+        const cardFamily = card.dataset.family ?? '';
+        const matchesSearch = !query || searchText.includes(query);
+        const matchesFamily = family === 'all' || cardFamily === family;
+        const isVisible = matchesSearch && matchesFamily;
+
+        card.classList.toggle('hidden', !isVisible);
+
+        if (isVisible) {
+          visibleCount += 1;
+        }
+      });
+
+      if (emptyState instanceof HTMLElement) {
+        emptyState.classList.toggle('hidden', visibleCount > 0);
+      }
+    };
+
+    searchField?.addEventListener('input', applyFilters);
+    familyField?.addEventListener('change', applyFilters);
+    applyFilters();
+  };
+
+  initSpeciesFilters();
+  document.addEventListener('astro:page-load', initSpeciesFilters);
+</script>
