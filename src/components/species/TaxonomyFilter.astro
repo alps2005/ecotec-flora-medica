@@ -1,0 +1,20 @@
+---
+interface Props {
+  families: string[];
+}
+
+const { families } = Astro.props;
+---
+
+<label class="flex flex-col gap-2 text-sm font-medium text-slate-700">
+  <span>Filtrar por familia</span>
+  <select
+    data-species-family
+    class="min-w-[220px] rounded-full border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm outline-none transition focus:border-primary"
+  >
+    <option value="all">Todas las familias</option>
+    {families.map((family) => (
+      <option value={family}>{family}</option>
+    ))}
+  </select>
+</label>
