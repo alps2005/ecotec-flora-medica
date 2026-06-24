@@ -2,6 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
+@theme {
+    --color-primary: #1B6D24;
+    --color-primary-fixed-dim: #2E7D3C;
+    --color-secondary: #A86B3D;
+    --color-secondary-fixed-dim: #C58A55;
+    --color-tertiary: #6A7D45;
+    --color-tertiary-fixed-dim: #869A5E;
+    --color-surface: #FAFCFA;
+    --color-surface-muted: #F3F4EF;
+    --color-text: #1F2A22;
+    --color-text-muted: #5F675F;
+    --radius-card: 1.5rem;
+    --shadow-card: 0 20px 60px -24px rgba(27, 109, 36, 0.2);
+    --font-display: 'EB Garamond', serif;
+    --font-body: 'Hanken Grotesk', sans-serif;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'EB Garamond', serif;
 }
