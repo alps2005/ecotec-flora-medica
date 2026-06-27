@@ -1,0 +1,174 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const species = await getCollection('species');
+  return species.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: {
+    data: {
+      slug: string;
+      nombreComun: string;
+      nombreCientifico: string;
+      taxonomia: {
+        reino: string;
+        division: string;
+        clase: string;
+        familia: string;
+        genero: string;
+      };
+      etnobotanica: {
+        clasificacion: string;
+        parteUtilizada: string;
+        usoTradicional: string;
+        compuestosQuimicos: string[];
+      };
+      analisisAcademico: {
+        taxonomia: string;
+        etnobotanica: string;
+        fitoquimica: string;
+        sostenibilidad: string;
+      };
+      multimediaPrincipal: {
+        imagenUrl: string;
+      };
+    };
+  };
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+
+// Map family to accent color (same as in SpeciesGrid)
+const familyAccentMap = new Map<string, string>([
+  ['Rutaceae', 'bg-primary/10 text-primary'],
+  ['Lamiaceae', 'bg-secondary/10 text-secondary'],
+  ['Asteraceae', 'bg-tertiary/10 text-tertiary'],
+]);
+
+const getAccent = (family: string) => {
+  return familyAccentMap.get(family) ?? 'bg-primary/10 text-primary';
+};
+
+const academicSections = [
+  { key: 'taxonomia', title: 'Taxonomía' },
+  { key: 'etnobotanica', title: 'Etnobotánica' },
+  { key: 'fitoquimica', title: 'Fitoquímica' },
+  { key: 'sostenibilidad', title: 'Sostenibilidad' },
+];
+---
+
+<Layout
+  title={`${data.nombreComun} | Ecotec Flora Médica`}
+  description={`Detalle completo de ${data.nombreComun} (${data.nombreCientifico}) - clasificación ${data.etnobotanica.clasificacion}`}
+>
+  <section class="mx-auto max-w-[1280px] px-6 pb-16 pt-32 lg:px-8">
+    {/* Back button */}
+    <div class="mb-8">
+      <a
+        href="/especies"
+        class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline transition"
+      >
+        <span>←</span>
+        <span>Volver al catálogo</span>
+      </a>
+    </div>
+
+    {/* Header with name and scientific name */}
+    <div class="mb-12 space-y-4">
+      <div class="flex items-start justify-between gap-6">
+        <div class="flex-1">
+          <h1 class="text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl">
+            {data.nombreComun}
+          </h1>
+          <p class="mt-3 text-2xl italic text-slate-600">
+            {data.nombreCientifico}
+          </p>
+        </div>
+        <span class={`rounded-full px-4 py-2 text-sm font-semibold uppercase tracking-[0.2em] whitespace-nowrap ${getAccent(data.taxonomia.familia)}`}>
+          {data.taxonomia.familia}
+        </span>
+      </div>
+    </div>
+
+    {/* Taxonomic breadcrumb */}
+    <div class="mb-12 rounded-[1.5rem] border border-slate-200/80 bg-slate-50/50 p-6 shadow-sm">
+      <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Clasificación taxonómica</h2>
+      <div class="mt-4 flex flex-wrap items-center gap-2 text-sm text-slate-700">
+        <span>{data.taxonomia.reino}</span>
+        <span class="text-slate-300">&gt;</span>
+        <span>{data.taxonomia.division}</span>
+        <span class="text-slate-300">&gt;</span>
+        <span>{data.taxonomia.clase}</span>
+        <span class="text-slate-300">&gt;</span>
+        <span class="font-medium text-slate-900">{data.taxonomia.familia}</span>
+        <span class="text-slate-300">&gt;</span>
+        <span class="font-medium text-slate-900">{data.taxonomia.genero}</span>
+      </div>
+    </div>
+
+    {/* Etnobotánica basic info */}
+    <div class="mb-12 grid gap-8 lg:grid-cols-2">
+      <div class="rounded-[1.5rem] border border-slate-200/80 bg-white shadow-sm p-6">
+        <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Etnobotánica</h2>
+        <div class="mt-6 space-y-4">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Clasificación</p>
+            <p class="mt-2 font-medium text-slate-900">{data.etnobotanica.clasificacion}</p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Parte utilizada</p>
+            <p class="mt-2 font-medium text-slate-900">{data.etnobotanica.parteUtilizada}</p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Uso tradicional</p>
+            <p class="mt-2 leading-7 text-slate-700">{data.etnobotanica.usoTradicional}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-[1.5rem] border border-slate-200/80 bg-white shadow-sm p-6 flex flex-col">
+        <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Compuestos químicos</h2>
+        <div class="mt-6 flex flex-1 items-center justify-center flex-wrap gap-3">
+          {data.etnobotanica.compuestosQuimicos.map((compound) => (
+            <span class="rounded-full bg-primary/20 border border-primary/30 px-4 py-2 text-base font-semibold text-primary">
+              {compound}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Academic analysis blocks - 2x2 grid */}
+    <div class="mb-12">
+      <h2 class="mb-6 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Análisis académico</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        {academicSections.map(({ key, title }) => (
+          <div class="rounded-[1.5rem] border border-slate-200/80 bg-white shadow-sm p-6">
+            <h3 class="font-display text-xl font-semibold text-slate-950">
+              {title}
+            </h3>
+            <p class="mt-4 leading-7 text-slate-700">
+              {data.analisisAcademico[key as keyof typeof data.analisisAcademico]}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Main image */}
+    <div class="rounded-[2rem] overflow-hidden border border-slate-200/80 bg-slate-100 shadow-sm">
+      <img
+        src={data.multimediaPrincipal.imagenUrl}
+        alt={`${data.nombreComun} (${data.nombreCientifico})`}
+        class="w-full h-[500px] object-cover"
+      />
+    </div>
+  </section>
+</Layout>

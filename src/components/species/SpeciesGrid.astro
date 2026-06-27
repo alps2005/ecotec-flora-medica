@@ -45,6 +45,7 @@ const getAccent = (family: string) => {
       const familia = entry.data.taxonomia.familia;
       const descripcion = entry.data.etnobotanica?.usoTradicional ?? '';
       const imagenUrl = entry.data.multimediaPrincipal?.imagenUrl ?? '';
+      const slug = entry.data.slug;
 
       return (
         <SpeciesCard
@@ -54,6 +55,7 @@ const getAccent = (family: string) => {
           descripcion={descripcion}
           imagenUrl={imagenUrl}
           accent={getAccent(familia)}
+          slug={slug}
         />
       );
     })}

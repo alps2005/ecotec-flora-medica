@@ -8,13 +8,34 @@ const { families } = Astro.props;
 
 <label class="flex flex-col gap-2 text-sm font-medium text-slate-700">
   <span>Filtrar por familia</span>
-  <select
-    data-species-family
-    class="min-w-[220px] rounded-full border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm outline-none transition focus:border-primary"
-  >
-    <option value="all">Todas las familias</option>
-    {families.map((family) => (
-      <option value={family}>{family}</option>
-    ))}
-  </select>
+  <div class="relative">
+    <select
+      data-species-family
+      class="min-w-[220px] appearance-none rounded-full border border-slate-200 bg-white px-4 py-3 pr-10 text-sm text-slate-700 shadow-sm outline-none transition focus:border-primary focus:ring-1 focus:ring-primary/20"
+    >
+      <option value="all">Todas las familias</option>
+      {families.map((family) => (
+        <option value={family}>{family}</option>
+      ))}
+    </select>
+    <svg
+      class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-700"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width={2}
+        d="M19 14l-7 7m0 0l-7-7m7 7V3"
+      />
+    </svg>
+  </div>
 </label>
+
+<style>
+  select {
+    font-family: 'Hanken Grotesk', sans-serif;
+  }
+</style>
