@@ -5,11 +5,17 @@ interface Props {
   species: Array<{
     id: string;
     data: {
-      commonName: string;
-      scientificName: string;
-      family: string;
-      description: string;
-      image: string;
+      nombreComun: string;
+      nombreCientifico: string;
+      taxonomia: {
+        familia: string;
+      };
+      etnobotanica?: {
+        usoTradicional?: string;
+      };
+      multimediaPrincipal?: {
+        imagenUrl?: string;
+      };
     };
   }>;
 }
@@ -23,7 +29,7 @@ const familyAccentMap = new Map<string, string>([
 ]);
 
 const getAccent = (family: string) => {
-  const index = Array.from(new Set(species.map((item) => item.data.family))).indexOf(family);
+  const index = Array.from(new Set(species.map((item) => item.data.taxonomia.familia))).indexOf(family);
   const palette = [
     'bg-primary/10 text-primary',
     'bg-secondary/10 text-secondary',
@@ -35,16 +41,22 @@ const getAccent = (family: string) => {
 
 <div data-species-root class="space-y-6">
   <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-2">
-    {species.map((entry) => (
-      <SpeciesCard
-        commonName={entry.data.commonName}
-        scientificName={entry.data.scientificName}
-        family={entry.data.family}
-        description={entry.data.description}
-        image={entry.data.image}
-        accent={getAccent(entry.data.family)}
-      />
-    ))}
+    {species.map((entry) => {
+      const familia = entry.data.taxonomia.familia;
+      const descripcion = entry.data.etnobotanica?.usoTradicional ?? '';
+      const imagenUrl = entry.data.multimediaPrincipal?.imagenUrl ?? '';
+
+      return (
+        <SpeciesCard
+          nombreComun={entry.data.nombreComun}
+          nombreCientifico={entry.data.nombreCientifico}
+          familia={familia}
+          descripcion={descripcion}
+          imagenUrl={imagenUrl}
+          accent={getAccent(familia)}
+        />
+      );
+    })}
   </div>
 
   <div data-species-empty class="hidden rounded-[1.5rem] border border-dashed border-slate-300 bg-white/70 p-10 text-center text-slate-600">

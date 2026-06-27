@@ -7,9 +7,9 @@ import TaxonomyFilter from '../components/species/TaxonomyFilter.astro';
 import Pagination from '../components/species/Pagination.astro';
 
 const species = (await getCollection('species')).sort((a, b) =>
-  a.data.commonName.localeCompare(b.data.commonName),
+  a.data.nombreComun.localeCompare(b.data.nombreComun),
 );
-const families = [...new Set(species.map((entry) => entry.data.family))];
+const families = [...new Set(species.map((entry) => entry.data.taxonomia.familia))];
 ---
 
 <Layout

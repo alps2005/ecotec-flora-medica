@@ -1,7 +1,33 @@
 {
-  "commonName": "Naranjo Amargo",
-  "scientificName": "Citrus × aurantium",
-  "family": "Rutaceae",
-  "description": "Árbol cítrico de corteza aromática y flores blancas, valorado por su uso medicinal y su presencia en paisajes mediterráneos.",
-  "image": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80"
+  "slug": "naranjo-amargo",
+  "nombreComun": "Naranjo Amargo",
+  "nombreCientifico": "Citrus aurantium",
+  "nombresAlternativos": ["Naranja amarga"],
+  "taxonomia": {
+    "reino": "Plantae",
+    "division": "Magnoliophyta",
+    "clase": "Magnoliopsida",
+    "familia": "Rutaceae",
+    "genero": "Citrus"
+  },
+  "etnobotanica": {
+    "clasificacion": "Alimenticia - Medicinal",
+    "parteUtilizada": "Flores (azahar) y fruto",
+    "usoTradicional": "Sedante suave y digestivo, flores destiladas en fitoterapia",
+    "compuestosQuimicos": ["Hesperidina", "D-limoneno", "Ácido cítrico"]
+  },
+  "analisisAcademico": {
+    "taxonomia": "El naranjo amargo pertenece a Rutaceae y comparte el hábito arbóreo de los cítricos con flores aromáticas muy características.",
+    "etnobotanica": "Se ha utilizado tradicionalmente en la preparación de flores y frutos para aplicaciones digestivas y relajantes.",
+    "fitoquimica": "Su composición incluye flavonoides y terpenos asociados a su aroma distintivo y a posibles efectos antioxidantes.",
+    "sostenibilidad": "Su cultivo es relevante en regiones mediterráneas, donde aporta valor cultural y económico en sistemas agrícolas diversos."
+  },
+  "multimediaPrincipal": {
+    "imagenUrl": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80",
+    "imagenPublicId": "",
+    "videoUrl": "",
+    "videoPublicId": "",
+    "proveedor": "CLOUDINARY"
+  },
+  "estado": "ACTIVO"
 }

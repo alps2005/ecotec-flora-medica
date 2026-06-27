@@ -1,26 +1,26 @@
 ---
 interface Props {
-  commonName: string;
-  scientificName: string;
-  family: string;
-  description: string;
-  image: string;
+  nombreComun: string;
+  nombreCientifico: string;
+  familia: string;
+  descripcion: string;
+  imagenUrl: string;
   accent: string;
 }
 
-const { commonName, scientificName, family, description, image, accent } = Astro.props;
+const { nombreComun, nombreCientifico, familia, descripcion, imagenUrl, accent } = Astro.props;
 ---
 
 <article
   data-species-card
-  data-family={family}
-  data-search-text={`${commonName} ${scientificName} ${family} ${description}`.toLowerCase()}
+  data-family={familia}
+  data-search-text={`${nombreComun} ${nombreCientifico} ${familia} ${descripcion}`.toLowerCase()}
   class="group overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_-28px_rgba(27,109,36,0.25)]"
 >
   <div class="aspect-[4/3] overflow-hidden bg-slate-100">
     <img
-      src={image}
-      alt={`Detalle de ${commonName}, ${scientificName}`}
+      src={imagenUrl}
+      alt={`Detalle de ${nombreComun}, ${nombreCientifico}`}
       class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
     />
   </div>
@@ -28,19 +28,19 @@ const { commonName, scientificName, family, description, image, accent } = Astro
     <div class="flex items-start justify-between gap-4">
       <div>
         <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-          {family}
+          {familia}
         </p>
         <h2 class="mt-2 text-2xl font-semibold text-slate-950">
-          {commonName}
+          {nombreComun}
         </h2>
       </div>
       <span class={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] ${accent}`}>
-        {family}
+        {familia}
       </span>
     </div>
-    <p class="mt-3 text-sm italic text-slate-600">{scientificName}</p>
+    <p class="mt-3 text-sm italic text-slate-600">{nombreCientifico}</p>
     <p class="mt-4 text-sm leading-7 text-slate-700">
-      {description}
+      {descripcion}
     </p>
   </div>
 </article>
