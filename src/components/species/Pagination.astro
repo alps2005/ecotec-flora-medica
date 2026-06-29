@@ -1,0 +1,25 @@
+---
+interface Props {
+  currentPage: number;
+  totalPages: number;
+}
+
+const { currentPage, totalPages } = Astro.props;
+---
+
+<nav aria-label="Paginación del catálogo" class="flex items-center justify-between gap-4 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm text-slate-600 shadow-sm">
+  <span class="font-medium text-slate-700">
+    Página {currentPage} de {totalPages}
+  </span>
+  <div class="flex items-center gap-2">
+    <button class="rounded-full border border-slate-200 px-3 py-1.5 transition hover:border-primary hover:text-primary">
+      Anterior
+    </button>
+    <button class="rounded-full bg-primary px-3 py-1.5 font-semibold text-white">
+      1
+    </button>
+    <button class="rounded-full border border-slate-200 px-3 py-1.5 transition hover:border-primary hover:text-primary">
+      Siguiente
+    </button>
+  </div>
+</nav>

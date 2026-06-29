@@ -13,4 +13,15 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog };
+const species = defineCollection({
+	loader: glob({ pattern: '**/*.json', base: './src/content/species' }),
+	schema: z.object({
+		commonName: z.string(),
+		scientificName: z.string(),
+		family: z.string(),
+		description: z.string(),
+		image: z.string().url(),
+	}),
+});
+
+export const collections = { blog, species };
