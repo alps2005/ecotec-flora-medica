@@ -1,27 +1,41 @@
-import { defineCollection } from 'astro:content';
-import { glob } from 'astro/loaders';
-import { z } from 'astro/zod';
+	import { defineCollection } from 'astro:content';
+	import { glob } from 'astro/loaders';
+	import { z } from 'astro/zod';
 
-const blog = defineCollection({
-	loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
-	schema: z.object({
-		title: z.string(),
-		description: z.string(),
-		pubDate: z.date(),
-		updatedDate: z.date().optional(),
-		tags: z.array(z.string()).default([]),
-	}),
+	const blog = defineCollection({
+		loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+		schema: z.object({
+			title: z.string(),
+			description: z.string(),
+			pubDate: z.date(),
+			updatedDate: z.date().optional(),
+			tags: z.array(z.string()).default([]),
+		}),
+	});
+
+	const species = defineCollection({
+		loader: glob({ pattern: '**/*.json', base: './src/content/species' }),
+		schema: z.object({
+			commonName: z.string(),
+			scientificName: z.string(),
+			family: z.string(),
+			description: z.string(),
+			image: z.string().url(),
+		}),
+	});
+
+const etnobotanica = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/etnobotanicacont' }),
+  schema: z.object({
+    nombre: z.string(),
+    cientifico: z.string(),
+    categoria: z.string(),
+    parteUsada: z.string(),
+    uso: z.string(),
+    compuestos: z.string(),
+    img: z.string().url(),
+  }),
 });
 
-const species = defineCollection({
-	loader: glob({ pattern: '**/*.json', base: './src/content/species' }),
-	schema: z.object({
-		commonName: z.string(),
-		scientificName: z.string(),
-		family: z.string(),
-		description: z.string(),
-		image: z.string().url(),
-	}),
-});
+export const collections = { blog, species, etnobotanica };
 
-export const collections = { blog, species };
