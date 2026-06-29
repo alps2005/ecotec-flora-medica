@@ -1,148 +1,62 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
+import EtnobotanicaHero from '../components/etnobotanicacomp/Etnobotanicahero.astro';
+import EtnobotanicaFilters from '../components/etnobotanicacomp/Etnobotanicafilters.astro';
+import EtnobotanicaGrid from '../components/etnobotanicacomp/Etnobotanicagrid.astro';
 ---
 
 <Layout
   title="Etnobotánica | Ecotec Flora Médica"
   description="Atlas Etnobotánico: explora la relación entre plantas medicinales y el cuerpo humano."
 >
-  <section class="mx-auto max-w-4xl px-6 pt-32 pb-16 lg:px-0">
-    <!-- Hero -->
-    <div class="text-center mb-12">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700 mb-2">
-        Etnobotánica
-      </p>
-      <h1 class="text-4xl font-semibold tracking-tight text-emerald-900 mb-4">
-        Atlas Etnobotánico
-      </h1>
-      <p class="text-lg leading-8 text-slate-600 max-w-xl mx-auto">
-        Explora la relación ancestral entre la anatomía humana y la flora medicinal.
-        Selecciona una zona del cuerpo para descubrir las especies utilizadas
-        tradicionalmente para su cuidado y curación.
-      </p>
+  <section class="mx-auto max-w-6xl px-6 pt-32 pb-16 lg:px-0">
+
+    <EtnobotanicaHero />
+
+    <div class="rounded-3xl p-8" style="background-color: #F7FAF6; border: 1px solid #dde8db;">
+      <EtnobotanicaFilters />
+      <EtnobotanicaGrid />
     </div>
 
-    <!-- Grid principal -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-      <!-- Panel silueta -->
-      <div class="bg-white border border-slate-200 rounded-2xl flex flex-col items-center p-8">
-
-        <!-- Selector hombre / mujer -->
-        <div class="flex gap-2 mb-6">
-          <button
-            id="btn-hombre"
-            onclick="switchSilhouette('hombre')"
-            class="px-5 py-2 text-sm font-medium rounded-lg border transition-all duration-200 bg-emerald-700 text-white border-emerald-700"
-          >
-            Hombre
-          </button>
-          <button
-            id="btn-mujer"
-            onclick="switchSilhouette('mujer')"
-            class="px-5 py-2 text-sm font-medium rounded-lg border transition-all duration-200 bg-white text-slate-600 border-slate-200 hover:border-emerald-400 hover:text-emerald-700"
-          >
-            Mujer
-          </button>
-        </div>
-
-        <!-- Silueta hombre -->
-        <svg id="silueta-hombre" viewBox="0 0 180 440" width="180" height="320" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="90" cy="38" rx="26" ry="30" fill="#1a1a1a"/>
-          <rect x="80" y="65" width="20" height="20" rx="4" fill="#1a1a1a"/>
-          <path d="M55,84 Q45,90 42,110 L38,190 Q38,200 50,202 L65,204 L65,220 L115,220 L115,204 L130,202 Q142,200 142,190 L138,110 Q135,90 125,84 Z" fill="#1a1a1a"/>
-          <path d="M55,90 Q38,95 30,115 L22,170 Q20,182 26,188 L34,186 L40,130 L52,110 Z" fill="#3B6D11"/>
-          <path d="M22,172 Q18,190 20,208 L28,210 L34,188 Z" fill="#3B6D11"/>
-          <path d="M125,90 Q142,95 150,115 L158,170 Q160,182 154,188 L146,186 L140,130 L128,110 Z" fill="#3B6D11"/>
-          <path d="M158,172 Q162,190 160,208 L152,210 L146,188 Z" fill="#3B6D11"/>
-          <ellipse cx="24" cy="216" rx="9" ry="12" fill="#1a1a1a"/>
-          <ellipse cx="156" cy="216" rx="9" ry="12" fill="#1a1a1a"/>
-          <path d="M65,218 L60,310 Q58,330 62,350 L72,350 L76,280 L90,275 L104,280 L108,350 L118,350 Q122,330 120,310 L115,218 Z" fill="#1a1a1a"/>
-          <path d="M62,350 L64,400 Q64,415 68,420 L76,420 L76,350 Z" fill="#1a1a1a"/>
-          <path d="M118,350 L116,400 Q116,415 112,420 L104,420 L104,350 Z" fill="#1a1a1a"/>
-          <ellipse cx="70" cy="424" rx="13" ry="8" fill="#1a1a1a"/>
-          <ellipse cx="110" cy="424" rx="13" ry="8" fill="#1a1a1a"/>
-        </svg>
-
-        <!-- Silueta mujer -->
-        <svg id="silueta-mujer" viewBox="0 0 180 440" width="180" height="320" xmlns="http://www.w3.org/2000/svg" style="display:none;">
-          <!-- Cabeza -->
-          <ellipse cx="90" cy="36" rx="24" ry="28" fill="#1a1a1a"/>
-          <!-- Cabello -->
-          <ellipse cx="90" cy="22" rx="28" ry="18" fill="#1a1a1a"/>
-          <ellipse cx="64" cy="42" rx="10" ry="22" fill="#1a1a1a"/>
-          <ellipse cx="116" cy="42" rx="10" ry="22" fill="#1a1a1a"/>
-          <!-- Cuello -->
-          <rect x="82" y="62" width="16" height="18" rx="4" fill="#1a1a1a"/>
-          <!-- Hombros -->
-          <path d="M60,78 Q46,82 40,95 L38,105 L56,108 L62,90 Z" fill="#1a1a1a"/>
-          <path d="M120,78 Q134,82 140,95 L142,105 L124,108 L118,90 Z" fill="#1a1a1a"/>
-          <!-- Torso con cintura -->
-          <path d="M60,78 L56,108 L48,150 L52,180 L60,195 L75,202 L75,218 L105,218 L105,202 L120,195 L128,180 L132,150 L124,108 L120,78 Q105,72 90,72 Q75,72 60,78 Z" fill="#1a1a1a"/>
-          <!-- Brazos izquierdo (verde) -->
-          <path d="M40,95 Q28,102 22,125 L18,172 Q17,184 23,188 L31,186 L36,135 L50,108 Z" fill="#3B6D11"/>
-          <path d="M18,175 Q15,192 17,208 L25,210 L31,188 Z" fill="#3B6D11"/>
-          <!-- Brazo derecho (verde) -->
-          <path d="M140,95 Q152,102 158,125 L162,172 Q163,184 157,188 L149,186 L144,135 L130,108 Z" fill="#3B6D11"/>
-          <path d="M162,175 Q165,192 163,208 L155,210 L149,188 Z" fill="#3B6D11"/>
-          <!-- Manos -->
-          <ellipse cx="21" cy="216" rx="8" ry="11" fill="#1a1a1a"/>
-          <ellipse cx="159" cy="216" rx="8" ry="11" fill="#1a1a1a"/>
-          <!-- Falda / cadera -->
-          <path d="M75,218 L68,265 L65,310 Q63,330 67,350 L77,350 L80,285 L90,280 L100,285 L103,350 L113,350 Q117,330 115,310 L112,265 L105,218 Z" fill="#1a1a1a"/>
-          <!-- Piernas -->
-          <path d="M67,350 L69,400 Q69,415 73,420 L81,420 L81,350 Z" fill="#1a1a1a"/>
-          <path d="M113,350 L111,400 Q111,415 107,420 L99,420 L99,350 Z" fill="#1a1a1a"/>
-          <!-- Pies -->
-          <ellipse cx="75" cy="424" rx="12" ry="7" fill="#1a1a1a"/>
-          <ellipse cx="105" cy="424" rx="12" ry="7" fill="#1a1a1a"/>
-        </svg>
-
-      </div>
-
-      <!-- Panel info -->
-      <div class="bg-white border border-slate-200 rounded-2xl flex flex-col items-center justify-center p-10 text-center min-h-[300px]">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-emerald-500 mb-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
-        </svg>
-        <h2 class="text-xl font-semibold text-emerald-900 mb-3">
-          Conocimiento Etnobotánico
-        </h2>
-        <p class="text-sm text-slate-500 leading-relaxed">
-          Selecciona una parte del cuerpo en la silueta anatómica para explorar
-          el conocimiento ancestral y las especies medicinales asociadas a esa región.
-        </p>
-      </div>
-    </div>
   </section>
 </Layout>
 
 <script>
-  function switchSilhouette(tipo: string) {
-    const hombre = document.getElementById('silueta-hombre');
-    const mujer = document.getElementById('silueta-mujer');
-    const btnHombre = document.getElementById('btn-hombre');
-    const btnMujer = document.getElementById('btn-mujer');
+  const initEtnobotanicaFilters = () => {
+    const buttons = Array.from(
+      document.querySelectorAll<HTMLElement>('[data-etnobotanica-filter]'),
+    );
+    const cards = Array.from(
+      document.querySelectorAll<HTMLElement>('.tarjeta-especie'),
+    );
 
-    const activeClass = ['bg-emerald-700', 'text-white', 'border-emerald-700'];
-    const inactiveClass = ['bg-white', 'text-slate-600', 'border-slate-200'];
+    if (!buttons.length) return;
 
-    if (tipo === 'hombre') {
-      hombre!.style.display = 'block';
-      mujer!.style.display = 'none';
-      btnHombre!.classList.add(...activeClass);
-      btnHombre!.classList.remove(...inactiveClass);
-      btnMujer!.classList.add(...inactiveClass);
-      btnMujer!.classList.remove(...activeClass);
-    } else {
-      mujer!.style.display = 'block';
-      hombre!.style.display = 'none';
-      btnMujer!.classList.add(...activeClass);
-      btnMujer!.classList.remove(...inactiveClass);
-      btnHombre!.classList.add(...inactiveClass);
-      btnHombre!.classList.remove(...activeClass);
-    }
-  }
+    const ACTIVE   = ['bg-emerald-900', 'text-white', 'border-emerald-900'];
+    const INACTIVE = ['bg-white', 'text-slate-600', 'border-slate-300'];
 
-  // Exponer globalmente para el onclick inline
-  (window as any).switchSilhouette = switchSilhouette;
+    const applyFilter = (cat: string) => {
+      buttons.forEach((b) => {
+        const isActive = b.dataset.cat === cat;
+        b.classList.toggle('bg-emerald-900',   isActive);
+        b.classList.toggle('text-white',        isActive);
+        b.classList.toggle('border-emerald-900',isActive);
+        b.classList.toggle('bg-white',         !isActive);
+        b.classList.toggle('text-slate-600',   !isActive);
+        b.classList.toggle('border-slate-300', !isActive);
+      });
+
+      cards.forEach((card) => {
+        const show = cat === 'GENERAL' || card.dataset.categoria === cat;
+        card.style.display = show ? 'block' : 'none';
+      });
+    };
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => applyFilter(btn.dataset.cat ?? 'GENERAL'));
+    });
+  };
+
+  initEtnobotanicaFilters();
+  document.addEventListener('astro:page-load', initEtnobotanicaFilters);
 </script>

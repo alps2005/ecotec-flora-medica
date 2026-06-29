@@ -1,0 +1,93 @@
+---
+import EtnobotanicaCard from './Etnobotanicacard.astro';
+
+const BADGE_MAP: Record<string, { color: string; bg: string }> = {
+  MEDICINAL:     { color: 'text-emerald-800', bg: 'bg-emerald-50' },
+  RITUAL:        { color: 'text-purple-700',  bg: 'bg-purple-50' },
+  ALIMENTICIA:   { color: 'text-amber-700',   bg: 'bg-amber-50' },
+  ESTIMULANTE:   { color: 'text-blue-700',    bg: 'bg-blue-50' },
+  AROMÁTICA:     { color: 'text-emerald-700', bg: 'bg-emerald-50' },
+  AGROECOLÓGICA: { color: 'text-green-700',   bg: 'bg-green-50' },
+};
+
+const ICON_MAP: Record<string, string> = {
+  MEDICINAL:     'ti-heart-plus',
+  RITUAL:        'ti-sparkles',
+  ALIMENTICIA:   'ti-tools-kitchen-2',
+  ESTIMULANTE:   'ti-bolt',
+  AROMÁTICA:     'ti-flower',
+  AGROECOLÓGICA: 'ti-seeding',
+};
+
+const PLANTAS = [
+  {
+    nombre: 'Manzanilla',
+    cientifico: 'Matricaria chamomilla',
+    categoria: 'MEDICINAL',
+    parteUsada: 'Flores, hojas',
+    uso: 'Digestivo, calmante',
+    compuestos: 'Apigenina · bisabolol · camazuleno',
+    img: '/images/manzanilla.jpg',
+  },
+  {
+    nombre: 'Romero',
+    cientifico: 'Rosmarinus officinalis',
+    categoria: 'RITUAL',
+    parteUsada: 'Hojas, tallos',
+    uso: 'Memoria, sahumerio',
+    compuestos: 'Ácido rosmarínico · carnosol · alcanfor',
+    img: '/images/romero.jpg',
+  },
+  {
+    nombre: 'Amaranto',
+    cientifico: 'Amaranthus cruentus',
+    categoria: 'ALIMENTICIA',
+    parteUsada: 'Semillas, hojas',
+    uso: 'Nutritivo, energizante',
+    compuestos: 'Proteínas · lisina · escualeno',
+    img: '/images/amaranto.jpg',
+  },
+  {
+    nombre: 'Guayusa',
+    cientifico: 'Ilex guayusa',
+    categoria: 'ESTIMULANTE',
+    parteUsada: 'Hojas',
+    uso: 'Estimulante, alerta',
+    compuestos: 'Cafeína · teobromina · antioxidantes',
+    img: '/images/guayusa.jpg',
+  },
+  {
+    nombre: 'Salvia',
+    cientifico: 'Salvia officinalis',
+    categoria: 'AROMÁTICA',
+    parteUsada: 'Hojas',
+    uso: 'Antibacteriano, digestivo',
+    compuestos: 'Tuiona · cineol · ácido ursólico',
+    img: '/images/salvia.jpg',
+  },
+  {
+    nombre: 'Higuerilla',
+    cientifico: 'Ricinus communis',
+    categoria: 'AGROECOLÓGICA',
+    parteUsada: 'Hojas, semillas',
+    uso: 'Repelente, agroforestal',
+    compuestos: 'Ricinoleína · ricina · flavonoides',
+    img: '/images/higuerilla.jpg',
+  },
+];
+---
+
+<div id="grid-especies" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+  {PLANTAS.map((planta) => {
+    const badge = BADGE_MAP[planta.categoria] ?? { color: 'text-slate-700', bg: 'bg-slate-50' };
+    const icono = ICON_MAP[planta.categoria] ?? 'ti-leaf';
+    return (
+      <EtnobotanicaCard
+        {...planta}
+        icono={icono}
+        badgeColor={badge.color}
+        badgeBg={badge.bg}
+      />
+    );
+  })}
+</div>

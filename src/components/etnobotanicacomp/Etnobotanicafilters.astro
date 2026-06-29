@@ -1,0 +1,28 @@
+---
+const FILTERS = [
+  { cat: "GENERAL",       icon: "ti-leaf" },
+  { cat: "MEDICINAL",     icon: "ti-heart-plus" },
+  { cat: "ALIMENTICIA",   icon: "ti-tools-kitchen-2" },
+  { cat: "ESTIMULANTE",   icon: "ti-bolt" },
+  { cat: "AROMÁTICA",     icon: "ti-flower" },
+  { cat: "RITUAL",        icon: "ti-sparkles" },
+  { cat: "AGROECOLÓGICA", icon: "ti-seeding" },
+] as const;
+---
+
+<div id="filtros" class="flex flex-wrap gap-2 mb-8">
+  {FILTERS.map(({ cat, icon }) => (
+    <button
+      data-cat={cat}
+      data-etnobotanica-filter
+      class={`flex items-center gap-2 px-5 py-2 rounded-full text-sm font-medium border transition-all duration-200 ${
+        cat === "GENERAL"
+          ? "bg-emerald-900 text-white border-emerald-900"
+          : "bg-white text-slate-600 border-slate-300 hover:border-emerald-600 hover:text-emerald-800"
+      }`}
+    >
+      <i class={`ti ${icon}`} style="font-size:15px;"></i>
+      {cat}
+    </button>
+  ))}
+</div>
