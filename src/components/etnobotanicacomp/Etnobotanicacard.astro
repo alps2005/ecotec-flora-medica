@@ -1,0 +1,64 @@
+---
+interface Props {
+  nombre: string;
+  cientifico: string;
+  categoria: string;
+  icono: string;
+  parteUsada: string;
+  uso: string;
+  compuestos: string;
+  badgeColor: string;
+  badgeBg: string;
+  img: string;
+}
+
+const {
+  nombre,
+  cientifico,
+  categoria,
+  icono,
+  parteUsada,
+  uso,
+  compuestos,
+  badgeColor,
+  badgeBg,
+  img,
+} = Astro.props;
+---
+
+<div
+  data-categoria={categoria}
+  class="tarjeta-especie bg-white border border-slate-200 rounded-2xl overflow-hidden"
+>
+  <div class="h-48 relative overflow-hidden bg-slate-100">
+    <img
+      src={img}
+      alt={nombre}
+      class="w-full h-full object-cover"
+    />
+    <span
+      class={`absolute top-3 right-3 ${badgeBg} ${badgeColor} text-xs font-semibold px-3 py-1 rounded-md flex items-center gap-1`}
+    >
+      <i class={`ti ${icono}`} style="font-size:12px;"></i>
+      {categoria}
+    </span>
+  </div>
+
+  <div class="p-5">
+    <p class="text-base font-semibold text-slate-900 mb-0.5">{nombre}</p>
+    <p class="text-sm text-slate-400 italic mb-4">{cientifico}</p>
+
+    <div class="border-t border-slate-100 pt-3 space-y-2">
+      <div class="flex justify-between items-start">
+        <p class="text-xs font-semibold uppercase tracking-widest text-slate-400">Parte usada</p>
+        <p class="text-sm text-slate-600 text-right">{parteUsada}</p>
+      </div>
+      <div class="flex justify-between items-start border-t border-slate-100 pt-2">
+        <p class="text-xs font-semibold uppercase tracking-widest text-slate-400">Uso</p>
+        <p class="text-sm text-slate-600 text-right">{uso}</p>
+      </div>
+    </div>
+
+    <p class="text-xs text-slate-400 mt-3 pt-3 border-t border-slate-100">{compuestos}</p>
+  </div>
+</div>

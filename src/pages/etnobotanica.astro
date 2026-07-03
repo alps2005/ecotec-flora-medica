@@ -1,23 +1,62 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
+import EtnobotanicaHero from '../components/etnobotanicacomp/Etnobotanicahero.astro';
+import EtnobotanicaFilters from '../components/etnobotanicacomp/Etnobotanicafilters.astro';
+import EtnobotanicaGrid from '../components/etnobotanicacomp/Etnobotanicagrid.astro';
 ---
 
 <Layout
   title="Etnobotánica | Ecotec Flora Médica"
-  description="Notas introductorias sobre la relación entre plantas, comunidades y conocimiento tradicional."
+  description="Atlas Etnobotánico: explora la relación entre plantas medicinales y el cuerpo humano."
 >
   <section class="mx-auto max-w-6xl px-6 pt-32 pb-16 lg:px-0">
-    <p
-      class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700"
-    >
-      Etnobotánica
-    </p>
-    <h1 class="mt-4 text-4xl font-semibold tracking-tight text-slate-950">
-      Contexto etnobotánico
-    </h1>
-    <p class="mt-4 text-lg leading-8 text-slate-700">
-      Aquí puedes desarrollar contenido sobre territorio, memoria, prácticas y
-      relación cultural con las especies medicinales.
-    </p>
+
+    <EtnobotanicaHero />
+
+    <div class="rounded-3xl p-8" style="background-color: #F7FAF6; border: 1px solid #dde8db;">
+      <EtnobotanicaFilters />
+      <EtnobotanicaGrid />
+    </div>
+
   </section>
 </Layout>
+
+<script>
+  const initEtnobotanicaFilters = () => {
+    const buttons = Array.from(
+      document.querySelectorAll<HTMLElement>('[data-etnobotanica-filter]'),
+    );
+    const cards = Array.from(
+      document.querySelectorAll<HTMLElement>('.tarjeta-especie'),
+    );
+
+    if (!buttons.length) return;
+
+    const ACTIVE   = ['bg-emerald-900', 'text-white', 'border-emerald-900'];
+    const INACTIVE = ['bg-white', 'text-slate-600', 'border-slate-300'];
+
+    const applyFilter = (cat: string) => {
+      buttons.forEach((b) => {
+        const isActive = b.dataset.cat === cat;
+        b.classList.toggle('bg-emerald-900',   isActive);
+        b.classList.toggle('text-white',        isActive);
+        b.classList.toggle('border-emerald-900',isActive);
+        b.classList.toggle('bg-white',         !isActive);
+        b.classList.toggle('text-slate-600',   !isActive);
+        b.classList.toggle('border-slate-300', !isActive);
+      });
+
+      cards.forEach((card) => {
+        const show = cat === 'GENERAL' || card.dataset.categoria === cat;
+        card.style.display = show ? 'block' : 'none';
+      });
+    };
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => applyFilter(btn.dataset.cat ?? 'GENERAL'));
+    });
+  };
+
+  initEtnobotanicaFilters();
+  document.addEventListener('astro:page-load', initEtnobotanicaFilters);
+</script>
