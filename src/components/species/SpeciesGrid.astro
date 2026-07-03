@@ -5,6 +5,7 @@ interface Props {
   species: Array<{
     id: string;
     data: {
+      slug?: string;
       nombreComun: string;
       nombreCientifico: string;
       taxonomia: {
@@ -45,7 +46,7 @@ const getAccent = (family: string) => {
       const familia = entry.data.taxonomia.familia;
       const descripcion = entry.data.etnobotanica?.usoTradicional ?? '';
       const imagenUrl = entry.data.multimediaPrincipal?.imagenUrl ?? '';
-      const slug = entry.data.slug;
+      const slug = entry.data.slug ?? entry.id;
 
       return (
         <SpeciesCard

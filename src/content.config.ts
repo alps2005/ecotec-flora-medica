@@ -14,18 +14,38 @@
 	});
 
 	const species = defineCollection({
-		loader: glob({ pattern: '**/*.json', base: './src/content/species' }),
+		loader: glob({ pattern: '**/*.md', base: './src/content/species' }),
 		schema: z.object({
-			commonName: z.string(),
-			scientificName: z.string(),
-			family: z.string(),
-			description: z.string(),
-			image: z.string().url(),
+			slug: z.string().optional(),
+			nombreComun: z.string(),
+			nombreCientifico: z.string(),
+			nombresAlternativos: z.array(z.string()).default([]),
+			taxonomia: z.object({
+				reino: z.string(),
+				division: z.string(),
+				clase: z.string(),
+				familia: z.string(),
+				genero: z.string(),
+			}),
+			etnobotanica: z.object({
+				clasificacion: z.string(),
+				parteUtilizada: z.string(),
+				usoTradicional: z.string(),
+				compuestosQuimicos: z.array(z.string()),
+			}),
+			multimediaPrincipal: z.object({
+				imagenUrl: z.string().url(),
+				imagenPublicId: z.string(),
+				videoUrl: z.string(),
+				videoPublicId: z.string(),
+				proveedor: z.string(),
+			}),
+			estado: z.string(),
 		}),
 	});
 
 const etnobotanica = defineCollection({
-  loader: glob({ pattern: '**/*.json', base: './src/content/etnobotanicacont' }),
+  loader: glob({ pattern: '**/*.md', base: './src/content/etnobotanicacont' }),
   schema: z.object({
     nombre: z.string(),
     cientifico: z.string(),
@@ -38,4 +58,3 @@ const etnobotanica = defineCollection({
 });
 
 export const collections = { blog, species, etnobotanica };
-

@@ -1,0 +1,12 @@
+---
+nombre: "Guayusa"
+cientifico: "Ilex guayusa"
+categoria: "ESTIMULANTE"
+parteUsada: "Hojas"
+uso: "Estimulante, alerta"
+compuestos: "Cafeína · teobromina · antioxidantes"
+img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAb5qIfPwn5lPGcd1SxeWXnuhwh9geX3HMtGVyJU6mj_y1DMAkb7ah7SA&s=10"
+---
+
+Ficha etnobotánica resumida de guayusa para el atlas de categorías funcionales.
+
