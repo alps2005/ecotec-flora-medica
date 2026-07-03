@@ -24,21 +24,25 @@ estado: "ACTIVO"
 
 ## Introducción
 
-La manzanilla es una especie medicinal aromática ampliamente usada en infusiones por su perfil digestivo y calmante.
+La manzanilla (Matricaria chamomilla) es una de las hierbas medicinales más consumidas del mundo en forma de infusión. Sus flores concentran aceites esenciales de acción antiespasmódica, calmante y protectora de la mucosa gástrica.
 
-## Taxonomía
+## Historia y evolución botánica
 
-La manzanilla pertenece a la familia Asteraceae y presenta capítulos florales muy reconocibles en su hábito herbáceo.
+- **Origen:** Europa y norte de Asia.
+- **Dispersión:** Se introdujo en América durante la colonización europea y se naturalizó en climas templados.
+- **Evolución:** Especie de la familia Asteraceae de cultivo sencillo y amplia adaptación ecológica.
 
-## Etnobotánica
+## Perfil etnobotánico
 
-Ha sido empleada tradicionalmente en infusiones para favorecer la relajación y apoyar la digestión.
+Se emplea principalmente la flor seca para aliviar indigestión, cólicos y flatulencia. También se utiliza como sedante suave y en aplicaciones tópicas para piel y ojos inflamados.
 
-## Fitoquímica
+## Importación y exportación
 
-Su perfil fitoquímico destaca compuestos flavonoides y sesquiterpenos con actividad antiinflamatoria y calmante.
+- **Exportación:** Egipto, México y Alemania son productores y exportadores destacados; Argentina tiene peso regional en Sudamérica.
+- **Importación:** Estados Unidos y la Unión Europea concentran gran parte del consumo industrial (tés, cosmética y fitoterapia).
 
-## Sostenibilidad
+## Características químicas principales
 
-Su cultivo suele adaptarse bien a sistemas extensivos y conserva valor en la medicina tradicional de baja tecnología.
-
+- **Apigenina:** flavonoide asociado a efectos sedantes y ansiolíticos leves.
+- **Bisabolol y camazuleno:** compuestos del aceite esencial con acción antiinflamatoria y antimicrobiana.
+- **Cumarinas:** contribuyen a su efecto antiespasmódico digestivo.

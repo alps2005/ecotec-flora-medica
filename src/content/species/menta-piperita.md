@@ -1,5 +1,5 @@
 ---
-nombreComun: "Menta Piperita"
+nombreComun: "Menta"
 nombreCientifico: "Mentha piperita"
 nombresAlternativos: []
 taxonomia:
@@ -24,21 +24,25 @@ estado: "ACTIVO"
 
 ## Introducción
 
-La menta piperita es una planta aromática usada en preparaciones medicinales por su efecto digestivo y refrescante.
+La menta (Mentha piperita) es una de las plantas medicinales aromáticas más usadas en infusiones, extractos y fitofármacos por su acción digestiva, carminativa y refrescante.
 
-## Taxonomía
+## Historia y evolución botánica
 
-La menta piperita forma parte del género Mentha y se distingue por su hábito aromático y hojas de borde dentado.
+- **Origen:** Europa templada y norte de África.
+- **Dispersión:** Se extendió por Asia y América desde el siglo XVII.
+- **Evolución:** Híbrido natural estéril entre *Mentha aquatica* y *Mentha spicata*.
 
-## Etnobotánica
+## Perfil etnobotánico
 
-Su uso tradicional destaca en preparados digestivos y en aplicaciones para aliviar molestias respiratorias.
+Se emplean hojas frescas o secas para aliviar cólicos, flatulencias y digestión lenta. También se utiliza en cuadros respiratorios leves por su efecto descongestionante suave.
 
-## Fitoquímica
+## Importación y exportación
 
-Su composición incluye mentol y otros monoterpenos que aportan efecto refrescante y espasmolítico.
+- **Exportación:** Estados Unidos, India, China y Marruecos lideran hojas secas, aceite y mentol natural.
+- **Importación:** Europa occidental y EE.UU. concentran compras para farmacia, higiene oral y alimentos.
 
-## Sostenibilidad
+## Características químicas principales
 
-Es una especie de cultivo frecuente en sistemas de herbolario y jardines medicinales por su productividad y adaptación.
-
+- **Mentol y mentona:** monoterpenos dominantes del aceite esencial.
+- **Ácido rosmarínico:** polifenol antioxidante y antiinflamatorio.
+- **Flavonoides:** luteolina y mentósido con actividad espasmolítica digestiva.
