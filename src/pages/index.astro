@@ -12,11 +12,12 @@ posts.sort(
 );
 
 const featuredPost = posts[0];
+const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <section class="relative overflow-hidden border-b border-emerald-950/10">
-    <div class="flex min-h-screen max-w-full justify-evenly items-center gap-14 pt-24 pb-20 mx-30">
+    <div class="flex min-h-screen max-w-full justify-evenly items-center pt-24 pb-20 mx-30">
       <div class="space-y-8">
         <span class="inline-flex items-center text-xs font-medium text-[#2E7D32] border-b" >
           HERBARIUM DIGITAL
@@ -141,64 +142,148 @@ const featuredPost = posts[0];
     </div>
   </section>
 
-  <section
-    class="flex min-h-screen max-w-full justify-center items-center gap-14 pt-34 pb-20 mx-30"
-  >
-    <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-      <div class="space-y-4">
-        <p
-          class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700"
-        >
-          Por qué este sitio
-        </p>
-        <h2
-          class="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl"
-        >
-          Una landing que guía y un blog que profundiza.
-        </h2>
-        <p class="max-w-prose text-base leading-7 text-slate-700">
-          La página principal presenta el proyecto con un mensaje claro,
-          llamadas a la acción visibles y contenido de apoyo. El blog sirve para
-          ampliar cada tema con artículos indexables y enlazables.
-        </p>
+  <section class="relative overflow-hidden border-b border-emerald-950/10 bg-[#27692b]">
+    <div class="flex max-w-full justify-evenly items-center gap-14 py-20 mx-30">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-24 text-center">
+        <div class="text-[#FAFCFA] space-y-2">
+          <h1 class="text-6xl font-normal">27</h1>
+          <a class="font-light">Especies Catalogada</a>
+        </div>
+        <div class="text-[#FAFCFA] space-y-2">
+          <h1 class="text-6xl font-normal">10</h1>
+          <a class="font-light">Familias Botánicas</a>
+        </div>
+        <div class="text-[#FAFCFA] space-y-2">
+          <h1 class="text-6xl font-normal">4</h1>
+          <a class="font-light">Dimensiones de Estudio</a>
+        </div>
+        <div class="text-[#FAFCFA] space-y-2">
+          <h1 class="text-6xl font-normal">3</h1>
+          <a class="font-light">Matrices Analíticas</a>
+        </div>
+
       </div>
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h3 class="text-lg font-semibold text-slate-950">
-            Contenido orientado a búsqueda
-          </h3>
-          <p class="mt-2 text-sm leading-6 text-slate-600">
-            Títulos claros, descripciones útiles y enlaces internos con
-            propósito.
+    </div>
+  </section>
+
+  <section class={`flex w-full justify-evenly items-center bg-black ${pageSectionSpacing}`}>
+    <div class="flex w-full flex-col justify-center gap-6 lg:w-[42%]">
+      <div class="space-y-2">
+        <h2 class="text-4xl font-light italic leading-tight text-white sm:text-5xl">
+          Unete a nuestro blog de
+        </h2>
+        <h2 class="text-4xl font-light italic leading-tight text-white sm:text-5xl">
+          Noticias actualizadas
+        </h2>
+      </div>
+      <p class="max-w-xl text-base leading-7 text-white/80 sm:text-lg">
+        Recibe nuestro boletín de noticias para mantenerte actualizado con las últimas investigaciones y descubrimientos en el campo de la flora medica.
+      </p>
+    </div>
+    <div class="mx-10 w-2xl rounded-[28px] border border-white/10 bg-[#1f1f1f] px-6 py-10 shadow-2xl shadow-black/30 sm:px-10 sm:py-12 lg:px-12 lg:py-14">
+      <div class="flex w-full flex-col gap-10">
+        <form class="w-full space-y-8" action="#" method="post">
+          <div class="w-full space-y-3">
+            <label class="block text-sm font-medium uppercase tracking-[0.3em] text-white/40" for="full-name">
+              Nombre completo
+            </label>
+            <input
+              id="full-name"
+              type="text"
+              name="fullName"
+              placeholder="Dr. Elena Garro"
+              class="h-20 w-full border border-white/15 bg-transparent px-4 text-lg text-white placeholder:text-white/22 outline-none transition focus:border-white/30 focus:ring-0"
+            />
+          </div>
+
+          <div class="w-full space-y-3">
+            <label class="block text-sm font-medium uppercase tracking-[0.3em] text-white/40" for="email">
+              Correo institucional
+            </label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="investigacion@flormedica.org"
+              class="h-20 w-full border border-white/15 bg-transparent px-4 text-lg text-white placeholder:text-white/22 outline-none transition focus:border-white/30 focus:ring-0"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="inline-flex h-16 w-full items-center justify-center rounded-full bg-[#157a21] px-6 text-sm font-semibold uppercase tracking-[0.25em] text-white transition hover:bg-[#0f661a]"
+          >
+            Suscribirme al boletín
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class={`bg-[#eaf5ff] ${pageSectionSpacing}`}>
+    <div class="mx-auto max-w-7xl space-y-16">
+      <h2 class="text-center text-5xl font-light italic leading-tight text-slate-900 sm:text-6xl lg:text-7xl">
+        Nuestro Marco de Estudio
+      </h2>
+
+      <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+        <article class="flex min-h-[26rem] flex-col items-center rounded-[28px] bg-[#eef7e9] px-8 py-12 text-center shadow-sm">
+          <div class="flex h-16 w-16 items-center justify-center text-[#3d6f34]">
+            <svg viewBox="0 0 24 24" class="h-12 w-12 fill-none stroke-current stroke-[1.6]" aria-hidden="true">
+              <path d="M12 3v6" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M8.5 7.5c0 3.5 1.4 5.5 3.5 6.5 2.1-1 3.5-3 3.5-6.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M10 13.5c-2 1-3 2.8-3 5.5h10c0-2.7-1-4.5-3-5.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3 class="mt-8 text-3xl font-semibold text-slate-900">Taxonomía</h3>
+          <p class="mt-8 max-w-xs text-lg leading-9 text-slate-600">
+            Sistematización morfológica y genética para una identificación inequívoca de cada especie.
           </p>
-        </div>
-        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h3 class="text-lg font-semibold text-slate-950">
-            Arquitectura escalable
-          </h3>
-          <p class="mt-2 text-sm leading-6 text-slate-600">
-            BaseHead centraliza SEO, Layout unifica estructura y el blog crece
-            por colección.
+        </article>
+
+        <article class="flex min-h-[26rem] flex-col items-center rounded-[28px] bg-[#f3f8e7] px-8 py-12 text-center shadow-sm">
+          <div class="flex h-16 w-16 items-center justify-center text-[#3d6f34]">
+            <svg viewBox="0 0 24 24" class="h-12 w-12 fill-none stroke-current stroke-[1.6]" aria-hidden="true">
+              <circle cx="12" cy="12" r="8.5" />
+              <path d="M12 3.5v5" stroke-linecap="round" />
+              <path d="M12 15.5v5" stroke-linecap="round" />
+              <path d="M3.5 12h5" stroke-linecap="round" />
+              <path d="M15.5 12h5" stroke-linecap="round" />
+              <path d="M8 8l3 3" stroke-linecap="round" />
+              <path d="M16 9l-3 3" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="mt-8 text-3xl font-semibold text-slate-900">Etnobotánica</h3>
+          <p class="mt-8 max-w-xs text-lg leading-9 text-slate-600">
+            Documentación de usos tradicionales y conocimiento biocultural de comunidades originarias.
           </p>
-        </div>
-        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h3 class="text-lg font-semibold text-slate-950">
-            Acciones visibles
-          </h3>
-          <p class="mt-2 text-sm leading-6 text-slate-600">
-            La navegación prioriza explorar especies, leer el blog y seguir
-            rutas claras.
+        </article>
+
+        <article class="flex min-h-[26rem] flex-col items-center rounded-[28px] bg-[#fff2dd] px-8 py-12 text-center shadow-sm">
+          <div class="flex h-16 w-16 items-center justify-center text-[#8f642f]">
+            <svg viewBox="0 0 24 24" class="h-12 w-12 fill-none stroke-current stroke-[1.6]" aria-hidden="true">
+              <path d="M9 3v6l-4 6a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-4-6V3" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M8 3h8" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="mt-8 text-3xl font-semibold text-slate-900">Fitoquímica</h3>
+          <p class="mt-8 max-w-xs text-lg leading-9 text-slate-600">
+            Análisis de compuestos bioactivos, metabolitos secundarios y sus mecanismos de acción.
           </p>
-        </div>
-        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h3 class="text-lg font-semibold text-slate-950">
-            Preparado para crecer
-          </h3>
-          <p class="mt-2 text-sm leading-6 text-slate-600">
-            Puedes añadir más artículos y secciones sin cambiar la base del
-            sitio.
+        </article>
+
+        <article class="flex min-h-[26rem] flex-col items-center rounded-[28px] bg-[#dff0f2] px-8 py-12 text-center shadow-sm">
+          <div class="flex h-16 w-16 items-center justify-center text-[#4b7592]">
+            <svg viewBox="0 0 24 24" class="h-12 w-12 fill-none stroke-current stroke-[1.6]" aria-hidden="true">
+              <path d="M18.5 4c-4.8 0-9.5 2-11.8 6-1.8 3.2-1.4 7.2 1 9.6 2.3 2.4 6.3 2.8 9.6 1 4-2.3 6-7 6-11.8C23.3 5.9 21.1 4 18.5 4Z" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M9 15c0-4.8 3.4-7.9 7.8-8.2" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="mt-8 text-3xl font-semibold text-slate-900">Sostenibilidad</h3>
+          <p class="mt-8 max-w-xs text-lg leading-9 text-slate-600">
+            Modelos de aprovechamiento responsable que garantizan la regeneración de los ecosistemas.
           </p>
-        </div>
+        </article>
       </div>
     </div>
   </section>
