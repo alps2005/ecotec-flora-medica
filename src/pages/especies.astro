@@ -7,16 +7,16 @@ import TaxonomyFilter from '../components/species/TaxonomyFilter.astro';
 import Pagination from '../components/species/Pagination.astro';
 
 const species = (await getCollection('species')).sort((a, b) =>
-  a.data.commonName.localeCompare(b.data.commonName),
+  a.data.nombreComun.localeCompare(b.data.nombreComun),
 );
-const families = [...new Set(species.map((entry) => entry.data.family))];
+const families = [...new Set(species.map((entry) => entry.data.taxonomia.familia))];
 ---
 
 <Layout
   title="Especies | Ecotec Flora Médica"
   description="Catálogo editorial de especies medicinales con búsquedas y filtros taxonómicos."
 >
-  <section class="mx-auto max-w-6xl px-6 pb-16 pt-32 lg:px-8">
+  <section class="mx-auto max-w-[1280px] px-6 pb-16 pt-32 lg:px-8">
     <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
       <div>
         <p class="text-sm font-semibold uppercase tracking-[0.2em] text-primary">

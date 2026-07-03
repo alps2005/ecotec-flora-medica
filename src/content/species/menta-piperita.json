@@ -1,7 +1,33 @@
 {
-  "commonName": "Menta Piperita",
-  "scientificName": "Mentha × piperita",
-  "family": "Lamiaceae",
-  "description": "Hierba aromática de hojas brillantes y sabor refrescante, muy reconocida por sus aplicaciones digestivas y aromáticas.",
-  "image": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80"
+  "slug": "menta-piperita",
+  "nombreComun": "Menta Piperita",
+  "nombreCientifico": "Mentha piperita",
+  "nombresAlternativos": [],
+  "taxonomia": {
+    "reino": "Plantae",
+    "division": "Magnoliophyta",
+    "clase": "Magnoliopsida",
+    "familia": "Lamiaceae",
+    "genero": "Mentha"
+  },
+  "etnobotanica": {
+    "clasificacion": "Medicinal aromática",
+    "parteUtilizada": "Hojas",
+    "usoTradicional": "Digestiva, espasmolítica, carminativa y refrescante de vías respiratorias",
+    "compuestosQuimicos": ["Mentol", "Mentona", "Ácido rosmarínico", "Luteolina"]
+  },
+  "analisisAcademico": {
+    "taxonomia": "La menta piperita forma parte del género Mentha y se distingue por su hábito aromático y hojas de borde dentado.",
+    "etnobotanica": "Su uso tradicional destaca en preparados digestivos y en aplicaciones para aliviar molestias respiratorias.",
+    "fitoquimica": "Su composición incluye mentol y otros monoterpenos que aportan efecto refrescante y espasmolítico.",
+    "sostenibilidad": "Es una especie de cultivo frecuente en sistemas de herbolario y jardines medicinales por su productividad y adaptación."
+  },
+  "multimediaPrincipal": {
+    "imagenUrl": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80",
+    "imagenPublicId": "",
+    "videoUrl": "",
+    "videoPublicId": "",
+    "proveedor": "CLOUDINARY"
+  },
+  "estado": "ACTIVO"
 }
