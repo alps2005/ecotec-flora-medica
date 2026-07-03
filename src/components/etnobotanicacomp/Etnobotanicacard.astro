@@ -10,6 +10,7 @@ interface Props {
   badgeColor: string;
   badgeBg: string;
   img: string;
+  slug: string;
 }
 
 const {
@@ -23,12 +24,14 @@ const {
   badgeColor,
   badgeBg,
   img,
+  slug,
 } = Astro.props;
 ---
 
-<div
+<a
+  href={`/especies/${slug}`}
   data-categoria={categoria}
-  class="tarjeta-especie bg-white border border-slate-200 rounded-2xl overflow-hidden"
+  class="tarjeta-especie block bg-white border border-slate-200 rounded-2xl overflow-hidden transition duration-200 hover:-translate-y-0.5 hover:border-emerald-200 hover:shadow-sm"
 >
   <div class="h-48 relative overflow-hidden bg-slate-100">
     <img
@@ -61,4 +64,4 @@ const {
 
     <p class="text-xs text-slate-400 mt-3 pt-3 border-t border-slate-100">{compuestos}</p>
   </div>
-</div>
+</a>

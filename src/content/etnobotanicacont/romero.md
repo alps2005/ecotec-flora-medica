@@ -1,12 +1,11 @@
 ---
 nombre: "Romero"
-cientifico: "Rosmarinus officinalis"
-categoria: "RITUAL"
-parteUsada: "Hojas, tallos"
-uso: "Memoria, sahumerio"
-compuestos: "Ácido rosmarínico · carnosol · alcanfor"
-img: "https://images.unsplash.com/photo-1515586000433-45406d8e6662?auto=format&fit=crop&w=900&q=80"
+cientifico: "Salvia rosmarinus"
+categoria: "AROMÁTICA"
+parteUsada: "Hojas"
+uso: "Estimulante del sistema circulatorio y cognitivo, tónico digestivo y antioxidante"
+compuestos: "Ácido carnósico · Carnosol · Ácido rosmarínico · 1,8-cineol"
+img: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80"
 ---
 
-Ficha etnobotánica resumida de romero para el atlas de categorías funcionales.
-
+Ficha etnobotánica resumida de Romero para el atlas de categorías funcionales.

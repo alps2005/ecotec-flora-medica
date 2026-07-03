@@ -3,7 +3,11 @@ import { getCollection } from 'astro:content';
 import Etnobotanicacard from './Etnobotanicacard.astro';
 import Etnobotanicapagination from './Etnobotanicapagination.astro';
 
-const plantas = await getCollection('etnobotanica');
+const species = await getCollection('species');
+const speciesOrder = new Map(species.map((entry, index) => [entry.id, index]));
+const plantas = (await getCollection('etnobotanica'))
+  .filter((planta) => speciesOrder.has(planta.id))
+  .sort((a, b) => (speciesOrder.get(a.id) ?? 0) - (speciesOrder.get(b.id) ?? 0));
 
 const BADGE_MAP: Record<string, { color: string; bg: string }> = {
   MEDICINAL:     { color: 'text-emerald-800', bg: 'bg-emerald-50' },
@@ -31,6 +35,7 @@ const ICON_MAP: Record<string, string> = {
     return (
       <Etnobotanicacard
         {...planta.data}
+        slug={planta.id}
         icono={icono}
         badgeColor={badge.color}
         badgeBg={badge.bg}
