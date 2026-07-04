@@ -92,53 +92,6 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
           />
         </div>
       </div>
-      
-      <!-- <div class="rounded-4xl border border-emerald-900/10 bg-slate-950 p-6 text-white shadow-2xl shadow-emerald-950/10 lg:p-8">
-        <div
-          class="flex items-center justify-between border-b border-white/10 pb-4"
-        >
-          <p
-            class="text-sm font-medium uppercase tracking-[0.25em] text-emerald-300"
-          >
-            Lectura destacada
-          </p>
-          <span
-            class="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/80"
-          >
-            Blog
-          </span>
-        </div>
-        {
-          featuredPost ? (
-            <article class="space-y-5 pt-6">
-              <p class="text-sm text-white/60">
-                {featuredPost.data.pubDate.toLocaleDateString("es-EC", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </p>
-              <h2 class="text-3xl font-semibold tracking-tight text-white">
-                {featuredPost.data.title}
-              </h2>
-              <p class="text-base leading-7 text-white/75">
-                {featuredPost.data.description}
-              </p>
-              <a
-                class="inline-flex items-center text-sm font-semibold text-emerald-300 transition hover:text-emerald-200"
-                href={`/blog/${featuredPost.id}`}
-              >
-                Leer artículo
-              </a>
-            </article>
-          ) : (
-            <p class="pt-6 text-white/75">
-              Pronto publicaremos artículos sobre especies, usos y contexto
-              etnobotánico.
-            </p>
-          )
-        }
-      </div> -->
     </div>
   </section>
 
