@@ -7,16 +7,50 @@ interface Props {
 const { currentPage, totalPages } = Astro.props;
 ---
 
-<div class="flex items-center justify-between rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600 shadow-sm">
-  <span>Página {currentPage} de {totalPages}</span>
-  <div class="flex items-center gap-2">
-    <button class="rounded-full border border-slate-200 px-4 py-1.5 text-sm hover:bg-slate-50 disabled:opacity-40" disabled={currentPage <= 1}>
+<div
+  data-etnobotanica-pagination
+  data-current-page={currentPage}
+  data-total-pages={totalPages}
+  class="flex flex-col gap-4 rounded-[1.5rem] border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600 shadow-sm sm:flex-row sm:items-center sm:justify-between"
+>
+  <span data-etnobotanica-page-status>Página {currentPage} de {totalPages}</span>
+  <div class="flex flex-wrap items-center gap-2">
+    <button
+      data-etnobotanica-page-prev
+      type="button"
+      class="rounded-full border border-slate-200 px-4 py-1.5 text-sm hover:bg-slate-50 disabled:opacity-40"
+      disabled={currentPage <= 1}
+    >
       Anterior
     </button>
-    <span class="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-900 text-white text-sm font-medium">
-      {currentPage}
-    </span>
-    <button class="rounded-full border border-slate-200 px-4 py-1.5 text-sm hover:bg-slate-50 disabled:opacity-40" disabled={currentPage >= totalPages}>
+    <div data-etnobotanica-page-list class="flex flex-wrap items-center gap-2">
+      {Array.from({ length: totalPages }, (_, index) => {
+        const page = index + 1;
+        const isCurrent = page === currentPage;
+
+        return (
+          <button
+            data-etnobotanica-page-button={page}
+            type="button"
+            aria-current={isCurrent ? 'page' : undefined}
+            class:list={[
+              'flex h-8 w-8 items-center justify-center rounded-full text-sm font-medium transition',
+              isCurrent
+                ? 'bg-emerald-900 text-white'
+                : 'border border-slate-200 text-slate-600 hover:bg-slate-50',
+            ]}
+          >
+            {page}
+          </button>
+        );
+      })}
+    </div>
+    <button
+      data-etnobotanica-page-next
+      type="button"
+      class="rounded-full border border-slate-200 px-4 py-1.5 text-sm hover:bg-slate-50 disabled:opacity-40"
+      disabled={currentPage >= totalPages}
+    >
       Siguiente
     </button>
   </div>

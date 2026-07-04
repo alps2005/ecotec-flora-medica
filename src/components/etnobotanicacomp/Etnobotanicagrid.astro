@@ -8,6 +8,8 @@ const speciesOrder = new Map(species.map((entry, index) => [entry.id, index]));
 const plantas = (await getCollection('etnobotanica'))
   .filter((planta) => speciesOrder.has(planta.id))
   .sort((a, b) => (speciesOrder.get(a.id) ?? 0) - (speciesOrder.get(b.id) ?? 0));
+const plantasPerPage = 9;
+const totalPages = Math.max(1, Math.ceil(plantas.length / plantasPerPage));
 
 const BADGE_MAP: Record<string, { color: string; bg: string }> = {
   MEDICINAL:     { color: 'text-emerald-800', bg: 'bg-emerald-50' },
@@ -28,7 +30,7 @@ const ICON_MAP: Record<string, string> = {
 };
 ---
 
-<div id="grid-especies" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<div id="grid-especies" class="flex flex-wrap gap-5">
   {plantas.map((planta) => {
     const badge = BADGE_MAP[planta.data.categoria] ?? { color: 'text-slate-700', bg: 'bg-slate-50' };
     const icono = ICON_MAP[planta.data.categoria] ?? 'ti-leaf';
@@ -45,5 +47,5 @@ const ICON_MAP: Record<string, string> = {
 </div>
 
 <div class="mt-6">
-  <Etnobotanicapagination currentPage={1} totalPages={1} />
+  <Etnobotanicapagination currentPage={1} totalPages={totalPages} />
 </div>

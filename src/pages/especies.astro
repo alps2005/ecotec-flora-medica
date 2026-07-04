@@ -10,15 +10,17 @@ const species = (await getCollection('species')).sort((a, b) =>
   a.data.nombreComun.localeCompare(b.data.nombreComun),
 );
 const families = [...new Set(species.map((entry) => entry.data.taxonomia.familia))];
+const speciesPerPage = 9;
+const totalPages = Math.max(1, Math.ceil(species.length / speciesPerPage));
 ---
 
 <Layout
   title="Especies | Ecotec Flora Médica"
   description="Catálogo editorial de especies medicinales con búsquedas y filtros taxonómicos."
 >
-  <section class="mx-auto max-w-[1280px] px-6 pb-16 pt-32 lg:px-8">
-    <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-      <div>
+  <section class="mx-auto max-w-[1480px] px-6 pb-16 pt-32 lg:px-8">
+    <div class="grid gap-8 lg:grid-rows">
+      <div class="">
         <p class="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
           Especies
         </p>
@@ -61,13 +63,15 @@ const families = [...new Set(species.map((entry) => entry.data.taxonomia.familia
       </div>
 
       <div class="mt-6">
-        <Pagination currentPage={1} totalPages={1} />
+        <Pagination currentPage={1} totalPages={totalPages} />
       </div>
     </div>
   </section>
 </Layout>
 
 <script>
+  const SPECIES_PER_PAGE = 9;
+
   const initSpeciesFilters = () => {
     const root = document.querySelector('[data-species-root]');
 
@@ -81,38 +85,112 @@ const families = [...new Set(species.map((entry) => entry.data.taxonomia.familia
     const familyField = document.querySelector('[data-species-family]');
     const cards = Array.from(root.querySelectorAll('[data-species-card]'));
     const emptyState = root.querySelector('[data-species-empty]');
+    const pagination = document.querySelector('[data-species-pagination]');
+    const pageStatus = pagination?.querySelector('[data-species-page-status]');
+    const pageList = pagination?.querySelector('[data-species-page-list]');
+    const previousButton = pagination?.querySelector('[data-species-page-prev]');
+    const nextButton = pagination?.querySelector('[data-species-page-next]');
+
+    let currentPage = 1;
+
+    const setButtonState = (button: Element | null | undefined, isDisabled: boolean) => {
+      if (button instanceof HTMLButtonElement) {
+        button.disabled = isDisabled;
+      }
+    };
+
+    const renderPageButtons = (totalPages: number) => {
+      if (!(pageList instanceof HTMLElement)) {
+        return;
+      }
+
+      pageList.innerHTML = '';
+
+      Array.from({ length: totalPages }, (_, index) => index + 1).forEach((page) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.dataset.speciesPageButton = page.toString();
+        button.textContent = page.toString();
+        button.className =
+          page === currentPage
+            ? 'rounded-full bg-primary px-3 py-1.5 font-semibold text-white transition'
+            : 'rounded-full border border-slate-200 px-3 py-1.5 font-semibold text-slate-600 transition hover:border-primary hover:text-primary';
+        button.setAttribute('aria-current', page === currentPage ? 'page' : 'false');
+        button.addEventListener('click', () => {
+          currentPage = page;
+          applyFilters();
+        });
+
+        pageList.append(button);
+      });
+    };
 
     const applyFilters = () => {
       const query =
         searchField instanceof HTMLInputElement ? searchField.value.trim().toLowerCase() : '';
       const family = familyField instanceof HTMLSelectElement ? familyField.value : 'all';
-      let visibleCount = 0;
+      const matchingCards = cards.filter((card) => {
+        if (!(card instanceof HTMLElement)) {
+          return false;
+        }
+
+        const searchText = card.dataset.searchText ?? '';
+        const cardFamily = card.dataset.family ?? '';
+
+        return (!query || searchText.includes(query)) && (family === 'all' || cardFamily === family);
+      });
+
+      const totalPages = Math.max(1, Math.ceil(matchingCards.length / SPECIES_PER_PAGE));
+      currentPage = Math.min(currentPage, totalPages);
+
+      const pageStart = (currentPage - 1) * SPECIES_PER_PAGE;
+      const pageEnd = pageStart + SPECIES_PER_PAGE;
+      const visibleCards = new Set(matchingCards.slice(pageStart, pageEnd));
 
       cards.forEach((card) => {
         if (!(card instanceof HTMLElement)) {
           return;
         }
 
-        const searchText = card.dataset.searchText ?? '';
-        const cardFamily = card.dataset.family ?? '';
-        const matchesSearch = !query || searchText.includes(query);
-        const matchesFamily = family === 'all' || cardFamily === family;
-        const isVisible = matchesSearch && matchesFamily;
-
-        card.classList.toggle('hidden', !isVisible);
-
-        if (isVisible) {
-          visibleCount += 1;
-        }
+        card.classList.toggle('hidden', !visibleCards.has(card));
       });
 
       if (emptyState instanceof HTMLElement) {
-        emptyState.classList.toggle('hidden', visibleCount > 0);
+        emptyState.classList.toggle('hidden', matchingCards.length > 0);
       }
+
+      if (pageStatus instanceof HTMLElement) {
+        pageStatus.textContent =
+          matchingCards.length > 0
+            ? `Página ${currentPage} de ${totalPages}`
+            : 'Sin resultados';
+      }
+
+      if (pagination instanceof HTMLElement) {
+        pagination.classList.toggle('hidden', matchingCards.length === 0);
+      }
+
+      setButtonState(previousButton, currentPage <= 1);
+      setButtonState(nextButton, currentPage >= totalPages);
+      renderPageButtons(totalPages);
     };
 
-    searchField?.addEventListener('input', applyFilters);
-    familyField?.addEventListener('change', applyFilters);
+    searchField?.addEventListener('input', () => {
+      currentPage = 1;
+      applyFilters();
+    });
+    familyField?.addEventListener('change', () => {
+      currentPage = 1;
+      applyFilters();
+    });
+    previousButton?.addEventListener('click', () => {
+      currentPage -= 1;
+      applyFilters();
+    });
+    nextButton?.addEventListener('click', () => {
+      currentPage += 1;
+      applyFilters();
+    });
     applyFilters();
   };
 

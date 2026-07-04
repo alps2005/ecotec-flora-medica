@@ -7,18 +7,51 @@ interface Props {
 const { currentPage, totalPages } = Astro.props;
 ---
 
-<nav aria-label="Paginación del catálogo" class="flex items-center justify-between gap-4 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm text-slate-600 shadow-sm">
-  <span class="font-medium text-slate-700">
+<nav
+  data-species-pagination
+  data-current-page={currentPage}
+  data-total-pages={totalPages}
+  aria-label="Paginación del catálogo"
+  class="flex flex-col gap-4 rounded-[1.5rem] border border-slate-200 bg-white px-5 py-3 text-sm text-slate-600 shadow-sm sm:flex-row sm:items-center sm:justify-between"
+>
+  <span data-species-page-status class="font-medium text-slate-700">
     Página {currentPage} de {totalPages}
   </span>
-  <div class="flex items-center gap-2">
-    <button class="rounded-full border border-slate-200 px-3 py-1.5 transition hover:border-primary hover:text-primary">
+  <div class="flex flex-wrap items-center gap-2">
+    <button
+      data-species-page-prev
+      type="button"
+      class="rounded-full border border-slate-200 px-3 py-1.5 transition hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-40"
+    >
       Anterior
     </button>
-    <button class="rounded-full bg-primary px-3 py-1.5 font-semibold text-white">
-      1
-    </button>
-    <button class="rounded-full border border-slate-200 px-3 py-1.5 transition hover:border-primary hover:text-primary">
+    <div data-species-page-list class="flex flex-wrap items-center gap-2">
+      {Array.from({ length: totalPages }, (_, index) => {
+        const page = index + 1;
+        const isCurrent = page === currentPage;
+
+        return (
+          <button
+            data-species-page-button={page}
+            type="button"
+            aria-current={isCurrent ? 'page' : undefined}
+            class:list={[
+              'rounded-full px-3 py-1.5 font-semibold transition',
+              isCurrent
+                ? 'bg-primary text-white'
+                : 'border border-slate-200 text-slate-600 hover:border-primary hover:text-primary',
+            ]}
+          >
+            {page}
+          </button>
+        );
+      })}
+    </div>
+    <button
+      data-species-page-next
+      type="button"
+      class="rounded-full border border-slate-200 px-3 py-1.5 transition hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-40"
+    >
       Siguiente
     </button>
   </div>

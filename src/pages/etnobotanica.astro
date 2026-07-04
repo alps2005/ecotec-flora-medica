@@ -9,7 +9,7 @@ import EtnobotanicaGrid from '../components/etnobotanicacomp/Etnobotanicagrid.as
   title="Etnobotánica | Ecotec Flora Médica"
   description="Atlas Etnobotánico: explora la relación entre plantas medicinales y el cuerpo humano."
 >
-  <section class="mx-auto max-w-6xl px-6 pt-32 pb-16 lg:px-0">
+  <section class="mx-auto max-w-[1480px] px-6 pt-32 pb-16 lg:px-8">
 
     <EtnobotanicaHero />
 
@@ -22,6 +22,8 @@ import EtnobotanicaGrid from '../components/etnobotanicacomp/Etnobotanicagrid.as
 </Layout>
 
 <script>
+  const ETNOBOTANICA_PER_PAGE = 9;
+
   const initEtnobotanicaFilters = () => {
     const buttons = Array.from(
       document.querySelectorAll<HTMLElement>('[data-etnobotanica-filter]'),
@@ -29,13 +31,44 @@ import EtnobotanicaGrid from '../components/etnobotanicacomp/Etnobotanicagrid.as
     const cards = Array.from(
       document.querySelectorAll<HTMLElement>('.tarjeta-especie'),
     );
+    const pagination = document.querySelector<HTMLElement>('[data-etnobotanica-pagination]');
+    const pageStatus = pagination?.querySelector<HTMLElement>('[data-etnobotanica-page-status]');
+    const pageList = pagination?.querySelector<HTMLElement>('[data-etnobotanica-page-list]');
+    const previousButton = pagination?.querySelector<HTMLButtonElement>('[data-etnobotanica-page-prev]');
+    const nextButton = pagination?.querySelector<HTMLButtonElement>('[data-etnobotanica-page-next]');
 
     if (!buttons.length) return;
 
-    const ACTIVE   = ['bg-emerald-900', 'text-white', 'border-emerald-900'];
-    const INACTIVE = ['bg-white', 'text-slate-600', 'border-slate-300'];
+    let currentPage = 1;
+    let currentCategory = 'GENERAL';
+
+    const renderPageButtons = (totalPages: number) => {
+      if (!pageList) return;
+
+      pageList.innerHTML = '';
+
+      Array.from({ length: totalPages }, (_, index) => index + 1).forEach((page) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.dataset.etnobotanicaPageButton = page.toString();
+        button.textContent = page.toString();
+        button.className =
+          page === currentPage
+            ? 'flex h-8 w-8 items-center justify-center rounded-full bg-emerald-900 text-sm font-medium text-white'
+            : 'flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 text-sm font-medium text-slate-600 transition hover:bg-slate-50';
+        button.setAttribute('aria-current', page === currentPage ? 'page' : 'false');
+        button.addEventListener('click', () => {
+          currentPage = page;
+          applyFilter(currentCategory);
+        });
+
+        pageList.append(button);
+      });
+    };
 
     const applyFilter = (cat: string) => {
+      currentCategory = cat;
+
       buttons.forEach((b) => {
         const isActive = b.dataset.cat === cat;
         b.classList.toggle('bg-emerald-900',   isActive);
@@ -46,15 +79,49 @@ import EtnobotanicaGrid from '../components/etnobotanicacomp/Etnobotanicagrid.as
         b.classList.toggle('border-slate-300', !isActive);
       });
 
+      const matchingCards = cards.filter((card) => cat === 'GENERAL' || card.dataset.categoria === cat);
+      const totalPages = Math.max(1, Math.ceil(matchingCards.length / ETNOBOTANICA_PER_PAGE));
+      currentPage = Math.min(currentPage, totalPages);
+
+      const pageStart = (currentPage - 1) * ETNOBOTANICA_PER_PAGE;
+      const pageEnd = pageStart + ETNOBOTANICA_PER_PAGE;
+      const visibleCards = new Set(matchingCards.slice(pageStart, pageEnd));
+
       cards.forEach((card) => {
-        const show = cat === 'GENERAL' || card.dataset.categoria === cat;
-        card.style.display = show ? 'block' : 'none';
+        card.classList.toggle('hidden', !visibleCards.has(card));
       });
+
+      if (pageStatus) {
+        pageStatus.textContent =
+          matchingCards.length > 0
+            ? `Página ${currentPage} de ${totalPages}`
+            : 'Sin resultados';
+      }
+
+      if (pagination) {
+        pagination.classList.toggle('hidden', matchingCards.length === 0);
+      }
+
+      if (previousButton) previousButton.disabled = currentPage <= 1;
+      if (nextButton) nextButton.disabled = currentPage >= totalPages;
+      renderPageButtons(totalPages);
     };
 
     buttons.forEach((btn) => {
-      btn.addEventListener('click', () => applyFilter(btn.dataset.cat ?? 'GENERAL'));
+      btn.addEventListener('click', () => {
+        currentPage = 1;
+        applyFilter(btn.dataset.cat ?? 'GENERAL');
+      });
     });
+    previousButton?.addEventListener('click', () => {
+      currentPage -= 1;
+      applyFilter(currentCategory);
+    });
+    nextButton?.addEventListener('click', () => {
+      currentPage += 1;
+      applyFilter(currentCategory);
+    });
+    applyFilter(currentCategory);
   };
 
   initEtnobotanicaFilters();
