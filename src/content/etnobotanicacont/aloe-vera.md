@@ -1,11 +1,11 @@
 ---
 nombre: "Aloe vera"
 cientifico: "Aloe vera"
-categoria: "MEDICINAL"
+categoria: "Medicinal tradicional"
 parteUsada: "Gel foliar"
 uso: "Cicatrizante"
-compuestos: "Acemanano · Aloína · Emodina · Vitaminas A/C/E"
+compuestos: "Polisacáridos · Antraquinonas · Vitaminas y Minerales"
 img: "https://picsum.photos/seed/aloe-vera/1200/800"
 ---
 
-Ficha etnobotánica resumida de Aloe vera para el atlas de categorías funcionales.
+Ficha etnobotánica de Aloe vera, actualizada con la información de la ficha técnica fuente.

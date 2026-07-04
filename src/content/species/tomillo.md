@@ -11,8 +11,8 @@ taxonomia:
 etnobotanica:
   clasificacion: "Medicinal aromática"
   parteUtilizada: "Hojas"
-  usoTradicional: "Antiséptica, expectorante y antitusígena"
-  compuestosQuimicos: ["Timol", "Carvacrol", "Apigenina", "Ácido rosmarínico"]
+  usoTradicional: "Antisépica"
+  compuestosQuimicos: ["Fenoles Monoterpénicos", "Flavonoides", "Ácidos Polifenólicos"]
 multimediaPrincipal:
   imagenUrl: "https://picsum.photos/seed/tomillo/1200/800"
   imagenPublicId: ""
@@ -24,26 +24,25 @@ estado: "ACTIVO"
 
 ## Introducción
 
-El tomillo es una planta medicinal aromática con potente actividad antimicrobiana y amplio uso respiratorio.
+El tomillo (Thymus vulgaris) es un recurso fitoterapéutico de primer orden con una de las actividades antimicrobianas más potentes documentadas en el reino vegetal. Esta pequeña planta arbustiva condensa en sus hojas una intrincada matriz de compuestos fenólicos volátiles desarrollados como barrera de defensa ambiental. Su capacidad para inhibir de manera efectiva la proliferación de patógenos le otorga una alta relevancia en la medicina tradicional y la farmacología moderna, destacando como un antiséptico natural e insumo clave en tratamientos para las vías respiratorias y desinfección biológica.
 
 ## Historia y evolución botánica
 
-- **Origen:** Sur de Europa y Mediterráneo occidental.
-- **Dispersión:** Expandido por Europa y luego por América.
-- **Evolución:** Subarbusto leñoso con tricomas glandulares ricos en compuestos volátiles.
+- **Origen:** Es nativo de las regiones templadas del sur de Europa y la cuenca del Mediterráneo occidental. Los antiguos egipcios lo usaban en los procesos de embalsamamiento, mientras que los griegos y romanos lo utilizaban por sus propiedades desinfectantes, medicinales y aromatizantes.
+- **Dispersión:** Se difundió por el centro y norte de Europa durante el Imperio Romano y la Edad Media. Con la colonización del siglo XVI, fue introducido en el continente americano, prosperando en suelos bien drenados y climas templados.
+- **Evolución:** Perteneciente a la familia Lamiaceae, el tomillo ha evolucionado como un subarbusto leñoso con hojas pequeñas y densamente cubiertas de tricomas glandulares, optimizado para retener humedad y acumular compuestos volátiles altamente defensivos.
 
 ## Perfil etnobotánico
 
-Se utiliza como antiséptico natural, antibacteriano y apoyo en afecciones respiratorias con tos y flema.
+La relevancia de Thymus vulgaris se fundamenta en su alta concentración de principios activos antibacterianos. Clasificado dentro de la categoría medicinal aromática, la porción vegetal empleada son sus hojas y sumidades floridas. Su perfil molecular le confiere notables propiedades defensivas, fijando su uso medicinal principal como un potente agente antiséptico, antibacteriano, antifúngico y un eficaz expectorante/antitusígeno en afecciones del aparato respiratorio.
 
 ## Importación y exportación
 
-- **Exportación:** España, Marruecos, Francia, Polonia y Egipto.
-- **Importación:** Estados Unidos, Alemania, Francia, Reino Unido y Japón.
+- **Dinámica de Exportación:** España, Marruecos, Francia, Polonia y Egipto lideran la exportación global de tomillo deshidratado y sus aceites esenciales derivados. España se destaca por la excelente calidad fitosanitaria de sus cultivos destinados al mercado de especias y farmacia.
+- **Dinámica de Importación:** Las corrientes comerciales de importación fluyen principalmente hacia los Estados Unidos, Alemania, Francia, el Reino Unido y Japón, debido a la alta demanda de la industria cárnica (como conservante natural), farmacéutica (jarabes para la tos) y cosmética.
 
 ## Características químicas principales
 
-- **Timol y carvacrol:** fenoles monoterpénicos de alta acción antiséptica.
-- **Flavonoides:** apigenina y luteolina.
-- **Ácidos polifenólicos:** rosmarínico y cafeico.
-
+- **Fenoles Monoterpénicos:** El compuesto estelar absoluto es el timol (30-55%), un potente agente antiséptico con capacidad de disolver las membranas celulares de bacterias y hongos, acompañado por su isómero, el carvacrol.
+- **Flavonoides:** Presencia de apigenina y luteolina, compuestos flavonoides que otorgan una acción espasmolítica sobre los bronquios, facilitando la expulsión de flemas y calmando la tos.
+- **Ácidos Polifenólicos:** Contiene niveles significativos de ácido rosmarínico y ácido cafeico, que incrementan la respuesta antioxidante y antiinflamatoria de los tejidos respiratorios afectados.

@@ -1,11 +1,11 @@
 ---
 nombre: "Guanábana / Graviola"
 cientifico: "Annona muricata"
-categoria: "MEDICINAL"
+categoria: "Medicinal tradicional"
 parteUsada: "Hojas y fruto"
 uso: "Sedante, antioxidante, citotóxica y antiinflamatoria"
-compuestos: "Acetogeninas · Alcaloides isoquinolínicos"
+compuestos: "Acetogeninas (Annonáceas) · Alcaloides Isoquinolínicos"
 img: "https://picsum.photos/seed/guanabana/1200/800"
 ---
 
-Ficha etnobotánica resumida de Guanábana / Graviola para el atlas de categorías funcionales.
+Ficha etnobotánica de Guanábana / Graviola, actualizada con la información de la ficha técnica fuente.

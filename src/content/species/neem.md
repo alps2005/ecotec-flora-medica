@@ -12,7 +12,7 @@ etnobotanica:
   clasificacion: "Medicinal y agroecológica"
   parteUtilizada: "Hojas, corteza, semillas y aceite"
   usoTradicional: "Antimicrobiana, antifúngica, antiparasitaria y antiinflamatoria"
-  compuestosQuimicos: ["Azadiractina", "Limonoides", "Compuestos azufrados"]
+  compuestosQuimicos: ["Limonoides (Azadiractina)", "Compuestos Azufrados"]
 multimediaPrincipal:
   imagenUrl: "https://picsum.photos/seed/neem/1200/800"
   imagenPublicId: ""
@@ -24,25 +24,23 @@ estado: "ACTIVO"
 
 ## Introducción
 
-El neem es un árbol medicinal y agroecológico de alta relevancia por su acción biopesticida y su amplio uso fitoterapéutico.
+El Neem es un árbol perennifolio de valor extraordinario. Combina una potente acción medicinal humana con una revolucionaria aplicación agroecológica como biopesticida sistemático biodegradable.
 
 ## Historia y evolución botánica
 
-- **Origen:** India, Myanmar y Pakistán.
-- **Dispersión:** Introducido en África y América Latina durante el siglo XX para sistemas agroecológicos.
-- **Evolución:** Especie de alta adaptación a ambientes áridos y semiáridos.
+Origen: Originario de las regiones áridas de la India, Myanmar y Pakistán, con registros milenarios en la medicina Ayurvédica.
+Dispersión: Introducido en el siglo XX en regiones áridas de África y América Latina para mitigar la desertificación.
 
 ## Perfil etnobotánico
 
-Hojas y corteza se aplican en problemas dermatológicos; extractos de semilla se usan para control de plagas en agricultura sostenible.
+Las hojas y corteza se aplican tópicamente para afecciones dermatológicas severas. En agroecología, los extractos de sus semillas actúan como reguladores del crecimiento de insectos plaga.
 
 ## Importación y exportación
 
-- **Exportación:** India domina aceite, extractos y torta de neem.
-- **Importación:** Unión Europea, Estados Unidos, Canadá y Brasil demandan insumos para agricultura verde.
+Dinámica de Exportación (2023-2026): India mantiene un monopolio casi absoluto en la exportación de extracto puro de neem, aceite crudo y torta de neem para fertilización orgánica. Países del sudeste asiático muestran un crecimiento emergente.
+Dinámica de Importación (2023-2026): Los mercados con regulaciones agrícolas verdes estrictas son los principales compradores, destacando la Unión Europea, Estados Unidos, Canadá y Brasil (para su sector agroindustrial extensivo).
 
 ## Características químicas principales
 
-- **Limonoides (azadiractina):** reguladores del crecimiento de insectos.
-- **Compuestos azufrados:** asociados a actividad bactericida y antiséptica.
-
+Limonoides (Azadiractina): Bloquea el sistema endocrino de los insectos y destruye paredes celulares de hongos fitopatógenos.
+Compuestos Azufrados: Otorgan al aceite de la semilla propiedades bactericidas y antisépticas.

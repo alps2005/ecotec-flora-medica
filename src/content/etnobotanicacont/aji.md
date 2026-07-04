@@ -1,11 +1,11 @@
 ---
 nombre: "Ají"
 cientifico: "Capsicum annuum"
-categoria: "ALIMENTICIA"
+categoria: "Alimenticia - Medicinal"
 parteUsada: "Fruto"
 uso: "Analgésico, antiinflamatorio y estimulante circulatorio"
-compuestos: "Capsaicina · Capsantina · Capsorrubina · Vitamina C"
+compuestos: "Capsaicina · Carotenoides · Vitamina C · Flavonoides"
 img: "https://picsum.photos/seed/aji/1200/800"
 ---
 
-Ficha etnobotánica resumida de Ají para el atlas de categorías funcionales.
+Ficha etnobotánica de Ají, actualizada con la información de la ficha técnica fuente.

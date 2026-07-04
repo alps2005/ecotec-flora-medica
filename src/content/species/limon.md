@@ -12,7 +12,7 @@ etnobotanica:
   clasificacion: "Alimenticia - Medicinal"
   parteUtilizada: "Fruto (jugo y cáscara / pericarpio)"
   usoTradicional: "Antiséptico, antioxidante, astringente y depurativo"
-  compuestosQuimicos: ["Ácido cítrico", "Eriocitrina", "Hesperidina"]
+  compuestosQuimicos: ["Ácidos Orgánicos Libres", "Compuestos Fenólicos"]
 multimediaPrincipal:
   imagenUrl: "https://picsum.photos/seed/limon/1200/800"
   imagenPublicId: ""
@@ -24,25 +24,23 @@ estado: "ACTIVO"
 
 ## Introducción
 
-El limón es un recurso fitoterapéutico de gran uso global por su acidez funcional y su perfil antimicrobiano y antioxidante.
+El limón es un recurso fitoterapéutico global dotado de una versatilidad bioquímica excepcional. Su marcada acidez lo convierte en un potente agente antiséptico y antioxidante.
 
 ## Historia y evolución botánica
 
-- **Origen:** Regiones nororientales de la India.
-- **Dispersión:** Introducido al Mediterráneo por los árabes y a América en la época de Colón.
-- **Evolución:** Cítrico domesticado de amplia diversificación agrícola.
+Origen: Regiones nororientales de la India, expandiéndose tempranamente hacia Asia Central.
+Dispersión: Introducido en el Mediterráneo por los árabes durante la Edad Media y llevado a América en los viajes de Cristóbal Colón.
 
 ## Perfil etnobotánico
 
-Se aprovechan jugo y cáscara. Tradicionalmente se utiliza para apoyo digestivo, efecto antiséptico y depuración leve.
+Su caracterización etnobotánica dual integra la pulpa ácida y la corteza. Tradicionalmente se emplea el jugo fresco como antimicrobiano y estimulante gástrico.
 
 ## Importación y exportación
 
-- **Exportación:** España, México y Turquía lideran fruta fresca; Argentina destaca en derivados.
-- **Importación:** Estados Unidos, Países Bajos, Alemania, Francia y Japón son mercados estables.
+Dinámica de Exportación (2023-2026): España lidera la exportación mundial de limones frescos, seguida de cerca por México (dominante en el mercado norteamericano) y Turquía. Argentina destaca como el principal procesador de derivados industriales.
+Dinámica de Importación (2023-2026): Los Estados Unidos, los Países Bajos (como hub de distribución europeo), Alemania, Francia y Japón representan los mercados de importación más estables.
 
 ## Características químicas principales
 
-- **Ácidos orgánicos:** alta concentración de ácido cítrico (5-7% en jugo).
-- **Fenólicos:** eriocitrina y hesperidina con efecto vasoprotector y antioxidante.
-
+Ácidos Orgánicos Libres: Alta concentración de ácido cítrico (5-7% en jugo), condicionando un pH bactericida.
+Compuestos Fenólicos: Presencia de eriocitrina y hesperidina con propiedades vasoprotectoras.

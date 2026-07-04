@@ -1,11 +1,11 @@
 ---
 nombre: "Ruda"
 cientifico: "Ruta graveolens"
-categoria: "RITUAL"
+categoria: "Medicinal ritual"
 parteUsada: "Hojas"
 uso: "Antiespasmódica"
-compuestos: "Rutina · Graveolina · Arborina · Psoraleno"
+compuestos: "Flavonoides · Alcaloides · Furanocumarinas"
 img: "https://picsum.photos/seed/ruda/1200/800"
 ---
 
-Ficha etnobotánica resumida de Ruda para el atlas de categorías funcionales.
+Ficha etnobotánica de Ruda, actualizada con la información de la ficha técnica fuente.

@@ -1,11 +1,11 @@
 ---
 nombre: "Papaya"
 cientifico: "Carica papaya"
-categoria: "ALIMENTICIA"
-parteUsada: "Fruto y látex"
-uso: "Digestiva y laxante suave"
-compuestos: "Papaína · Quimopapaína · Licopeno · Ácido ascórbico"
+categoria: "Alimenticia-medicinal"
+parteUsada: "Fruto, látex"
+uso: "Digestiva"
+compuestos: "Enzimas Proteolíticas · Vitaminas y Antioxidantes · Carotenoides"
 img: "https://picsum.photos/seed/papaya/1200/800"
 ---
 
-Ficha etnobotánica resumida de Papaya para el atlas de categorías funcionales.
+Ficha etnobotánica de Papaya, actualizada con la información de la ficha técnica fuente.

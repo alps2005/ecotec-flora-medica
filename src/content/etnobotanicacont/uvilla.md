@@ -1,11 +1,11 @@
 ---
 nombre: "Uvilla"
 cientifico: "Physalis peruviana"
-categoria: "ALIMENTICIA"
+categoria: "Alimenticia-medicinal andina"
 parteUsada: "Fruto"
-uso: "Antioxidante, depurativa urinaria y apoyo visual"
-compuestos: "Withanólidos · Quercetina · Kaempferol · Vitamina C"
+uso: "Antioxidante"
+compuestos: "Withanólidos · Polifenoles y Flavonoides · Vitaminas Esenciales"
 img: "https://picsum.photos/seed/uvilla/1200/800"
 ---
 
-Ficha etnobotánica resumida de Uvilla para el atlas de categorías funcionales.
+Ficha etnobotánica de Uvilla, actualizada con la información de la ficha técnica fuente.

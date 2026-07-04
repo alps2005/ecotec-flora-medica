@@ -9,10 +9,10 @@ taxonomia:
   familia: "Caricaceae"
   genero: "Carica"
 etnobotanica:
-  clasificacion: "Alimenticia - Medicinal"
-  parteUtilizada: "Fruto y látex"
-  usoTradicional: "Digestiva y laxante suave"
-  compuestosQuimicos: ["Papaína", "Quimopapaína", "Licopeno", "Ácido ascórbico"]
+  clasificacion: "Alimenticia-medicinal"
+  parteUtilizada: "Fruto, látex"
+  usoTradicional: "Digestiva"
+  compuestosQuimicos: ["Enzimas Proteolíticas", "Vitaminas y Antioxidantes", "Carotenoides"]
 multimediaPrincipal:
   imagenUrl: "https://picsum.photos/seed/papaya/1200/800"
   imagenPublicId: ""
@@ -24,26 +24,25 @@ estado: "ACTIVO"
 
 ## Introducción
 
-La papaya es una fruta tropical de alto valor nutricional y terapéutico, destacada por sus enzimas proteolíticas y su aporte antioxidante.
+La papaya (*Carica papaya*) es un fruto tropical de gran relevancia global, reconocido por su exquisito sabor y sus notables propiedades nutricionales y terapéuticas. Más allá de su alto valor en la industria alimentaria por su aporte de vitaminas y minerales, destaca en la etnobotánica gracias a la presencia de enzimas proteolíticas en su matriz biológica y látex, convirtiéndola en un elemento esencial tanto para la medicina tradicional como para el desarrollo de productos farmacéuticos y cosméticos.
 
 ## Historia y evolución botánica
 
-- **Origen:** Mesoamérica (sur de México y América Central).
-- **Dispersión:** Extendida por Caribe, Sudamérica, África y sudeste asiático tras la colonización.
-- **Evolución:** Especie diploide con sistemas sexuales diferenciados y mejoramiento moderno frente a virus.
+Origen: Nativa de las regiones tropicales de Mesoamérica (especialmente el sur de México y América Central).
+Dispersión: Tras la colonización de América, fue dispersada rápidamente por los españoles y portugueses hacia el Caribe, las regiones tropicales de América del Sur, África y el sudeste asiático, adaptándose perfectamente a climas cálidos y húmedos de baja altitud.
+Hibridación/Genética: Pertenece a la familia Caricaceae. Estudios genómicos modernos han permitido mapear su genoma diploide, identificando la evolución de sus cromosomas sexuales (plantas de tipos masculinas, femeninas y hermafroditas) y optimizando variedades comerciales tolerantes a virus como el de la mancha anular.
 
 ## Perfil etnobotánico
 
-La pulpa madura se usa como digestivo y laxante suave; el látex de frutos verdes concentra enzimas con aplicaciones terapéuticas e industriales.
+Clasificada bajo una categoría dual alimenticia-medicinal, la papaya es ampliamente valorada por su aprovechamiento integral. Mientras que la pulpa del fruto maduro actúa como un excelente nutriente digestivo y laxante suave, el látex extraído de los frutos verdes concentra enzimas claves que descomponen las proteínas. Esta versatilidad terapéutica la posiciona como un remedio natural predilecto para optimizar la salud gastrointestinal.
 
 ## Importación y exportación
 
-- **Exportación:** México lidera fruta fresca; India y Brasil lideran producción total.
-- **Importación:** Estados Unidos y la Unión Europea concentran gran parte del mercado.
+Dinámica de Exportación: India y Brasil lideran la producción mundial masiva, orientando gran parte a sus mercados internos. Sin embargo, México se posiciona como el principal exportador global de fruta fresca, abasteciendo de forma masiva el mercado de los Estados Unidos. Otros exportadores clave en América Latina incluyen a Guatemala y Ecuador.
+Dinámica de Importación: El principal mercado comprador mundial es Estados Unidos, seguido por la Unión Europea (con países como Alemania, Países Bajos y España como principales receptores) y naciones asiáticas que demandan frutas exóticas tropicales.
 
 ## Características químicas principales
 
-- **Enzimas proteolíticas:** papaína y quimopapaína.
-- **Vitaminas antioxidantes:** C, A y E.
-- **Carotenoides:** licopeno y criptoxantina.
-
+Enzimas Proteolíticas: El látex y el fruto contienen papaína y quimopapaína, potentes enzimas que facilitan la hidrólisis de proteínas, mejorando significativamente los procesos digestivos.
+Vitaminas y Antioxidantes: Posee concentraciones elevadas de Ácido Ascórbico (Vitamina C), Vitamina A (a través de precursores como el betacaroteno) y Vitamina E, que fortalecen la respuesta inmunológica y celular.
+Carotenoides: Dominio de licopeno y criptoxantina, polifenoles responsables de la coloración anaranjada-rojiza de la pulpa que actúan neutralizando los radicales libres.

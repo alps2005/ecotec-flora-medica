@@ -1,11 +1,11 @@
 ---
 nombre: "Perejil"
 cientifico: "Petroselinum crispum"
-categoria: "MEDICINAL"
+categoria: "Condimento medicinal"
 parteUsada: "Hojas"
 uso: "Diurético"
-compuestos: "Apiol · Miristicina · Apiina · Vitamina K"
+compuestos: "Apiol y Miristicina (Aceites Esenciales) · Apiina (Flavonoides) · Densidad Nutricional"
 img: "https://picsum.photos/seed/perejil/1200/800"
 ---
 
-Ficha etnobotánica resumida de Perejil para el atlas de categorías funcionales.
+Ficha etnobotánica de Perejil, actualizada con la información de la ficha técnica fuente.

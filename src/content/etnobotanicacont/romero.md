@@ -1,11 +1,11 @@
 ---
 nombre: "Romero"
-cientifico: "Salvia rosmarinus"
-categoria: "AROMÁTICA"
+cientifico: "Salvia rosmarinus (sinónimo Rosmarinus officinalis)"
+categoria: "Medicinal aromática"
 parteUsada: "Hojas"
-uso: "Estimulante del sistema circulatorio y cognitivo, tónico digestivo y antioxidante"
-compuestos: "Ácido carnósico · Carnosol · Ácido rosmarínico · 1,8-cineol"
+uso: "Estimulante"
+compuestos: "Diterpenos Fenólicos · Ácido Rosmarínico · Monoterpenos (Aceite Esencial)"
 img: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80"
 ---
 
-Ficha etnobotánica resumida de Romero para el atlas de categorías funcionales.
+Ficha etnobotánica de Romero, actualizada con la información de la ficha técnica fuente.

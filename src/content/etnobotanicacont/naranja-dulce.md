@@ -1,11 +1,11 @@
 ---
 nombre: "Naranja dulce / Naranjo"
 cientifico: "Citrus sinensis"
-categoria: "ALIMENTICIA"
-parteUsada: "Fruto (pulpa, jugo) y cáscara (epicarpio / flavedo)"
+categoria: "Alimenticia - Medicinal"
+parteUsada: "Fruto (pulpa, jugo) y Cáscara (epicarpio / flavedo)"
 uso: "Antioxidante, digestiva, aromatizante y fitoterapéutica"
-compuestos: "Ácido ascórbico · Hesperidina · Narirutina · D-limoneno"
+compuestos: "Ácidos Orgánicos · Flavonoides · Aceites Esenciales (Cáscara) · Carotenoides"
 img: "https://picsum.photos/seed/naranja-dulce/1200/800"
 ---
 
-Ficha etnobotánica resumida de Naranja dulce / Naranjo para el atlas de categorías funcionales.
+Ficha etnobotánica de Naranja dulce / Naranjo, actualizada con la información de la ficha técnica fuente.

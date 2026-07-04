@@ -1,11 +1,11 @@
 ---
 nombre: "Hierba luisa / Limonaria"
 cientifico: "Cymbopogon citratus"
-categoria: "AROMÁTICA"
+categoria: "Medicinal aromática"
 parteUsada: "Hojas"
-uso: "Sedante, ansiolítica y digestiva"
-compuestos: "Citral · Mirceno · Luteolina"
+uso: "Sedante"
+compuestos: "Aldehídos Terpénicos (Aceite Esencial) · Monoterpenos · Compuestos Fenólicos"
 img: "https://picsum.photos/seed/hierba-luisa/1200/800"
 ---
 
-Ficha etnobotánica resumida de Hierba luisa / Limonaria para el atlas de categorías funcionales.
+Ficha etnobotánica de Hierba luisa / Limonaria, actualizada con la información de la ficha técnica fuente.

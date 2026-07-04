@@ -1,11 +1,11 @@
 ---
 nombre: "Apio"
 cientifico: "Apium graveolens"
-categoria: "ALIMENTICIA"
+categoria: "Alimenticia - Medicinal"
 parteUsada: "Tallos y hojas"
 uso: "Diurético y depurativo"
-compuestos: "Apiol · Apigenina · Luteolina · Potasio"
+compuestos: "Apiol · Flavonoides · Potasio · Vitaminas A, C y K"
 img: "https://picsum.photos/seed/apio/1200/800"
 ---
 
-Ficha etnobotánica resumida de Apio para el atlas de categorías funcionales.
+Ficha etnobotánica de Apio, actualizada con la información de la ficha técnica fuente.

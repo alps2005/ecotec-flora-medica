@@ -1,11 +1,11 @@
 ---
 nombre: "Valeriana"
 cientifico: "Valeriana officinalis"
-categoria: "MEDICINAL"
+categoria: "Medicinal sedante"
 parteUsada: "Raíz"
-uso: "Ansiolítica y apoyo del sueño"
-compuestos: "Ácido valerénico · Valepotriatos · Isovalerianatos"
+uso: "Ansiolítica"
+compuestos: "Ácido Valerénico · Valepotriatos · Aceites esenciales (Isovalerianato)"
 img: "https://picsum.photos/seed/valeriana/1200/800"
 ---
 
-Ficha etnobotánica resumida de Valeriana para el atlas de categorías funcionales.
+Ficha etnobotánica de Valeriana, actualizada con la información de la ficha técnica fuente.

@@ -1,11 +1,11 @@
 ---
 nombre: "Cola de caballo"
 cientifico: "Equisetum arvense"
-categoria: "MEDICINAL"
+categoria: "Medicinal tradicional"
 parteUsada: "Tallos"
-uso: "Diurética y remineralizante"
-compuestos: "Ácido silícico · Equisetonina · Sales de potasio"
+uso: "Diurética"
+compuestos: "Ácido Silícico (Sílice) · Equisetonina (Saponinas) · Sales de Potasio"
 img: "https://picsum.photos/seed/cola-de-caballo/1200/800"
 ---
 
-Ficha etnobotánica resumida de Cola de caballo para el atlas de categorías funcionales.
+Ficha etnobotánica de Cola de caballo, actualizada con la información de la ficha técnica fuente.

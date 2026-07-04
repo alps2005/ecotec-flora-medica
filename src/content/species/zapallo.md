@@ -12,7 +12,7 @@ etnobotanica:
   clasificacion: "Alimenticia - Medicinal"
   parteUtilizada: "Semillas y fruto (pulpa)"
   usoTradicional: "Antiparasitaria, antiinflamatoria prostática y demulcente"
-  compuestosQuimicos: ["Cucurbitina", "Beta-sitosterol"]
+  compuestosQuimicos: ["Cucurbitina", "Fitosteroles (Beta-sitosterol)"]
 multimediaPrincipal:
   imagenUrl: "https://picsum.photos/seed/zapallo/1200/800"
   imagenPublicId: ""
@@ -24,25 +24,23 @@ estado: "ACTIVO"
 
 ## Introducción
 
-El zapallo es uno de los cultivos más antiguos de América y una especie alimentaria con aplicaciones medicinales relevantes.
+El zapallo es uno de los cultivos domesticados más antiguos de América. Sus semillas albergan compuestos fitoquímicos específicos de alta eficacia clínica contra parasitosis y problemas prostáticos.
 
 ## Historia y evolución botánica
 
-- **Origen:** América del Sur, con domesticación andina temprana.
-- **Dispersión:** Se expandió globalmente tras el intercambio colombino.
-- **Evolución:** Selección de cultivares con alta resistencia y almacenamiento.
+Origen: Nativa de América del Sur, domesticada en la región andina a partir de variantes silvestres milenarias.
+Dispersión: Difundida con rapidez mundial post-intercambio colombino, seleccionada en múltiples cultivares de gran resistencia de almacenamiento.
 
 ## Perfil etnobotánico
 
-Las semillas se usan por su efecto antihelmíntico y su aceite para apoyo urológico; la pulpa tiene uso alimentario y demulcente.
+El uso principal de sus semillas es antiparasitario, paralizando los helmintos intestinales de manera segura. Su aceite regula y desinflama tejidos urológicos benignos.
 
 ## Importación y exportación
 
-- **Exportación:** México, España y Nueva Zelanda destacan en comercio internacional.
-- **Importación:** Estados Unidos y Japón son mercados de alta demanda.
+Dinámica de Exportación (2023-2026): México, España y Nueva Zelanda son los exportadores dominantes a nivel mundial de calabazas y zapallos, cubriendo ventanas estacionales clave en hemisferios opuestos.
+Dinámica de Importación (2023-2026): Los Estados Unidos representan el mercado de importación más grande. En Asia, Japón destaca como un comprador masivo de variedades dulces de Cucurbita maxima desde el Hemisferio Sur.
 
 ## Características químicas principales
 
-- **Cucurbitina:** aminoácido asociado a efecto antiparasitario.
-- **Fitosteroles:** beta-sitosterol con actividad en salud prostática.
-
+Cucurbitina: Aminoácido pirrolidínico con probada acción antihelmíntica que paraliza los parásitos.
+Fitosteroles (Beta-sitosterol): Bloquea de forma competitiva hormonas asociadas a la hiperplasia prostática benigna.

@@ -5,14 +5,14 @@ nombresAlternativos: []
 taxonomia:
   reino: "Plantae"
   division: "Magnoliophyta"
-  clase: "Liliopsida"
+  clase: "Magnoliopsida"
   familia: "Amaryllidaceae"
   genero: "Allium"
 etnobotanica:
   clasificacion: "Medicinal universal"
   parteUtilizada: "Bulbo"
   usoTradicional: "Antibiótico natural"
-  compuestosQuimicos: ["Alicina", "Ajoenos", "Vinilditiínas", "Selenio"]
+  compuestosQuimicos: ["Alicina (Compuestos Azufrados)", "Ajoenos y Vinilditiínas", "Oligoelementos"]
 multimediaPrincipal:
   imagenUrl: "https://picsum.photos/seed/ajo/1200/800"
   imagenPublicId: ""
@@ -24,26 +24,25 @@ estado: "ACTIVO"
 
 ## Introducción
 
-El ajo es uno de los fitoterapéuticos más estudiados por su acción antimicrobiana y su uso tradicional universal.
+El ajo (*Allium sativum*) constituye uno de los agentes etnobotánicos y fitoterapéuticos más antiguos, estudiados y venerados por la humanidad. Clasificado dentro de la familia Amaryllidaceae, este bulbo subterráneo trasciende su valor gastronómico global gracias a una compleja matriz química rica en compuestos azufrados volátiles. Estas características le confieren propiedades terapéuticas extraordinarias, consolidándolo en la medicina moderna como un potente y eficaz antibiótico natural de amplio espectro.
 
 ## Historia y evolución botánica
 
-- **Origen:** Asia Central.
-- **Dispersión:** Expandido desde la antigüedad hacia Mediterráneo, India, China y luego América.
-- **Evolución:** Propagación principalmente vegetativa por dientes de bulbo.
+Origen: Nativo de Asia Central (regiones de Kirguistán, Turkmenistán y Uzbekistán), extendiéndose desde la antigüedad hacia la cuenca del Mediterráneo, India y China. Existen registros de su uso medicinal en las culturas egipcia, griega, romana y china desde hace más de 4,000 años.
+Dispersión: Llegó al continente americano a través de los colonizadores españoles en el siglo XVI, convirtiéndose de inmediato en un componente esencial de la medicina popular y la agricultura americana.
+Evolución: Es una planta bulbosa perenne que raramente produce semillas viables en la actualidad; su propagación ha evolucionado de manera estrictamente vegetativa (mediante "dientes" o bulbillos), lo que ha generado una amplia diversidad de ecotipos adaptados a distintas latitudes geográficas.
 
 ## Perfil etnobotánico
 
-El bulbo se usa para apoyo en infecciones respiratorias, digestivas y cutáneas, además de fortalecer defensas.
+El ajo posee una clasificación de medicinal universal debido a su presencia transversal en casi todas las culturas del planeta. El bulbo es la porción anatómica que concentra los principios activos biológicamente estables. Utilizado históricamente para combatir infecciones de origen respiratorio, gastrointestinal y cutáneo, actúa destruyendo patógenos y estimulando simultáneamente las defensas del huésped.
 
 ## Importación y exportación
 
-- **Exportación:** China domina el mercado global; España, Argentina, India y México son actores relevantes.
-- **Importación:** Unión Europea, EE.UU., Indonesia, Brasil y Malasia concentran demanda.
+Dinámica de Exportación: China ejerce un monopolio y dominio absoluto sobre el mercado global del ajo, controlando más del 70% u 80% de las exportaciones mundiales de ajo fresco, deshidratado y procesado. Otros exportadores internacionales relevantes a gran escala incluyen a España (líder europeo en calidad), Argentina, India y México.
+Dinámica de Importación: Los principales mercados de destino para el flujo comercial del ajo son la Unión Europea, Estados Unidos, Indonesia, Brasil, Malasia y diversas naciones de América Latina.
 
 ## Características químicas principales
 
-- **Alicina:** compuesto clave con acción antimicrobiana.
-- **Ajoenos/vinilditiínas:** actividad antitrombótica y cardiometabólica.
-- **Oligoelementos:** selenio y germanio.
-
+Alicina (Compuestos Azufrados): Al triturar o machacar el bulbo fresco, el aminoácido alíina entra en contacto con la enzima aliinasa, transformándose de inmediato en alicina. Este compuesto volátil es el responsable directo de su acción antimicrobiana, antifúngica y antiviral (antibiótico natural).
+Ajoenos y Vinilditiínas: Moléculas estables derivadas de la degradación de la alicina que ejercen potentes efectos antitrombóticos, antiagregantes plaquetarios y reductores del colesterol sérico.
+Oligoelementos: Presencia de Selenio (Se) y Germanio (Ge), minerales esenciales acoplados a la protección antioxidante sistémica y al fortalecimiento celular.

@@ -11,8 +11,8 @@ taxonomia:
 etnobotanica:
   clasificacion: "Medicinal tradicional"
   parteUtilizada: "Hojas"
-  usoTradicional: "Antiinflamatoria y remineralizante"
-  compuestosQuimicos: ["Histamina", "Serotonina", "Flavonoides", "Hierro"]
+  usoTradicional: "Antiinflamatoria"
+  compuestosQuimicos: ["Histamina, Serotonina y Acetilcolina", "Hierro, Calcio, Sílice y Potasio", "Ácidos Fenólicos y Flavonoides"]
 multimediaPrincipal:
   imagenUrl: "https://picsum.photos/seed/ortiga/1200/800"
   imagenPublicId: ""
@@ -24,26 +24,27 @@ estado: "ACTIVO"
 
 ## Introducción
 
-La ortiga, pese a su carácter urticante, es una planta medicinal de alto valor por su perfil mineral y antiinflamatorio.
+La ortiga (Urtica dioica) es frecuentemente considerada una "mala hierba" debido a los pelos urticantes de sus hojas y tallos. Sin embargo, es una de las plantas medicinales más completas, con un altísimo contenido de minerales, vitaminas y compuestos que le otorgan propiedades antiinflamatorias, depurativas y antianémicas.
 
 ## Historia y evolución botánica
 
-- **Origen:** Distribución amplia en Europa, Asia, norte de África y Norteamérica.
-- **Dispersión:** Uso documentado desde la antigüedad romana.
-- **Evolución:** Especie adaptada a suelos ricos en nitrógeno.
+- **Origen:** De distribución cosmopolita, nativa principalmente de Europa, Asia, norte de África y Norteamérica.
+- **Dispersión:** Utilizada desde la antigüedad (los romanos se frotaban con ella para mantener el calor corporal y mejorar la circulación).
+- **Evolución:** Familia Urticaceae. Crece en suelos ricos en nitrógeno y materia orgánica, a menudo cerca de asentamientos humanos.
 
 ## Perfil etnobotánico
 
-Tras secado o cocción se emplea en infusiones y preparaciones para artritis, gota, fatiga y apoyo prostático.
+Medicinal tradicional. Al secarse o hervirse, la ortiga pierde su cualidad urticante. Se consume en infusiones o sopas para tratar la artritis, la gota, inflamaciones prostáticas (HPB) y como remineralizante en casos de anemia y fatiga debido a su alta concentración de hierro.
 
 ## Importación y exportación
 
-- **Exportación:** Europa del Este (Polonia y Bulgaria).
-- **Importación:** Alemania, Francia e Italia para fitofarmacia y cosmética.
+- Dinámica de Exportación:
+- **Europa del Este (Polonia, Bulgaria):** Principales proveedores de hoja seca y raíces.
+- Dinámica de Importación:
+- **Alemania, Francia e Italia:** Grandes demandantes para la industria fitofarmacéutica y cosmética (lociones capilares).
 
 ## Características químicas principales
 
-- **Aminas biógenas:** histamina, serotonina y acetilcolina en tricomas.
-- **Minerales:** hierro, calcio, sílice y potasio.
-- **Fenólicos y flavonoides:** acción antiinflamatoria y diurética.
-
+- **Histamina, Serotonina y Acetilcolina:** Presentes en los tricomas (pelos) responsables de la urticaria inicial.
+- **Hierro, Calcio, Sílice y Potasio:** Alta carga mineral.
+- **Ácidos Fenólicos y Flavonoides:** Confieren su potente acción antiinflamatoria y diurética.

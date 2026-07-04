@@ -1,11 +1,11 @@
 ---
 nombre: "Uña de gato"
 cientifico: "Uncaria tomentosa"
-categoria: "MEDICINAL"
+categoria: "Medicinal amazónica"
 parteUsada: "Corteza"
-uso: "Inmunomoduladora y antiinflamatoria"
-compuestos: "Alcaloides oxindólicos · Glucósidos del ácido quinóvico · Esteroles vegetales"
+uso: "Inmunomoduladora"
+compuestos: "Alcaloides Oxindólicos (POA) · Glucósidos del Ácido Quinóvico · Esteroles vegetales"
 img: "https://picsum.photos/seed/una-de-gato/1200/800"
 ---
 
-Ficha etnobotánica resumida de Uña de gato para el atlas de categorías funcionales.
+Ficha etnobotánica de Uña de gato, actualizada con la información de la ficha técnica fuente.

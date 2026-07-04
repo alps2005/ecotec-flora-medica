@@ -1,11 +1,11 @@
 ---
 nombre: "Cedrón"
 cientifico: "Aloysia citrodora"
-categoria: "AROMÁTICA"
+categoria: "Medicinal aromática"
 parteUsada: "Hojas"
-uso: "Digestiva y carminativa"
-compuestos: "Citral · Limoneno · Linalol · Verbascósido"
+uso: "Digestiva"
+compuestos: "Citral (Geranial y Neral) · Limoneno y Linalol · Verbascósido"
 img: "https://picsum.photos/seed/cedron/1200/800"
 ---
 
-Ficha etnobotánica resumida de Cedrón para el atlas de categorías funcionales.
+Ficha etnobotánica de Cedrón, actualizada con la información de la ficha técnica fuente.

@@ -12,7 +12,7 @@ etnobotanica:
   clasificacion: "Medicinal tradicional"
   parteUtilizada: "Hojas y fruto"
   usoTradicional: "Sedante, antioxidante, citotóxica y antiinflamatoria"
-  compuestosQuimicos: ["Acetogeninas", "Alcaloides isoquinolínicos"]
+  compuestosQuimicos: ["Acetogeninas (Annonáceas)", "Alcaloides Isoquinolínicos"]
 multimediaPrincipal:
   imagenUrl: "https://picsum.photos/seed/guanabana/1200/800"
   imagenPublicId: ""
@@ -24,25 +24,23 @@ estado: "ACTIVO"
 
 ## Introducción
 
-La guanábana combina uso alimentario y medicinal, con hojas ricas en compuestos bioactivos y fruto de alto valor antioxidante.
+La guanábana combina un fruto de alto consumo fresco con hojas ricas en compuestos bioactivos exclusivos, posicionándose a la vanguardia de la investigación fitoquímica moderna.
 
 ## Historia y evolución botánica
 
-- **Origen:** Regiones tropicales de América Central y del Sur.
-- **Dispersión:** Extendida a Asia tropical y África subsahariana.
-- **Evolución:** Especie tradicional en huertos tropicales de múltiples culturas.
+Origen: Nativa de las regiones tropicales de América Central y del Sur, arraigada en las culturas precolombinas.
+Dispersión: Dispersada hacia los territorios tropicales de Asia (Filipinas, Malasia) y África subsahariana en huertos tradicionales.
 
 ## Perfil etnobotánico
 
-Las hojas se usan como sedante y ansiolítico tradicional; el fruto aporta actividad antioxidante asociada a protección celular.
+Las preparaciones de sus hojas se administran oralmente como sedante natural y ansiolítico. El fruto aporta una robusta protección antioxidante frente al estrés celular.
 
 ## Importación y exportación
 
-- **Exportación:** México lidera fruta fresca; Colombia, Perú y Ecuador destacan en pulpa y derivados.
-- **Importación:** Estados Unidos y Europa concentran la demanda de productos saludables.
+Dinámica de Exportación (2023-2026): México es el principal exportador mundial de guanábana fresca. Colombia, Perú y Ecuador lideran los envíos de pulpa congelada congelada e insumos deshidratados para té.
+Dinámica de Importación (2023-2026): Estados Unidos lidera la demanda debido al mercado de productos saludables. En Europa, España, los Países Bajos y Alemania concentran las importaciones de pulpa y derivados fitoterapéuticos.
 
 ## Características químicas principales
 
-- **Acetogeninas anonáceas:** asociadas a actividad citotóxica selectiva.
-- **Alcaloides isoquinolínicos:** relacionados con efectos sedantes tradicionales.
-
+Acetogeninas (Annonáceas): Exhiben propiedades citotóxicas selectivas al inhibir el complejo I mitocondrial.
+Alcaloides Isoquinolínicos: Interactúan con receptores de serotonina, justificando efectos sedantes tradicionales.

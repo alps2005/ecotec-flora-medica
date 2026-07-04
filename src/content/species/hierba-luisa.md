@@ -5,14 +5,14 @@ nombresAlternativos: ["Limonaria", "Lemongrass"]
 taxonomia:
   reino: "Plantae"
   division: "Magnoliophyta"
-  clase: "Liliopsida"
+  clase: "Magnoliopsida"
   familia: "Poaceae"
   genero: "Cymbopogon"
 etnobotanica:
   clasificacion: "Medicinal aromática"
   parteUtilizada: "Hojas"
-  usoTradicional: "Sedante, ansiolítica y digestiva"
-  compuestosQuimicos: ["Citral", "Mirceno", "Luteolina"]
+  usoTradicional: "Sedante"
+  compuestosQuimicos: ["Aldehídos Terpénicos (Aceite Esencial)", "Monoterpenos", "Compuestos Fenólicos"]
 multimediaPrincipal:
   imagenUrl: "https://picsum.photos/seed/hierba-luisa/1200/800"
   imagenPublicId: ""
@@ -24,26 +24,25 @@ estado: "ACTIVO"
 
 ## Introducción
 
-La hierba luisa es una gramínea aromática muy usada en infusiones por su aroma cítrico y su efecto relajante.
+La hierba luisa o limonaria (Cymbopogon citratus) destaca como una de las gramíneas medicinales de mayor impacto en la herbolaria contemporánea y la industria de bebidas a nivel global. Caracterizada por su intenso y agradable aroma cítrico, sus hojas perennes en forma de listón concentran una serie de aldehídos terpénicos bioactivos. Su capacidad para interactuar con los receptores neurotransmisores del organismo humano le confiere un valor fitoterapéutico sobresaliente como una opción natural y segura para mitigar estados de ansiedad, estrés y alteraciones del sueño.
 
 ## Historia y evolución botánica
 
-- **Origen:** Sur y sudeste de Asia.
-- **Dispersión:** Introducida en África, América Latina y Caribe.
-- **Evolución:** Se propaga vegetativamente mediante división de macollos.
+- **Origen:** Es una especie nativa de las regiones tropicales y subtropicales del sur y sudeste de Asia (especialmente de la India y Sri Lanka). Su uso en la medicina ayurvédica y en la gastronomía asiática milenaria es fundamental.
+- **Dispersión:** Fue introducida a lo largo de las regiones tropicales de África, América Latina y el Caribe durante los flujos comerciales de la época colonial, adaptándose con rapidez gracias a los requerimientos de climas cálidos y húmedos.
+- **Evolución:** Es un miembro destacado de la familia Poaceae (Gramíneas). Es una planta perenne de crecimiento en densas matas que rara vez produce flores bajo cultivo, por lo que su propagación es estrictamente vegetativa mediante la división de sus macollos.
 
 ## Perfil etnobotánico
 
-Sus hojas se emplean como sedante suave, relajante muscular y tónico digestivo.
+La trascendencia de Cymbopogon citratus radica en su alto valor organoléptico y medicinal. Clasificada en la categoría de medicinal aromática, la porción vegetal empleada son sus hojas alargadas. Su particular perfil fitoquímico le concede propiedades biológicas eficaces, consolidando su uso medicinal principal como un sedante suave, ansiolítico, relajante muscular y un excelente tónico eupéptico/digestivo.
 
 ## Importación y exportación
 
-- **Exportación:** India, China, Guatemala, Brasil y Paraguay.
-- **Importación:** Estados Unidos, Unión Europea y Japón.
+- **Dinámica de Exportación:** Los líderes globales en la producción masiva de biomasa deshidratada y de su valorado aceite esencial (conocido comercialmente como lemongrass oil) son India, China, Guatemala, Brasil y Paraguay. Guatemala destaca como un exportador premium en América Latina.
+- **Dinámica de Importación:** La demanda internacional está concentrada en Estados Unidos, la Unión Europea (Reino Unido, Francia, Alemania) y Japón, destinados al desarrollo de infusiones comerciales, saborizantes de alimentos y aceites para aromaterapia.
 
 ## Características químicas principales
 
-- **Citral (geranial/neral):** responsable del aroma y efecto sedante.
-- **Mirceno:** actividad analgésica periférica.
-- **Fenólicos:** flavonoides y ácidos fenólicos antioxidantes.
-
+- **Aldehídos Terpénicos (Aceite Esencial):** Contiene citral (65-85%), que es una mezcla natural de los isómeros geranial y neral. El citral es el responsable directo del aroma a limón y posee efectos sedantes probados sobre el sistema nervioso central.
+- **Monoterpenos:** Presencia de mirceno, un compuesto volátil que aporta propiedades analgésicas periféricas y coadyuva en la relajación muscular.
+- **Compuestos Fenólicos:** Contiene flavonoides como la luteolina y ácidos fenólicos que le otorgan capacidades antioxidantes y antiinflamatorias adicionales.

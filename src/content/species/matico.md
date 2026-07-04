@@ -12,7 +12,7 @@ etnobotanica:
   clasificacion: "Medicinal"
   parteUtilizada: "Hojas, tallos y aceites esenciales"
   usoTradicional: "Cicatrizante, antimicrobiano y antiinflamatorio"
-  compuestosQuimicos: ["Dilapiol", "Flavonoides", "Taninos", "Fenoles"]
+  compuestosQuimicos: ["Aceites Esenciales", "Flavonoides", "Taninos", "Fenoles"]
 multimediaPrincipal:
   imagenUrl: "https://picsum.photos/seed/matico/1200/800"
   imagenPublicId: ""
@@ -24,26 +24,30 @@ estado: "ACTIVO"
 
 ## Introducción
 
-El matico es una planta medicinal amazónica de amplio uso tradicional en cicatrización, inflamación y control microbiano.
+El matico (Piper aduncum) es una planta medicinal de la Amazonía y regiones tropicales de América. Utilizada por comunidades indígenas por sus propiedades cicatrizantes, antimicrobianas y antiinflamatorias.
 
 ## Historia y evolución botánica
 
-- **Origen:** Cuenca amazónica y regiones tropicales americanas.
-- **Dispersión:** Integrada en medicina tradicional latinoamericana.
-- **Evolución:** Especie pionera de rápida adaptación en suelos perturbados.
+- **Origen:** Nativa de regiones tropicales (cuenca amazónica). Desde México hasta Sudamérica en bosques húmedos tropicales.
+- **Dispersión:** Se difundió entre culturas indígenas amazónicas y la medicina tradicional latinoamericana.
+- **Evolución y Adaptación:** Familia Piperaceae (como la pimienta negra). De rápida adaptación y colonización de terrenos perturbados.
 
 ## Perfil etnobotánico
 
-Se utiliza en infusiones, lavados y emplastos para heridas, inflamaciones y trastornos gastrointestinales leves.
+Destacado en medicina tradicional amazónica. Hojas usadas en infusiones, emplastos y lavados para heridas, inflamaciones y afecciones gastrointestinales.
 
 ## Importación y exportación
 
-- **Exportación:** Perú y Brasil destacan en derivados y aceites.
-- **Importación:** Estados Unidos y Europa demandan extractos para farmacia y cosmética.
+- Dinámica de Exportación:
+- Perú y Brasil participan activamente en comercialización de derivados.
+- Demanda internacional se concentra en extractos y aceites.
+- Dinámica de Importación:
+- Estados Unidos y Europa son mercados relevantes.
+- El sector farmacéutico y cosmético impulsa la demanda.
 
 ## Características químicas principales
 
-- **Aceites esenciales:** ricos en dilapiol.
-- **Taninos y fenoles:** acción cicatrizante y antimicrobiana.
-- **Flavonoides:** actividad antiinflamatoria y antioxidante.
-
+- **Aceites Esenciales:** Ricos en dilapiol.
+- **Flavonoides:** Antioxidantes y antiinflamatorios.
+- **Taninos:** Cicatrizantes y astringentes.
+- **Fenoles:** Antimicrobianos.

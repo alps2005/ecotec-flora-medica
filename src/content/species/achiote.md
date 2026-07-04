@@ -12,7 +12,7 @@ etnobotanica:
   clasificacion: "Medicinal y tintórea"
   parteUtilizada: "Semillas"
   usoTradicional: "Antioxidante"
-  compuestosQuimicos: ["Bixina", "Norbixina", "Tocotrienoles", "Flavonoides"]
+  compuestosQuimicos: ["Bixina y Norbixina", "Tocotrienoles (Vitamina E)", "Flavonoides"]
 multimediaPrincipal:
   imagenUrl: "https://picsum.photos/seed/achiote/1200/800"
   imagenPublicId: ""
@@ -24,26 +24,27 @@ estado: "ACTIVO"
 
 ## Introducción
 
-El achiote es un arbusto tropical de gran valor como colorante natural y fuente de compuestos antioxidantes.
+El achiote (Bixa orellana) es un arbusto originario de las regiones tropicales de América. Sus semillas están cubiertas por un arilo rojo que se utiliza mundialmente como colorante natural (bixina). Además de su uso industrial y culinario, posee compuestos bioactivos con gran potencial antioxidante y protector celular.
 
 ## Historia y evolución botánica
 
-- **Origen:** América tropical (Amazonía y Centroamérica).
-- **Dispersión:** Introducido en Asia y África durante la expansión colonial.
-- **Evolución:** Cultivo rústico adaptado a climas cálidos y húmedos.
+- **Origen:** Nativo de América Tropical (Amazonía y Centroamérica). Los pueblos precolombinos lo utilizaban como pintura corporal, repelente de insectos, especia y medicina.
+- **Dispersión:** Los europeos lo llevaron a Asia (especialmente Filipinas) y África, donde se integró en la gastronomía local.
+- **Evolución:** Pertenece a la familia Bixaceae. Es un cultivo rústico adaptado a zonas cálidas y húmedas.
 
 ## Perfil etnobotánico
 
-Se utilizan semillas y extractos en usos medicinales y tintóreos, además de aplicaciones urinarias y prostáticas tradicionales.
+Uso medicinal y tintóreo. Las semillas y sus extractos son ricos en pigmentos antioxidantes que protegen contra el daño de los radicales libres. La medicina tradicional usa infusiones de sus hojas y semillas para inflamaciones de la próstata, problemas urinarios y como cicatrizante.
 
 ## Importación y exportación
 
-- **Exportación:** Perú, Brasil, Kenia y Costa de Marfil.
-- **Importación:** Unión Europea, EE.UU. y Japón (annatto/E-160b).
+- Dinámica de Exportación:
+- **Perú, Brasil, Kenia y Costa de Marfil:** Principales exportadores de semilla de achiote y extractos de bixina.
+- Dinámica de Importación:
+- **Unión Europea, Estados Unidos y Japón:** Importan el colorante (Annatto / E-160b) como alternativa natural a los colorantes sintéticos en alimentos (quesos, mantequillas, snacks).
 
 ## Características químicas principales
 
-- **Bixina y norbixina:** carotenoides pigmentarios y antioxidantes.
-- **Tocotrienoles:** fracción de vitamina E.
-- **Flavonoides:** apoyo antiinflamatorio.
-
+- **Bixina y Norbixina:** Carotenoides responsables de la pigmentación roja-anaranjada y con alta actividad antioxidante.
+- **Tocotrienoles (Vitamina E):** Potentes antioxidantes que protegen las membranas celulares.
+- **Flavonoides:** Presentes en las hojas, aportan acción antiinflamatoria.

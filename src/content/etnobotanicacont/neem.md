@@ -1,11 +1,11 @@
 ---
 nombre: "Neem / Nim"
 cientifico: "Azadirachta indica"
-categoria: "AGROECOLÓGICA"
+categoria: "Medicinal y agroecológica"
 parteUsada: "Hojas, corteza, semillas y aceite"
 uso: "Antimicrobiana, antifúngica, antiparasitaria y antiinflamatoria"
-compuestos: "Azadiractina · Limonoides · Compuestos azufrados"
+compuestos: "Limonoides (Azadiractina) · Compuestos Azufrados"
 img: "https://picsum.photos/seed/neem/1200/800"
 ---
 
-Ficha etnobotánica resumida de Neem / Nim para el atlas de categorías funcionales.
+Ficha etnobotánica de Neem / Nim, actualizada con la información de la ficha técnica fuente.

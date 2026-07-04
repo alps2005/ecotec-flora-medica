@@ -1,11 +1,11 @@
 ---
 nombre: "Ajo"
 cientifico: "Allium sativum"
-categoria: "MEDICINAL"
+categoria: "Medicinal universal"
 parteUsada: "Bulbo"
 uso: "Antibiótico natural"
-compuestos: "Alicina · Ajoenos · Vinilditiínas · Selenio"
+compuestos: "Alicina (Compuestos Azufrados) · Ajoenos y Vinilditiínas · Oligoelementos"
 img: "https://picsum.photos/seed/ajo/1200/800"
 ---
 
-Ficha etnobotánica resumida de Ajo para el atlas de categorías funcionales.
+Ficha etnobotánica de Ajo, actualizada con la información de la ficha técnica fuente.

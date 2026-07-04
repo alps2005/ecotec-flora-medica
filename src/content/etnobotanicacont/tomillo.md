@@ -1,11 +1,11 @@
 ---
 nombre: "Tomillo"
 cientifico: "Thymus vulgaris"
-categoria: "AROMÁTICA"
+categoria: "Medicinal aromática"
 parteUsada: "Hojas"
-uso: "Antiséptica, expectorante y antitusígena"
-compuestos: "Timol · Carvacrol · Apigenina · Ácido rosmarínico"
+uso: "Antisépica"
+compuestos: "Fenoles Monoterpénicos · Flavonoides · Ácidos Polifenólicos"
 img: "https://picsum.photos/seed/tomillo/1200/800"
 ---
 
-Ficha etnobotánica resumida de Tomillo para el atlas de categorías funcionales.
+Ficha etnobotánica de Tomillo, actualizada con la información de la ficha técnica fuente.

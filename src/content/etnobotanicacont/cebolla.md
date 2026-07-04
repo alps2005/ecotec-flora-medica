@@ -1,11 +1,11 @@
 ---
 nombre: "Cebolla"
 cientifico: "Allium cepa"
-categoria: "ALIMENTICIA"
+categoria: "Alimenticia - Medicinal"
 parteUsada: "Bulbo"
 uso: "Antimicrobiana, expectorante y antioxidante"
-compuestos: "Tiosulfinatos · Quercetina · Vitamina C"
+compuestos: "Compuestos Azufrados · Quercetina · Vitamina C · Minerales"
 img: "https://picsum.photos/seed/cebolla/1200/800"
 ---
 
-Ficha etnobotánica resumida de Cebolla para el atlas de categorías funcionales.
+Ficha etnobotánica de Cebolla, actualizada con la información de la ficha técnica fuente.

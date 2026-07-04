@@ -1,11 +1,11 @@
 ---
 nombre: "Achiote"
 cientifico: "Bixa orellana"
-categoria: "MEDICINAL"
+categoria: "Medicinal y tintórea"
 parteUsada: "Semillas"
 uso: "Antioxidante"
-compuestos: "Bixina · Norbixina · Tocotrienoles · Flavonoides"
+compuestos: "Bixina y Norbixina · Tocotrienoles (Vitamina E) · Flavonoides"
 img: "https://picsum.photos/seed/achiote/1200/800"
 ---
 
-Ficha etnobotánica resumida de Achiote para el atlas de categorías funcionales.
+Ficha etnobotánica de Achiote, actualizada con la información de la ficha técnica fuente.

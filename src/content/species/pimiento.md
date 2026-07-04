@@ -12,7 +12,7 @@ etnobotanica:
   clasificacion: "Alimenticia - Medicinal"
   parteUtilizada: "Fruto"
   usoTradicional: "Antioxidante"
-  compuestosQuimicos: ["Capsantina", "Luteína", "Betacaroteno", "Vitamina C"]
+  compuestosQuimicos: ["Carotenoides", "Vitamina C", "Vitamina A", "Polifenoles"]
 multimediaPrincipal:
   imagenUrl: "https://picsum.photos/seed/pimiento/1200/800"
   imagenPublicId: ""
@@ -24,26 +24,32 @@ estado: "ACTIVO"
 
 ## Introducción
 
-El pimiento es una variedad no picante de *Capsicum annuum* apreciada por su alta densidad vitamínica y antioxidante.
+El pimiento es una variedad no picante de Capsicum annuum ampliamente cultivada por su valor alimenticio y nutricional. Su fruto destaca por contener elevadas concentraciones de vitaminas, carotenoides y compuestos antioxidantes que contribuyen a la prevención del daño celular. Ocupa un lugar importante dentro de la alimentación saludable y la medicina preventiva moderna.
 
 ## Historia y evolución botánica
 
-- **Origen:** Domesticación mesoamericana de *Capsicum annuum*.
-- **Dispersión:** Se difundió desde Europa al resto del mundo tras el siglo XV.
-- **Evolución:** Mejoramiento para frutos carnosos, de gran tamaño y bajo contenido de capsaicina.
+- **Origen:** Tiene su origen en las especies silvestres de Capsicum annuum domesticadas por las antiguas civilizaciones de Mesoamérica. Estudios arqueológicos en México y Centroamérica demuestran su cultivo hace más de 6.000 años. La selección continua favoreció plantas con frutos más grandes, carnosos y menos picantes.
+- **Dispersión:** Los exploradores españoles introdujeron las semillas en Europa durante el siglo XV. Se difundió rápidamente por España, Portugal e Italia, y desde ahí al resto del mundo, convirtiéndose en una hortaliza esencial.
+- **Evolución y Mejoramiento Genético:** Pertenece a la familia Solanaceae. Los pimientos modernos presentan niveles extremadamente bajos de capsaicina (sin sabor picante). Los programas de mejoramiento en los siglos XIX y XX obtuvieron variedades de distintos colores (verdes, amarillos, naranjas, rojos).
 
 ## Perfil etnobotánico
 
-Se consume para apoyo inmunológico y protección celular frente a estrés oxidativo.
+Es considerado una especie alimenticia-medicinal debido a su elevado valor nutricional. Su consumo contribuye a la protección celular, el fortalecimiento inmunológico y el mantenimiento de la salud cardiovascular. Las variedades rojas son apreciadas por su riqueza en pigmentos antioxidantes.
 
 ## Importación y exportación
 
-- **Exportación:** España, México y Países Bajos.
-- **Importación:** Estados Unidos, Alemania, Francia, Reino Unido y Canadá.
+- Dinámica de Exportación:
+- España lidera las exportaciones europeas.
+- México abastece el mercado norteamericano durante todo el año.
+- Países Bajos destaca por la producción bajo invernadero.
+- Dinámica de Importación:
+- Estados Unidos es uno de los mayores compradores mundiales.
+- Alemania, Francia y Reino Unido mantienen una alta demanda.
+- Canadá importa grandes volúmenes.
 
 ## Características químicas principales
 
-- **Carotenoides:** capsantina, luteína y betacaroteno.
-- **Vitamina C:** concentración elevada.
-- **Polifenoles:** contribuyen a la actividad antioxidante.
-
+- **Carotenoides:** Capsantina, luteína y betacaroteno con potente actividad antioxidante.
+- **Vitamina C:** Concentraciones superiores a muchos cítricos.
+- **Vitamina A:** Fundamental para la salud visual y la inmunidad.
+- **Polifenoles:** Participan en la protección frente al daño oxidativo celular.

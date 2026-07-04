@@ -24,25 +24,28 @@ estado: "ACTIVO"
 
 ## Introducción
 
-El eucalipto es un árbol medicinal ampliamente utilizado en afecciones respiratorias por su aceite esencial expectorante.
+El eucalipto (Eucalyptus globulus) es un árbol perennifolio ampliamente reconocido por su intenso aroma y sus potentes propiedades medicinales, especialmente en el tratamiento de afecciones del tracto respiratorio. Su aceite esencial es un ingrediente fundamental en la industria farmacéutica para la elaboración de jarabes, ungüentos y pastillas descongestionantes.
 
 ## Historia y evolución botánica
 
-- **Origen:** Australia y Tasmania.
-- **Dispersión:** Introducido en Europa, América y Asia desde el siglo XIX.
-- **Evolución:** Especie de rápido crecimiento, con impacto ecológico variable según manejo.
+- **Origen:** Es originario de Australia y Tasmania, donde crecía de forma silvestre y era utilizado por los aborígenes australianos para curar heridas y aliviar fiebres.
+- **Dispersión:** Fue introducido en Europa en el siglo XIX, principalmente para sanear zonas pantanosas y combatir la malaria, debido a su rápida absorción de agua. Posteriormente, se expandió por América y Asia.
+- **Evolución:** Pertenece a la familia Myrtaceae. Se ha adaptado a diversos climas, destacando por su rápido crecimiento, aunque su cultivo intensivo a veces genera controversia por el impacto en los suelos locales.
 
 ## Perfil etnobotánico
 
-Sus hojas se usan en vaporizaciones e infusiones para resfriados, bronquitis y congestión sinusal.
+Clasificado como una planta medicinal respiratoria. Tradicionalmente, sus hojas se utilizan en decocciones e inhalaciones (vahos) para tratar resfriados, bronquitis, asma y sinusitis, gracias a su capacidad para despejar las vías respiratorias y fluidificar las secreciones.
 
 ## Importación y exportación
 
-- **Exportación:** China, India y Australia lideran aceite esencial; España y Portugal son actores europeos.
-- **Importación:** EE.UU. y Europa concentran demanda farmacéutica y cosmética.
+- Dinámica de Exportación:
+- **China, India y Australia:** Lideran la producción y exportación mundial de aceite esencial de eucalipto.
+- **España y Portugal:** Son importantes exportadores europeos, tanto de madera como de extractos.
+- Dinámica de Importación:
+- **Estados Unidos y Europa:** Representan los principales mercados importadores para la industria farmacéutica y cosmética.
 
 ## Características químicas principales
 
-- **Eucaliptol:** acción mucolítica, antiinflamatoria y expectorante.
-- **Taninos y flavonoides:** apoyo antioxidante y astringente.
-
+- **Eucaliptol (1,8-cineol):** Compuesto mayoritario responsable de la acción expectorante, mucolítica y antiinflamatoria.
+- **Taninos:** Confieren propiedades astringentes.
+- **Flavonoides:** Aportan acción antioxidante.

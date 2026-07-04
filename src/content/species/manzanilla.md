@@ -11,8 +11,8 @@ taxonomia:
 etnobotanica:
   clasificacion: "Medicinal aromática"
   parteUtilizada: "Flores"
-  usoTradicional: "Digestiva, antiespasmódica, sedante suave y antiinflamatoria tópica"
-  compuestosQuimicos: ["Apigenina", "Bisabolol", "Camazuleno", "Cumarinas"]
+  usoTradicional: "Digestiva"
+  compuestosQuimicos: ["Apigenina", "Bisabolol y Camazuleno (Aceite esencial)", "Cumarinas"]
 multimediaPrincipal:
   imagenUrl: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80"
   imagenPublicId: ""
@@ -24,25 +24,28 @@ estado: "ACTIVO"
 
 ## Introducción
 
-La manzanilla (Matricaria chamomilla) es una de las hierbas medicinales más consumidas del mundo en forma de infusión. Sus flores concentran aceites esenciales de acción antiespasmódica, calmante y protectora de la mucosa gástrica.
+La manzanilla (Matricaria chamomilla) es una de las hierbas medicinales más consumidas a nivel mundial en forma de infusión. Sus pequeñas flores similares a margaritas concentran aceites esenciales que actúan como suaves relajantes musculares, antiespasmódicos y protectores de la mucosa gástrica.
 
 ## Historia y evolución botánica
 
-- **Origen:** Europa y norte de Asia.
-- **Dispersión:** Se introdujo en América durante la colonización europea y se naturalizó en climas templados.
-- **Evolución:** Especie de la familia Asteraceae de cultivo sencillo y amplia adaptación ecológica.
+- **Origen:** Originaria de Europa y el norte de Asia. Fue ampliamente utilizada en el antiguo Egipto, Grecia y Roma para tratar eritemas y fiebres.
+- **Dispersión:** Se introdujo en América con la colonización europea, naturalizándose rápidamente en climas templados.
+- **Evolución:** Pertenece a la familia Asteraceae. Su cultivo es sencillo y se ha adaptado a múltiples ecosistemas alrededor del mundo.
 
 ## Perfil etnobotánico
 
-Se emplea principalmente la flor seca para aliviar indigestión, cólicos y flatulencia. También se utiliza como sedante suave y en aplicaciones tópicas para piel y ojos inflamados.
+Considerada una planta medicinal aromática. Las flores secas se emplean para aliviar trastornos digestivos (indigestión, cólicos, flatulencia), así como sedante suave para el insomnio leve y de forma tópica para desinflamar la piel y los ojos.
 
 ## Importación y exportación
 
-- **Exportación:** Egipto, México y Alemania son productores y exportadores destacados; Argentina tiene peso regional en Sudamérica.
-- **Importación:** Estados Unidos y la Unión Europea concentran gran parte del consumo industrial (tés, cosmética y fitoterapia).
+- Dinámica de Exportación:
+- **Egipto, México y Alemania:** Principales productores y exportadores mundiales.
+- **Argentina:** Importante proveedor en Sudamérica.
+- Dinámica de Importación:
+- **Estados Unidos y la Unión Europea:** Consumen grandes volúmenes tanto para la industria alimentaria (tés) como cosmética.
 
 ## Características químicas principales
 
-- **Apigenina:** flavonoide asociado a efectos sedantes y ansiolíticos leves.
-- **Bisabolol y camazuleno:** compuestos del aceite esencial con acción antiinflamatoria y antimicrobiana.
-- **Cumarinas:** contribuyen a su efecto antiespasmódico digestivo.
+- **Apigenina:** Flavonoide responsable de los efectos sedantes y ansiolíticos suaves.
+- **Bisabolol y Camazuleno (Aceite esencial):** Propiedades antiinflamatorias y antimicrobianas.
+- **Cumarinas:** Efectos antiespasmódicos a nivel gástrico.

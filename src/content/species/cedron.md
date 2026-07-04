@@ -11,8 +11,8 @@ taxonomia:
 etnobotanica:
   clasificacion: "Medicinal aromática"
   parteUtilizada: "Hojas"
-  usoTradicional: "Digestiva y carminativa"
-  compuestosQuimicos: ["Citral", "Limoneno", "Linalol", "Verbascósido"]
+  usoTradicional: "Digestiva"
+  compuestosQuimicos: ["Citral (Geranial y Neral)", "Limoneno y Linalol", "Verbascósido"]
 multimediaPrincipal:
   imagenUrl: "https://picsum.photos/seed/cedron/1200/800"
   imagenPublicId: ""
@@ -24,26 +24,27 @@ estado: "ACTIVO"
 
 ## Introducción
 
-El cedrón es un arbusto aromático sudamericano con uso digestivo y relajante tradicional.
+El cedrón (Aloysia citrodora), también conocido como hierbaluisa, es un arbusto caducifolio muy apreciado por el intenso aroma a limón de sus hojas. Es utilizado frecuentemente en la gastronomía, la perfumería y, de manera muy destacada, en la medicina tradicional sudamericana por sus propiedades digestivas y relajantes.
 
 ## Historia y evolución botánica
 
-- **Origen:** Chile, Argentina, Perú y Uruguay.
-- **Dispersión:** Introducido en Europa a finales del siglo XVIII.
-- **Evolución:** Se adapta a climas soleados y suelos bien drenados.
+- **Origen:** Endémico de Sudamérica (principalmente de Chile, Argentina, Perú y Uruguay).
+- **Dispersión:** Fue introducido en Europa a finales del siglo XVIII por botánicos españoles, popularizándose rápidamente en los jardines botánicos y como hierba aromática.
+- **Evolución:** Familia Verbenaceae. Adaptable a climas soleados y suelos bien drenados.
 
 ## Perfil etnobotánico
 
-Sus hojas en infusión se usan tras las comidas para facilitar digestión y disminuir gases.
+Planta medicinal aromática. La infusión de sus hojas se consume tradicionalmente después de las comidas para facilitar la digestión, expulsar gases (carminativo) y aliviar dolores estomacales. También tiene propiedades relajantes que ayudan a combatir el estrés leve.
 
 ## Importación y exportación
 
-- **Exportación:** Marruecos, Paraguay y Chile.
-- **Importación:** Francia y Alemania para perfumería y aromaterapia.
+- Dinámica de Exportación:
+- **Marruecos, Paraguay y Chile:** Destacan en la producción para exportación de hojas secas y aceites.
+- Dinámica de Importación:
+- **Francia y Alemania:** Importan el aceite esencial para la industria de la perfumería fina y aromaterapia.
 
 ## Características químicas principales
 
-- **Citral (geranial/neral):** aroma limón y actividad antimicrobiana.
-- **Limoneno y linalol:** acción digestiva y sedante suave.
-- **Verbascósido:** antioxidante.
-
+- **Citral (Geranial y Neral):** Responsable de su característico aroma a limón y de sus efectos antimicrobianos.
+- **Limoneno y Linalol:** Aceites esenciales con propiedades sedantes y digestivas.
+- **Verbascósido:** Potente compuesto antioxidante.

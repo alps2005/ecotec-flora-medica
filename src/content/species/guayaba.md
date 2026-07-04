@@ -12,7 +12,7 @@ etnobotanica:
   clasificacion: "Medicinal tradicional"
   parteUtilizada: "Hojas y fruto"
   usoTradicional: "Antidiarreica, antimicrobiana, espasmolítica y astringente"
-  compuestosQuimicos: ["Taninos", "Ácido ascórbico"]
+  compuestosQuimicos: ["Taninos", "Ácido Ascórbico"]
 multimediaPrincipal:
   imagenUrl: "https://picsum.photos/seed/guayaba/1200/800"
   imagenPublicId: ""
@@ -24,25 +24,23 @@ estado: "ACTIVO"
 
 ## Introducción
 
-La guayaba es una especie tropical de alto valor alimentario y medicinal. Sus hojas tienen amplio uso gastrointestinal en medicina tradicional.
+La guayaba es una de las especies medicinales y alimenticias más valiosas del trópico. Las infusiones de sus hojas están sólidamente respaldadas en la farmacopea tradicional para problemas gastrointestinales.
 
 ## Historia y evolución botánica
 
-- **Origen:** Zonas tropicales de América (México a Brasil).
-- **Dispersión:** Introducida en Filipinas, India y África por rutas coloniales.
-- **Evolución:** Especie rústica adaptada a múltiples ambientes tropicales.
+- **Origen:** Especie nativa de las zonas tropicales de América, extendiéndose desde México hasta Brasil.
+- **Dispersión:** Dispersada por españoles y portugueses hacia Filipinas, India y costas africanas, naturalizándose con gran éxito.
 
 ## Perfil etnobotánico
 
-Las hojas se emplean por su efecto antidiarreico y espasmolítico; el fruto se valora como reconstituyente vitamínico.
+El uso principal de las hojas es antidiarreico, actuando de forma directa disminuyendo el peristaltismo intestinal. El fruto es un potente reconstituyente vitamínico.
 
 ## Importación y exportación
 
-- **Exportación:** India y China lideran procesados; México y Brasil destacan en fruta fresca.
-- **Importación:** Estados Unidos, Europa y Medio Oriente concentran la demanda.
+- **Dinámica de Exportación (2023-2026):** India y China son los mayores productores y exportadores de productos procesados de guayaba (purés, jugos y conservas). En América Latina, México y Brasil lideran las exportaciones de fruta fresca.
+- **Dinámica de Importación (2023-2026):** El principal importador de guayaba fresca y procesada es Estados Unidos, seguido por mercados de la Unión Europea (vía Países Bajos y Alemania) y el Medio Oriente.
 
 ## Características químicas principales
 
-- **Taninos:** alta presencia en hojas, asociada a efecto astringente.
-- **Vitamina C:** el fruto puede superar varias veces la concentración de cítricos comunes.
-
+- **Taninos:** Alta concentración en hojas, responsables de la acción astringente y espasmolítica.
+- **Ácido Ascórbico:** El fruto contiene de 3 a 5 veces más vitamina C que los cítricos comunes.

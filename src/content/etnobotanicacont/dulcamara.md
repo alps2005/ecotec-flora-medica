@@ -1,11 +1,11 @@
 ---
 nombre: "Dulcamara"
 cientifico: "Solanum dulcamara"
-categoria: "MEDICINAL"
+categoria: "Medicinal tradicional"
 parteUsada: "Tallos"
-uso: "Antiinflamatoria, depurativa y analgésica"
-compuestos: "Solanina · Dulcamarina · Solamargina · Saponinas"
+uso: "Antiinflamatoria"
+compuestos: "Alcaloides Esteroideos · Saponinas · Taninos y Flavonoides"
 img: "https://picsum.photos/seed/dulcamara/1200/800"
 ---
 
-Ficha etnobotánica resumida de Dulcamara para el atlas de categorías funcionales.
+Ficha etnobotánica de Dulcamara, actualizada con la información de la ficha técnica fuente.

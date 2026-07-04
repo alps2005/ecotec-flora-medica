@@ -1,11 +1,11 @@
 ---
 nombre: "Tomate de árbol"
 cientifico: "Solanum betaceum"
-categoria: "ALIMENTICIA"
+categoria: "Alimenticia-medicinal"
 parteUsada: "Fruto"
-uso: "Cardioprotectora y apoyo metabólico"
-compuestos: "Antocianinas · Carotenoides · Pectinas · Potasio"
+uso: "Cardioprotectora"
+compuestos: "Antocianinas y Carotenoides · Fibra Soluble (Pectinas) · Minerales Esenciales"
 img: "https://picsum.photos/seed/tomate-de-arbol/1200/800"
 ---
 
-Ficha etnobotánica resumida de Tomate de árbol para el atlas de categorías funcionales.
+Ficha etnobotánica de Tomate de árbol, actualizada con la información de la ficha técnica fuente.
