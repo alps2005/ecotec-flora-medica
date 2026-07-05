@@ -19,6 +19,8 @@ interface Props {
 const { entry } = Astro.props as Props;
 const { data } = entry;
 const { Content } = await render(entry);
+const { etnobotanica, historiaEvolucion, comercio, compuestosQuimicos } = data;
+const hasInternationalTrade = comercio.exportacion.length > 0 || comercio.importacion.length > 0;
 
 // Map family to accent color (same as in SpeciesGrid)
 const familyAccentMap = new Map<string, string>([
@@ -35,7 +37,7 @@ const getAccent = (family: string) => {
 
 <Layout
   title={`${data.nombreComun} | Ecotec Flora Médica`}
-  description={`Detalle completo de ${data.nombreComun} (${data.nombreCientifico}) - clasificación ${data.etnobotanica.clasificacion}`}
+  description={`Detalle completo de ${data.nombreComun} (${data.nombreCientifico}) - clasificación ${etnobotanica.clasificacion}`}
 >
   <section class="mx-auto max-w-[1280px] px-6 pb-16 pt-32 lg:px-8">
     {/* Back button */}
@@ -89,15 +91,15 @@ const getAccent = (family: string) => {
         <div class="mt-6 space-y-4">
           <div>
             <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Clasificación</p>
-            <p class="mt-2 font-medium text-slate-900">{data.etnobotanica.clasificacion}</p>
+            <p class="mt-2 font-medium text-slate-900">{etnobotanica.clasificacion}</p>
           </div>
           <div>
             <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Parte utilizada</p>
-            <p class="mt-2 font-medium text-slate-900">{data.etnobotanica.parteUtilizada}</p>
+            <p class="mt-2 font-medium text-slate-900">{etnobotanica.parteUtilizada}</p>
           </div>
           <div>
             <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Uso tradicional</p>
-            <p class="mt-2 leading-7 text-slate-700">{data.etnobotanica.usoTradicional}</p>
+            <p class="mt-2 leading-7 text-slate-700">{etnobotanica.usoTradicional}</p>
           </div>
         </div>
       </div>
@@ -105,11 +107,11 @@ const getAccent = (family: string) => {
       <div class="rounded-[1.5rem] border border-slate-200/80 bg-white shadow-sm p-6 flex flex-col">
         <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Compuestos químicos</h2>
         <div class="mt-6 flex flex-1 items-center justify-center flex-wrap gap-3">
-          {data.etnobotanica.compuestosQuimicos.map((compound) => (
+          {compuestosQuimicos.length > 0 ? compuestosQuimicos.map((compound) => (
             <span class="rounded-full bg-primary/20 border border-primary/30 px-4 py-2 text-base font-semibold text-primary">
-              {compound}
+              {compound.nombre}
             </span>
-          ))}
+          )) : <p class="text-sm leading-7 text-slate-600">Sin información registrada.</p>}
         </div>
       </div>
     </div>
@@ -117,10 +119,77 @@ const getAccent = (family: string) => {
     {/* Academic analysis body */}
     <div class="mb-12">
       <h2 class="mb-6 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Análisis académico</h2>
-      <div class="prose prose-slate max-w-none rounded-[1.5rem] border border-slate-200/80 bg-white p-6 shadow-sm prose-headings:font-display prose-headings:text-slate-950 prose-p:text-slate-700 prose-p:leading-7 prose-strong:text-slate-900">
-        <Content />
+      <div class="rounded-[1.5rem] border border-slate-200/80 bg-white p-6 shadow-sm">
+        <div class="prose prose-slate max-w-none prose-headings:font-display prose-headings:text-slate-950 prose-p:text-slate-700 prose-p:leading-7 prose-strong:text-slate-900">
+          <Content />
+        </div>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-3">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Origen</p>
+            <p class="mt-2 leading-7 text-slate-700">{historiaEvolucion.origen || 'Sin información registrada.'}</p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Dispersión</p>
+            <p class="mt-2 leading-7 text-slate-700">{historiaEvolucion.dispersion || 'Sin información registrada.'}</p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Evolución</p>
+            <p class="mt-2 leading-7 text-slate-700">{historiaEvolucion.evolucion || 'Sin información registrada.'}</p>
+          </div>
+        </div>
+
+        <div class="mt-8 border-t border-slate-200 pt-6">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Perfil etnobotánico</p>
+          <p class="mt-2 leading-7 text-slate-700">{data.perfilEtnobotanico || 'Sin información registrada.'}</p>
+        </div>
       </div>
     </div>
+
+    {hasInternationalTrade && (
+      <div class="mb-12">
+        <h2 class="mb-6 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Comercio internacional</h2>
+        <div class="grid gap-8 lg:grid-cols-2">
+          <div class="rounded-[1.5rem] border border-slate-200/80 bg-white p-6 shadow-sm">
+            <h3 class="font-semibold text-slate-950">Exportación</h3>
+            <div class="mt-4 space-y-4">
+              {comercio.exportacion.length > 0 ? comercio.exportacion.map((item) => (
+                <div>
+                  <p class="font-medium text-slate-900">{item.pais}</p>
+                  <p class="mt-1 leading-7 text-slate-700">{item.detalle}</p>
+                </div>
+              )) : <p class="leading-7 text-slate-600">Sin información registrada.</p>}
+            </div>
+          </div>
+
+          <div class="rounded-[1.5rem] border border-slate-200/80 bg-white p-6 shadow-sm">
+            <h3 class="font-semibold text-slate-950">Importación</h3>
+            <div class="mt-4 space-y-4">
+              {comercio.importacion.length > 0 ? comercio.importacion.map((item) => (
+                <div>
+                  <p class="font-medium text-slate-900">{item.pais}</p>
+                  <p class="mt-1 leading-7 text-slate-700">{item.detalle}</p>
+                </div>
+              )) : <p class="leading-7 text-slate-600">Sin información registrada.</p>}
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+
+    {compuestosQuimicos.length > 0 && (
+      <div class="mb-12">
+        <h2 class="mb-6 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Características químicas</h2>
+        <div class="grid gap-4 md:grid-cols-2">
+          {compuestosQuimicos.map((compound) => (
+            <div class="rounded-[1.5rem] border border-slate-200/80 bg-white p-6 shadow-sm">
+              <h3 class="font-semibold text-slate-950">{compound.nombre}</h3>
+              <p class="mt-2 leading-7 text-slate-700">{compound.detalle}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
 
     {/* Main image */}
     <div class="rounded-[2rem] overflow-hidden border border-slate-200/80 bg-slate-100 shadow-sm">
