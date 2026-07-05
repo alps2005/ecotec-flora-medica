@@ -18,7 +18,7 @@ const totalPages = Math.max(1, Math.ceil(species.length / speciesPerPage));
   title="Especies | Ecotec Flora Médica"
   description="Catálogo editorial de especies medicinales con búsquedas y filtros taxonómicos."
 >
-  <section class="mx-auto max-w-[1480px] px-6 pb-16 pt-32 lg:px-8">
+  <section class="mx-auto max-w-370 px-6 pb-16 pt-32 lg:px-8">
     <div class="grid gap-8 lg:grid-rows">
       <div class="">
         <p class="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
@@ -34,7 +34,7 @@ const totalPages = Math.max(1, Math.ceil(species.length / speciesPerPage));
         </p>
       </div>
 
-      <div class="rounded-[2rem] border border-slate-200/80 bg-white/80 p-8 shadow-[0_20px_60px_-24px_rgba(27,109,36,0.2)] backdrop-blur-sm">
+      <div class="rounded-4xl border border-slate-200/80 bg-white/80 p-8 shadow-[0_20px_60px_-24px_rgba(27,109,36,0.2)] backdrop-blur-sm">
         <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
           Exposición
         </p>
@@ -52,7 +52,7 @@ const totalPages = Math.max(1, Math.ceil(species.length / speciesPerPage));
       </div>
     </div>
 
-    <div class="mt-12 rounded-[2rem] border border-slate-200/80 bg-[#F7FAF6]/80 p-6 shadow-sm backdrop-blur-sm">
+    <div class="mt-12 rounded-4xl border border-slate-200/80 bg-[#F7FAF6]/80 p-6 shadow-sm backdrop-blur-sm">
       <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <SearchBar placeholder="Buscar por nombre, familia o descripción" />
         <TaxonomyFilter families={families} />
