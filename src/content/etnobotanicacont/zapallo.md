@@ -5,7 +5,7 @@ categoria: "Alimenticia - Medicinal"
 parteUsada: "Semillas y fruto (pulpa)"
 uso: "Antiparasitaria, antiinflamatoria prostática y demulcente"
 compuestos: "Cucurbitina · Fitosteroles (Beta-sitosterol)"
-img: "https://picsum.photos/seed/zapallo/1200/800"
+img: "https://antropocene.it/wp-content/uploads/2018/11/Cucurbita_maxima.jpg"
 ---
 
 Ficha etnobotánica de Zapallo / Calabaza / Auyama, actualizada con la información de la ficha técnica fuente.
