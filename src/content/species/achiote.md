@@ -40,7 +40,7 @@ compuestosQuimicos:
   - nombre: "Flavonoides"
     detalle: "Presentes en las hojas, aportan acción antiinflamatoria."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/achiote/1200/800"
+  imagenUrl: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Achiote_pj.JPG"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

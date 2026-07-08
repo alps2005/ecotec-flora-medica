@@ -40,7 +40,7 @@ compuestosQuimicos:
   - nombre: "Vitaminas y Minerales"
     detalle: "Fuente directa de vitaminas antioxidantes (A, C, y E), vitaminas del complejo B, y minerales esenciales como zinc, calcio y magnesio, determinantes en los procesos enzimáticos de regeneración celular."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/aloe-vera/1200/800"
+  imagenUrl: "https://plantas-ec.globalmarketmanager.com/images/8/aloe.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

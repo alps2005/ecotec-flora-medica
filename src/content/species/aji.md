@@ -50,7 +50,7 @@ compuestosQuimicos:
   - nombre: "Flavonoides"
     detalle: "Compuestos antioxidantes que contribuyen a la protección celular."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/aji/1200/800"
+  imagenUrl: "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783453725/Aj%C3%AD_wcecco.webp"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

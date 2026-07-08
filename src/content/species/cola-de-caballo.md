@@ -40,7 +40,7 @@ compuestosQuimicos:
   - nombre: "Sales de Potasio"
     detalle: "Refuerzan la acción de eliminación hídrica sin desequilibrar los electrolitos."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/cola-de-caballo/1200/800"
+  imagenUrl: "https://upload.wikimedia.org/wikipedia/commons/2/23/Equisetum_arvense_foliage.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

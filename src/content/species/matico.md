@@ -46,7 +46,7 @@ compuestosQuimicos:
   - nombre: "Fenoles"
     detalle: "Antimicrobianos."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/matico/1200/800"
+  imagenUrl: "https://d2seqvvyy3b8p2.cloudfront.net/5cd4a9b8b3d1808f6fc2dd43ac21bc0c.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

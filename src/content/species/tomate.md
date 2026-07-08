@@ -32,7 +32,7 @@ comercio:
 compuestosQuimicos:
   []
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/tomate/1200/800"
+  imagenUrl: "https://www.picturethisai.com/wiki-image/1080/348111888240246784.jpeg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

@@ -40,7 +40,7 @@ compuestosQuimicos:
   - nombre: "Monoterpenos (Aceite Esencial)"
     detalle: "Contiene concentraciones elevadas de 1,8-cineol (eucaliptol), alfa-pineno y alcanfor, terpenos que ejercen efectos estimulantes sobre el sistema nervioso central y la microcirculación sanguínea."
 multimediaPrincipal:
-  imagenUrl: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80"
+  imagenUrl: "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783453766/Romero_lerue2.webp"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

@@ -40,7 +40,7 @@ compuestosQuimicos:
   - nombre: "Ácidos Polifenólicos"
     detalle: "Contiene niveles significativos de ácido rosmarínico y ácido cafeico, que incrementan la respuesta antioxidante y antiinflamatoria de los tejidos respiratorios afectados."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/tomillo/1200/800"
+  imagenUrl: "https://www.crocus.co.uk/images/products2/pl/20/00/01/88/pl2000018851.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

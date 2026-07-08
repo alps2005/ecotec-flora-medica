@@ -39,7 +39,7 @@ compuestosQuimicos:
   - nombre: "Taninos y Flavonoides"
     detalle: "Polifenoles con propiedades astringentes y antioxidantes que coadyuvan en la cicatrización y desinflamación de tejidos."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/dulcamara/1200/800"
+  imagenUrl: "https://www.picturethisai.com/wiki-image/1080/202657507878109184.jpeg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

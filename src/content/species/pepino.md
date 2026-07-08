@@ -50,7 +50,7 @@ compuestosQuimicos:
   - nombre: "Cucurbitacinas"
     detalle: "Metabolitos secundarios característicos de las cucurbitáceas que han despertado interés científico por sus potenciales actividades biológicas."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/pepino/1200/800"
+  imagenUrl: "https://www.gardenia.net/wp-content/uploads/2023/05/cucumis-sativus.webp"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

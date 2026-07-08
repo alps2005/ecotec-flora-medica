@@ -40,7 +40,7 @@ compuestosQuimicos:
   - nombre: "Ácidos Grasos Esenciales"
     detalle: "Las semillas contienen altas concentraciones de ácido petroselínico y ácido oleico, lípidos importantes para los procesos celulares."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/culantro/1200/800"
+  imagenUrl: "https://antropocene.it/wp-content/uploads/2017/05/Coriandrum_sativum.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

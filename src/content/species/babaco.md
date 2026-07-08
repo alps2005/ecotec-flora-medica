@@ -48,7 +48,7 @@ compuestosQuimicos:
   - nombre: "Fibra Dietética"
     detalle: "Favorece tránsito intestinal."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/babaco/1200/800"
+  imagenUrl: "https://u.iplantz.com/1574/Vasconcellea%20heilbornii-7217.5362.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

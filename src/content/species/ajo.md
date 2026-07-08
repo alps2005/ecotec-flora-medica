@@ -40,7 +40,7 @@ compuestosQuimicos:
   - nombre: "Oligoelementos"
     detalle: "Presencia de Selenio (Se) y Germanio (Ge), minerales esenciales acoplados a la protección antioxidante sistémica y al fortalecimiento celular."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/ajo/1200/800"
+  imagenUrl: "https://d1ssu070pg2v9i.cloudfront.net/pex/wcair/2021/11/02110422/Garlic_organically_grown-1024x679.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

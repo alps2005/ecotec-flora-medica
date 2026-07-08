@@ -37,7 +37,7 @@ compuestosQuimicos:
   - nombre: "Compuestos Azufrados"
     detalle: "Otorgan al aceite de la semilla propiedades bactericidas y antisépticas."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/neem/1200/800"
+  imagenUrl: "https://d2seqvvyy3b8p2.cloudfront.net/bc703f38508c413a5e72446666067a5d.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

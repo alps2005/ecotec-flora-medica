@@ -37,7 +37,7 @@ compuestosQuimicos:
   - nombre: "Compuestos Fenólicos"
     detalle: "Presencia de eriocitrina y hesperidina con propiedades vasoprotectoras."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/limon/1200/800"
+  imagenUrl: "https://cdn.britannica.com/84/188484-050-F27B0049/lemons-tree.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

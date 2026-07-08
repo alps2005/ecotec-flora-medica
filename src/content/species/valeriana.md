@@ -42,7 +42,7 @@ compuestosQuimicos:
   - nombre: "Aceites esenciales (Isovalerianato)"
     detalle: "Otorgan el olor característico de la raíz."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/valeriana/1200/800"
+  imagenUrl: "https://upload.wikimedia.org/wikipedia/commons/a/af/Valeriana_officinalis_inflorescence_-_Niitv%C3%A4lja.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

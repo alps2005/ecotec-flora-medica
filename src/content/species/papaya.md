@@ -40,7 +40,7 @@ compuestosQuimicos:
   - nombre: "Carotenoides"
     detalle: "Dominio de licopeno y criptoxantina, polifenoles responsables de la coloración anaranjada-rojiza de la pulpa que actúan neutralizando los radicales libres."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/papaya/1200/800"
+  imagenUrl: "https://agrolink.ec/wp-content/uploads/2025/07/trtwertwrt-1024x559.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

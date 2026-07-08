@@ -40,7 +40,7 @@ compuestosQuimicos:
   - nombre: "Sesquiterpenos (Aceites Volátiles)"
     detalle: "Contiene zingibereno y beta-bisaboleno, compuestos responsables del aroma característico y con marcadas propiedades antimicrobianas."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/jengibre/1200/800"
+  imagenUrl: "https://www.monaconatureencyclopedia.com/wp-content/uploads/2009/01/2-Zingiber-officinale-%C2%A9-Thian-Yeo.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

@@ -50,7 +50,7 @@ compuestosQuimicos:
   - nombre: "Vitaminas A, C y K"
     detalle: "Participan en la función inmunológica y la coagulación sanguínea."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/apio/1200/800"
+  imagenUrl: "https://imgproxy.infoflora.ch/aL2FZZOdZs41ig_5QBu1dQ/rs:fit:1000:800:1/g:ce/aHR0cHM6Ly9pbWFnZS5pbmZvZmxvcmEuY2gvZmlsZXMvV2lraXBlZGlhL0FwaXVtIGdyYXZlb2xlbnMgLSBILiBaZWxsLmpwZw.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

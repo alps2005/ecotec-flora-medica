@@ -42,7 +42,7 @@ compuestosQuimicos:
   - nombre: "Flavonoides"
     detalle: "Aportan acción antioxidante."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/eucalipto/1200/800"
+  imagenUrl: "https://www.gardenplantsonline.co.uk/wp-content/uploads/2019/11/22516-1.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

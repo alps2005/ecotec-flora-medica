@@ -40,7 +40,7 @@ compuestosQuimicos:
   - nombre: "Minerales Esenciales"
     detalle: "** Concentraciones significativas de Potasio (K) y Magnesio (Mg), electrolitos fundamentales para la regulación de la presión arterial y la contracción miocárdica."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/tomate-de-arbol/1200/800"
+  imagenUrl: "https://www.quintadosouriques.com/wp-content/uploads/2026/03/cyphomandra-betacea-18280.jpg-1.webp"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

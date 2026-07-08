@@ -40,7 +40,7 @@ compuestosQuimicos:
   - nombre: "Flavonoides"
     detalle: "Contiene luteolina y mentosido, compuestos que ejercen una acción espasmolítica directa sobre el músculo liso del estómago y los intestinos, aliviando cólicos y flatulencias."
 multimediaPrincipal:
-  imagenUrl: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80"
+  imagenUrl: "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783453898/Menta_piperita_xhh5uz.webp"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

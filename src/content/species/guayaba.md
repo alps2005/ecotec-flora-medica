@@ -37,7 +37,7 @@ compuestosQuimicos:
   - nombre: "Ácido Ascórbico"
     detalle: "El fruto contiene de 3 a 5 veces más vitamina C que los cítricos comunes."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/guayaba/1200/800"
+  imagenUrl: "https://datazone.darwinfoundation.org/images/checklist/00312_IF_Ch_Psidium_guajava.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

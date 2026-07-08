@@ -37,7 +37,7 @@ compuestosQuimicos:
   - nombre: "Alcaloides Isoquinolínicos"
     detalle: "Interactúan con receptores de serotonina, justificando efectos sedantes tradicionales."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/guanabana/1200/800"
+  imagenUrl: "https://cdn.lakpura.com/images/LK94006933-01-E.JPG"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

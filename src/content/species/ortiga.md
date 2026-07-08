@@ -40,7 +40,7 @@ compuestosQuimicos:
   - nombre: "Ácidos Fenólicos y Flavonoides"
     detalle: "Confieren su potente acción antiinflamatoria y diurética."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/ortiga/1200/800"
+  imagenUrl: "https://upload.wikimedia.org/wikipedia/commons/1/16/Brennnessel_1.JPG"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

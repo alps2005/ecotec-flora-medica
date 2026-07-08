@@ -48,7 +48,7 @@ compuestosQuimicos:
   - nombre: "Carotenoides"
     detalle: "Presencia de betacaroteno, luteína y criptoxantina, compuestos liposolubles responsables de la coloración naranja de la piel y pulpa, precursores de la Vitamina A en el organismo."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/naranja-dulce/1200/800"
+  imagenUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVOlJWYVpVFnL596D631HeHh_sVR8H_NSrOyLU09EmNe8uHTUPz6V8Ro1B&s=10"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

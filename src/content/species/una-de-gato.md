@@ -42,7 +42,7 @@ compuestosQuimicos:
   - nombre: "Esteroles vegetales"
     detalle: "Contribuyen a la reducción del colesterol e inflamación."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/una-de-gato/1200/800"
+  imagenUrl: "https://ask-ayurveda.com/media/uploads/wiki/Uncaria_tomentosa_-_U%C3%B1a_de_gato.png"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

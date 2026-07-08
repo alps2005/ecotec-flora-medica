@@ -39,7 +39,7 @@ compuestosQuimicos:
   - nombre: "Densidad Nutricional"
     detalle: "Concentraciones sobresalientes de Vitamina K (esencial para la coagulación), Ácido Ascórbico (Vitamina C) y Hierro (Fe), superando los promedios de la mayoría de los vegetales comunes."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/perejil/1200/800"
+  imagenUrl: "https://www.gardenia.net/wp-content/uploads/2023/05/petroselinum-crispum-var-neapolitanum.webp"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

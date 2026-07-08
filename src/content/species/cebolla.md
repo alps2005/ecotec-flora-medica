@@ -50,7 +50,7 @@ compuestosQuimicos:
   - nombre: "Minerales"
     detalle: "Potasio, calcio y fósforo."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/cebolla/1200/800"
+  imagenUrl: "https://www-static.antropocene.it/wp-content/uploads/2018/10/Allium_cepa-800x445.jpg?media=1780467786"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

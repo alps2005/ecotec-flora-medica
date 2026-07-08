@@ -37,7 +37,7 @@ compuestosQuimicos:
   - nombre: "Flavonoides Polietoxilados (PMFs)"
     detalle: "Contiene altas concentraciones de nobiletina y tangeretina con propiedades antioxidantes y neuroprotectoras."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/mandarina/1200/800"
+  imagenUrl: "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41559-025-02822-4/MediaObjects/41559_2025_2822_Figa_HTML.png"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

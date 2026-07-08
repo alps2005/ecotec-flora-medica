@@ -40,7 +40,7 @@ compuestosQuimicos:
   - nombre: "Alantoína"
     detalle: "Estimula la proliferación celular, promoviendo una rápida cicatrización de los tejidos dañados."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/llanten/1200/800"
+  imagenUrl: "https://eunis.eea.europa.eu/images/species//177829/c0a30d2b052081c3d182d6abb0947d29.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

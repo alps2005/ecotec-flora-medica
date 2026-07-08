@@ -42,7 +42,7 @@ compuestosQuimicos:
   - nombre: "Cumarinas"
     detalle: "Efectos antiespasmódicos a nivel gástrico."
 multimediaPrincipal:
-  imagenUrl: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80"
+  imagenUrl: "https://joradahl.de/wp-content/uploads/2023/06/kamille.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

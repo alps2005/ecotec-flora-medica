@@ -40,7 +40,7 @@ compuestosQuimicos:
   - nombre: "Vitaminas Esenciales"
     detalle: "Alta densidad de Ácido Ascórbico (Vitamina C), complejo B (tiamina, niacina) y precursores de Vitamina A, esenciales para la regeneración tisular y la salud ocular."
 multimediaPrincipal:
-  imagenUrl: "https://picsum.photos/seed/uvilla/1200/800"
+  imagenUrl: "https://inaturalist-open-data.s3.amazonaws.com/photos/316253446/large.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""
