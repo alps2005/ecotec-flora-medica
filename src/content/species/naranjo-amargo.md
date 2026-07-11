@@ -12,9 +12,28 @@ etnobotanica:
   clasificacion: "Alimenticia - Medicinal"
   parteUtilizada: "Flores (azahar) y fruto"
   usoTradicional: "Sedante suave y digestivo, flores destiladas en fitoterapia"
-  compuestosQuimicos: ["Hesperidina", "D-limoneno", "Ácido cítrico"]
+perfilEtnobotanico:
+  |
+    Se ha utilizado tradicionalmente en la preparación de flores y frutos para aplicaciones digestivas y relajantes.
+historiaEvolucion:
+  origen:
+    ""
+  dispersion:
+    ""
+  evolucion:
+    |
+      El naranjo amargo pertenece a Rutaceae y comparte el hábito arbóreo de los cítricos con flores aromáticas muy características.
+comercio:
+  exportacion:
+    - pais: "Sostenibilidad"
+      detalle: "Su cultivo es relevante en regiones mediterráneas, donde aporta valor cultural y económico en sistemas agrícolas diversos."
+  importacion:
+    []
+compuestosQuimicos:
+  - nombre: "Fitoquímica"
+    detalle: "Su composición incluye flavonoides y terpenos asociados a su aroma distintivo y a posibles efectos antioxidantes."
 multimediaPrincipal:
-  imagenUrl: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80"
+  imagenUrl: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Citrus_aurantium.jpg"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""
@@ -22,23 +41,4 @@ multimediaPrincipal:
 estado: "ACTIVO"
 ---
 
-## Introducción
-
 El naranjo amargo se utiliza por sus flores y fruto en preparaciones tradicionales de perfil digestivo y relajante.
-
-## Taxonomía
-
-El naranjo amargo pertenece a Rutaceae y comparte el hábito arbóreo de los cítricos con flores aromáticas muy características.
-
-## Etnobotánica
-
-Se ha utilizado tradicionalmente en la preparación de flores y frutos para aplicaciones digestivas y relajantes.
-
-## Fitoquímica
-
-Su composición incluye flavonoides y terpenos asociados a su aroma distintivo y a posibles efectos antioxidantes.
-
-## Sostenibilidad
-
-Su cultivo es relevante en regiones mediterráneas, donde aporta valor cultural y económico en sistemas agrícolas diversos.
-
