@@ -40,7 +40,7 @@ compuestosQuimicos:
   - nombre: "Verbascósido"
     detalle: "Potente compuesto antioxidante."
 multimediaPrincipal:
-  imagenUrl: "https://botanix.com/cdn/shop/files/Aloysiaverveinecitronanti-moustiquefleur.jpg?v=1748468296&width=1445"
+  imagenUrl: "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783713895/Cedr%C3%B3n_zng78l.webp"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

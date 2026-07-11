@@ -40,7 +40,7 @@ compuestosQuimicos:
   - nombre: "Compuestos Fenólicos"
     detalle: "Contiene flavonoides como la luteolina y ácidos fenólicos que le otorgan capacidades antioxidantes y antiinflamatorias adicionales."
 multimediaPrincipal:
-  imagenUrl: "https://d2seqvvyy3b8p2.cloudfront.net/2d04494ab4c17c31c9e73798f7c243dd.jpg"
+  imagenUrl: "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783716503/Hierba_luisa_ih41sn.webp"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""

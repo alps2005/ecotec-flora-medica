@@ -40,7 +40,7 @@ compuestosQuimicos:
   - nombre: "Furanocumarinas"
     detalle: "Presencia de psoraleno y bergapteno en sus hojas. Estos compuestos químicos son fototóxicos, lo que significa que pueden provocar dermatitis severa al contacto con la piel bajo exposición solar directa."
 multimediaPrincipal:
-  imagenUrl: "https://botanix.com/cdn/shop/files/Rutagraveolensrueplanterepulsive.jpg?v=1748381241&width=1946"
+  imagenUrl: "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783716532/Ruda_e4seuk.webp"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""
