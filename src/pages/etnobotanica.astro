@@ -13,7 +13,7 @@ import EtnobotanicaGrid from '../components/etnobotanicacomp/Etnobotanicagrid.as
 
     <EtnobotanicaHero />
 
-    <div class="rounded-3xl p-8" style="background-color: #F7FAF6; border: 1px solid #dde8db;">
+    <div class="rounded-3xl border border-primary/10 bg-surface-muted p-8 shadow-sm">
       <EtnobotanicaFilters />
       <EtnobotanicaGrid />
     </div>
@@ -54,7 +54,7 @@ import EtnobotanicaGrid from '../components/etnobotanicacomp/Etnobotanicagrid.as
         button.textContent = page.toString();
         button.className =
           page === currentPage
-            ? 'flex h-8 w-8 items-center justify-center rounded-full bg-emerald-900 text-sm font-medium text-white'
+            ? 'flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-medium text-white'
             : 'flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 text-sm font-medium text-slate-600 transition hover:bg-slate-50';
         button.setAttribute('aria-current', page === currentPage ? 'page' : 'false');
         button.addEventListener('click', () => {
@@ -71,9 +71,9 @@ import EtnobotanicaGrid from '../components/etnobotanicacomp/Etnobotanicagrid.as
 
       buttons.forEach((b) => {
         const isActive = b.dataset.cat === cat;
-        b.classList.toggle('bg-emerald-900',   isActive);
+        b.classList.toggle('bg-primary',       isActive);
         b.classList.toggle('text-white',        isActive);
-        b.classList.toggle('border-emerald-900',isActive);
+        b.classList.toggle('border-primary',    isActive);
         b.classList.toggle('bg-white',         !isActive);
         b.classList.toggle('text-slate-600',   !isActive);
         b.classList.toggle('border-slate-300', !isActive);

@@ -12,12 +12,12 @@ const plantasPerPage = 9;
 const totalPages = Math.max(1, Math.ceil(plantas.length / plantasPerPage));
 
 const BADGE_MAP: Record<string, { color: string; bg: string }> = {
-  MEDICINAL:     { color: 'text-emerald-800', bg: 'bg-emerald-50' },
-  RITUAL:        { color: 'text-purple-700',  bg: 'bg-purple-50' },
-  ALIMENTICIA:   { color: 'text-amber-700',   bg: 'bg-amber-50' },
-  ESTIMULANTE:   { color: 'text-blue-700',    bg: 'bg-blue-50' },
-  AROMÁTICA:     { color: 'text-emerald-700', bg: 'bg-emerald-50' },
-  AGROECOLÓGICA: { color: 'text-green-700',   bg: 'bg-green-50' },
+  MEDICINAL:     { color: 'text-primary',   bg: 'bg-primary/10' },
+  RITUAL:        { color: 'text-tertiary',  bg: 'bg-secondary/15' },
+  ALIMENTICIA:   { color: 'text-primary',   bg: 'bg-secondary/15' },
+  ESTIMULANTE:   { color: 'text-secondary', bg: 'bg-primary/10' },
+  AROMÁTICA:     { color: 'text-tertiary',  bg: 'bg-tertiary/10' },
+  AGROECOLÓGICA: { color: 'text-primary',   bg: 'bg-secondary/10' },
 };
 
 const ICON_MAP: Record<string, string> = {

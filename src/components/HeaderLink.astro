@@ -12,9 +12,9 @@ const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
     href={href}
     aria-current={isActive ? 'page' : undefined}
     class:list={[
-        'js-header-link relative inline-flex items-center pb-1 no-underline text-[#40493D] transition-colors duration-300 hover:text-[#1B6D24]',
+        'js-header-link relative inline-flex items-center pb-1 no-underline text-tertiary transition-colors duration-300 hover:text-primary',
         className,
-        isActive && 'font-semibold text-green-800',
+        isActive && 'font-semibold text-primary',
     ]}
     {...props}
 >

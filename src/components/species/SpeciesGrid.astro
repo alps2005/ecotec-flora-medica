@@ -24,17 +24,17 @@ interface Props {
 const { species } = Astro.props;
 
 const familyAccentMap = new Map<string, string>([
-  ['Rutaceae', 'bg-primary/10 text-primary'],
-  ['Lamiaceae', 'bg-secondary/10 text-secondary'],
-  ['Asteraceae', 'bg-tertiary/10 text-tertiary'],
+  ['Rutaceae', 'bg-primary/10 text-primary border-primary/20'],
+  ['Lamiaceae', 'bg-secondary/15 text-tertiary border-secondary/20'],
+  ['Asteraceae', 'bg-tertiary/10 text-secondary border-tertiary/20'],
 ]);
 
 const getAccent = (family: string) => {
   const index = Array.from(new Set(species.map((item) => item.data.taxonomia.familia))).indexOf(family);
   const palette = [
-    'bg-primary/10 text-primary',
-    'bg-secondary/10 text-secondary',
-    'bg-tertiary/10 text-tertiary',
+    'bg-primary/10 text-primary border-primary/20',
+    'bg-secondary/15 text-tertiary border-secondary/20',
+    'bg-tertiary/10 text-secondary border-tertiary/20',
   ];
   return familyAccentMap.get(family) ?? palette[index % palette.length] ?? palette[0];
 };

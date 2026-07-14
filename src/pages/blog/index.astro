@@ -17,7 +17,7 @@ posts.sort(
   <section class="mx-auto max-w-6xl px-6 pt-32 pb-16 lg:px-0">
     <div class="max-w-3xl space-y-4">
       <p
-        class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700"
+        class="text-sm font-semibold uppercase tracking-[0.2em] text-primary"
       >
         Blog
       </p>
@@ -45,13 +45,13 @@ posts.sort(
                 })}
               </time>
               {post.data.tags.map((tag: string) => (
-                <span class="rounded-full bg-emerald-50 px-3 py-1 text-emerald-800">
+                <span class="rounded-full bg-secondary/15 px-3 py-1 text-tertiary">
                   {tag}
                 </span>
               ))}
             </div>
             <h2 class="mt-4 text-2xl font-semibold tracking-tight text-slate-950">
-              <a class="hover:text-emerald-700" href={`/blog/${post.id}`}>
+              <a class="hover:text-primary" href={`/blog/${post.id}`}>
                 {post.data.title}
               </a>
             </h2>
@@ -60,7 +60,7 @@ posts.sort(
             </p>
             <div class="mt-5">
               <a
-                class="text-sm font-semibold text-emerald-700 hover:text-emerald-600"
+                class="text-sm font-semibold text-primary hover:text-primary-fixed-dim"
                 href={`/blog/${post.id}`}
               >
                 Leer artículo

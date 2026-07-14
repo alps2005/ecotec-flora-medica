@@ -3,37 +3,48 @@ import Layout from "../layouts/Layout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import homeGridImage1 from "../assets/home_images/home_image_grid_test.webp";
 
 const posts = (await getCollection("blog")) as CollectionEntry<"blog">[];
+const species = (await getCollection(
+  "species",
+)) as CollectionEntry<"species">[];
 posts.sort(
   (left: CollectionEntry<"blog">, right: CollectionEntry<"blog">) =>
     right.data.pubDate.valueOf() - left.data.pubDate.valueOf(),
 );
 
 const featuredPost = posts[0];
+const speciesImages = species
+  .map((entry) => ({
+    src: entry.data.multimediaPrincipal.imagenUrl,
+    name: entry.data.nombreComun,
+  }))
+  .filter((image) => Boolean(image.src));
+const initialSpeciesImages = [...speciesImages]
+  .sort(() => Math.random() - 0.5)
+  .slice(0, 5);
 const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <section class="relative overflow-hidden border-b border-emerald-950/10">
+  <section class="relative overflow-hidden border-b border-primary/10">
     <div
       class="flex min-h-screen max-w-full justify-evenly items-center pt-24 pb-20 mx-30"
     >
       <div class="space-y-8">
         <span
-          class="inline-flex items-center text-xs font-medium text-[#2E7D32] border-b"
+          class="inline-flex items-center border-b text-xs font-medium text-tertiary"
         >
           HERBARIUM DIGITAL
         </span>
         <div class="space-y-5">
           <h1
-            class="max-w-3xl text-5xl font-medium tracking-tight text-slate-950 sm:text-6xl lg:text-7xl"
+            class="max-w-3xl text-5xl font-medium tracking-tight text-tertiary sm:text-6xl lg:text-7xl"
           >
             El saber ancestral
           </h1>
           <h1
-            class="max-w-3xl text-5xl font-medium italic tracking-tight text-[#2E7D32] sm:text-6xl lg:text-7xl"
+            class="max-w-3xl text-5xl font-medium italic tracking-tight text-primary sm:text-6xl lg:text-7xl"
           >
             en la lente científica.
           </h1>
@@ -49,13 +60,13 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
         </div>
         <div class="flex flex-wrap gap-4">
           <a
-            class="inline-flex items-center justify-center rounded-full bg-[#0D631B] px-6 py-3 text-sm font-semibold text-white transition hover:bg-green-700"
+            class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary-fixed-dim"
             href="/especies"
           >
             Explorar especies
           </a>
           <a
-            class="inline-flex items-center justify-center rounded-full border border-emerald-900/15 bg-white/80 px-6 py-3 text-sm font-semibold text-emerald-950 transition hover:border-emerald-900/25 hover:bg-white"
+            class="inline-flex items-center justify-center rounded-full border border-primary/15 bg-white/80 px-6 py-3 text-sm font-semibold text-tertiary transition hover:border-primary/25 hover:bg-white"
             href="/blog"
           >
             Leer blogs
@@ -63,66 +74,138 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
         </div>
       </div>
 
-      <div class="grid grid-cols-2 grid-rows-3 gap-4 h-150">
-        <div class="rounded-xl overflow-hidden shadow-sm relative group">
-          <img
-            src={homeGridImage1.src}
-            alt="Imagen de plantas medicinales"
-            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-sm relative group">
-          <img
-            src={homeGridImage1.src}
-            alt="Imagen de plantas medicinales"
-            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-        </div>
+      <div class="grid h-150 grid-cols-2 grid-rows-[repeat(3,minmax(0,1fr))] gap-4">
         <div
-          class="rounded-xl overflow-hidden shadow-sm relative group row-span-2"
+          class="species-grid-tile group relative overflow-hidden rounded-xl shadow-sm"
+          data-species-slot
         >
           <img
-            src={homeGridImage1.src}
-            alt="Imagen de plantas medicinales"
-            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            src={initialSpeciesImages[0]?.src}
+            alt={initialSpeciesImages[0]?.name ?? "Imagen de especies"}
+            class="species-grid-image h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            data-species-image
           />
+          <span
+            class="species-grid-label absolute bottom-3 left-3 rounded-full bg-white/85 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-tertiary shadow-sm backdrop-blur"
+            data-species-label
+          >
+            {initialSpeciesImages[0]?.name ?? "Especie"}
+          </span>
         </div>
-        <div class="rounded-xl overflow-hidden shadow-sm relative group">
+        <div
+          class="species-grid-tile group relative overflow-hidden rounded-xl shadow-sm"
+          data-species-slot
+        >
           <img
-            src={homeGridImage1.src}
-            alt="Imagen de plantas medicinales"
-            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            src={initialSpeciesImages[1]?.src ?? initialSpeciesImages[0]?.src}
+            alt={initialSpeciesImages[1]?.name ??
+              initialSpeciesImages[0]?.name ??
+              "Imagen de especies"}
+            class="species-grid-image h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            data-species-image
           />
+          <span
+            class="species-grid-label absolute bottom-3 left-3 rounded-full bg-white/85 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-tertiary shadow-sm backdrop-blur"
+            data-species-label
+          >
+            {
+              initialSpeciesImages[1]?.name ??
+                initialSpeciesImages[0]?.name ??
+                "Especie"
+            }
+          </span>
         </div>
-        <div class="rounded-xl overflow-hidden shadow-sm relative group">
+        <div
+          class="species-grid-tile group relative row-span-2 overflow-hidden rounded-xl shadow-sm"
+          data-species-slot
+        >
           <img
-            src={homeGridImage1.src}
-            alt="Imagen de plantas medicinales"
-            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            src={initialSpeciesImages[2]?.src ?? initialSpeciesImages[0]?.src}
+            alt={initialSpeciesImages[2]?.name ??
+              initialSpeciesImages[0]?.name ??
+              "Imagen de especies"}
+            class="species-grid-image h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            data-species-image
           />
+          <span
+            class="species-grid-label absolute bottom-3 left-3 rounded-full bg-white/85 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-tertiary shadow-sm backdrop-blur"
+            data-species-label
+          >
+            {
+              initialSpeciesImages[2]?.name ??
+                initialSpeciesImages[0]?.name ??
+                "Especie"
+            }
+          </span>
+        </div>
+        <div
+          class="species-grid-tile group relative overflow-hidden rounded-xl shadow-sm"
+          data-species-slot
+        >
+          <img
+            src={initialSpeciesImages[3]?.src ?? initialSpeciesImages[0]?.src}
+            alt={initialSpeciesImages[3]?.name ??
+              initialSpeciesImages[0]?.name ??
+              "Imagen de especies"}
+            class="species-grid-image h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            data-species-image
+          />
+          <span
+            class="species-grid-label absolute bottom-3 left-3 rounded-full bg-white/85 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-tertiary shadow-sm backdrop-blur"
+            data-species-label
+          >
+            {
+              initialSpeciesImages[3]?.name ??
+                initialSpeciesImages[0]?.name ??
+                "Especie"
+            }
+          </span>
+        </div>
+        <div
+          class="species-grid-tile group relative overflow-hidden rounded-xl shadow-sm"
+          data-species-slot
+        >
+          <img
+            src={initialSpeciesImages[4]?.src ?? initialSpeciesImages[0]?.src}
+            alt={initialSpeciesImages[4]?.name ??
+              initialSpeciesImages[0]?.name ??
+              "Imagen de especies"}
+            class="species-grid-image h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            data-species-image
+          />
+          <span
+            class="species-grid-label absolute bottom-3 left-3 rounded-full bg-white/85 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-tertiary shadow-sm backdrop-blur"
+            data-species-label
+          >
+            {
+              initialSpeciesImages[4]?.name ??
+                initialSpeciesImages[0]?.name ??
+                "Especie"
+            }
+          </span>
         </div>
       </div>
     </div>
   </section>
 
   <section
-    class="relative overflow-hidden border-b border-emerald-950/10 bg-[#27692b]"
+    class="relative overflow-hidden border-b border-primary/10 bg-gradient-to-r from-tertiary via-primary to-secondary"
   >
     <div class="flex max-w-full justify-evenly items-center gap-14 py-20 mx-30">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-24 text-center">
-        <div class="text-[#FAFCFA] space-y-2">
+        <div class="space-y-2 text-white">
           <h1 class="text-6xl font-normal">27</h1>
           <a class="font-light">Especies Catalogada</a>
         </div>
-        <div class="text-[#FAFCFA] space-y-2">
+        <div class="space-y-2 text-white">
           <h1 class="text-6xl font-normal">10</h1>
           <a class="font-light">Familias Botánicas</a>
         </div>
-        <div class="text-[#FAFCFA] space-y-2">
+        <div class="space-y-2 text-white">
           <h1 class="text-6xl font-normal">4</h1>
           <a class="font-light">Dimensiones de Estudio</a>
         </div>
-        <div class="text-[#FAFCFA] space-y-2">
+        <div class="space-y-2 text-white">
           <h1 class="text-6xl font-normal">3</h1>
           <a class="font-light">Matrices Analíticas</a>
         </div>
@@ -130,8 +213,8 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
     </div>
   </section>
 
-  <section
-    class={`flex w-full justify-evenly items-center bg-black ${pageSectionSpacing}`}
+  <!-- <section
+    class={`flex w-full items-center justify-evenly bg-tertiary ${pageSectionSpacing}`}
   >
     <div class="flex w-full flex-col justify-center gap-6 lg:w-[42%]">
       <div class="space-y-2">
@@ -141,7 +224,7 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
           Unete a nuestro blog de
         </h2>
         <h2
-          class="text-4xl font-light italic leading-tight text-[#27692b] sm:text-5xl"
+          class="text-4xl font-light italic leading-tight text-secondary sm:text-5xl"
         >
           Noticias actualizadas
         </h2>
@@ -153,7 +236,7 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
       </p>
     </div>
     <div
-      class="mx-10 w-2xl rounded-[28px] border border-white/10 bg-[#1f1f1f] px-6 py-10 shadow-2xl shadow-black/30 sm:px-10 sm:py-12 lg:px-12 lg:py-14"
+      class="mx-10 w-2xl rounded-[28px] border border-white/10 bg-white/10 px-6 py-10 shadow-2xl shadow-black/25 backdrop-blur-sm sm:px-10 sm:py-12 lg:px-12 lg:py-14"
     >
       <div class="flex w-full flex-col gap-10">
         <form class="w-full space-y-8" action="#" method="post">
@@ -169,7 +252,7 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
               type="text"
               name="fullName"
               placeholder="Dr. Elena Garro"
-              class="h-20 w-full border border-white/15 bg-transparent px-4 text-lg text-white placeholder:text-white/22 outline-none transition focus:border-white/30 focus:ring-0"
+              class="h-20 w-full border border-white/15 bg-transparent px-4 text-lg text-white placeholder:text-white/20 outline-none transition focus:border-white/30 focus:ring-0"
             />
           </div>
 
@@ -185,22 +268,22 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
               type="email"
               name="email"
               placeholder="investigacion@flormedica.org"
-              class="h-20 w-full border border-white/15 bg-transparent px-4 text-lg text-white placeholder:text-white/22 outline-none transition focus:border-white/30 focus:ring-0"
+              class="h-20 w-full border border-white/15 bg-transparent px-4 text-lg text-white placeholder:text-white/20 outline-none transition focus:border-white/30 focus:ring-0"
             />
           </div>
 
           <button
             type="submit"
-            class="inline-flex h-16 w-full items-center justify-center rounded-full bg-[#157a21] px-6 text-sm font-semibold uppercase tracking-[0.25em] text-white transition hover:bg-[#0f661a]"
+            class="inline-flex h-16 w-full items-center justify-center rounded-full bg-secondary px-6 text-sm font-semibold uppercase tracking-[0.25em] text-tertiary transition hover:bg-white"
           >
             Suscribirme al boletín
           </button>
         </form>
       </div>
     </div>
-  </section>
+  </section> -->
 
-  <section class={`bg-[#eaf5ff] ${pageSectionSpacing}`}>
+  <section class={`bg-surface-muted ${pageSectionSpacing}`}>
     <div class="mx-auto max-w-7xl space-y-16">
       <h2
         class="text-center text-5xl font-light italic leading-tight text-slate-900 sm:text-6xl lg:text-7xl"
@@ -210,11 +293,9 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
 
       <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
         <article
-          class="flex min-h-[26rem] flex-col items-center rounded-[28px] bg-[#eef7e9] px-8 py-12 text-center shadow-sm"
+          class="flex min-h-[26rem] flex-col items-center rounded-[28px] bg-white px-8 py-12 text-center shadow-sm ring-1 ring-primary/10"
         >
-          <div
-            class="flex h-16 w-16 items-center justify-center text-[#3d6f34]"
-          >
+          <div class="flex h-16 w-16 items-center justify-center text-primary">
             <svg
               viewBox="0 0 24 24"
               class="h-12 w-12 fill-none stroke-current stroke-[1.6]"
@@ -240,11 +321,9 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
         </article>
 
         <article
-          class="flex min-h-[26rem] flex-col items-center rounded-[28px] bg-[#f3f8e7] px-8 py-12 text-center shadow-sm"
+          class="flex min-h-[26rem] flex-col items-center rounded-[28px] bg-secondary/15 px-8 py-12 text-center shadow-sm ring-1 ring-secondary/20"
         >
-          <div
-            class="flex h-16 w-16 items-center justify-center text-[#3d6f34]"
-          >
+          <div class="flex h-16 w-16 items-center justify-center text-tertiary">
             <svg
               viewBox="0 0 24 24"
               class="h-12 w-12 fill-none stroke-current stroke-[1.6]"
@@ -269,10 +348,10 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
         </article>
 
         <article
-          class="flex min-h-[26rem] flex-col items-center rounded-[28px] bg-[#fff2dd] px-8 py-12 text-center shadow-sm"
+          class="flex min-h-[26rem] flex-col items-center rounded-[28px] bg-white px-8 py-12 text-center shadow-sm ring-1 ring-tertiary/10"
         >
           <div
-            class="flex h-16 w-16 items-center justify-center text-[#8f642f]"
+            class="flex h-16 w-16 items-center justify-center text-secondary"
           >
             <svg
               viewBox="0 0 24 24"
@@ -296,11 +375,9 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
         </article>
 
         <article
-          class="flex min-h-[26rem] flex-col items-center rounded-[28px] bg-[#dff0f2] px-8 py-12 text-center shadow-sm"
+          class="flex min-h-[26rem] flex-col items-center rounded-[28px] bg-primary/10 px-8 py-12 text-center shadow-sm ring-1 ring-primary/10"
         >
-          <div
-            class="flex h-16 w-16 items-center justify-center text-[#4b7592]"
-          >
+          <div class="flex h-16 w-16 items-center justify-center text-primary">
             <svg
               viewBox="0 0 24 24"
               class="h-12 w-12 fill-none stroke-current stroke-[1.6]"
@@ -326,4 +403,88 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
     </div>
   </section>
   <script src="../scripts/suscripcion.js"></script>
+  <script define:vars={{ speciesImages }}>
+    import gsap from "gsap";
+
+    const CHANGE_INTERVAL = 5000;
+    const FADE_DURATION = 0.45;
+    const slots = Array.from(document.querySelectorAll("[data-species-slot]"));
+
+    const pickRandomImage = (currentSrc) => {
+      if (!speciesImages.length) {
+        return null;
+      }
+
+      const available = speciesImages.filter(
+        (image) => image.src !== currentSrc,
+      );
+      const pool = available.length > 0 ? available : speciesImages;
+      const index = Math.floor(Math.random() * pool.length);
+
+      return pool[index] ?? null;
+    };
+
+    const updateSlot = (slot) => {
+      const img = slot.querySelector("[data-species-image]");
+      const label = slot.querySelector("[data-species-label]");
+
+      if (
+        !(img instanceof HTMLImageElement) ||
+        !(label instanceof HTMLElement)
+      ) {
+        return;
+      }
+
+      const nextImage = pickRandomImage(img.src);
+
+      if (!nextImage) {
+        return;
+      }
+
+      gsap.to(slot, {
+        opacity: 0,
+        duration: FADE_DURATION,
+        ease: "power2.inOut",
+        onComplete: () => {
+          img.src = nextImage.src;
+          img.alt = `Imagen de ${nextImage.name}`;
+          label.textContent = nextImage.name;
+
+          gsap.to(slot, {
+            opacity: 1,
+            duration: FADE_DURATION,
+            ease: "power2.inOut",
+          });
+        },
+      });
+    };
+
+    const startSlotCycle = (slot, initialDelay) => {
+      const tick = () => {
+        updateSlot(slot);
+        window.setTimeout(tick, CHANGE_INTERVAL);
+      };
+
+      window.setTimeout(tick, initialDelay);
+    };
+
+    const initSpeciesGrid = () => {
+      if (
+        !slots.length ||
+        document.documentElement.dataset.speciesGridBound === "true"
+      ) {
+        return;
+      }
+
+      document.documentElement.dataset.speciesGridBound = "true";
+
+      slots.forEach((slot) => {
+        const delay = Math.floor(Math.random() * CHANGE_INTERVAL);
+        startSlotCycle(slot, delay);
+      });
+    };
+
+    initSpeciesGrid();
+    document.addEventListener("astro:page-load", initSpeciesGrid);
+  </script>
 </Layout>

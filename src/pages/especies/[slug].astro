@@ -72,13 +72,13 @@ const getAccent = (family: string) => {
       </div>
 
       {/* Hero Section */}
-      <section class="group relative mb-16 h-[520px] w-full overflow-hidden rounded-[2rem] bg-slate-100 shadow-[0_28px_80px_-34px_rgba(27,109,36,0.35)]">
+      <section class="group relative mb-16 h-[520px] w-full overflow-hidden rounded-[2rem] bg-slate-100 shadow-[0_28px_80px_-34px_rgba(0,73,164,0.32)]">
         <img
           src={data.multimediaPrincipal.imagenUrl}
           alt={`${data.nombreComun} (${data.nombreCientifico})`}
           class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#102214]/90 via-[#102214]/35 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-tertiary/90 via-tertiary/35 to-transparent"></div>
         <div class="absolute inset-x-6 bottom-8 flex flex-col gap-4 sm:inset-x-10 sm:bottom-10 lg:left-12 lg:right-12">
           <div class="flex flex-wrap items-center gap-3">
             <span class="rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-primary shadow-sm">
@@ -94,7 +94,7 @@ const getAccent = (family: string) => {
             <h1 class="max-w-3xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
               {data.nombreComun}
             </h1>
-            <p class="mt-4 text-2xl italic text-[#DDE9D3] sm:text-3xl">
+            <p class="mt-4 text-2xl italic text-secondary/85 sm:text-3xl">
               {data.nombreCientifico}
             </p>
           </div>
@@ -103,7 +103,7 @@ const getAccent = (family: string) => {
 
       {/* Taxonomic Breadcrumb */}
       <section id="taxonomia" class="mb-20">
-        <div class="rounded-[1.5rem] border border-slate-200/80 bg-[#F7FAF6]/90 p-6 shadow-sm backdrop-blur-sm">
+        <div class="rounded-[1.5rem] border border-slate-200/80 bg-surface-muted/90 p-6 shadow-sm backdrop-blur-sm">
           <div class="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
             <div class="flex flex-wrap items-stretch gap-y-6">
               {taxonomicRanks.map((rank, index) => (

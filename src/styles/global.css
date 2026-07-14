@@ -3,18 +3,18 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #1B6D24;
-    --color-primary-fixed-dim: #2E7D3C;
-    --color-secondary: #A86B3D;
-    --color-secondary-fixed-dim: #C58A55;
-    --color-tertiary: #6A7D45;
-    --color-tertiary-fixed-dim: #869A5E;
-    --color-surface: #FAFCFA;
-    --color-surface-muted: #F3F4EF;
-    --color-text: #1F2A22;
-    --color-text-muted: #5F675F;
+    --color-primary: #0049A4;
+    --color-primary-fixed-dim: #003A86;
+    --color-secondary: #4DD0D1;
+    --color-secondary-fixed-dim: #2FA6A8;
+    --color-tertiary: #0A233C;
+    --color-tertiary-fixed-dim: #163A5D;
+    --color-surface: #F7FBFF;
+    --color-surface-muted: #EAF4FF;
+    --color-text: #0A233C;
+    --color-text-muted: #51657A;
     --radius-card: 1.5rem;
-    --shadow-card: 0 20px 60px -24px rgba(27, 109, 36, 0.2);
+    --shadow-card: 0 20px 60px -24px rgba(0, 73, 164, 0.24);
     --font-display: 'EB Garamond', serif;
     --font-body: 'Hanken Grotesk', sans-serif;
 }
@@ -25,7 +25,13 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
     font-family: 'Hanken Grotesk', sans-serif;
-    background-color: #FAFCFA;
+    color: #0A233C;
+    background-color: #F7FBFF;
+    background-image:
+        radial-gradient(circle at top left, rgba(77, 208, 209, 0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(0, 73, 164, 0.12), transparent 32%),
+        linear-gradient(180deg, #F7FBFF 0%, #EEF6FF 100%);
+    background-attachment: fixed;
 }
 
 .logo-font {

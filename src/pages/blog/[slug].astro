@@ -27,7 +27,7 @@ const { Content } = await render(post);
   <article class="mx-auto max-w-4xl px-6 pt-32 pb-16 lg:px-0">
     <div class="space-y-4">
       <p
-        class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700"
+        class="text-sm font-semibold uppercase tracking-[0.2em] text-primary"
       >
         Blog
       </p>
@@ -51,7 +51,7 @@ const { Content } = await render(post);
       </time>
       {
         post.data.tags.map((tag: string) => (
-          <span class="rounded-full bg-emerald-50 px-3 py-1 text-emerald-800">
+          <span class="rounded-full bg-secondary/15 px-3 py-1 text-tertiary">
             {tag}
           </span>
         ))
@@ -59,7 +59,7 @@ const { Content } = await render(post);
     </div>
 
     <div
-      class="prose prose-slate mt-12 max-w-none prose-headings:tracking-tight prose-a:text-emerald-700 prose-a:no-underline hover:prose-a:underline"
+      class="prose prose-slate mt-12 max-w-none prose-headings:tracking-tight prose-a:text-primary prose-a:no-underline hover:prose-a:underline"
     >
       <Content />
     </div>
