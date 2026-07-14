@@ -8,12 +8,22 @@ const posts = (await getCollection("blog")) as CollectionEntry<"blog">[];
 const species = (await getCollection(
   "species",
 )) as CollectionEntry<"species">[];
+const etnobotanicaEntries = (await getCollection(
+  "etnobotanica",
+)) as CollectionEntry<"etnobotanica">[];
 posts.sort(
   (left: CollectionEntry<"blog">, right: CollectionEntry<"blog">) =>
     right.data.pubDate.valueOf() - left.data.pubDate.valueOf(),
 );
 
 const featuredPost = posts[0];
+const uniqueFamilies = new Set(
+  species.map((entry) => entry.data.taxonomia.familia),
+);
+const totalCompounds = species.reduce(
+  (sum, entry) => sum + entry.data.compuestosQuimicos.length,
+  0,
+);
 const speciesImages = species
   .map((entry) => ({
     src: entry.data.multimediaPrincipal.imagenUrl,
@@ -194,20 +204,20 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
     <div class="flex max-w-full justify-evenly items-center gap-14 py-20 mx-30">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-24 text-center">
         <div class="space-y-2 text-white">
-          <h1 class="text-6xl font-normal">27</h1>
-          <a class="font-light">Especies Catalogada</a>
+          <h1 class="text-6xl font-normal">{species.length}</h1>
+          <a class="font-light">Especies registradas</a>
         </div>
         <div class="space-y-2 text-white">
-          <h1 class="text-6xl font-normal">10</h1>
+          <h1 class="text-6xl font-normal">{uniqueFamilies.size}</h1>
           <a class="font-light">Familias Botánicas</a>
         </div>
         <div class="space-y-2 text-white">
-          <h1 class="text-6xl font-normal">4</h1>
-          <a class="font-light">Dimensiones de Estudio</a>
+          <h1 class="text-6xl font-normal">{etnobotanicaEntries.length}</h1>
+          <a class="font-light">Fichas etnobotánicas</a>
         </div>
         <div class="space-y-2 text-white">
-          <h1 class="text-6xl font-normal">3</h1>
-          <a class="font-light">Matrices Analíticas</a>
+          <h1 class="text-6xl font-normal">{totalCompounds}</h1>
+          <a class="font-light">Compuestos documentados</a>
         </div>
       </div>
     </div>
