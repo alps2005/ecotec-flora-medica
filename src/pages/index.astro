@@ -39,9 +39,9 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <section class="relative overflow-hidden border-b border-primary/10">
     <div
-      class="flex min-h-screen max-w-full justify-evenly items-center pt-24 pb-20 mx-30"
+      class="flex flex-col md:flex-row min-h-screen max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 justify-between items-center gap-12 pt-28 pb-20"
     >
-      <div class="space-y-8">
+      <div class="space-y-8 flex-1">
         <span
           class="inline-flex items-center border-b text-xs font-medium text-tertiary"
         >
@@ -84,7 +84,11 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
         </div>
       </div>
 
-      <div class="grid h-150 grid-cols-2 grid-rows-[repeat(3,minmax(0,1fr))] gap-4">
+      <div
+        id="species-grid"
+        class="grid w-full md:w-[480px] lg:w-[500px] h-[500px] md:h-[600px] shrink-0 grid-cols-2 grid-rows-[repeat(3,minmax(0,1fr))] gap-4"
+        data-species-images={JSON.stringify(speciesImages)}
+      >
         <div
           class="species-grid-tile group relative overflow-hidden rounded-xl shadow-sm"
           data-species-slot
@@ -413,28 +417,47 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
     </div>
   </section>
   <script src="../scripts/suscripcion.js"></script>
-  <script define:vars={{ speciesImages }}>
+  <script>
     import gsap from "gsap";
 
     const CHANGE_INTERVAL = 5000;
     const FADE_DURATION = 0.45;
-    const slots = Array.from(document.querySelectorAll("[data-species-slot]"));
+    const STAGGER_DELAY = 200;
 
-    const pickRandomImage = (currentSrc) => {
-      if (!speciesImages.length) {
-        return null;
+    const shuffleArray = (array) => {
+      const arr = [...array];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
       }
-
-      const available = speciesImages.filter(
-        (image) => image.src !== currentSrc,
-      );
-      const pool = available.length > 0 ? available : speciesImages;
-      const index = Math.floor(Math.random() * pool.length);
-
-      return pool[index] ?? null;
+      return arr;
     };
 
-    const updateSlot = (slot) => {
+    const preloadImage = (src) => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = resolve;
+        img.onerror = resolve;
+      });
+    };
+
+    const preloadImages = (images) => {
+      return Promise.all(images.map((img) => preloadImage(img.src)));
+    };
+
+    const getNextImages = (currentSrcs, allImages, count) => {
+      let pool = allImages.filter((img) => !currentSrcs.includes(img.src));
+
+      if (pool.length < count) {
+        pool = allImages;
+      }
+
+      const shuffled = shuffleArray(pool);
+      return shuffled.slice(0, count);
+    };
+
+    const updateSlot = (slot, nextImage) => {
       const img = slot.querySelector("[data-species-image]");
       const label = slot.querySelector("[data-species-label]");
 
@@ -442,12 +465,6 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
         !(img instanceof HTMLImageElement) ||
         !(label instanceof HTMLElement)
       ) {
-        return;
-      }
-
-      const nextImage = pickRandomImage(img.src);
-
-      if (!nextImage) {
         return;
       }
 
@@ -469,29 +486,61 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
       });
     };
 
-    const startSlotCycle = (slot, initialDelay) => {
-      const tick = () => {
-        updateSlot(slot);
-        window.setTimeout(tick, CHANGE_INTERVAL);
-      };
-
-      window.setTimeout(tick, initialDelay);
-    };
-
     const initSpeciesGrid = () => {
-      if (
-        !slots.length ||
-        document.documentElement.dataset.speciesGridBound === "true"
-      ) {
+      const gridEl = document.getElementById("species-grid");
+      if (!gridEl) {
         return;
       }
 
-      document.documentElement.dataset.speciesGridBound = "true";
+      if (gridEl.dataset.speciesGridBound === "true") {
+        return;
+      }
+      gridEl.dataset.speciesGridBound = "true";
 
-      slots.forEach((slot) => {
-        const delay = Math.floor(Math.random() * CHANGE_INTERVAL);
-        startSlotCycle(slot, delay);
-      });
+      const speciesImages = JSON.parse(gridEl.dataset.speciesImages || "[]");
+      const slots = Array.from(gridEl.querySelectorAll("[data-species-slot]"));
+
+      if (!slots.length || !speciesImages.length) {
+        return;
+      }
+
+      const runCycle = async () => {
+        const currentSrcs = slots
+          .map((slot) => {
+            const img = slot.querySelector("[data-species-image]");
+            return img ? img.getAttribute("src") : null;
+          })
+          .filter(Boolean);
+
+        const nextImages = getNextImages(currentSrcs, speciesImages, slots.length);
+
+        if (nextImages.length < slots.length) {
+          return;
+        }
+
+        const timeoutPromise = new Promise((resolve) =>
+          setTimeout(resolve, 1500),
+        );
+        await Promise.race([preloadImages(nextImages), timeoutPromise]);
+
+        const shuffledSlots = shuffleArray(
+          slots.map((slot, index) => ({ slot, index })),
+        );
+
+        shuffledSlots.forEach(({ slot }, staggerIndex) => {
+          const nextImage = nextImages[staggerIndex];
+          if (nextImage) {
+            setTimeout(() => {
+              updateSlot(slot, nextImage);
+            }, staggerIndex * STAGGER_DELAY);
+          }
+        });
+      };
+
+      if (window.speciesGridInterval) {
+        clearInterval(window.speciesGridInterval);
+      }
+      window.speciesGridInterval = setInterval(runCycle, CHANGE_INTERVAL);
     };
 
     initSpeciesGrid();
