@@ -79,7 +79,11 @@ import EtnobotanicaGrid from '../components/etnobotanicacomp/Etnobotanicagrid.as
         b.classList.toggle('border-slate-300', !isActive);
       });
 
-      const matchingCards = cards.filter((card) => cat === 'GENERAL' || card.dataset.categoria === cat);
+      const matchingCards = cards.filter((card) => {
+        if (cat === 'GENERAL') return true;
+        const cardCats = card.dataset.categoria ? card.dataset.categoria.split(',') : [];
+        return cardCats.includes(cat);
+      });
       const totalPages = Math.max(1, Math.ceil(matchingCards.length / ETNOBOTANICA_PER_PAGE));
       currentPage = Math.min(currentPage, totalPages);
 

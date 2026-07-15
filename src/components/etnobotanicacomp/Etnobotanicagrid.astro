@@ -4,12 +4,24 @@ import Etnobotanicacard from './Etnobotanicacard.astro';
 import Etnobotanicapagination from './Etnobotanicapagination.astro';
 
 const species = await getCollection('species');
-const speciesOrder = new Map(species.map((entry, index) => [entry.id, index]));
-const plantas = (await getCollection('etnobotanica'))
-  .filter((planta) => speciesOrder.has(planta.id))
-  .sort((a, b) => (speciesOrder.get(a.id) ?? 0) - (speciesOrder.get(b.id) ?? 0));
-const plantasPerPage = 9;
-const totalPages = Math.max(1, Math.ceil(plantas.length / plantasPerPage));
+const activeSpecies = species.filter(especie => especie.data.estado === 'ACTIVO');
+
+const getCategories = (clasificacion: string): string[] => {
+  const normalized = clasificacion.toLowerCase();
+  const matched: string[] = [];
+  
+  if (normalized.includes('medicinal')) matched.push('MEDICINAL');
+  if (normalized.includes('alimenticia') || normalized.includes('condimento')) matched.push('ALIMENTICIA');
+  if (normalized.includes('estimulante')) matched.push('ESTIMULANTE');
+  if (normalized.includes('aromática') || normalized.includes('aromatica')) matched.push('AROMÁTICA');
+  if (normalized.includes('ritual')) matched.push('RITUAL');
+  if (normalized.includes('agroecológica') || normalized.includes('agroecologica')) matched.push('AGROECOLÓGICA');
+  
+  if (matched.length === 0) {
+    matched.push('MEDICINAL');
+  }
+  return matched;
+};
 
 const BADGE_MAP: Record<string, { color: string; bg: string }> = {
   MEDICINAL:     { color: 'text-primary',   bg: 'bg-primary/10' },
@@ -28,22 +40,42 @@ const ICON_MAP: Record<string, string> = {
   AROMÁTICA:     'ti-flower',
   AGROECOLÓGICA: 'ti-seeding',
 };
+
+const plantas = activeSpecies.map((especie) => {
+  const clasificacion = especie.data.etnobotanica.clasificacion;
+  const matchedCategories = getCategories(clasificacion);
+  const primaryCategory = matchedCategories[0] ?? 'MEDICINAL';
+  
+  const badge = BADGE_MAP[primaryCategory] ?? { color: 'text-slate-700', bg: 'bg-slate-50' };
+  const icono = ICON_MAP[primaryCategory] ?? 'ti-leaf';
+  const compuestos = especie.data.compuestosQuimicos.map(c => c.nombre).join(' · ');
+
+  return {
+    nombre: especie.data.nombreComun,
+    cientifico: especie.data.nombreCientifico,
+    categoria: clasificacion,
+    icono,
+    parteUsada: especie.data.etnobotanica.parteUtilizada,
+    uso: especie.data.etnobotanica.usoTradicional,
+    compuestos,
+    badgeColor: badge.color,
+    badgeBg: badge.bg,
+    img: especie.data.multimediaPrincipal.imagenUrl,
+    slug: especie.data.slug ?? especie.id,
+    categorias: matchedCategories.join(','),
+  };
+});
+
+const plantasPerPage = 9;
+const totalPages = Math.max(1, Math.ceil(plantas.length / plantasPerPage));
 ---
 
 <div id="grid-especies" class="flex flex-wrap gap-5">
-  {plantas.map((planta) => {
-    const badge = BADGE_MAP[planta.data.categoria] ?? { color: 'text-slate-700', bg: 'bg-slate-50' };
-    const icono = ICON_MAP[planta.data.categoria] ?? 'ti-leaf';
-    return (
-      <Etnobotanicacard
-        {...planta.data}
-        slug={planta.id}
-        icono={icono}
-        badgeColor={badge.color}
-        badgeBg={badge.bg}
-      />
-    );
-  })}
+  {plantas.map((planta) => (
+    <Etnobotanicacard
+      {...planta}
+    />
+  ))}
 </div>
 
 <div class="mt-6">

@@ -8,9 +8,6 @@ const posts = (await getCollection("blog")) as CollectionEntry<"blog">[];
 const species = (await getCollection(
   "species",
 )) as CollectionEntry<"species">[];
-const etnobotanicaEntries = (await getCollection(
-  "etnobotanica",
-)) as CollectionEntry<"etnobotanica">[];
 posts.sort(
   (left: CollectionEntry<"blog">, right: CollectionEntry<"blog">) =>
     right.data.pubDate.valueOf() - left.data.pubDate.valueOf(),
@@ -216,7 +213,7 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
           <a class="font-light">Familias Botánicas</a>
         </div>
         <div class="space-y-2 text-white">
-          <h1 class="text-6xl font-normal">{etnobotanicaEntries.length}</h1>
+          <h1 class="text-6xl font-normal">{species.length}</h1>
           <a class="font-light">Fichas etnobotánicas</a>
         </div>
         <div class="space-y-2 text-white">

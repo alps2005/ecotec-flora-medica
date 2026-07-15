@@ -69,17 +69,4 @@
 		}),
 	});
 
-const etnobotanica = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/etnobotanicacont' }),
-  schema: z.object({
-    nombre: z.string(),
-    cientifico: z.string(),
-    categoria: z.string(),
-    parteUsada: z.string(),
-    uso: z.string(),
-    compuestos: z.string(),
-    img: z.string().url(),
-  }),
-});
-
-export const collections = { blog, species, etnobotanica };
+export const collections = { blog, species };
