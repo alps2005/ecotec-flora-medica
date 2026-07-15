@@ -1,12 +1,146 @@
 ---
-import { SITE_TITLE } from '../consts';
-const today = new Date();
+import logoEcotec from '../assets/logo-ecotec-2025-transparente.webp';
+import isotipoSamborondon from '../assets/isotipo-samborondon.webp';
+import isotipoGuayaquil from '../assets/isotipo-guayaquil.webp';
+import isotipoCosta from '../assets/isotipo-costa.webp';
 ---
 
-<footer class="border-t border-slate-200 bg-white">
-  <div class="flex justify-center gap-6 px-6 py-8">
-    <p class="text-sm text-slate-600 hover:text-primary">
-      &copy; {new Date().getFullYear()} {SITE_TITLE}. Built with Astro.
-    </p>
+<footer class="border-t border-slate-200 bg-white py-12 px-6 sm:px-8 lg:px-12">
+  <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 lg:gap-8">
+    
+    <!-- Left Column: Logo & Admissions -->
+    <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+      <!-- ECOTEC Logo -->
+      <a href="https://ecotec.edu.ec/" target="_blank" rel="noopener" class="block">
+        <img 
+          src={logoEcotec.src} 
+          alt="Universidad ECOTEC Logo" 
+          width="220" 
+          height="65"
+          class="h-auto w-48 sm:w-56"
+        />
+      </a>
+
+      <!-- Explora, Lidera, Transforma -->
+      <div class="flex items-center justify-center lg:justify-start gap-2.5 font-sans font-black uppercase text-[10px] tracking-wider text-[#403f2b]">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#27B5E6] flex-shrink-0"></span>
+        <span>Explora</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#27B5E6] flex-shrink-0"></span>
+        <span>Lidera</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#27B5E6] flex-shrink-0"></span>
+        <span>Transforma</span>
+      </div>
+
+      <!-- Admissions Section -->
+      <div class="space-y-2">
+        <div class="text-[11px] font-extrabold tracking-widest text-[#403f2b] uppercase">ADMISIONES</div>
+        <div class="flex items-center justify-center lg:justify-start">
+          <a 
+            href="https://wa.me/593989880999" 
+            target="_blank" 
+            rel="noopener" 
+            class="flex items-center gap-2 text-sm text-[#403f2b] hover:text-[#0049A4] transition-colors font-semibold"
+          >
+            <!-- WhatsApp Icon (inline SVG) -->
+            <svg class="w-5 h-5 fill-current text-green-600 hover:text-green-700 transition-colors" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.862-1.864-4.339-2.89-6.974-2.891-5.441 0-9.866 4.422-9.87 9.861-.001 1.716.452 3.39 1.31 4.877L1.93 21.085l4.717-1.231zm11.215-7.757c-.294-.147-1.736-.857-2.004-.954-.268-.099-.463-.147-.659.147-.196.295-.76.954-.93 1.15-.17.196-.341.221-.635.074-1.802-.818-3.096-1.74-4.094-3.456-.263-.452.263-.42.752-1.398.082-.164.041-.307-.02-.455-.06-.148-.559-1.345-.766-1.84-.201-.484-.403-.418-.559-.426-.144-.008-.31-.009-.476-.009-.165 0-.434.062-.661.309-.227.247-.867.847-.867 2.066 0 1.219.888 2.397 1.012 2.56.124.164 1.748 2.668 4.233 3.738.591.255 1.053.408 1.412.523.594.19 1.135.163 1.562.099.476-.072 1.488-.608 1.696-1.196.207-.587.207-1.092.145-1.197-.062-.105-.227-.165-.522-.312z"/>
+            </svg>
+            <span>+593 98 988 0999</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Grid: Campus Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12 w-full lg:w-auto">
+      
+      <!-- Campus Samborondón -->
+      <div class="flex flex-col">
+        <div class="flex items-center gap-3">
+          <img 
+            src={isotipoSamborondon.src} 
+            alt="Isotipo Campus Samborondón" 
+            width="32" 
+            height="40"
+            class="w-8 h-auto flex-shrink-0"
+          />
+          <span class="font-sans font-bold text-[#403f2b] text-base leading-tight">Campus Samborondón</span>
+        </div>
+        <div class="flex items-start gap-2 mt-3 pl-11">
+          <!-- Pin Icon (inline SVG) -->
+          <svg class="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <a 
+            href="https://maps.app.goo.gl/Yh83efo6bvvjxecg6" 
+            target="_blank" 
+            rel="noopener" 
+            class="text-sm text-gray-600 hover:text-[#0049A4] transition-colors leading-normal"
+          >
+            Vía Samborondón KM 13.5
+          </a>
+        </div>
+      </div>
+
+      <!-- Campus Guayaquil -->
+      <div class="flex flex-col">
+        <div class="flex items-center gap-3">
+          <img 
+            src={isotipoGuayaquil.src} 
+            alt="Isotipo Campus Guayaquil" 
+            width="32" 
+            height="40"
+            class="w-8 h-auto flex-shrink-0"
+          />
+          <span class="font-sans font-bold text-[#403f2b] text-base leading-tight">Campus Guayaquil</span>
+        </div>
+        <div class="flex items-start gap-2 mt-3 pl-11">
+          <!-- Pin Icon -->
+          <svg class="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <a 
+            href="https://www.google.com/maps/place/Universidad+ECOTEC,+Juan+Tanca+Marengo/@-2.1502836,-79.9051049,17z/data=!3m1!4b1!4m5!3m4!1s0x902d6d7603f247fd:0xe328e6304112dcb4!8m2!3d-2.150289!4d-79.9029109" 
+            target="_blank" 
+            rel="noopener" 
+            class="text-sm text-gray-600 hover:text-[#0049A4] transition-colors leading-normal"
+          >
+            Av. Juan Tanca Marengo Km. 2
+          </a>
+        </div>
+      </div>
+
+      <!-- Campus La Costa -->
+      <div class="flex flex-col">
+        <div class="flex items-center gap-3">
+          <img 
+            src={isotipoCosta.src} 
+            alt="Isotipo Campus La Costa" 
+            width="32" 
+            height="40"
+            class="w-8 h-auto flex-shrink-0"
+          />
+          <span class="font-sans font-bold text-[#403f2b] text-base leading-tight">Campus La Costa</span>
+        </div>
+        <div class="flex items-start gap-2 mt-3 pl-11">
+          <!-- Pin Icon -->
+          <svg class="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <a 
+            href="https://www.google.com/maps/place/Universidad+Tecnologica+ECOTEC+(La+Costa)/@-2.1876118,-80.0178524,17z/data=!3m1!4b1!4m5!3m4!1s0x902d758a7cbeef21:0x5696a683de24622!8m2!3d-2.1876172!4d-80.0156584" 
+            target="_blank" 
+            rel="noopener" 
+            class="text-sm text-gray-600 hover:text-[#0049A4] transition-colors leading-normal"
+          >
+            Km 16.5 Vía La Costa
+          </a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </footer>
