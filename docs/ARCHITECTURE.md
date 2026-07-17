@@ -19,6 +19,9 @@ flowchart TD
         HTML --> DOM["DOM"]
         DOM --> TS["TypeScript Puro\n(búsqueda, filtrado, paginación)"]
         DOM --> GSAP["GSAP\n(animaciones del header)"]
+        DOM --> SUB["suscripcion.js\n(formulario de suscripción)"]
+        SUB --> API["src/lib/api.ts\n(cliente HTTP)"]
+        API --> BACK["API Backend\nPOST /api/suscriptores"]
     end
 
     subgraph Assets["Assets y Público"]
@@ -37,7 +40,6 @@ ecotec-flora-medica/
 ├── .astro/                     ← Generado automáticamente por Astro (no editar)
 │   ├── collections/            ← Esquemas JSON generados para las colecciones de contenido
 │   │   ├── blog.schema.json
-│   │   ├── etnobotanica.schema.json
 │   │   └── species.schema.json
 │   ├── content.d.ts            ← Tipos TypeScript generados para las colecciones
 │   ├── types.d.ts              ← Aumentaciones de tipos globales de Astro
@@ -52,10 +54,13 @@ ecotec-flora-medica/
 │   ├── favicon.ico
 │   ├── favicon-02.ico          ← Favicon activo (referenciado en BaseHead)
 │   └── favicon.svg
-├── scripts/                    ← Vacío; reservado para scripts de datos/build
 ├── src/
 │   ├── assets/                 ← Procesados por el pipeline de imágenes de Astro
 │   │   ├── blog-placeholder.jpg
+│   │   ├── logo-ecotec-2025-transparente.webp
+│   │   ├── isotipo-samborondon.webp
+│   │   ├── isotipo-guayaquil.webp
+│   │   ├── isotipo-costa.webp
 │   │   └── home_images/
 │   │       └── home_image_grid_test.webp
 │   ├── components/             ← Componentes Astro reutilizables
@@ -78,12 +83,13 @@ ecotec-flora-medica/
 │   ├── content/                ← Archivos de datos en Markdown
 │   │   ├── blog/               ← Entradas de posts del blog
 │   │   │   └── primer-post.md
-│   │   ├── species/            ← Perfiles ricos de especies (39 entradas)
-│   │   │   └── [slug].md
-│   │   └── etnobotanicacont/   ← Tarjetas de etnobotánica simplificadas (43 entradas)
+│   │   └── species/            ← Perfiles ricos de especies (42 entradas)
 │   │       └── [slug].md
 │   ├── layouts/
 │   │   └── Layout.astro        ← Envoltorio universal de página
+│   ├── lib/                    ← Capa de integración con la API del backend
+│   │   ├── api.ts              ← Cliente HTTP genérico (PUBLIC_API_URL)
+│   │   └── suscriptores.ts     ← Servicio de suscriptores + SuscriptorDTO
 │   ├── pages/                  ← Enrutamiento basado en archivos
 │   │   ├── index.astro         → /
 │   │   ├── especies.astro      → /especies
@@ -94,6 +100,8 @@ ecotec-flora-medica/
 │   │   │   └── [slug].astro    → /blog/[id]
 │   │   └── especies/
 │   │       └── [slug].astro    → /especies/[slug]
+│   ├── scripts/                ← Scripts del lado del cliente (no inline)
+│   │   └── suscripcion.js      ← Handler del formulario de suscripción
 │   ├── styles/
 │   │   └── global.css          ← Importaciones de Tailwind + tokens @theme + estilos base
 │   ├── consts.ts               ← Exportaciones de SITE_TITLE y SITE_DESCRIPTION
@@ -194,7 +202,13 @@ Envuelve etiquetas `<a>` con:
 - Clases CSS para el elemento de subrayado animado `.js-header-link-underline`.
 
 #### `Footer.astro`
-Pie de página mínimo: una línea de texto de copyright con el año actual calculado en tiempo de construcción.
+Footer completo de múltiples columnas alineado con el sitio de vinculación de ECOTEC. Estructura:
+
+- **Columna izquierda:** logo principal de ECOTEC (`logo-ecotec-2025-transparente.webp`), tagline "Explora · Lidera · Transforma" y sección de admisiones con enlace directo a WhatsApp (`wa.me/593989880999`).
+- **Columna central:** tres isotipos de campus (`isotipo-samborondon.webp`, `isotipo-guayaquil.webp`, `isotipo-costa.webp`) con sus nombres.
+- **Columna derecha:** links institucionales (Sitio web, Vinculación, Contacto) y copyright.
+
+Los cuatro assets de imagen son importados y procesados por el pipeline de Astro desde `src/assets/`.
 
 ### Componentes de Especies (`src/components/species/`)
 
@@ -232,7 +246,13 @@ graph TD
     EGRID --> EPAG[Etnobotanicapagination.astro]
 ```
 
-`Etnobotanicagrid.astro` realiza una unión entre colecciones: obtiene tanto la colección `species` como `etnobotanica`, usa la colección de especies para establecer el orden y la presencia (filtrando entradas de etnobotánica sin especie coincidente) y renderiza las tarjetas en el orden de las especies.
+`Etnobotanicagrid.astro` realiza una **unión derivada desde la colección `species`**: a partir del 2026-07-15 se eliminó la colección independiente `etnobotanica` y sus 43 archivos `.md` en `src/content/etnobotanicacont/`. Ahora el componente:
+
+1. Obtiene todas las entradas de la colección `species` con `estado === 'ACTIVO'`.
+2. Infiere la categoría etnobotánica (MEDICINAL, ALIMENTICIA, ESTIMULANTE, AROMÁTICA, RITUAL, AGROECOLÓGICA) parseando el campo `etnobotanica.clasificacion` de cada especie.
+3. Construye los datos de la tarjeta (badge, ícono, parte usada, uso tradicional, compuestos químicos) a partir de los mismos campos ricos del esquema de especie.
+
+Esto elimina la duplicación de datos y garantiza que el atlas de etnobotánica esté siempre sincronizado con el catálogo de especies.
 
 ---
 
@@ -244,7 +264,8 @@ Definidas en `src/content.config.ts` usando `defineCollection` de Astro + valida
 |---|---|---|---|
 | `blog` | `src/content/blog/` | `**/*.md` | Simple (title, description, pubDate, tags) |
 | `species` | `src/content/species/` | `**/*.md` | Rico (9 campos de nivel superior, objetos anidados, arrays) |
-| `etnobotanica` | `src/content/etnobotanicacont/` | `**/*.md` | Moderado (7 campos planos) |
+
+> **Nota:** La colección `etnobotanica` y sus 43 archivos en `src/content/etnobotanicacont/` fueron **eliminados el 2026-07-15**. El atlas de etnobotánica ahora deriva sus datos directamente de la colección `species` en tiempo de construcción. El array `collections` exportado quedó como `{ blog, species }`.
 
 Todas las colecciones usan el cargador `glob` de Astro, que escanea el directorio objetivo en tiempo de construcción y valida cada archivo contra el esquema, fallando la compilación ante cualquier violación del esquema.
 
@@ -255,7 +276,11 @@ Todas las colecciones usan el cargador `glob` de Astro, que escanea el directori
 ### `src/assets/`
 Contiene archivos procesados por el pipeline de imágenes integrado de Astro (Vite + `@astrojs/image`). Actualmente:
 - `blog-placeholder.jpg` — imagen OG de respaldo para páginas sin imagen explícita
-- `home_images/home_image_grid_test.webp` — imagen de cuadrícula provisional usada en el hero del inicio (la misma imagen repetida en las 5 celdas; **[inferido]** en espera de fotografías reales)
+- `home_images/home_image_grid_test.webp` — imagen de cuadrícula provisional usada en el hero del inicio
+- `logo-ecotec-2025-transparente.webp` — logo principal de la Universidad ECOTEC (footer)
+- `isotipo-samborondon.webp` — isotipo del campus Samborondón (footer)
+- `isotipo-guayaquil.webp` — isotipo del campus Guayaquil (footer)
+- `isotipo-costa.webp` — isotipo del campus Costa (footer)
 
 ### `public/`
 Archivos copiados literalmente a la raíz de `dist/` sin procesamiento:
@@ -269,24 +294,38 @@ Archivos copiados literalmente a la raíz de `dist/` sin procesamiento:
 
 ### `src/styles/global.css`
 
-La hoja de estilos única, importada tanto en `Layout.astro` como en `Header.astro`. Usa la directiva `@import "tailwindcss"` de Tailwind v4 y un bloque `@theme` para definir tokens de diseño personalizados:
+La hoja de estilos única, importada tanto en `Layout.astro` como en `Header.astro`. Usa la directiva `@import "tailwindcss"` de Tailwind v4 y un bloque `@theme` para definir tokens de diseño personalizados.
+
+**A partir del 2026-07-13 la paleta migró de tonos verdes botánicos a azul institucional ECOTEC:**
 
 ```css
 @theme {
-    --color-primary: #1B6D24;
-    --color-primary-fixed-dim: #2E7D3C;
-    --color-secondary: #A86B3D;
-    --color-secondary-fixed-dim: #C58A55;
-    --color-tertiary: #6A7D45;
-    --color-tertiary-fixed-dim: #869A5E;
-    --color-surface: #FAFCFA;
-    --color-surface-muted: #F3F4EF;
-    --color-text: #1F2A22;
-    --color-text-muted: #5F675F;
+    --color-primary: #0049A4;             /* azul ECOTEC */
+    --color-primary-fixed-dim: #003A86;
+    --color-secondary: #4DD0D1;           /* teal */
+    --color-secondary-fixed-dim: #2FA6A8;
+    --color-tertiary: #0A233C;            /* azul marino oscuro */
+    --color-tertiary-fixed-dim: #163A5D;
+    --color-surface: #F7FBFF;
+    --color-surface-muted: #EAF4FF;
+    --color-text: #0A233C;
+    --color-text-muted: #51657A;
     --radius-card: 1.5rem;
-    --shadow-card: 0 20px 60px -24px rgba(27, 109, 36, 0.2);
+    --shadow-card: 0 20px 60px -24px rgba(0, 73, 164, 0.24);
     --font-display: 'EB Garamond', serif;
     --font-body: 'Hanken Grotesk', sans-serif;
+}
+```
+
+El `body` ahora aplica gradientes radiales y un gradiente lineal fijo que dan profundidad al fondo sin imágenes:
+
+```css
+body {
+    background-image:
+        radial-gradient(circle at top left, rgba(77, 208, 209, 0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(0, 73, 164, 0.12), transparent 32%),
+        linear-gradient(180deg, #F7FBFF 0%, #EEF6FF 100%);
+    background-attachment: fixed;
 }
 ```
 
@@ -298,6 +337,39 @@ Estos tokens están disponibles como utilidades de Tailwind: `text-primary`, `bg
 
 ### Directorio `scripts/`
 Actualmente vacío. **[inferido]** Este directorio probablemente fue creado con la intención de alojar scripts de migración de datos, scripts de generación de contenido o helpers de despliegue. Aún no existe ningún script.
+
+### `src/lib/` — Capa de integración con el backend
+
+Agregada el 2026-07-11 por Luis Eraso. Contiene los módulos TypeScript que abstraen la comunicación con la API del backend.
+
+#### `src/lib/api.ts`
+Cliente HTTP genérico. Lee la URL base desde la variable de entorno `PUBLIC_API_URL` y expone un método `api.post(endpoint, body)` que:
+1. Realiza un `fetch` con `Content-Type: application/json`.
+2. Deserializa la respuesta JSON.
+3. Lanza un `Error` con el mensaje del servidor si `response.ok` es falso.
+
+```typescript
+const API_URL = import.meta.env.PUBLIC_API_URL;
+export const api = {
+  post: async (endpoint: string, body: any) => { ... }
+};
+```
+
+#### `src/lib/suscriptores.ts`
+Servicio específico para el recurso de suscriptores. Exporta:
+- **`SuscriptorDTO`** — interfaz con `nombre?: string` y `correo: string`.
+- **`suscriptoresService.registrar(datos)`** — llama a `POST /api/suscriptores` mediante `api.post`.
+
+### `src/scripts/` — Scripts del lado del cliente
+
+#### `src/scripts/suscripcion.js`
+Handler del formulario de suscripción. Se ejecuta en el navegador al cargar la página (`DOMContentLoaded`). Flujo:
+1. Captura los valores de `#full-name` y `#email`.
+2. Valida que ambos campos tengan valor.
+3. Llama a `suscriptoresService.registrar()`.
+4. Muestra feedback al usuario (éxito o error).
+
+> **Nota arquitectónica:** Este script importa `suscriptoresService` en tiempo de ejecución del navegador, lo que requiere que `PUBLIC_API_URL` esté disponible como variable de entorno pública en tiempo de compilación (prefijo `PUBLIC_` de Astro/Vite).
 
 ### `src/consts.ts`
 Un módulo TypeScript simple que exporta dos constantes de cadena:
@@ -315,14 +387,21 @@ sequenceDiagram
     participant PAGE as Página Astro
     participant HTML as HTML Compilado
     participant JS as Script del Cliente
+    participant LIB as src/lib (api + suscriptores)
+    participant API as API Backend
     participant USER as Navegador
 
     MD->>CC: Parseados y validados en tiempo de construcción
     CC->>PAGE: Datos tipados mediante getCollection()
     PAGE->>HTML: Renderizados a HTML estático con atributos data-*
     HTML->>USER: Entregados via HTTP
-    USER->>JS: El navegador ejecuta el script inline
+    USER->>JS: El navegador ejecuta los scripts inline y externos
     JS->>HTML: Lee atributos data-*, filtra/pagina elementos del DOM
+    JS->>LIB: suscripcion.js llama a suscriptoresService.registrar()
+    LIB->>API: POST /api/suscriptores (fetch con PUBLIC_API_URL)
+    API-->>LIB: Respuesta JSON
+    LIB-->>JS: Datos o Error
+    JS-->>USER: Feedback de éxito o error en el formulario
 ```
 
-El punto clave es que **todos los datos se incrustan en el HTML como atributos de datos en tiempo de construcción**. El JavaScript del lado del cliente nunca realiza peticiones de red — simplemente lee y alterna elementos del DOM, lo que hace que las funcionalidades interactivas funcionen sin conexión y carguen instantáneamente.
+El punto clave es que **todos los datos de contenido se incrustan en el HTML como atributos de datos en tiempo de construcción**. El JavaScript del lado del cliente nunca realiza peticiones de red para contenido de especies — simplemente lee y alterna elementos del DOM, lo que hace que las funcionalidades de catálogo funcionen sin conexión y carguen instantáneamente. La única petición de red en tiempo de ejecución es el formulario de suscripción hacia la API del backend.

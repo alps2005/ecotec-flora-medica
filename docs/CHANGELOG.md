@@ -6,7 +6,48 @@ Derivado del historial de Git. Los commits se listan del más reciente al más a
 
 ## [Sin Publicar] — Rama `dev`
 
+### 2026-07-16
+
+- `80b49fb` **chore:** Actualización de astro config — se revirtió la integración `astro-icon` que se había agregado el día anterior, dejando la configuración en su estado base con `sitemap()` únicamente.
+
+### 2026-07-15
+
+- `2f06dfc` **feat:** Actualización del footer, cambios en la orientación de layout e icono de WhatsApp — se refactorizó `Footer.astro` con mayor detalle de markup (formato expandido por líneas), se actualizó el ícono de WhatsApp a uno SVG inline mejorado y se ajustó la orientación del layout de la columna derecha del pie de página.
+- `e5314a7` **feat:** Actualización del badge de las tarjetas de etnobotánica — ajuste puntual en el estilo del badge en `Etnobotanicacard.astro`.
+- `b6bf03d` **chore:** Actualización de astro config — se agregó la integración `astro-icon` a `astro.config.mjs` (revertida al día siguiente).
+- `0e73a70` **chore:** Actualización de dependencias — actualización masiva de dependencias del proyecto; `pnpm-lock.yaml` reconstruido (~620 adiciones / ~1359 eliminaciones).
+- `a4f18db` **feat:** Actualización de la página de etnobotánica — **cambio arquitectónico mayor**: se eliminó la colección independiente `etnobotanica` de `content.config.ts` y se eliminaron los 43 archivos `.md` de `src/content/etnobotanicacont/`. `Etnobotanicagrid.astro` fue refactorizado para derivar todos sus datos directamente de la colección `species` existente, extrayendo la categoría etnobotánica mediante parsing del campo `etnobotanica.clasificacion`. Las páginas `etnobotanica.astro` e `index.astro` fueron ajustadas para la nueva fuente de datos.
+- `719f21e` **feat:** Footer actualizado al que está en la página de vinculación — se reemplazó el footer minimalista por un footer completo alineado con el sitio de vinculación de ECOTEC: columna de logos (Samborondón, Guayaquil, Costa), sección de admisiones con enlace a WhatsApp, links institucionales y copyright. Se agregaron cuatro nuevas imágenes a `src/assets/` (`isotipo-costa.webp`, `isotipo-guayaquil.webp`, `isotipo-samborondon.webp`, `logo-ecotec-2025-transparente.webp`).
+
+### 2026-07-14
+
+- `c131b32` **feat:** Ajuste de grid en homepage — revisión del layout de cuadrícula en `src/pages/index.astro` (+87/-38 líneas), refinando el sistema de columnas y espaciado del hero y secciones KPI.
+
+### 2026-07-13
+
+- `360694c` **feat:** KPIs de homepage actualizados — actualización de los valores numéricos y etiquetas de la barra de estadísticas de la homepage.
+- `44d7813` **feat:** Refactor de paleta de colores y grid del home — **cambio de identidad visual global**: la paleta se migró de tonos verdes botánicos a azul institucional ECOTEC. Nuevos tokens en `global.css`:
+  - `--color-primary: #0049A4` (azul ECOTEC)
+  - `--color-secondary: #4DD0D1` (teal)
+  - `--color-tertiary: #0A233C` (azul marino oscuro)
+  - Se actualizó el fondo del `body` con gradientes radiales y lineales fijos.
+  - Se propagaron los cambios de color a todos los componentes: `Header`, `HeaderLink`, `Footer`, `SpeciesCard`, `SpeciesGrid`, `TaxonomyFilter`, `SearchBar`, y todos los componentes de etnobotánica.
+  - `src/pages/index.astro` fue reescrito extensamente con el nuevo layout (+273/-118 líneas).
+
+### 2026-07-11
+
+- `d9e2359` **chore:** Merge branch 'dev' into luis — fusión de la rama `dev` en la rama `luis` para mantener sincronización.
+- `ce002ca` **feat:** Suscripción (Luis Eraso) — **nueva capa de integración con el backend**:
+  - Se crearon `src/lib/api.ts` (cliente HTTP genérico que consume `PUBLIC_API_URL`) y `src/lib/suscriptores.ts` (servicio con interfaz `SuscriptorDTO` y llamada a `POST /api/suscriptores`).
+  - Se agregó `src/scripts/suscripcion.js` con el handler del formulario del lado del cliente: validación de campos, llamada al servicio y manejo de errores.
+  - Se actualizó `src/pages/index.astro` con el formulario de suscripción funcional conectado al backend.
+  - Se generó `docs/FRONTEND_INTEGRACION_BACKEND.md` con la documentación completa de la integración frontend-backend.
+- `e9c85407` **feat:** 3 plantas agregadas — se agregaron tres nuevas fichas de especies a `src/content/species/`: `hortensia.md`, `lazo-de-amor.md`, `madre-de-miles.md`. El total de especies sube a **42 entradas**.
+- `e5fa554` **chore:** Actualización de imágenes para 8 plantas — se actualizaron las URLs de imagen (`multimediaPrincipal.imagenUrl`) en los archivos `.md` de: ajo, cedrón, dulcamara, eucalipto, hierba luisa, limón, neem y ruda.
+
 ### 2026-07-06
+
+
 
 - `d96f00b` **chore:** Eliminación de archivos innecesarios para la nueva documentación — se limpiaron archivos obsoletos antes de la generación de documentación.
 
