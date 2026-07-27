@@ -7,6 +7,7 @@ import type { CollectionEntry } from "astro:content";
 const posts = (await getCollection("blog")) as CollectionEntry<"blog">[];
 const species = (await getCollection(
   "species",
+  ({ data }) => data.estado === "ACTIVO",
 )) as CollectionEntry<"species">[];
 posts.sort(
   (left: CollectionEntry<"blog">, right: CollectionEntry<"blog">) =>
@@ -27,9 +28,15 @@ const speciesImages = species
     name: entry.data.nombreComun,
   }))
   .filter((image) => Boolean(image.src));
-const initialSpeciesImages = [...speciesImages]
-  .sort(() => Math.random() - 0.5)
-  .slice(0, 5);
+const shuffleSpeciesImages = (items: typeof speciesImages) => {
+  const arr = [...items];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+};
+const initialSpeciesImages = shuffleSpeciesImages(speciesImages).slice(0, 5);
 const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
 ---
 
@@ -250,7 +257,7 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
       class="mx-10 w-2xl rounded-[28px] border border-white/10 bg-white/10 px-6 py-10 shadow-2xl shadow-black/25 backdrop-blur-sm sm:px-10 sm:py-12 lg:px-12 lg:py-14"
     >
       <div class="flex w-full flex-col gap-10">
-        <form class="w-full space-y-8" action="#" method="post">
+        <form class="w-full space-y-8" action="#" method="post" data-suscripcion-form>
           <div class="w-full space-y-3">
             <label
               class="block text-sm font-medium uppercase tracking-[0.3em] text-white/40"

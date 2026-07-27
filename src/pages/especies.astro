@@ -6,9 +6,9 @@ import SpeciesGrid from '../components/species/SpeciesGrid.astro';
 import TaxonomyFilter from '../components/species/TaxonomyFilter.astro';
 import Pagination from '../components/species/Pagination.astro';
 
-const species = (await getCollection('species')).sort((a, b) =>
-  a.data.nombreComun.localeCompare(b.data.nombreComun),
-);
+const species = (
+  await getCollection('species', ({ data }) => data.estado === 'ACTIVO')
+).sort((a, b) => a.data.nombreComun.localeCompare(b.data.nombreComun));
 const families = [...new Set(species.map((entry) => entry.data.taxonomia.familia))];
 const speciesPerPage = 9;
 const totalPages = Math.max(1, Math.ceil(species.length / speciesPerPage));

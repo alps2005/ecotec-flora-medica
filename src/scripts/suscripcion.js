@@ -1,22 +1,31 @@
+import { suscriptoresService } from "../lib/suscriptores";
+
 document.addEventListener("DOMContentLoaded", () => {
 
-    const formulario = document.querySelector("form");
+    const formulario = document.querySelector("[data-suscripcion-form]");
 
-    formulario?.addEventListener(
+    if (!(formulario instanceof HTMLFormElement)) {
+        return;
+    }
+
+    formulario.addEventListener(
         "submit",
         async (e) => {
 
             e.preventDefault();
 
-            const nombre = document
-                .getElementById("full-name")
-                .value
-                .trim();
+            const nombreField = formulario.querySelector("#full-name");
+            const correoField = formulario.querySelector("#email");
 
-            const correo = document
-                .getElementById("email")
-                .value
-                .trim();
+            if (
+                !(nombreField instanceof HTMLInputElement) ||
+                !(correoField instanceof HTMLInputElement)
+            ) {
+                return;
+            }
+
+            const nombre = nombreField.value.trim();
+            const correo = correoField.value.trim();
 
             if (!nombre || !correo) {
 
@@ -27,32 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             try {
 
-                const respuesta = await fetch(
-                    "http://localhost:3000/api/suscriptores",
-                    {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            nombre,
-                            correo
-                        })
-                    }
-                );
-
-                const resultado = await respuesta.json();
-
-                console.log(resultado);
-
-                if (!respuesta.ok) {
-
-                    throw new Error(
-                        resultado.message ||
-                        "No fue posible registrar la suscripción."
-                    );
-
-                }
+                await suscriptoresService.registrar({ nombre, correo });
 
                 alert("¡Suscripción realizada correctamente!");
 
@@ -61,8 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } catch (error) {
 
                 console.error(error);
-
-                alert(error.message);
+                alert(error instanceof Error ? error.message : "No fue posible registrar la suscripción.");
 
             }
 

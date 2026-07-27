@@ -3,8 +3,7 @@ import { getCollection } from 'astro:content';
 import Etnobotanicacard from './Etnobotanicacard.astro';
 import Etnobotanicapagination from './Etnobotanicapagination.astro';
 
-const species = await getCollection('species');
-const activeSpecies = species.filter(especie => especie.data.estado === 'ACTIVO');
+const activeSpecies = await getCollection('species', ({ data }) => data.estado === 'ACTIVO');
 
 const getCategories = (clasificacion: string): string[] => {
   const normalized = clasificacion.toLowerCase();

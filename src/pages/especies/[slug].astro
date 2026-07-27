@@ -3,11 +3,23 @@ import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
-  const species = await getCollection('species');
-  return species.map((entry) => ({
-    params: { slug: entry.data.slug ?? entry.id },
-    props: { entry },
-  }));
+  const species = await getCollection('species', ({ data }) => data.estado === 'ACTIVO');
+
+  const seenSlugs = new Set<string>();
+  return species.map((entry) => {
+    const slug = entry.data.slug ?? entry.id;
+    if (seenSlugs.has(slug)) {
+      throw new Error(
+        `Duplicate species slug "${slug}" — check the "slug" field in src/content/species/*.md for a collision.`,
+      );
+    }
+    seenSlugs.add(slug);
+
+    return {
+      params: { slug },
+      props: { entry },
+    };
+  });
 }
 
 import type { CollectionEntry } from 'astro:content';

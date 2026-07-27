@@ -59,7 +59,7 @@
 				}),
 			),
 			multimediaPrincipal: z.object({
-				imagenUrl: z.string(),
+				imagenUrl: z.string().url(),
 				imagenPublicId: z.string().optional(),
 				videoUrl: z.string().optional(),
 				videoPublicId: z.string().optional(),
