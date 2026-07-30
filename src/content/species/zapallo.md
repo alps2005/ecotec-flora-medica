@@ -37,7 +37,7 @@ compuestosQuimicos:
   - nombre: "Fitosteroles (Beta-sitosterol)"
     detalle: "Bloquea de forma competitiva hormonas asociadas a la hiperplasia prostática benigna."
 multimediaPrincipal:
-  imagenUrl: "https://antropocene.it/wp-content/uploads/2018/11/Cucurbita_maxima.jpg"
+  imagenUrl: "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783718821/Zapallo_de_mantequilla_k5n0tg.webp"
   imagenPublicId: ""
   videoUrl: ""
   videoPublicId: ""
