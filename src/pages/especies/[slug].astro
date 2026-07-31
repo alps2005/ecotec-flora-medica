@@ -167,22 +167,25 @@ const getAccent = (family: string) => {
 
         {/* Etnobotany Sidebar */}
         <aside class="md:col-span-4">
-          <div class="h-full rounded-[1.5rem] border border-secondary/15 bg-secondary/10 p-8 shadow-sm">
-            <span class="mb-6 block text-xs font-bold uppercase tracking-[0.22em] text-secondary">
-              Etnobotánica
-            </span>
-            <ul class="flex flex-col gap-8">
-              {etnobotanyItems.map((item) => (
-                <li class="flex flex-col">
-                  <span class="mb-1 text-[9px] font-bold uppercase tracking-[0.2em] text-secondary/70">
-                    {item.label}
-                  </span>
-                  <span class="text-lg font-semibold leading-7 text-text">
-                    {item.value}
-                  </span>
-                </li>
-              ))}
-            </ul>
+          <div class="relative h-full overflow-hidden rounded-[1.5rem] border border-tertiary/15 bg-tertiary/15 p-8 shadow-sm">
+            <div class="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-tertiary/15"></div>
+            <div class="relative z-10">
+              <span class="mb-6 block text-xs font-bold uppercase tracking-[0.22em] text-primary">
+                Etnobotánica
+              </span>
+              <ul class="flex flex-col gap-8">
+                {etnobotanyItems.map((item) => (
+                  <li class="flex flex-col">
+                    <span class="mb-1 text-[9px] font-bold uppercase tracking-[0.2em] text-primary">
+                      {item.label}
+                    </span>
+                    <span class="text-lg font-semibold leading-7 text-text">
+                      {item.value}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </aside>
       </div>
