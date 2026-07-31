@@ -5,8 +5,8 @@ import Etnobotanicapagination from './Etnobotanicapagination.astro';
 
 const activeSpecies = await getCollection('species', ({ data }) => data.estado === 'ACTIVO');
 
-const getCategories = (clasificacion: string): string[] => {
-  const normalized = clasificacion.toLowerCase();
+const getCategories = (clasificacion: string, usoTradicional: string): string[] => {
+  const normalized = `${clasificacion} ${usoTradicional}`.toLowerCase();
   const matched: string[] = [];
   
   if (normalized.includes('medicinal')) matched.push('MEDICINAL');
@@ -42,7 +42,8 @@ const ICON_MAP: Record<string, string> = {
 
 const plantas = activeSpecies.map((especie) => {
   const clasificacion = especie.data.etnobotanica.clasificacion;
-  const matchedCategories = getCategories(clasificacion);
+  const usoTradicional = especie.data.etnobotanica.usoTradicional;
+  const matchedCategories = getCategories(clasificacion, usoTradicional);
   const primaryCategory = matchedCategories[0] ?? 'MEDICINAL';
   
   const badge = BADGE_MAP[primaryCategory] ?? { color: 'text-slate-700', bg: 'bg-slate-50' };
@@ -62,6 +63,7 @@ const plantas = activeSpecies.map((especie) => {
     img: especie.data.multimediaPrincipal.imagenUrl,
     slug: especie.data.slug ?? especie.id,
     categorias: matchedCategories.join(','),
+    perfil: especie.data.perfilEtnobotanico,
   };
 });
 
