@@ -1,0 +1,52 @@
+---
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+
+interface Props {
+  totalSpecies: number;
+  withComtradeData: number;
+  narrativeOnly: number;
+  topExportDestination: string;
+  topImportOrigin: string;
+}
+
+const { totalSpecies, withComtradeData, narrativeOnly, topExportDestination, topImportOrigin } = Astro.props;
+
+const kpis = [
+  {
+    label: 'Especies monitoreadas',
+    value: String(totalSpecies),
+    hint: 'Ficha etnobotánica con posible comercio internacional',
+  },
+  {
+    label: 'Con datos verificados',
+    value: `${withComtradeData} / ${totalSpecies}`,
+    hint: `${narrativeOnly} especies solo con relato cualitativo`,
+  },
+  {
+    label: 'Principal destino de exportación',
+    value: topExportDestination,
+    hint: 'Agregado entre especies con datos de Comtrade',
+  },
+  {
+    label: 'Principal origen de importación',
+    value: topImportOrigin,
+    hint: 'Agregado entre especies con datos de Comtrade',
+  },
+];
+---
+
+<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+  {
+    kpis.map((kpi) => (
+      <Card className="border-tertiary/10 bg-white/70 shadow-none">
+        <CardHeader>
+          <CardDescription>{kpi.label}</CardDescription>
+          <CardTitle className="font-display text-3xl font-normal text-text">{kpi.value}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p class="text-xs text-text-muted">{kpi.hint}</p>
+        </CardContent>
+      </Card>
+    ))
+  }
+</div>

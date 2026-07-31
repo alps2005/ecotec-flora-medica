@@ -1,0 +1,83 @@
+---
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+import { Badge } from '@/components/ui/badge';
+import type { SpeciesTradeRow } from '@/lib/trade-data';
+
+interface Props {
+  rows: SpeciesTradeRow[];
+}
+
+const { rows } = Astro.props;
+
+const usdFormatter = new Intl.NumberFormat('es-EC', {
+  style: 'currency',
+  currency: 'USD',
+  maximumFractionDigits: 0,
+  notation: 'compact',
+});
+
+function summarize(row: SpeciesTradeRow): string {
+  if (row.hasComtradeData) {
+    const latest = [...row.yearly].reverse().find((y) => y.exportValueUsd > 0 || y.importValueUsd > 0);
+    if (!latest) return `Sin movimiento registrado en ${row.yearly[0]?.year}–${row.yearly.at(-1)?.year}.`;
+    const topExport = row.partners.export[0]?.partnerName;
+    const topImport = row.partners.import[0]?.partnerName;
+    const parts: string[] = [];
+    if (latest.exportValueUsd > 0) {
+      parts.push(`exportó ${usdFormatter.format(latest.exportValueUsd)}${topExport ? ` (principal destino: ${topExport})` : ''}`);
+    }
+    if (latest.importValueUsd > 0) {
+      parts.push(`importó ${usdFormatter.format(latest.importValueUsd)}${topImport ? ` (principal origen: ${topImport})` : ''}`);
+    }
+    return `En ${latest.year} ${parts.join('; ')}.`;
+  }
+
+  const detalle = row.narrative.exportDetalle[0] ?? row.narrative.importDetalle[0];
+  return detalle ?? 'Sin información de comercio internacional registrada.';
+}
+---
+
+<div class="overflow-x-auto rounded-2xl border border-tertiary/10 bg-white/70">
+  <Table>
+    <TableHeader>
+      <TableRow>
+        <TableHead>Especie</TableHead>
+        <TableHead>Familia</TableHead>
+        <TableHead>Fuente de datos</TableHead>
+        <TableHead>Dinámica comercial</TableHead>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      {
+        rows.map((row) => (
+          <TableRow>
+            <TableCell class="whitespace-normal font-medium text-text">
+              {row.nombreComun}
+              <span class="block text-xs font-normal italic text-text-muted">{row.nombreCientifico}</span>
+            </TableCell>
+            <TableCell class="whitespace-normal text-text-muted">{row.familia}</TableCell>
+            <TableCell class="whitespace-normal">
+              {row.hasComtradeData ? (
+                <Badge className="bg-primary/10 text-primary border-primary/20">
+                  Comtrade{row.approximate ? ' · categoría aprox.' : ''}
+                </Badge>
+              ) : (
+                <Badge variant="outline" className="border-tertiary/30 text-text-muted">
+                  Narrativa (cualitativo)
+                </Badge>
+              )}
+            </TableCell>
+            <TableCell class="max-w-md min-w-64 whitespace-normal text-text-muted">{summarize(row)}</TableCell>
+          </TableRow>
+        ))
+      }
+    </TableBody>
+  </Table>
+</div>

@@ -1,0 +1,3785 @@
+{
+  "generatedAt": "2026-07-31T20:21:11.508Z",
+  "reporterCode": 218,
+  "reporterName": "Ecuador",
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "source": "UN Comtrade (comtradeapi.un.org public preview endpoint)",
+  "species": {
+    "achiote": {
+      "hsCode": "140490",
+      "hsDescription": "Productos vegetales n.c.o.p. (incl. semilla de achiote/annatto)",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1883425.68,
+          "exportValueUsd": 2378057.6,
+          "importQtyKg": 6257961.65,
+          "importValueUsd": 3960085.22
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 2779005.76,
+          "exportValueUsd": 3363828.12,
+          "importQtyKg": 5320258.32,
+          "importValueUsd": 3562313.23
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 3341636.72,
+          "exportValueUsd": 4520050.64,
+          "importQtyKg": 8303379.74,
+          "importValueUsd": 6589240.18
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 2571330.8,
+          "exportValueUsd": 3951669.8,
+          "importQtyKg": 1724078.6,
+          "importValueUsd": 1761940.2
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 1748013.1,
+          "importQtyKg": 1006.36,
+          "importValueUsd": 1198535.4
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 634769.4,
+            "qtyKg": 239.87,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 152,
+            "valueUsd": 543659.1,
+            "qtyKg": 328.84,
+            "partnerName": "Chile"
+          },
+          {
+            "partnerCode": 724,
+            "valueUsd": 236564.3,
+            "qtyKg": 120.53,
+            "partnerName": "España"
+          },
+          {
+            "partnerCode": 604,
+            "valueUsd": 151758.9,
+            "qtyKg": 133.97,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 156,
+            "valueUsd": 99328,
+            "qtyKg": 102.56,
+            "partnerName": "China"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 620399.7,
+            "qtyKg": 196.5,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 247233.6,
+            "qtyKg": 365.55,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 384,
+            "valueUsd": 87745.5,
+            "qtyKg": 103,
+            "partnerName": "Côte d'Ivoire"
+          },
+          {
+            "partnerCode": 144,
+            "valueUsd": 84191.9,
+            "qtyKg": 128.09,
+            "partnerName": "Sri Lanka"
+          },
+          {
+            "partnerCode": 204,
+            "valueUsd": 68485,
+            "qtyKg": 57.5,
+            "partnerName": "Benin"
+          }
+        ]
+      }
+    },
+    "ajo": {
+      "hsCode": "070320",
+      "hsDescription": "Ajos, frescos o refrigerados",
+      "approximate": false,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 124259872,
+          "importValueUsd": 148332247.87
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 19788.76,
+          "exportValueUsd": 29741.44,
+          "importQtyKg": 156951840,
+          "importValueUsd": 148810688.96
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 154118072,
+          "importValueUsd": 170877531.95
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 238500,
+          "exportValueUsd": 119250,
+          "importQtyKg": 37384833.6,
+          "importValueUsd": 37321021
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0.11,
+          "exportValueUsd": 90,
+          "importQtyKg": 17902.4,
+          "importValueUsd": 17561453
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 90,
+            "qtyKg": 0.11,
+            "partnerName": "Estados Unidos"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 156,
+            "valueUsd": 13720176.5,
+            "qtyKg": 12496.64,
+            "partnerName": "China"
+          },
+          {
+            "partnerCode": 604,
+            "valueUsd": 3841276.5,
+            "qtyKg": 5405.76,
+            "partnerName": "Perú"
+          }
+        ]
+      }
+    },
+    "aloe-vera": {
+      "hsCode": "121190",
+      "hsDescription": "Plantas y partes de plantas para perfumería/farmacia, otras",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1014958.96,
+          "exportValueUsd": 6667537.9,
+          "importQtyKg": 3229193.4,
+          "importValueUsd": 8423613.32
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1350764.92,
+          "exportValueUsd": 9315202.99,
+          "importQtyKg": 4447545.75,
+          "importValueUsd": 13077469.29
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 1335247.08,
+          "exportValueUsd": 9505134.13,
+          "importQtyKg": 5167479.54,
+          "importValueUsd": 14442241.84
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 709657,
+          "exportValueUsd": 5436331,
+          "importQtyKg": 1217664.4,
+          "importValueUsd": 4303443.8
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 2586779.2,
+          "importQtyKg": 0,
+          "importValueUsd": 2388048.7
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 1379355.8,
+            "qtyKg": 178268.1,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 380,
+            "valueUsd": 481902.7,
+            "qtyKg": 323.53,
+            "partnerName": "Italia"
+          },
+          {
+            "partnerCode": 528,
+            "valueUsd": 328531.9,
+            "qtyKg": 0,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 121852.7,
+            "qtyKg": 31.43,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 32,
+            "valueUsd": 72600,
+            "qtyKg": 30,
+            "partnerName": "Argentina"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 758168,
+            "qtyKg": 332.96,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 566,
+            "valueUsd": 621797.2,
+            "qtyKg": 175.04,
+            "partnerName": "Nigeria"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 444965.6,
+            "qtyKg": 132.62,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 818,
+            "valueUsd": 226928.1,
+            "qtyKg": 46.15,
+            "partnerName": "Egypt"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 189956.1,
+            "qtyKg": 60.39,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "apio": {
+      "hsCode": "070940",
+      "hsDescription": "Apio (excepto apionabo), fresco o refrigerado",
+      "approximate": false,
+      "hasData": false,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [],
+        "import": []
+      }
+    },
+    "babaco": {
+      "hsCode": "081090",
+      "hsDescription": "Las demás frutas frescas n.c.o.p.",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 39597379.72,
+          "exportValueUsd": 276963767.04,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 72240316.03,
+          "exportValueUsd": 370707628.46,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 96692436.32,
+          "exportValueUsd": 398829040.73,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 63101349.8,
+          "exportValueUsd": 243483046.6,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 186888218.6,
+          "importQtyKg": 32,
+          "importValueUsd": 29619
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 142297303,
+            "qtyKg": 51847087.15,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 344,
+            "valueUsd": 12520097.1,
+            "qtyKg": 4458723.59,
+            "partnerName": "China, Hong Kong SAR"
+          },
+          {
+            "partnerCode": 724,
+            "valueUsd": 8185662.3,
+            "qtyKg": 2725364.48,
+            "partnerName": "España"
+          },
+          {
+            "partnerCode": 124,
+            "valueUsd": 4632145.1,
+            "qtyKg": 1722804.36,
+            "partnerName": "Canadá"
+          },
+          {
+            "partnerCode": 604,
+            "valueUsd": 4038248.2,
+            "qtyKg": 13155.33,
+            "partnerName": "Perú"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 29619,
+            "qtyKg": 32,
+            "partnerName": "Perú"
+          }
+        ]
+      }
+    },
+    "cebolla": {
+      "hsCode": "070310",
+      "hsDescription": "Cebollas y chalotes, frescos o refrigerados",
+      "approximate": false,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 167624.04,
+          "exportValueUsd": 1007291.56,
+          "importQtyKg": 970400,
+          "importValueUsd": 473750.64
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 504119.08,
+          "exportValueUsd": 1510786.16,
+          "importQtyKg": 3307512,
+          "importValueUsd": 1568266.24
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 1293043.64,
+          "exportValueUsd": 3570284.8,
+          "importQtyKg": 400000,
+          "importValueUsd": 181476.8
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 3467160,
+          "exportValueUsd": 4113928.8,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 1877699.3,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 1218534.8,
+            "qtyKg": 0,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 124,
+            "valueUsd": 572209.9,
+            "qtyKg": 0,
+            "partnerName": "Canadá"
+          },
+          {
+            "partnerCode": 170,
+            "valueUsd": 86933,
+            "qtyKg": 459.04,
+            "partnerName": "Colombia"
+          },
+          {
+            "partnerCode": 591,
+            "valueUsd": 20.6,
+            "qtyKg": 0,
+            "partnerName": "Panamá"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 1,
+            "qtyKg": 0,
+            "partnerName": "Alemania"
+          }
+        ],
+        "import": []
+      }
+    },
+    "cedron": {
+      "hsCode": "121190",
+      "hsDescription": "Plantas y partes de plantas para perfumería/farmacia, otras",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1014958.96,
+          "exportValueUsd": 6667537.9,
+          "importQtyKg": 3229193.4,
+          "importValueUsd": 8423613.32
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1350764.92,
+          "exportValueUsd": 9315202.99,
+          "importQtyKg": 4447545.75,
+          "importValueUsd": 13077469.29
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 1335247.08,
+          "exportValueUsd": 9505134.13,
+          "importQtyKg": 5167479.54,
+          "importValueUsd": 14442241.84
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 709657,
+          "exportValueUsd": 5436331,
+          "importQtyKg": 1217664.4,
+          "importValueUsd": 4303443.8
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 2586779.2,
+          "importQtyKg": 0,
+          "importValueUsd": 2388048.7
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 1379355.8,
+            "qtyKg": 178268.1,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 380,
+            "valueUsd": 481902.7,
+            "qtyKg": 323.53,
+            "partnerName": "Italia"
+          },
+          {
+            "partnerCode": 528,
+            "valueUsd": 328531.9,
+            "qtyKg": 0,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 121852.7,
+            "qtyKg": 31.43,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 32,
+            "valueUsd": 72600,
+            "qtyKg": 30,
+            "partnerName": "Argentina"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 758168,
+            "qtyKg": 332.96,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 566,
+            "valueUsd": 621797.2,
+            "qtyKg": 175.04,
+            "partnerName": "Nigeria"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 444965.6,
+            "qtyKg": 132.62,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 818,
+            "valueUsd": 226928.1,
+            "qtyKg": 46.15,
+            "partnerName": "Egypt"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 189956.1,
+            "qtyKg": 60.39,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "cola-de-caballo": {
+      "hsCode": "121190",
+      "hsDescription": "Plantas y partes de plantas para perfumería/farmacia, otras",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1014958.96,
+          "exportValueUsd": 6667537.9,
+          "importQtyKg": 3229193.4,
+          "importValueUsd": 8423613.32
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1350764.92,
+          "exportValueUsd": 9315202.99,
+          "importQtyKg": 4447545.75,
+          "importValueUsd": 13077469.29
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 1335247.08,
+          "exportValueUsd": 9505134.13,
+          "importQtyKg": 5167479.54,
+          "importValueUsd": 14442241.84
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 709657,
+          "exportValueUsd": 5436331,
+          "importQtyKg": 1217664.4,
+          "importValueUsd": 4303443.8
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 2586779.2,
+          "importQtyKg": 0,
+          "importValueUsd": 2388048.7
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 1379355.8,
+            "qtyKg": 178268.1,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 380,
+            "valueUsd": 481902.7,
+            "qtyKg": 323.53,
+            "partnerName": "Italia"
+          },
+          {
+            "partnerCode": 528,
+            "valueUsd": 328531.9,
+            "qtyKg": 0,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 121852.7,
+            "qtyKg": 31.43,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 32,
+            "valueUsd": 72600,
+            "qtyKg": 30,
+            "partnerName": "Argentina"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 758168,
+            "qtyKg": 332.96,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 566,
+            "valueUsd": 621797.2,
+            "qtyKg": 175.04,
+            "partnerName": "Nigeria"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 444965.6,
+            "qtyKg": 132.62,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 818,
+            "valueUsd": 226928.1,
+            "qtyKg": 46.15,
+            "partnerName": "Egypt"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 189956.1,
+            "qtyKg": 60.39,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "culantro": {
+      "hsCode": "070999",
+      "hsDescription": "Las demás hortalizas frescas o refrigeradas n.c.o.p.",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 6470633.2,
+          "exportValueUsd": 4885595.56,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1677173.64,
+          "exportValueUsd": 3002740.44,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 515758.28,
+          "exportValueUsd": 3481297.92,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 2151148.8,
+          "exportValueUsd": 3270758.8,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 1746866.3,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 124,
+            "valueUsd": 714133.6,
+            "qtyKg": 0,
+            "partnerName": "Canadá"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 703125.8,
+            "qtyKg": 0,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 170,
+            "valueUsd": 322861.2,
+            "qtyKg": 990,
+            "partnerName": "Colombia"
+          },
+          {
+            "partnerCode": 724,
+            "valueUsd": 6745.7,
+            "qtyKg": 5.07,
+            "partnerName": "España"
+          }
+        ],
+        "import": []
+      }
+    },
+    "dulcamara": {
+      "hsCode": "121190",
+      "hsDescription": "Plantas y partes de plantas para perfumería/farmacia, otras",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1014958.96,
+          "exportValueUsd": 6667537.9,
+          "importQtyKg": 3229193.4,
+          "importValueUsd": 8423613.32
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1350764.92,
+          "exportValueUsd": 9315202.99,
+          "importQtyKg": 4447545.75,
+          "importValueUsd": 13077469.29
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 1335247.08,
+          "exportValueUsd": 9505134.13,
+          "importQtyKg": 5167479.54,
+          "importValueUsd": 14442241.84
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 709657,
+          "exportValueUsd": 5436331,
+          "importQtyKg": 1217664.4,
+          "importValueUsd": 4303443.8
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 2586779.2,
+          "importQtyKg": 0,
+          "importValueUsd": 2388048.7
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 1379355.8,
+            "qtyKg": 178268.1,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 380,
+            "valueUsd": 481902.7,
+            "qtyKg": 323.53,
+            "partnerName": "Italia"
+          },
+          {
+            "partnerCode": 528,
+            "valueUsd": 328531.9,
+            "qtyKg": 0,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 121852.7,
+            "qtyKg": 31.43,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 32,
+            "valueUsd": 72600,
+            "qtyKg": 30,
+            "partnerName": "Argentina"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 758168,
+            "qtyKg": 332.96,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 566,
+            "valueUsd": 621797.2,
+            "qtyKg": 175.04,
+            "partnerName": "Nigeria"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 444965.6,
+            "qtyKg": 132.62,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 818,
+            "valueUsd": 226928.1,
+            "qtyKg": 46.15,
+            "partnerName": "Egypt"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 189956.1,
+            "qtyKg": 60.39,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "eucalipto": {
+      "hsCode": "121190",
+      "hsDescription": "Plantas y partes de plantas para perfumería/farmacia, otras",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1014958.96,
+          "exportValueUsd": 6667537.9,
+          "importQtyKg": 3229193.4,
+          "importValueUsd": 8423613.32
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1350764.92,
+          "exportValueUsd": 9315202.99,
+          "importQtyKg": 4447545.75,
+          "importValueUsd": 13077469.29
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 1335247.08,
+          "exportValueUsd": 9505134.13,
+          "importQtyKg": 5167479.54,
+          "importValueUsd": 14442241.84
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 709657,
+          "exportValueUsd": 5436331,
+          "importQtyKg": 1217664.4,
+          "importValueUsd": 4303443.8
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 2586779.2,
+          "importQtyKg": 0,
+          "importValueUsd": 2388048.7
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 1379355.8,
+            "qtyKg": 178268.1,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 380,
+            "valueUsd": 481902.7,
+            "qtyKg": 323.53,
+            "partnerName": "Italia"
+          },
+          {
+            "partnerCode": 528,
+            "valueUsd": 328531.9,
+            "qtyKg": 0,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 121852.7,
+            "qtyKg": 31.43,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 32,
+            "valueUsd": 72600,
+            "qtyKg": 30,
+            "partnerName": "Argentina"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 758168,
+            "qtyKg": 332.96,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 566,
+            "valueUsd": 621797.2,
+            "qtyKg": 175.04,
+            "partnerName": "Nigeria"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 444965.6,
+            "qtyKg": 132.62,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 818,
+            "valueUsd": 226928.1,
+            "qtyKg": 46.15,
+            "partnerName": "Egypt"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 189956.1,
+            "qtyKg": 60.39,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "guanabana": {
+      "hsCode": "081090",
+      "hsDescription": "Las demás frutas frescas n.c.o.p.",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 39597379.72,
+          "exportValueUsd": 276963767.04,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 72240316.03,
+          "exportValueUsd": 370707628.46,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 96692436.32,
+          "exportValueUsd": 398829040.73,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 63101349.8,
+          "exportValueUsd": 243483046.6,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 186888218.6,
+          "importQtyKg": 32,
+          "importValueUsd": 29619
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 142297303,
+            "qtyKg": 51847087.15,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 344,
+            "valueUsd": 12520097.1,
+            "qtyKg": 4458723.59,
+            "partnerName": "China, Hong Kong SAR"
+          },
+          {
+            "partnerCode": 724,
+            "valueUsd": 8185662.3,
+            "qtyKg": 2725364.48,
+            "partnerName": "España"
+          },
+          {
+            "partnerCode": 124,
+            "valueUsd": 4632145.1,
+            "qtyKg": 1722804.36,
+            "partnerName": "Canadá"
+          },
+          {
+            "partnerCode": 604,
+            "valueUsd": 4038248.2,
+            "qtyKg": 13155.33,
+            "partnerName": "Perú"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 29619,
+            "qtyKg": 32,
+            "partnerName": "Perú"
+          }
+        ]
+      }
+    },
+    "guayaba": {
+      "hsCode": "080450",
+      "hsDescription": "Guayabas, mangos y mangostanes, frescos o secos",
+      "approximate": false,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 212469647.2,
+          "exportValueUsd": 170831212.68,
+          "importQtyKg": 24000,
+          "importValueUsd": 64443.44
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 240461984.08,
+          "exportValueUsd": 176563317,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 250980884.2,
+          "exportValueUsd": 197134458.16,
+          "importQtyKg": 14912,
+          "importValueUsd": 128959.23
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 128817705.8,
+          "exportValueUsd": 102850297.8,
+          "importQtyKg": 884,
+          "importValueUsd": 30565.4
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 28301353.4,
+          "importQtyKg": 0,
+          "importValueUsd": 24451.1
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 26342272.9,
+            "qtyKg": 24366.6,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 124,
+            "valueUsd": 875841.4,
+            "qtyKg": 872.01,
+            "partnerName": "Canadá"
+          },
+          {
+            "partnerCode": 170,
+            "valueUsd": 277480.7,
+            "qtyKg": 2700.96,
+            "partnerName": "Colombia"
+          },
+          {
+            "partnerCode": 554,
+            "valueUsd": 207217.5,
+            "qtyKg": 154.45,
+            "partnerName": "New Zealand"
+          },
+          {
+            "partnerCode": 528,
+            "valueUsd": 189489.5,
+            "qtyKg": 128.19,
+            "partnerName": "Países Bajos"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 276,
+            "valueUsd": 14526.1,
+            "qtyKg": 0,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 604,
+            "valueUsd": 9925,
+            "qtyKg": 0,
+            "partnerName": "Perú"
+          }
+        ]
+      }
+    },
+    "hierba-luisa": {
+      "hsCode": "121190",
+      "hsDescription": "Plantas y partes de plantas para perfumería/farmacia, otras",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1014958.96,
+          "exportValueUsd": 6667537.9,
+          "importQtyKg": 3229193.4,
+          "importValueUsd": 8423613.32
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1350764.92,
+          "exportValueUsd": 9315202.99,
+          "importQtyKg": 4447545.75,
+          "importValueUsd": 13077469.29
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 1335247.08,
+          "exportValueUsd": 9505134.13,
+          "importQtyKg": 5167479.54,
+          "importValueUsd": 14442241.84
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 709657,
+          "exportValueUsd": 5436331,
+          "importQtyKg": 1217664.4,
+          "importValueUsd": 4303443.8
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 2586779.2,
+          "importQtyKg": 0,
+          "importValueUsd": 2388048.7
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 1379355.8,
+            "qtyKg": 178268.1,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 380,
+            "valueUsd": 481902.7,
+            "qtyKg": 323.53,
+            "partnerName": "Italia"
+          },
+          {
+            "partnerCode": 528,
+            "valueUsd": 328531.9,
+            "qtyKg": 0,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 121852.7,
+            "qtyKg": 31.43,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 32,
+            "valueUsd": 72600,
+            "qtyKg": 30,
+            "partnerName": "Argentina"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 758168,
+            "qtyKg": 332.96,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 566,
+            "valueUsd": 621797.2,
+            "qtyKg": 175.04,
+            "partnerName": "Nigeria"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 444965.6,
+            "qtyKg": 132.62,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 818,
+            "valueUsd": 226928.1,
+            "qtyKg": 46.15,
+            "partnerName": "Egypt"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 189956.1,
+            "qtyKg": 60.39,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "hortensia": {
+      "hsCode": "060290",
+      "hsDescription": "Las demás plantas vivas (esquejes, injertos, ornamentales)",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 117744.16,
+          "exportValueUsd": 8001453.88,
+          "importQtyKg": 34394292.78,
+          "importValueUsd": 34661282.62
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 231871.06,
+          "exportValueUsd": 27581676.2,
+          "importQtyKg": 28431934.4,
+          "importValueUsd": 29479948.7
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 627582.96,
+          "exportValueUsd": 91263487.68,
+          "importQtyKg": 26981297.88,
+          "importValueUsd": 46501210.92
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 396246.8,
+          "exportValueUsd": 31876327.8,
+          "importQtyKg": 7123739.2,
+          "importValueUsd": 13378734.4
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 11999170.3,
+          "importQtyKg": 0,
+          "importValueUsd": 5760908.4
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 6516085.1,
+            "qtyKg": 0,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 2058042.1,
+            "qtyKg": 0,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 124,
+            "valueUsd": 662781.6,
+            "qtyKg": 0,
+            "partnerName": "Canadá"
+          },
+          {
+            "partnerCode": 764,
+            "valueUsd": 473874.6,
+            "qtyKg": 0,
+            "partnerName": "Thailand"
+          },
+          {
+            "partnerCode": 702,
+            "valueUsd": 437993,
+            "qtyKg": 0,
+            "partnerName": "Singapore"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 528,
+            "valueUsd": 2458376.9,
+            "qtyKg": 88276.78,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 170,
+            "valueUsd": 1313487,
+            "qtyKg": 0,
+            "partnerName": "Colombia"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 853480.6,
+            "qtyKg": 0,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 490,
+            "valueUsd": 436793.3,
+            "qtyKg": 0,
+            "partnerName": "Otras zonas de Asia (n.e.)"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 234168.7,
+            "qtyKg": 26783.23,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "jengibre": {
+      "hsCode": "091010",
+      "hsDescription": "Jengibre",
+      "approximate": false,
+      "hasData": false,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [],
+        "import": []
+      }
+    },
+    "lazo-de-amor": {
+      "hsCode": "060290",
+      "hsDescription": "Las demás plantas vivas (esquejes, injertos, ornamentales)",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 117744.16,
+          "exportValueUsd": 8001453.88,
+          "importQtyKg": 34394292.78,
+          "importValueUsd": 34661282.62
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 231871.06,
+          "exportValueUsd": 27581676.2,
+          "importQtyKg": 28431934.4,
+          "importValueUsd": 29479948.7
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 627582.96,
+          "exportValueUsd": 91263487.68,
+          "importQtyKg": 26981297.88,
+          "importValueUsd": 46501210.92
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 396246.8,
+          "exportValueUsd": 31876327.8,
+          "importQtyKg": 7123739.2,
+          "importValueUsd": 13378734.4
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 11999170.3,
+          "importQtyKg": 0,
+          "importValueUsd": 5760908.4
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 6516085.1,
+            "qtyKg": 0,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 2058042.1,
+            "qtyKg": 0,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 124,
+            "valueUsd": 662781.6,
+            "qtyKg": 0,
+            "partnerName": "Canadá"
+          },
+          {
+            "partnerCode": 764,
+            "valueUsd": 473874.6,
+            "qtyKg": 0,
+            "partnerName": "Thailand"
+          },
+          {
+            "partnerCode": 702,
+            "valueUsd": 437993,
+            "qtyKg": 0,
+            "partnerName": "Singapore"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 528,
+            "valueUsd": 2458376.9,
+            "qtyKg": 88276.78,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 170,
+            "valueUsd": 1313487,
+            "qtyKg": 0,
+            "partnerName": "Colombia"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 853480.6,
+            "qtyKg": 0,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 490,
+            "valueUsd": 436793.3,
+            "qtyKg": 0,
+            "partnerName": "Otras zonas de Asia (n.e.)"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 234168.7,
+            "qtyKg": 26783.23,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "limon": {
+      "hsCode": "080550",
+      "hsDescription": "Limones y limas, frescos o secos",
+      "approximate": false,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 4982441.44,
+          "exportValueUsd": 2081468.56,
+          "importQtyKg": 8277832,
+          "importValueUsd": 2686689.36
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 2610908.92,
+          "exportValueUsd": 854362.32,
+          "importQtyKg": 39582598.4,
+          "importValueUsd": 13428536.8
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 7428335.88,
+          "exportValueUsd": 2494618,
+          "importQtyKg": 6061504,
+          "importValueUsd": 3285784.56
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 8954314,
+          "exportValueUsd": 2740867.2,
+          "importQtyKg": 449742.4,
+          "importValueUsd": 426029
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 1030857,
+          "importQtyKg": 0,
+          "importValueUsd": 213925.8
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 593959,
+            "qtyKg": 0,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 170,
+            "valueUsd": 396487.2,
+            "qtyKg": 3964.86,
+            "partnerName": "Colombia"
+          },
+          {
+            "partnerCode": 251,
+            "valueUsd": 33138,
+            "qtyKg": 0,
+            "partnerName": "Francia"
+          },
+          {
+            "partnerCode": 124,
+            "valueUsd": 6103,
+            "qtyKg": 0,
+            "partnerName": "Canadá"
+          },
+          {
+            "partnerCode": 392,
+            "valueUsd": 958.8,
+            "qtyKg": 0,
+            "partnerName": "Japón"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 170,
+            "valueUsd": 208549.1,
+            "qtyKg": 0,
+            "partnerName": "Colombia"
+          },
+          {
+            "partnerCode": 604,
+            "valueUsd": 5376.7,
+            "qtyKg": 0,
+            "partnerName": "Perú"
+          }
+        ]
+      }
+    },
+    "llanten": {
+      "hsCode": "121190",
+      "hsDescription": "Plantas y partes de plantas para perfumería/farmacia, otras",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1014958.96,
+          "exportValueUsd": 6667537.9,
+          "importQtyKg": 3229193.4,
+          "importValueUsd": 8423613.32
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1350764.92,
+          "exportValueUsd": 9315202.99,
+          "importQtyKg": 4447545.75,
+          "importValueUsd": 13077469.29
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 1335247.08,
+          "exportValueUsd": 9505134.13,
+          "importQtyKg": 5167479.54,
+          "importValueUsd": 14442241.84
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 709657,
+          "exportValueUsd": 5436331,
+          "importQtyKg": 1217664.4,
+          "importValueUsd": 4303443.8
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 2586779.2,
+          "importQtyKg": 0,
+          "importValueUsd": 2388048.7
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 1379355.8,
+            "qtyKg": 178268.1,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 380,
+            "valueUsd": 481902.7,
+            "qtyKg": 323.53,
+            "partnerName": "Italia"
+          },
+          {
+            "partnerCode": 528,
+            "valueUsd": 328531.9,
+            "qtyKg": 0,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 121852.7,
+            "qtyKg": 31.43,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 32,
+            "valueUsd": 72600,
+            "qtyKg": 30,
+            "partnerName": "Argentina"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 758168,
+            "qtyKg": 332.96,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 566,
+            "valueUsd": 621797.2,
+            "qtyKg": 175.04,
+            "partnerName": "Nigeria"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 444965.6,
+            "qtyKg": 132.62,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 818,
+            "valueUsd": 226928.1,
+            "qtyKg": 46.15,
+            "partnerName": "Egypt"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 189956.1,
+            "qtyKg": 60.39,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "madre-de-miles": {
+      "hsCode": "060290",
+      "hsDescription": "Las demás plantas vivas (esquejes, injertos, ornamentales)",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 117744.16,
+          "exportValueUsd": 8001453.88,
+          "importQtyKg": 34394292.78,
+          "importValueUsd": 34661282.62
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 231871.06,
+          "exportValueUsd": 27581676.2,
+          "importQtyKg": 28431934.4,
+          "importValueUsd": 29479948.7
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 627582.96,
+          "exportValueUsd": 91263487.68,
+          "importQtyKg": 26981297.88,
+          "importValueUsd": 46501210.92
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 396246.8,
+          "exportValueUsd": 31876327.8,
+          "importQtyKg": 7123739.2,
+          "importValueUsd": 13378734.4
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 11999170.3,
+          "importQtyKg": 0,
+          "importValueUsd": 5760908.4
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 6516085.1,
+            "qtyKg": 0,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 2058042.1,
+            "qtyKg": 0,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 124,
+            "valueUsd": 662781.6,
+            "qtyKg": 0,
+            "partnerName": "Canadá"
+          },
+          {
+            "partnerCode": 764,
+            "valueUsd": 473874.6,
+            "qtyKg": 0,
+            "partnerName": "Thailand"
+          },
+          {
+            "partnerCode": 702,
+            "valueUsd": 437993,
+            "qtyKg": 0,
+            "partnerName": "Singapore"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 528,
+            "valueUsd": 2458376.9,
+            "qtyKg": 88276.78,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 170,
+            "valueUsd": 1313487,
+            "qtyKg": 0,
+            "partnerName": "Colombia"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 853480.6,
+            "qtyKg": 0,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 490,
+            "valueUsd": 436793.3,
+            "qtyKg": 0,
+            "partnerName": "Otras zonas de Asia (n.e.)"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 234168.7,
+            "qtyKg": 26783.23,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "mandarina": {
+      "hsCode": "080520",
+      "hsDescription": "Mandarinas, tangerinas y satsumas",
+      "approximate": false,
+      "hasData": false,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [],
+        "import": []
+      }
+    },
+    "manzanilla": {
+      "hsCode": "121190",
+      "hsDescription": "Plantas y partes de plantas para perfumería/farmacia, otras",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1014958.96,
+          "exportValueUsd": 6667537.9,
+          "importQtyKg": 3229193.4,
+          "importValueUsd": 8423613.32
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1350764.92,
+          "exportValueUsd": 9315202.99,
+          "importQtyKg": 4447545.75,
+          "importValueUsd": 13077469.29
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 1335247.08,
+          "exportValueUsd": 9505134.13,
+          "importQtyKg": 5167479.54,
+          "importValueUsd": 14442241.84
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 709657,
+          "exportValueUsd": 5436331,
+          "importQtyKg": 1217664.4,
+          "importValueUsd": 4303443.8
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 2586779.2,
+          "importQtyKg": 0,
+          "importValueUsd": 2388048.7
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 1379355.8,
+            "qtyKg": 178268.1,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 380,
+            "valueUsd": 481902.7,
+            "qtyKg": 323.53,
+            "partnerName": "Italia"
+          },
+          {
+            "partnerCode": 528,
+            "valueUsd": 328531.9,
+            "qtyKg": 0,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 121852.7,
+            "qtyKg": 31.43,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 32,
+            "valueUsd": 72600,
+            "qtyKg": 30,
+            "partnerName": "Argentina"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 758168,
+            "qtyKg": 332.96,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 566,
+            "valueUsd": 621797.2,
+            "qtyKg": 175.04,
+            "partnerName": "Nigeria"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 444965.6,
+            "qtyKg": 132.62,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 818,
+            "valueUsd": 226928.1,
+            "qtyKg": 46.15,
+            "partnerName": "Egypt"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 189956.1,
+            "qtyKg": 60.39,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "matico": {
+      "hsCode": "121190",
+      "hsDescription": "Plantas y partes de plantas para perfumería/farmacia, otras",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1014958.96,
+          "exportValueUsd": 6667537.9,
+          "importQtyKg": 3229193.4,
+          "importValueUsd": 8423613.32
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1350764.92,
+          "exportValueUsd": 9315202.99,
+          "importQtyKg": 4447545.75,
+          "importValueUsd": 13077469.29
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 1335247.08,
+          "exportValueUsd": 9505134.13,
+          "importQtyKg": 5167479.54,
+          "importValueUsd": 14442241.84
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 709657,
+          "exportValueUsd": 5436331,
+          "importQtyKg": 1217664.4,
+          "importValueUsd": 4303443.8
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 2586779.2,
+          "importQtyKg": 0,
+          "importValueUsd": 2388048.7
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 1379355.8,
+            "qtyKg": 178268.1,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 380,
+            "valueUsd": 481902.7,
+            "qtyKg": 323.53,
+            "partnerName": "Italia"
+          },
+          {
+            "partnerCode": 528,
+            "valueUsd": 328531.9,
+            "qtyKg": 0,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 121852.7,
+            "qtyKg": 31.43,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 32,
+            "valueUsd": 72600,
+            "qtyKg": 30,
+            "partnerName": "Argentina"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 758168,
+            "qtyKg": 332.96,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 566,
+            "valueUsd": 621797.2,
+            "qtyKg": 175.04,
+            "partnerName": "Nigeria"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 444965.6,
+            "qtyKg": 132.62,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 818,
+            "valueUsd": 226928.1,
+            "qtyKg": 46.15,
+            "partnerName": "Egypt"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 189956.1,
+            "qtyKg": 60.39,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "menta-piperita": {
+      "hsCode": "121190",
+      "hsDescription": "Plantas y partes de plantas para perfumería/farmacia, otras",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1014958.96,
+          "exportValueUsd": 6667537.9,
+          "importQtyKg": 3229193.4,
+          "importValueUsd": 8423613.32
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1350764.92,
+          "exportValueUsd": 9315202.99,
+          "importQtyKg": 4447545.75,
+          "importValueUsd": 13077469.29
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 1335247.08,
+          "exportValueUsd": 9505134.13,
+          "importQtyKg": 5167479.54,
+          "importValueUsd": 14442241.84
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 709657,
+          "exportValueUsd": 5436331,
+          "importQtyKg": 1217664.4,
+          "importValueUsd": 4303443.8
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 2586779.2,
+          "importQtyKg": 0,
+          "importValueUsd": 2388048.7
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 1379355.8,
+            "qtyKg": 178268.1,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 380,
+            "valueUsd": 481902.7,
+            "qtyKg": 323.53,
+            "partnerName": "Italia"
+          },
+          {
+            "partnerCode": 528,
+            "valueUsd": 328531.9,
+            "qtyKg": 0,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 121852.7,
+            "qtyKg": 31.43,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 32,
+            "valueUsd": 72600,
+            "qtyKg": 30,
+            "partnerName": "Argentina"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 758168,
+            "qtyKg": 332.96,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 566,
+            "valueUsd": 621797.2,
+            "qtyKg": 175.04,
+            "partnerName": "Nigeria"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 444965.6,
+            "qtyKg": 132.62,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 818,
+            "valueUsd": 226928.1,
+            "qtyKg": 46.15,
+            "partnerName": "Egypt"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 189956.1,
+            "qtyKg": 60.39,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "naranja-dulce": {
+      "hsCode": "080510",
+      "hsDescription": "Naranjas, frescas o secas",
+      "approximate": false,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 109.12,
+          "exportValueUsd": 2400.08,
+          "importQtyKg": 93942774.4,
+          "importValueUsd": 51364561.68
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 20.12,
+          "exportValueUsd": 1323.88,
+          "importQtyKg": 158243468,
+          "importValueUsd": 80558577.84
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 2700104.24,
+          "exportValueUsd": 364670.4,
+          "importQtyKg": 83155800,
+          "importValueUsd": 53128362.34
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 1691613.8,
+          "exportValueUsd": 312133,
+          "importQtyKg": 8174938.8,
+          "importValueUsd": 8867361.2
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 474589.9,
+          "importQtyKg": 0,
+          "importValueUsd": 4998081.5
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 170,
+            "valueUsd": 473890,
+            "qtyKg": 4727.7,
+            "partnerName": "Colombia"
+          },
+          {
+            "partnerCode": 392,
+            "valueUsd": 452,
+            "qtyKg": 0,
+            "partnerName": "Japón"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 195,
+            "qtyKg": 0,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 152,
+            "valueUsd": 52.9,
+            "qtyKg": 0,
+            "partnerName": "Chile"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 152,
+            "valueUsd": 2107212.1,
+            "qtyKg": 0,
+            "partnerName": "Chile"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 1801303.9,
+            "qtyKg": 0,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 724,
+            "valueUsd": 540297.6,
+            "qtyKg": 0,
+            "partnerName": "España"
+          },
+          {
+            "partnerCode": 170,
+            "valueUsd": 477966.7,
+            "qtyKg": 0,
+            "partnerName": "Colombia"
+          },
+          {
+            "partnerCode": 604,
+            "valueUsd": 71301.2,
+            "qtyKg": 0,
+            "partnerName": "Perú"
+          }
+        ]
+      }
+    },
+    "naranjo-amargo": {
+      "hsCode": "080510",
+      "hsDescription": "Naranjas, frescas o secas (comparte código con naranja dulce)",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 109.12,
+          "exportValueUsd": 2400.08,
+          "importQtyKg": 93942774.4,
+          "importValueUsd": 51364561.68
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 20.12,
+          "exportValueUsd": 1323.88,
+          "importQtyKg": 158243468,
+          "importValueUsd": 80558577.84
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 2700104.24,
+          "exportValueUsd": 364670.4,
+          "importQtyKg": 83155800,
+          "importValueUsd": 53128362.34
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 1691613.8,
+          "exportValueUsd": 312133,
+          "importQtyKg": 8174938.8,
+          "importValueUsd": 8867361.2
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 474589.9,
+          "importQtyKg": 0,
+          "importValueUsd": 4998081.5
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 170,
+            "valueUsd": 473890,
+            "qtyKg": 4727.7,
+            "partnerName": "Colombia"
+          },
+          {
+            "partnerCode": 392,
+            "valueUsd": 452,
+            "qtyKg": 0,
+            "partnerName": "Japón"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 195,
+            "qtyKg": 0,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 152,
+            "valueUsd": 52.9,
+            "qtyKg": 0,
+            "partnerName": "Chile"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 152,
+            "valueUsd": 2107212.1,
+            "qtyKg": 0,
+            "partnerName": "Chile"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 1801303.9,
+            "qtyKg": 0,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 724,
+            "valueUsd": 540297.6,
+            "qtyKg": 0,
+            "partnerName": "España"
+          },
+          {
+            "partnerCode": 170,
+            "valueUsd": 477966.7,
+            "qtyKg": 0,
+            "partnerName": "Colombia"
+          },
+          {
+            "partnerCode": 604,
+            "valueUsd": 71301.2,
+            "qtyKg": 0,
+            "partnerName": "Perú"
+          }
+        ]
+      }
+    },
+    "neem": {
+      "hsCode": "121190",
+      "hsDescription": "Plantas y partes de plantas para perfumería/farmacia, otras",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1014958.96,
+          "exportValueUsd": 6667537.9,
+          "importQtyKg": 3229193.4,
+          "importValueUsd": 8423613.32
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1350764.92,
+          "exportValueUsd": 9315202.99,
+          "importQtyKg": 4447545.75,
+          "importValueUsd": 13077469.29
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 1335247.08,
+          "exportValueUsd": 9505134.13,
+          "importQtyKg": 5167479.54,
+          "importValueUsd": 14442241.84
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 709657,
+          "exportValueUsd": 5436331,
+          "importQtyKg": 1217664.4,
+          "importValueUsd": 4303443.8
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 2586779.2,
+          "importQtyKg": 0,
+          "importValueUsd": 2388048.7
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 1379355.8,
+            "qtyKg": 178268.1,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 380,
+            "valueUsd": 481902.7,
+            "qtyKg": 323.53,
+            "partnerName": "Italia"
+          },
+          {
+            "partnerCode": 528,
+            "valueUsd": 328531.9,
+            "qtyKg": 0,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 121852.7,
+            "qtyKg": 31.43,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 32,
+            "valueUsd": 72600,
+            "qtyKg": 30,
+            "partnerName": "Argentina"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 758168,
+            "qtyKg": 332.96,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 566,
+            "valueUsd": 621797.2,
+            "qtyKg": 175.04,
+            "partnerName": "Nigeria"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 444965.6,
+            "qtyKg": 132.62,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 818,
+            "valueUsd": 226928.1,
+            "qtyKg": 46.15,
+            "partnerName": "Egypt"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 189956.1,
+            "qtyKg": 60.39,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "ortiga": {
+      "hsCode": "121190",
+      "hsDescription": "Plantas y partes de plantas para perfumería/farmacia, otras",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1014958.96,
+          "exportValueUsd": 6667537.9,
+          "importQtyKg": 3229193.4,
+          "importValueUsd": 8423613.32
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1350764.92,
+          "exportValueUsd": 9315202.99,
+          "importQtyKg": 4447545.75,
+          "importValueUsd": 13077469.29
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 1335247.08,
+          "exportValueUsd": 9505134.13,
+          "importQtyKg": 5167479.54,
+          "importValueUsd": 14442241.84
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 709657,
+          "exportValueUsd": 5436331,
+          "importQtyKg": 1217664.4,
+          "importValueUsd": 4303443.8
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 2586779.2,
+          "importQtyKg": 0,
+          "importValueUsd": 2388048.7
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 1379355.8,
+            "qtyKg": 178268.1,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 380,
+            "valueUsd": 481902.7,
+            "qtyKg": 323.53,
+            "partnerName": "Italia"
+          },
+          {
+            "partnerCode": 528,
+            "valueUsd": 328531.9,
+            "qtyKg": 0,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 121852.7,
+            "qtyKg": 31.43,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 32,
+            "valueUsd": 72600,
+            "qtyKg": 30,
+            "partnerName": "Argentina"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 758168,
+            "qtyKg": 332.96,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 566,
+            "valueUsd": 621797.2,
+            "qtyKg": 175.04,
+            "partnerName": "Nigeria"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 444965.6,
+            "qtyKg": 132.62,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 818,
+            "valueUsd": 226928.1,
+            "qtyKg": 46.15,
+            "partnerName": "Egypt"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 189956.1,
+            "qtyKg": 60.39,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "papaya": {
+      "hsCode": "080720",
+      "hsDescription": "Papayas, frescas",
+      "approximate": false,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 372637.6,
+          "exportValueUsd": 452799,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 633416,
+          "exportValueUsd": 135683.2,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 640378.88,
+          "exportValueUsd": 130025.92,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 134640,
+          "exportValueUsd": 26928,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 1280.53,
+          "exportValueUsd": 2041.8,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 724,
+            "valueUsd": 2041.8,
+            "qtyKg": 1280.53,
+            "partnerName": "España"
+          }
+        ],
+        "import": []
+      }
+    },
+    "pepino": {
+      "hsCode": "070700",
+      "hsDescription": "Pepinos y pepinillos, frescos o refrigerados",
+      "approximate": false,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1102760.5,
+          "exportValueUsd": 2195328.08,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 571098.8,
+          "exportValueUsd": 1129384.6,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 635230.8,
+          "exportValueUsd": 1435940.6,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 204847.6,
+          "exportValueUsd": 675661.8,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 203841.1,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 203344.1,
+            "qtyKg": 0,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 124,
+            "valueUsd": 312,
+            "qtyKg": 0,
+            "partnerName": "Canadá"
+          },
+          {
+            "partnerCode": 251,
+            "valueUsd": 185,
+            "qtyKg": 0,
+            "partnerName": "Francia"
+          }
+        ],
+        "import": []
+      }
+    },
+    "perejil": {
+      "hsCode": "070999",
+      "hsDescription": "Las demás hortalizas frescas o refrigeradas n.c.o.p.",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 6470633.2,
+          "exportValueUsd": 4885595.56,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1677173.64,
+          "exportValueUsd": 3002740.44,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 515758.28,
+          "exportValueUsd": 3481297.92,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 2151148.8,
+          "exportValueUsd": 3270758.8,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 1746866.3,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 124,
+            "valueUsd": 714133.6,
+            "qtyKg": 0,
+            "partnerName": "Canadá"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 703125.8,
+            "qtyKg": 0,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 170,
+            "valueUsd": 322861.2,
+            "qtyKg": 990,
+            "partnerName": "Colombia"
+          },
+          {
+            "partnerCode": 724,
+            "valueUsd": 6745.7,
+            "qtyKg": 5.07,
+            "partnerName": "España"
+          }
+        ],
+        "import": []
+      }
+    },
+    "pimiento": {
+      "hsCode": "070960",
+      "hsDescription": "Pimientos del género Capsicum o Pimenta, frescos",
+      "approximate": false,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 75610.56,
+          "exportValueUsd": 193403.84,
+          "importQtyKg": 462.5,
+          "importValueUsd": 131.12
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 30911.64,
+          "exportValueUsd": 84989.84,
+          "importQtyKg": 13840,
+          "importValueUsd": 15745.92
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 399382.84,
+          "exportValueUsd": 1157872.28,
+          "importQtyKg": 52145.92,
+          "importValueUsd": 78829.24
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 164294,
+          "exportValueUsd": 430133.2,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 184284.1,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 184018.6,
+            "qtyKg": 0,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 826,
+            "valueUsd": 265.5,
+            "qtyKg": 0,
+            "partnerName": "Reino Unido"
+          }
+        ],
+        "import": []
+      }
+    },
+    "romero": {
+      "hsCode": "121190",
+      "hsDescription": "Plantas y partes de plantas para perfumería/farmacia, otras",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1014958.96,
+          "exportValueUsd": 6667537.9,
+          "importQtyKg": 3229193.4,
+          "importValueUsd": 8423613.32
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1350764.92,
+          "exportValueUsd": 9315202.99,
+          "importQtyKg": 4447545.75,
+          "importValueUsd": 13077469.29
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 1335247.08,
+          "exportValueUsd": 9505134.13,
+          "importQtyKg": 5167479.54,
+          "importValueUsd": 14442241.84
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 709657,
+          "exportValueUsd": 5436331,
+          "importQtyKg": 1217664.4,
+          "importValueUsd": 4303443.8
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 2586779.2,
+          "importQtyKg": 0,
+          "importValueUsd": 2388048.7
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 1379355.8,
+            "qtyKg": 178268.1,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 380,
+            "valueUsd": 481902.7,
+            "qtyKg": 323.53,
+            "partnerName": "Italia"
+          },
+          {
+            "partnerCode": 528,
+            "valueUsd": 328531.9,
+            "qtyKg": 0,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 121852.7,
+            "qtyKg": 31.43,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 32,
+            "valueUsd": 72600,
+            "qtyKg": 30,
+            "partnerName": "Argentina"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 758168,
+            "qtyKg": 332.96,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 566,
+            "valueUsd": 621797.2,
+            "qtyKg": 175.04,
+            "partnerName": "Nigeria"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 444965.6,
+            "qtyKg": 132.62,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 818,
+            "valueUsd": 226928.1,
+            "qtyKg": 46.15,
+            "partnerName": "Egypt"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 189956.1,
+            "qtyKg": 60.39,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "ruda": {
+      "hsCode": "121190",
+      "hsDescription": "Plantas y partes de plantas para perfumería/farmacia, otras",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1014958.96,
+          "exportValueUsd": 6667537.9,
+          "importQtyKg": 3229193.4,
+          "importValueUsd": 8423613.32
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1350764.92,
+          "exportValueUsd": 9315202.99,
+          "importQtyKg": 4447545.75,
+          "importValueUsd": 13077469.29
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 1335247.08,
+          "exportValueUsd": 9505134.13,
+          "importQtyKg": 5167479.54,
+          "importValueUsd": 14442241.84
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 709657,
+          "exportValueUsd": 5436331,
+          "importQtyKg": 1217664.4,
+          "importValueUsd": 4303443.8
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 2586779.2,
+          "importQtyKg": 0,
+          "importValueUsd": 2388048.7
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 1379355.8,
+            "qtyKg": 178268.1,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 380,
+            "valueUsd": 481902.7,
+            "qtyKg": 323.53,
+            "partnerName": "Italia"
+          },
+          {
+            "partnerCode": 528,
+            "valueUsd": 328531.9,
+            "qtyKg": 0,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 121852.7,
+            "qtyKg": 31.43,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 32,
+            "valueUsd": 72600,
+            "qtyKg": 30,
+            "partnerName": "Argentina"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 758168,
+            "qtyKg": 332.96,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 566,
+            "valueUsd": 621797.2,
+            "qtyKg": 175.04,
+            "partnerName": "Nigeria"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 444965.6,
+            "qtyKg": 132.62,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 818,
+            "valueUsd": 226928.1,
+            "qtyKg": 46.15,
+            "partnerName": "Egypt"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 189956.1,
+            "qtyKg": 60.39,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "tomate-de-arbol": {
+      "hsCode": "081090",
+      "hsDescription": "Las demás frutas frescas n.c.o.p.",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 39597379.72,
+          "exportValueUsd": 276963767.04,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 72240316.03,
+          "exportValueUsd": 370707628.46,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 96692436.32,
+          "exportValueUsd": 398829040.73,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 63101349.8,
+          "exportValueUsd": 243483046.6,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 186888218.6,
+          "importQtyKg": 32,
+          "importValueUsd": 29619
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 142297303,
+            "qtyKg": 51847087.15,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 344,
+            "valueUsd": 12520097.1,
+            "qtyKg": 4458723.59,
+            "partnerName": "China, Hong Kong SAR"
+          },
+          {
+            "partnerCode": 724,
+            "valueUsd": 8185662.3,
+            "qtyKg": 2725364.48,
+            "partnerName": "España"
+          },
+          {
+            "partnerCode": 124,
+            "valueUsd": 4632145.1,
+            "qtyKg": 1722804.36,
+            "partnerName": "Canadá"
+          },
+          {
+            "partnerCode": 604,
+            "valueUsd": 4038248.2,
+            "qtyKg": 13155.33,
+            "partnerName": "Perú"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 29619,
+            "qtyKg": 32,
+            "partnerName": "Perú"
+          }
+        ]
+      }
+    },
+    "tomate": {
+      "hsCode": "070200",
+      "hsDescription": "Tomates, frescos o refrigerados",
+      "approximate": false,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 150,
+          "exportValueUsd": 554.4,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 36,
+          "exportValueUsd": 13.44,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 0,
+          "exportValueUsd": 0,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0.09,
+          "exportValueUsd": 10,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 757,
+            "valueUsd": 10,
+            "qtyKg": 0.09,
+            "partnerName": "Switzerland"
+          }
+        ],
+        "import": []
+      }
+    },
+    "tomillo": {
+      "hsCode": "091099",
+      "hsDescription": "Las demás especias n.c.o.p. (incl. tomillo)",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 8618.36,
+          "exportValueUsd": 31812.04,
+          "importQtyKg": 233235.66,
+          "importValueUsd": 1028293.32
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1244.12,
+          "exportValueUsd": 23131.4,
+          "importQtyKg": 385486.39,
+          "importValueUsd": 1337190.07
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 60493.6,
+          "exportValueUsd": 622377.08,
+          "importQtyKg": 518740.48,
+          "importValueUsd": 1750382.79
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 67773.4,
+          "exportValueUsd": 373779,
+          "importQtyKg": 122176.4,
+          "importValueUsd": 463603
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 5194,
+          "importQtyKg": 0,
+          "importValueUsd": 220767
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 5167.6,
+            "qtyKg": 0,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 724,
+            "valueUsd": 20,
+            "qtyKg": 0.03,
+            "partnerName": "España"
+          },
+          {
+            "partnerCode": 591,
+            "valueUsd": 6.4,
+            "qtyKg": 0.01,
+            "partnerName": "Panamá"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 792,
+            "valueUsd": 106833.4,
+            "qtyKg": 32.35,
+            "partnerName": "Türkiye"
+          },
+          {
+            "partnerCode": 724,
+            "valueUsd": 54362.8,
+            "qtyKg": 15.97,
+            "partnerName": "España"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 22590.9,
+            "qtyKg": 6.89,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 818,
+            "valueUsd": 18299.9,
+            "qtyKg": 4.3,
+            "partnerName": "Egypt"
+          },
+          {
+            "partnerCode": 616,
+            "valueUsd": 9942.4,
+            "qtyKg": 0,
+            "partnerName": "Poland"
+          }
+        ]
+      }
+    },
+    "una-de-gato": {
+      "hsCode": "121190",
+      "hsDescription": "Plantas y partes de plantas para perfumería/farmacia, otras",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1014958.96,
+          "exportValueUsd": 6667537.9,
+          "importQtyKg": 3229193.4,
+          "importValueUsd": 8423613.32
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1350764.92,
+          "exportValueUsd": 9315202.99,
+          "importQtyKg": 4447545.75,
+          "importValueUsd": 13077469.29
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 1335247.08,
+          "exportValueUsd": 9505134.13,
+          "importQtyKg": 5167479.54,
+          "importValueUsd": 14442241.84
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 709657,
+          "exportValueUsd": 5436331,
+          "importQtyKg": 1217664.4,
+          "importValueUsd": 4303443.8
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 2586779.2,
+          "importQtyKg": 0,
+          "importValueUsd": 2388048.7
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 1379355.8,
+            "qtyKg": 178268.1,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 380,
+            "valueUsd": 481902.7,
+            "qtyKg": 323.53,
+            "partnerName": "Italia"
+          },
+          {
+            "partnerCode": 528,
+            "valueUsd": 328531.9,
+            "qtyKg": 0,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 121852.7,
+            "qtyKg": 31.43,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 32,
+            "valueUsd": 72600,
+            "qtyKg": 30,
+            "partnerName": "Argentina"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 758168,
+            "qtyKg": 332.96,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 566,
+            "valueUsd": 621797.2,
+            "qtyKg": 175.04,
+            "partnerName": "Nigeria"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 444965.6,
+            "qtyKg": 132.62,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 818,
+            "valueUsd": 226928.1,
+            "qtyKg": 46.15,
+            "partnerName": "Egypt"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 189956.1,
+            "qtyKg": 60.39,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "uvilla": {
+      "hsCode": "081090",
+      "hsDescription": "Las demás frutas frescas n.c.o.p.",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 39597379.72,
+          "exportValueUsd": 276963767.04,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 72240316.03,
+          "exportValueUsd": 370707628.46,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 96692436.32,
+          "exportValueUsd": 398829040.73,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 63101349.8,
+          "exportValueUsd": 243483046.6,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 186888218.6,
+          "importQtyKg": 32,
+          "importValueUsd": 29619
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 142297303,
+            "qtyKg": 51847087.15,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 344,
+            "valueUsd": 12520097.1,
+            "qtyKg": 4458723.59,
+            "partnerName": "China, Hong Kong SAR"
+          },
+          {
+            "partnerCode": 724,
+            "valueUsd": 8185662.3,
+            "qtyKg": 2725364.48,
+            "partnerName": "España"
+          },
+          {
+            "partnerCode": 124,
+            "valueUsd": 4632145.1,
+            "qtyKg": 1722804.36,
+            "partnerName": "Canadá"
+          },
+          {
+            "partnerCode": 604,
+            "valueUsd": 4038248.2,
+            "qtyKg": 13155.33,
+            "partnerName": "Perú"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 29619,
+            "qtyKg": 32,
+            "partnerName": "Perú"
+          }
+        ]
+      }
+    },
+    "valeriana": {
+      "hsCode": "121190",
+      "hsDescription": "Plantas y partes de plantas para perfumería/farmacia, otras",
+      "approximate": true,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 1014958.96,
+          "exportValueUsd": 6667537.9,
+          "importQtyKg": 3229193.4,
+          "importValueUsd": 8423613.32
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 1350764.92,
+          "exportValueUsd": 9315202.99,
+          "importQtyKg": 4447545.75,
+          "importValueUsd": 13077469.29
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 1335247.08,
+          "exportValueUsd": 9505134.13,
+          "importQtyKg": 5167479.54,
+          "importValueUsd": 14442241.84
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 709657,
+          "exportValueUsd": 5436331,
+          "importQtyKg": 1217664.4,
+          "importValueUsd": 4303443.8
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 2586779.2,
+          "importQtyKg": 0,
+          "importValueUsd": 2388048.7
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 842,
+            "valueUsd": 1379355.8,
+            "qtyKg": 178268.1,
+            "partnerName": "Estados Unidos"
+          },
+          {
+            "partnerCode": 380,
+            "valueUsd": 481902.7,
+            "qtyKg": 323.53,
+            "partnerName": "Italia"
+          },
+          {
+            "partnerCode": 528,
+            "valueUsd": 328531.9,
+            "qtyKg": 0,
+            "partnerName": "Países Bajos"
+          },
+          {
+            "partnerCode": 276,
+            "valueUsd": 121852.7,
+            "qtyKg": 31.43,
+            "partnerName": "Alemania"
+          },
+          {
+            "partnerCode": 32,
+            "valueUsd": 72600,
+            "qtyKg": 30,
+            "partnerName": "Argentina"
+          }
+        ],
+        "import": [
+          {
+            "partnerCode": 604,
+            "valueUsd": 758168,
+            "qtyKg": 332.96,
+            "partnerName": "Perú"
+          },
+          {
+            "partnerCode": 566,
+            "valueUsd": 621797.2,
+            "qtyKg": 175.04,
+            "partnerName": "Nigeria"
+          },
+          {
+            "partnerCode": 699,
+            "valueUsd": 444965.6,
+            "qtyKg": 132.62,
+            "partnerName": "India"
+          },
+          {
+            "partnerCode": 818,
+            "valueUsd": 226928.1,
+            "qtyKg": 46.15,
+            "partnerName": "Egypt"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 189956.1,
+            "qtyKg": 60.39,
+            "partnerName": "Estados Unidos"
+          }
+        ]
+      }
+    },
+    "zapallo": {
+      "hsCode": "070993",
+      "hsDescription": "Calabazas, zapallos y calabazas confiteras, frescos o refrigerados",
+      "approximate": false,
+      "hasData": true,
+      "yearly": [
+        {
+          "year": 2019,
+          "exportQtyKg": 10535.48,
+          "exportValueUsd": 19971.8,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2020,
+          "exportQtyKg": 7270,
+          "exportValueUsd": 14443.28,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2021,
+          "exportQtyKg": 6688.4,
+          "exportValueUsd": 13349.84,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2022,
+          "exportQtyKg": 1599.4,
+          "exportValueUsd": 3926,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        },
+        {
+          "year": 2023,
+          "exportQtyKg": 0,
+          "exportValueUsd": 34841.1,
+          "importQtyKg": 0,
+          "importValueUsd": 0
+        }
+      ],
+      "partnerDataYear": 2023,
+      "partners": {
+        "export": [
+          {
+            "partnerCode": 724,
+            "valueUsd": 28098.4,
+            "qtyKg": 0,
+            "partnerName": "España"
+          },
+          {
+            "partnerCode": 842,
+            "valueUsd": 6742.7,
+            "qtyKg": 0,
+            "partnerName": "Estados Unidos"
+          }
+        ],
+        "import": []
+      }
+    }
+  }
+}

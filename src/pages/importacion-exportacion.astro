@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TradeKpiCards from '../components/importexport/TradeKpiCards.astro';
+import TradeTable from '../components/importexport/TradeTable.astro';
+import TradeExplorer from '../components/importexport/TradeExplorer';
+import { loadTradeDataset, computeKpis } from '../lib/trade-data';
+
+const dataset = await loadTradeDataset();
+const kpis = computeKpis(dataset.rows);
+
+const defaultRow =
+  dataset.rows.find((r) => r.hasComtradeData && r.yearly.some((y) => y.exportValueUsd > 0)) ?? dataset.rows[0];
+
+const dateFormatter = new Intl.DateTimeFormat('es-EC', { dateStyle: 'long' });
+---
+
+<Layout
+  title="Importación y Exportación | Ecotec Flora Médica"
+  description="Panel de comercio internacional de especies medicinales de Ecuador: cifras verificadas de UN Comtrade y dinámicas cualitativas por especie."
+>
+  <section class="mx-auto max-w-[1480px] px-6 pt-32 pb-16 lg:px-8">
+    <header class="mb-10 max-w-3xl">
+      <p class="mb-2 text-sm font-medium tracking-wide text-primary uppercase">Comercio internacional</p>
+      <h1 class="font-display text-4xl text-text sm:text-5xl">Importación y Exportación</h1>
+      <p class="mt-4 text-text-muted">
+        Cifras de comercio exterior de Ecuador (reportante {dataset.reporterName}, código 218) obtenidas de la base
+        pública de <span class="font-medium text-text">UN Comtrade</span>, cruzadas con la ficha etnobotánica de
+        cada especie. Cuando una especie no tiene un código arancelario (HS) específico, se usa la categoría
+        comercial más cercana y se marca como <span class="font-medium text-text">aproximada</span>; cuando
+        Comtrade no reporta cifras para el código correspondiente, se muestra únicamente el relato cualitativo de
+        la ficha, sin inventar números.
+      </p>
+      <p class="mt-2 text-xs text-text-muted">
+        Cifras de Comtrade generadas el {dateFormatter.format(new Date(dataset.generatedAt))} · años {dataset.years[0]}–{dataset.years.at(-1)}.
+      </p>
+    </header>
+
+    <TradeKpiCards
+      totalSpecies={kpis.totalSpecies}
+      withComtradeData={kpis.withComtradeData}
+      narrativeOnly={kpis.narrativeOnly}
+      topExportDestination={kpis.topExportDestination}
+      topImportOrigin={kpis.topImportOrigin}
+    />
+
+    <div class="mt-8 rounded-3xl border border-primary/10 bg-surface-muted p-6 shadow-sm sm:p-8">
+      <TradeExplorer client:load rows={dataset.rows} defaultSlug={defaultRow.slug} />
+    </div>
+
+    <div class="mt-10">
+      <h2 class="font-display text-2xl text-text mb-1">Todas las especies</h2>
+      <p class="mb-4 text-sm text-text-muted">
+        Fuente "Comtrade" indica cifras numéricas verificadas; "Narrativa (cualitativo)" indica que no hay cifras
+        de comercio disponibles y el resumen proviene del texto de la ficha etnobotánica.
+      </p>
+      <TradeTable rows={dataset.rows} />
+    </div>
+  </section>
+</Layout>
