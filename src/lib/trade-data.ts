@@ -1,5 +1,5 @@
-import { getCollection } from 'astro:content';
 import tradeData from '@/data/trade-data.json';
+import { getSpeciesList } from './species-source';
 
 export interface TradeYearPoint {
   year: number;
@@ -44,7 +44,7 @@ export interface TradeDataset {
 }
 
 export async function loadTradeDataset(): Promise<TradeDataset> {
-  const speciesEntries = await getCollection('species', ({ data }) => data.estado === 'ACTIVO');
+  const { rows: speciesEntries } = await getSpeciesList();
 
   const rows: SpeciesTradeRow[] = speciesEntries
     .map((entry) => {

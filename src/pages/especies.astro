@@ -1,14 +1,13 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import SearchBar from '../components/species/SearchBar.astro';
 import SpeciesGrid from '../components/species/SpeciesGrid.astro';
 import TaxonomyFilter from '../components/species/TaxonomyFilter.astro';
 import Pagination from '../components/species/Pagination.astro';
+import { getSpeciesList } from '../lib/species-source';
 
-const species = (
-  await getCollection('species', ({ data }) => data.estado === 'ACTIVO')
-).sort((a, b) => a.data.nombreComun.localeCompare(b.data.nombreComun));
+// Especies desde la API con respaldo en los .md (ya vienen ordenadas por nombre).
+const { rows: species } = await getSpeciesList();
 const families = [...new Set(species.map((entry) => entry.data.taxonomia.familia))];
 const speciesPerPage = 9;
 const totalPages = Math.max(1, Math.ceil(species.length / speciesPerPage));

@@ -1,9 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
 import Etnobotanicacard from './Etnobotanicacard.astro';
 import Etnobotanicapagination from './Etnobotanicapagination.astro';
+import { getSpeciesList } from '../../lib/species-source';
 
-const activeSpecies = await getCollection('species', ({ data }) => data.estado === 'ACTIVO');
+const { rows: activeSpecies } = await getSpeciesList();
 
 const getCategories = (clasificacion: string, usoTradicional: string): string[] => {
   const normalized = `${clasificacion} ${usoTradicional}`.toLowerCase();

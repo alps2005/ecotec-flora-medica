@@ -1,37 +1,52 @@
 ---
 import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import { getSpeciesList, getSpeciesDetail, IMAGE_PLACEHOLDER, type SpeciesData } from '../../lib/species-source';
 
 export async function getStaticPaths() {
-  const species = await getCollection('species', ({ data }) => data.estado === 'ACTIVO');
+  // Mapa de contenido .md (respaldo garantizado y fuente del cuerpo Markdown).
+  const mdEntries = await getCollection('species', ({ data }) => data.estado === 'ACTIVO');
+  const mdBySlug = new Map(mdEntries.map((entry) => [entry.data.slug ?? entry.id, entry]));
 
-  const seenSlugs = new Set<string>();
-  return species.map((entry) => {
-    const slug = entry.data.slug ?? entry.id;
-    if (seenSlugs.has(slug)) {
-      throw new Error(
-        `Duplicate species slug "${slug}" — check the "slug" field in src/content/species/*.md for a collision.`,
-      );
-    }
-    seenSlugs.add(slug);
+  // Set de slugs = unión API ∪ md (getSpeciesList ya hace ese merge).
+  const { rows } = await getSpeciesList();
 
-    return {
-      params: { slug },
-      props: { entry },
-    };
-  });
+  const paths = await Promise.all(
+    rows.map(async (row) => {
+      const slug = row.data.slug ?? row.id;
+      const mdEntry = mdBySlug.get(slug) ?? null;
+      // Detalle completo desde la API con merge por campo sobre el .md; si la API
+      // falla, cae al .md (o a los datos livianos de la lista si es especie solo-API).
+      const data = await getSpeciesDetail(slug, (mdEntry?.data as SpeciesData) ?? row.data);
+      return { params: { slug }, props: { data, entry: mdEntry } };
+    }),
+  );
+
+  return paths;
 }
-
-import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-  entry: CollectionEntry<'species'>;
+  data: SpeciesData;
+  entry: CollectionEntry<'species'> | null;
 }
 
-const { entry } = Astro.props as Props;
-const { data } = entry;
-const { Content } = await render(entry);
+const { data, entry } = Astro.props as Props;
 const { etnobotanica, historiaEvolucion, comercio, compuestosQuimicos } = data;
+
+// Cuerpo "Introducción y Contexto": preferir el análisis académico de la API;
+// si no hay, renderizar el cuerpo Markdown del .md con <Content/>.
+const analisis = data.analisisAcademico;
+const analisisSecciones = [
+  analisis?.taxonomia,
+  analisis?.etnobotanica,
+  analisis?.fitoquimica,
+  analisis?.sostenibilidad,
+].filter((section): section is string => Boolean(section && section.trim()));
+const hasAnalisis = analisisSecciones.length > 0;
+const Content = !hasAnalisis && entry ? (await render(entry)).Content : null;
+
+const heroImage = data.multimediaPrincipal.imagenUrl || IMAGE_PLACEHOLDER;
 const hasInternationalTrade = comercio.exportacion.length > 0 || comercio.importacion.length > 0;
 const taxonomicRanks = [
   { label: 'Reino', value: data.taxonomia.reino },
@@ -68,7 +83,7 @@ const getAccent = (family: string) => {
   title={`${data.nombreComun} | Ecotec Flora Médica`}
   description={`Detalle completo de ${data.nombreComun} (${data.nombreCientifico}) - clasificación ${etnobotanica.clasificacion}`}
 >
-  <div class="mx-auto flex min-h-screen max-w-[1280px] px-6 pb-20 pt-32 lg:px-8">
+  <div class="mx-auto flex min-h-screen max-w-7xl px-6 pb-20 pt-32 lg:px-8">
     <main class="w-full flex-1">
       <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
         <a
@@ -84,13 +99,13 @@ const getAccent = (family: string) => {
       </div>
 
       {/* Hero Section */}
-      <section class="group relative mb-16 h-[520px] w-full overflow-hidden rounded-[2rem] bg-slate-100 shadow-[0_28px_80px_-34px_rgba(0,73,164,0.32)]">
+      <section class="group relative mb-16 h-130 w-full overflow-hidden rounded-[2rem] bg-slate-100 shadow-[0_28px_80px_-34px_rgba(0,73,164,0.32)]">
         <img
-          src={data.multimediaPrincipal.imagenUrl}
+          src={heroImage}
           alt={`${data.nombreComun} (${data.nombreCientifico})`}
           class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-tertiary/90 via-tertiary/35 to-transparent"></div>
+        <div class="absolute inset-0 bg-linear-to-t from-tertiary/90 via-tertiary/35 to-transparent"></div>
         <div class="absolute inset-x-6 bottom-8 flex flex-col gap-4 sm:inset-x-10 sm:bottom-10 lg:left-12 lg:right-12">
           <div class="flex flex-wrap items-center gap-3">
             <span class="rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-primary shadow-sm">
@@ -115,7 +130,7 @@ const getAccent = (family: string) => {
 
       {/* Taxonomic Breadcrumb */}
       <section id="taxonomia" class="mb-20">
-        <div class="rounded-[1.5rem] border border-slate-200/80 bg-surface-muted/90 p-6 shadow-sm backdrop-blur-sm">
+        <div class="rounded-card border border-slate-200/80 bg-surface-muted/90 p-6 shadow-sm backdrop-blur-sm">
           <div class="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
             <div class="flex flex-wrap items-stretch gap-y-6">
               {taxonomicRanks.map((rank, index) => (
@@ -149,7 +164,13 @@ const getAccent = (family: string) => {
             </h2>
           </div>
           <div class="prose prose-slate max-w-none prose-headings:font-display prose-headings:text-text prose-p:text-slate-700 prose-p:leading-8 prose-strong:text-text">
-            <Content />
+            {hasAnalisis ? (
+              analisisSecciones.map((section) => <p>{section}</p>)
+            ) : Content ? (
+              <Content />
+            ) : (
+              <p>Sin información registrada.</p>
+            )}
           </div>
           <div class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2">
             {historyItems.map((item) => (
@@ -167,7 +188,7 @@ const getAccent = (family: string) => {
 
         {/* Etnobotany Sidebar */}
         <aside class="md:col-span-4">
-          <div class="relative h-full overflow-hidden rounded-[1.5rem] border border-tertiary/15 bg-tertiary/15 p-8 shadow-sm">
+          <div class="relative h-full overflow-hidden rounded-card border border-tertiary/15 bg-tertiary/15 p-8 shadow-sm">
             <div class="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-tertiary/15"></div>
             <div class="relative z-10">
               <span class="mb-6 block text-xs font-bold uppercase tracking-[0.22em] text-primary">
@@ -207,7 +228,7 @@ const getAccent = (family: string) => {
         </div>
         <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
           {compuestosQuimicos.length > 0 ? compuestosQuimicos.map((compound) => (
-            <article class="rounded-[1.5rem] border border-slate-200/80 bg-white/85 p-6 shadow-sm">
+            <article class="rounded-card border border-slate-200/80 bg-white/85 p-6 shadow-sm">
               <h3 class="mb-2 text-sm font-bold uppercase tracking-[0.16em] text-primary">
                 {compound.nombre}
               </h3>
@@ -216,7 +237,7 @@ const getAccent = (family: string) => {
               </p>
             </article>
           )) : (
-            <p class="rounded-[1.5rem] border border-slate-200/80 bg-white/85 p-6 text-sm leading-7 text-slate-600 shadow-sm md:col-span-3">
+            <p class="rounded-card border border-slate-200/80 bg-white/85 p-6 text-sm leading-7 text-slate-600 shadow-sm md:col-span-3">
               Sin información registrada.
             </p>
           )}
@@ -225,7 +246,7 @@ const getAccent = (family: string) => {
 
       {/* Secondary Information Grid */}
       <section class="mb-20 grid grid-cols-1 gap-8 md:grid-cols-12">
-        <div class="rounded-[1.5rem] border border-slate-200/80 bg-white/85 p-8 shadow-sm md:col-span-7">
+        <div class="rounded-card border border-slate-200/80 bg-white/85 p-8 shadow-sm md:col-span-7">
           <span class="mb-8 block text-xs font-bold uppercase tracking-[0.22em] text-primary">
             Comercio internacional
           </span>
@@ -273,7 +294,7 @@ const getAccent = (family: string) => {
           </div>
         </div>
 
-        <aside class="relative overflow-hidden rounded-[1.5rem] border border-tertiary/15 bg-tertiary/15 p-8 shadow-sm md:col-span-5">
+        <aside class="relative overflow-hidden rounded-card border border-tertiary/15 bg-tertiary/15 p-8 shadow-sm md:col-span-5">
           <div class="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-tertiary/15"></div>
           <div class="relative z-10">
             <div class="mb-6 flex items-start justify-between gap-4">

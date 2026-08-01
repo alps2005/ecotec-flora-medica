@@ -3,12 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { getSpeciesList } from "../lib/species-source";
 
 const posts = (await getCollection("blog")) as CollectionEntry<"blog">[];
-const species = (await getCollection(
-  "species",
-  ({ data }) => data.estado === "ACTIVO",
-)) as CollectionEntry<"species">[];
+const { rows: species } = await getSpeciesList();
 posts.sort(
   (left: CollectionEntry<"blog">, right: CollectionEntry<"blog">) =>
     right.data.pubDate.valueOf() - left.data.pubDate.valueOf(),
