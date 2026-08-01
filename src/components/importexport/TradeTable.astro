@@ -42,42 +42,167 @@ function summarize(row: SpeciesTradeRow): string {
   const detalle = row.narrative.exportDetalle[0] ?? row.narrative.importDetalle[0];
   return detalle ?? 'Sin información de comercio internacional registrada.';
 }
+
+const ROWS_PER_PAGE = 10;
+const totalPages = Math.max(1, Math.ceil(rows.length / ROWS_PER_PAGE));
 ---
 
-<div class="overflow-x-auto rounded-2xl border border-tertiary/10 bg-white/70">
-  <Table>
-    <TableHeader>
-      <TableRow>
-        <TableHead>Especie</TableHead>
-        <TableHead>Familia</TableHead>
-        <TableHead>Fuente de datos</TableHead>
-        <TableHead>Dinámica comercial</TableHead>
-      </TableRow>
-    </TableHeader>
-    <TableBody>
-      {
-        rows.map((row) => (
-          <TableRow>
-            <TableCell class="whitespace-normal font-medium text-text">
-              {row.nombreComun}
-              <span class="block text-xs font-normal italic text-text-muted">{row.nombreCientifico}</span>
-            </TableCell>
-            <TableCell class="whitespace-normal text-text-muted">{row.familia}</TableCell>
-            <TableCell class="whitespace-normal">
-              {row.hasComtradeData ? (
-                <Badge className="bg-primary/10 text-primary border-primary/20">
-                  Comtrade{row.approximate ? ' · categoría aprox.' : ''}
-                </Badge>
-              ) : (
-                <Badge variant="outline" className="border-tertiary/30 text-text-muted">
-                  Narrativa (cualitativo)
-                </Badge>
-              )}
-            </TableCell>
-            <TableCell class="max-w-md min-w-64 whitespace-normal text-text-muted">{summarize(row)}</TableCell>
-          </TableRow>
-        ))
-      }
-    </TableBody>
-  </Table>
+<div data-trade-table-root>
+  <div class="overflow-x-auto rounded-2xl border border-tertiary/10 bg-white/70">
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHead>Especie</TableHead>
+          <TableHead>Familia</TableHead>
+          <TableHead>Fuente de datos</TableHead>
+          <TableHead>Dinámica comercial</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {
+          rows.map((row) => (
+            <TableRow data-trade-row>
+              <TableCell class="whitespace-normal font-medium text-text">
+                {row.nombreComun}
+                <span class="block text-xs font-normal italic text-text-muted">{row.nombreCientifico}</span>
+              </TableCell>
+              <TableCell class="whitespace-normal text-text-muted">{row.familia}</TableCell>
+              <TableCell class="whitespace-normal">
+                {row.hasComtradeData ? (
+                  <Badge className="bg-primary/10 text-primary border-primary/20">
+                    Comtrade{row.approximate ? ' · categoría aprox.' : ''}
+                  </Badge>
+                ) : (
+                  <Badge variant="outline" className="border-tertiary/30 text-text-muted">
+                    Narrativa (cualitativo)
+                  </Badge>
+                )}
+              </TableCell>
+              <TableCell class="max-w-md min-w-64 whitespace-normal text-text-muted">{summarize(row)}</TableCell>
+            </TableRow>
+          ))
+        }
+      </TableBody>
+    </Table>
+  </div>
+
+  <nav
+    data-trade-pagination
+    aria-label="Paginación de la tabla de especies"
+    class:list={[
+      'mt-4 flex flex-col gap-4 rounded-2xl border border-tertiary/10 bg-white/70 px-5 py-3 text-sm text-text-muted sm:flex-row sm:items-center sm:justify-between',
+      totalPages <= 1 && 'hidden',
+    ]}
+  >
+    <span data-trade-page-status class="font-medium text-text">
+      Página 1 de {totalPages}
+    </span>
+    <div class="flex flex-wrap items-center gap-2">
+      <button
+        data-trade-page-prev
+        type="button"
+        class="rounded-full border border-tertiary/20 px-3 py-1.5 transition hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-40"
+      >
+        Anterior
+      </button>
+      <div data-trade-page-list class="flex flex-wrap items-center gap-2" />
+      <button
+        data-trade-page-next
+        type="button"
+        class="rounded-full border border-tertiary/20 px-3 py-1.5 transition hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-40"
+      >
+        Siguiente
+      </button>
+    </div>
+  </nav>
 </div>
+
+<script>
+  const ROWS_PER_PAGE = 10;
+
+  const initTradeTablePagination = () => {
+    const root = document.querySelector('[data-trade-table-root]');
+
+    if (!(root instanceof HTMLElement) || root.dataset.tradeTableBound === 'true') {
+      return;
+    }
+
+    root.dataset.tradeTableBound = 'true';
+
+    const rows = Array.from(root.querySelectorAll('[data-trade-row]'));
+    const pagination = root.querySelector('[data-trade-pagination]');
+    const pageStatus = pagination?.querySelector('[data-trade-page-status]');
+    const pageList = pagination?.querySelector('[data-trade-page-list]');
+    const previousButton = pagination?.querySelector('[data-trade-page-prev]');
+    const nextButton = pagination?.querySelector('[data-trade-page-next]');
+
+    const totalPages = Math.max(1, Math.ceil(rows.length / ROWS_PER_PAGE));
+    let currentPage = 1;
+
+    const setButtonState = (button: Element | null | undefined, isDisabled: boolean) => {
+      if (button instanceof HTMLButtonElement) {
+        button.disabled = isDisabled;
+      }
+    };
+
+    const renderPageButtons = () => {
+      if (!(pageList instanceof HTMLElement)) {
+        return;
+      }
+
+      pageList.innerHTML = '';
+
+      Array.from({ length: totalPages }, (_, index) => index + 1).forEach((page) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = page.toString();
+        button.className =
+          page === currentPage
+            ? 'rounded-full bg-primary px-3 py-1.5 font-semibold text-white transition'
+            : 'rounded-full border border-tertiary/20 px-3 py-1.5 font-semibold text-text-muted transition hover:border-primary hover:text-primary';
+        button.setAttribute('aria-current', page === currentPage ? 'page' : 'false');
+        button.addEventListener('click', () => {
+          currentPage = page;
+          applyPagination();
+        });
+
+        pageList.append(button);
+      });
+    };
+
+    const applyPagination = () => {
+      const pageStart = (currentPage - 1) * ROWS_PER_PAGE;
+      const pageEnd = pageStart + ROWS_PER_PAGE;
+
+      rows.forEach((row, index) => {
+        if (!(row instanceof HTMLElement)) {
+          return;
+        }
+
+        row.classList.toggle('hidden', index < pageStart || index >= pageEnd);
+      });
+
+      if (pageStatus instanceof HTMLElement) {
+        pageStatus.textContent = `Página ${currentPage} de ${totalPages}`;
+      }
+
+      setButtonState(previousButton, currentPage <= 1);
+      setButtonState(nextButton, currentPage >= totalPages);
+      renderPageButtons();
+    };
+
+    previousButton?.addEventListener('click', () => {
+      currentPage -= 1;
+      applyPagination();
+    });
+    nextButton?.addEventListener('click', () => {
+      currentPage += 1;
+      applyPagination();
+    });
+
+    applyPagination();
+  };
+
+  initTradeTablePagination();
+  document.addEventListener('astro:page-load', initTradeTablePagination);
+</script>

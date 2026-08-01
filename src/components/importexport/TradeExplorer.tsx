@@ -19,8 +19,8 @@ import {
 import type { SpeciesTradeRow } from '@/lib/trade-data';
 
 const chartConfig = {
-  exportQtyKg: { label: 'Exportación', color: '#2a78d6' },
-  importQtyKg: { label: 'Importación', color: '#eb6834' },
+  exportQtyKg: { label: 'Exportación', color: '#0A5CA5' },
+  importQtyKg: { label: 'Importación', color: '#2BBAE2' },
 } satisfies ChartConfig;
 
 const kgFormatter = new Intl.NumberFormat('es-EC', { maximumFractionDigits: 0 });
