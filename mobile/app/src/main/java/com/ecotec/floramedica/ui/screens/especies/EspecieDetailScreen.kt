@@ -41,6 +41,7 @@ import com.ecotec.floramedica.data.asDisplayImageUrl
 import com.ecotec.floramedica.data.inferBodyRegions
 import com.ecotec.floramedica.data.model.Species
 import com.ecotec.floramedica.data.repository.ContentRepository
+import com.ecotec.floramedica.ui.components.AnimatedSection
 import com.ecotec.floramedica.ui.components.BodyRegionsDialog
 import com.ecotec.floramedica.ui.components.Pill
 import com.ecotec.floramedica.ui.components.SpeciesImage
@@ -92,47 +93,57 @@ fun EspecieDetailScreen(
         }
         item { HeroImage(current) }
         item { TaxonomyStrip(current) }
-        item { UsoCorporalCard(onClick = { showBodyDialog = true }) }
+        item { AnimatedSection { UsoCorporalCard(onClick = { showBodyDialog = true }) } }
         item {
-            NumberedSection(numero = "01", titulo = "Perfil etnobotánico") {
-                InfoChipsRow(current)
-                BodyText(current.perfilEtnobotanico, modifier = Modifier.padding(top = 12.dp))
+            AnimatedSection {
+                NumberedSection(numero = "01", titulo = "Perfil etnobotánico") {
+                    InfoChipsRow(current)
+                    BodyText(current.perfilEtnobotanico, modifier = Modifier.padding(top = 12.dp))
+                }
             }
         }
         item {
-            NumberedSection(numero = "02", titulo = "Historia y evolución") {
-                InfoBlock("Origen", current.historiaEvolucion.origen)
-                InfoBlock("Dispersión", current.historiaEvolucion.dispersion)
-                InfoBlock("Evolución", current.historiaEvolucion.evolucion)
+            AnimatedSection {
+                NumberedSection(numero = "02", titulo = "Historia y evolución") {
+                    InfoBlock("Origen", current.historiaEvolucion.origen)
+                    InfoBlock("Dispersión", current.historiaEvolucion.dispersion)
+                    InfoBlock("Evolución", current.historiaEvolucion.evolucion)
+                }
             }
         }
         if (current.compuestosQuimicos.isNotEmpty()) {
             item {
-                NumberedSection(numero = "03", titulo = "Compuestos químicos") {
-                    current.compuestosQuimicos.forEach { compuesto ->
-                        CompoundCard(nombre = compuesto.nombre, detalle = compuesto.detalle)
+                AnimatedSection {
+                    NumberedSection(numero = "03", titulo = "Compuestos químicos") {
+                        current.compuestosQuimicos.forEach { compuesto ->
+                            CompoundCard(nombre = compuesto.nombre, detalle = compuesto.detalle)
+                        }
                     }
                 }
             }
         }
         if (current.comercio.exportacion.isNotEmpty() || current.comercio.importacion.isNotEmpty()) {
             item {
-                NumberedSection(numero = "04", titulo = "Comercio") {
-                    if (current.comercio.exportacion.isNotEmpty()) {
-                        SubHeader("Exportación")
-                        current.comercio.exportacion.forEach { InfoBlock(it.pais, it.detalle) }
-                    }
-                    if (current.comercio.importacion.isNotEmpty()) {
-                        SubHeader("Importación")
-                        current.comercio.importacion.forEach { InfoBlock(it.pais, it.detalle) }
+                AnimatedSection {
+                    NumberedSection(numero = "04", titulo = "Comercio") {
+                        if (current.comercio.exportacion.isNotEmpty()) {
+                            SubHeader("Exportación")
+                            current.comercio.exportacion.forEach { InfoBlock(it.pais, it.detalle) }
+                        }
+                        if (current.comercio.importacion.isNotEmpty()) {
+                            SubHeader("Importación")
+                            current.comercio.importacion.forEach { InfoBlock(it.pais, it.detalle) }
+                        }
                     }
                 }
             }
         }
         if (current.descripcion.isNotBlank()) {
             item {
-                Column(modifier = Modifier.padding(20.dp)) {
-                    BodyText(current.descripcion)
+                AnimatedSection {
+                    Column(modifier = Modifier.padding(20.dp)) {
+                        BodyText(current.descripcion)
+                    }
                 }
             }
         }
@@ -193,34 +204,37 @@ private fun TaxonomyStrip(especie: Species) {
     ) {
         Column(modifier = Modifier.padding(18.dp)) {
             Text("CLASIFICACIÓN TAXONÓMICA", style = MaterialTheme.typography.labelMedium, color = Teal400)
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 14.dp),
-                horizontalArrangement = Arrangement.spacedBy(16.dp),
-            ) {
-                TaxonomyItem("Reino", especie.taxonomia.reino, Modifier.weight(1f))
-                TaxonomyItem("División", especie.taxonomia.division, Modifier.weight(1.3f))
-                TaxonomyItem("Clase", especie.taxonomia.clase, Modifier.weight(1.3f))
-            }
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 14.dp),
-                horizontalArrangement = Arrangement.spacedBy(16.dp),
-            ) {
-                TaxonomyItem("Familia", especie.taxonomia.familia, Modifier.weight(1f))
-                TaxonomyItem("Género", especie.taxonomia.genero, Modifier.weight(1.6f))
-            }
+            // Filas full-width (rango a la izquierda, valor a la derecha): no se corta ni se
+            // amontona aunque el valor sea largo como "Magnoliophyta".
+            TaxonomyRow("Reino", especie.taxonomia.reino)
+            TaxonomyRow("División", especie.taxonomia.division)
+            TaxonomyRow("Clase", especie.taxonomia.clase)
+            TaxonomyRow("Familia", especie.taxonomia.familia)
+            TaxonomyRow("Género", especie.taxonomia.genero)
         }
     }
 }
 
 @Composable
-private fun TaxonomyItem(label: String, value: String, modifier: Modifier = Modifier) {
-    Column(modifier = modifier) {
-        Text(label.uppercase(), style = MaterialTheme.typography.labelSmall, color = Teal400)
-        Text(value, style = MaterialTheme.typography.titleMedium, color = Color.White)
+private fun TaxonomyRow(label: String, value: String) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 12.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Text(
+            label.uppercase(),
+            style = MaterialTheme.typography.labelSmall,
+            color = Teal400,
+            modifier = Modifier.weight(0.4f),
+        )
+        Text(
+            value,
+            style = MaterialTheme.typography.titleMedium,
+            color = Color.White,
+            modifier = Modifier.weight(0.6f),
+        )
     }
 }
 

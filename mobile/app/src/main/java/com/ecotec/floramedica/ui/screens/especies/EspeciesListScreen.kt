@@ -6,7 +6,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -16,7 +16,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.ecotec.floramedica.data.model.Species
 import com.ecotec.floramedica.data.repository.ContentRepository
+import com.ecotec.floramedica.ui.components.AnimatedListItem
 import com.ecotec.floramedica.ui.components.SpeciesCard
+import com.ecotec.floramedica.ui.theme.Navy900
 
 @Composable
 fun EspeciesListScreen(
@@ -37,11 +39,14 @@ fun EspeciesListScreen(
             Text(
                 text = "Catálogo de especies",
                 style = MaterialTheme.typography.headlineMedium,
+                color = Navy900,
                 modifier = Modifier.padding(bottom = 8.dp),
             )
         }
-        items(species, key = { it.slug }) { especie ->
-            SpeciesCard(species = especie, onClick = { onEspecieClick(especie.slug) })
+        itemsIndexed(species, key = { _, it -> it.slug }) { index, especie ->
+            AnimatedListItem(index = index) {
+                SpeciesCard(species = especie, onClick = { onEspecieClick(especie.slug) })
+            }
         }
     }
 }

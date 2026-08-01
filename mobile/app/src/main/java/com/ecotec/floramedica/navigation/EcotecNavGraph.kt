@@ -9,6 +9,7 @@ import com.ecotec.floramedica.data.repository.ContentRepository
 import com.ecotec.floramedica.ui.screens.autores.AutoresScreen
 import com.ecotec.floramedica.ui.screens.especies.EspecieDetailScreen
 import com.ecotec.floramedica.ui.screens.especies.EspeciesListScreen
+import com.ecotec.floramedica.ui.screens.etnobotanica.EtnobotanicaDetailScreen
 import com.ecotec.floramedica.ui.screens.etnobotanica.EtnobotanicaScreen
 import com.ecotec.floramedica.ui.screens.home.HomeScreen
 
@@ -46,7 +47,18 @@ fun EcotecNavGraph(
         composable(Routes.ETNOBOTANICA) {
             EtnobotanicaScreen(
                 repository = repository,
-                onEspecieClick = { slug -> navController.navigate(Routes.especieDetail(slug)) },
+                onFichaClick = { slug -> navController.navigate(Routes.etnobotanicaDetail(slug)) },
+            )
+        }
+        composable(
+            route = Routes.ETNOBOTANICA_DETAIL,
+            arguments = listOf(navArgument("slug") { }),
+        ) { backStackEntry ->
+            val slug = backStackEntry.arguments?.getString("slug").orEmpty()
+            EtnobotanicaDetailScreen(
+                slug = slug,
+                repository = repository,
+                onBack = { navController.popBackStack() },
             )
         }
         composable(Routes.AUTORES) {

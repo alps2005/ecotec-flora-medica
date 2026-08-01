@@ -15,9 +15,9 @@ val Surface = Color(0xFFFFFFFF)
 val SurfaceTint = Color(0xFFEFF3FC)
 val SurfaceMint = Color(0xFFE3F7F3)
 
-val TextPrimary = Color(0xFF1E2A44)
-val TextSecondary = Color(0xFF52607A)
-val TextMuted = Color(0xFF8A93A6)
+val TextPrimary = Color(0xFF14203A)
+val TextSecondary = Color(0xFF3C4A63)
+val TextMuted = Color(0xFF6B7488)
 
 val PillBackground = Color(0xFFE8EDFB)
 val PillTextOnLight = Color(0xFF1E2A44)

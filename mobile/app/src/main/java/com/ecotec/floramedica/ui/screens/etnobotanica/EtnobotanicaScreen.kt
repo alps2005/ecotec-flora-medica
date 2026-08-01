@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Science
@@ -32,6 +32,7 @@ import androidx.compose.ui.unit.dp
 import com.ecotec.floramedica.data.asDisplayImageUrl
 import com.ecotec.floramedica.data.model.Species
 import com.ecotec.floramedica.data.repository.ContentRepository
+import com.ecotec.floramedica.ui.components.AnimatedListItem
 import com.ecotec.floramedica.ui.components.Pill
 import com.ecotec.floramedica.ui.components.SpeciesImage
 import com.ecotec.floramedica.ui.theme.Blue600
@@ -46,7 +47,7 @@ import com.ecotec.floramedica.ui.theme.TextSecondary
 @Composable
 fun EtnobotanicaScreen(
     repository: ContentRepository,
-    onEspecieClick: (String) -> Unit,
+    onFichaClick: (String) -> Unit,
 ) {
     val species by produceState(initialValue = emptyList<Species>(), repository) {
         value = repository.getSpecies()
@@ -67,8 +68,10 @@ fun EtnobotanicaScreen(
                 modifier = Modifier.padding(bottom = 16.dp),
             )
         }
-        items(species, key = { it.slug }) { especie ->
-            FichaCard(especie, onClick = { onEspecieClick(especie.slug) })
+        itemsIndexed(species, key = { _, it -> it.slug }) { index, especie ->
+            AnimatedListItem(index = index) {
+                FichaCard(especie, onClick = { onFichaClick(especie.slug) })
+            }
         }
     }
 }
