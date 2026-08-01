@@ -1,0 +1,6 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.EcotecFloraMedica" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/ecotec_navy</item>
+        <item name="android:windowBackground">@color/ecotec_background</item>
+    </style>
+</resources>
