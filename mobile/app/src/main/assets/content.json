@@ -1,0 +1,2623 @@
+{
+  "species": [
+    {
+      "nombreComun": "Achiote",
+      "nombreCientifico": "Bixa orellana",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Bixaceae",
+        "genero": "Bixa"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal y tintórea",
+        "parteUtilizada": "Semillas",
+        "usoTradicional": "Antioxidante"
+      },
+      "perfilEtnobotanico": "Uso medicinal y tintóreo. Las semillas y sus extractos son ricos en pigmentos antioxidantes que protegen contra el daño de los radicales libres. La medicina tradicional usa infusiones de sus hojas y semillas para inflamaciones de la próstata, problemas urinarios y como cicatrizante.",
+      "historiaEvolucion": {
+        "origen": "Nativo de América Tropical (Amazonía y Centroamérica). Los pueblos precolombinos lo utilizaban como pintura corporal, repelente de insectos, especia y medicina.",
+        "dispersion": "Los europeos lo llevaron a Asia (especialmente Filipinas) y África, donde se integró en la gastronomía local.",
+        "evolucion": "Pertenece a la familia Bixaceae. Es un cultivo rústico adaptado a zonas cálidas y húmedas."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Perú, Brasil, Kenia y Costa de Marfil",
+            "detalle": "Principales exportadores de semilla de achiote y extractos de bixina."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Unión Europea, Estados Unidos y Japón",
+            "detalle": "Importan el colorante (Annatto / E-160b) como alternativa natural a los colorantes sintéticos en alimentos (quesos, mantequillas, snacks)."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Bixina y Norbixina",
+          "detalle": "Carotenoides responsables de la pigmentación roja-anaranjada y con alta actividad antioxidante."
+        },
+        {
+          "nombre": "Tocotrienoles (Vitamina E)",
+          "detalle": "Potentes antioxidantes que protegen las membranas celulares."
+        },
+        {
+          "nombre": "Flavonoides",
+          "detalle": "Presentes en las hojas, aportan acción antiinflamatoria."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Achiote_pj.JPG",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "achiote",
+      "descripcion": "El achiote (Bixa orellana) es un arbusto originario de las regiones tropicales de América. Sus semillas están cubiertas por un arilo rojo que se utiliza mundialmente como colorante natural (bixina). Además de su uso industrial y culinario, posee compuestos bioactivos con gran potencial antioxidante y protector celular."
+    },
+    {
+      "nombreComun": "Ajo",
+      "nombreCientifico": "Allium sativum",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Amaryllidaceae",
+        "genero": "Allium"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal universal",
+        "parteUtilizada": "Bulbo",
+        "usoTradicional": "Antibiótico natural"
+      },
+      "perfilEtnobotanico": "El ajo posee una clasificación de medicinal universal debido a su presencia transversal en casi todas las culturas del planeta. El bulbo es la porción anatómica que concentra los principios activos biológicamente estables. Utilizado históricamente para combatir infecciones de origen respiratorio, gastrointestinal y cutáneo, actúa destruyendo patógenos y estimulando simultáneamente las defensas del huésped.",
+      "historiaEvolucion": {
+        "origen": "Nativo de Asia Central (regiones de Kirguistán, Turkmenistán y Uzbekistán), extendiéndose desde la antigüedad hacia la cuenca del Mediterráneo, India y China. Existen registros de su uso medicinal en las culturas egipcia, griega, romana y china desde hace más de 4,000 años.",
+        "dispersion": "Llegó al continente americano a través de los colonizadores españoles en el siglo XVI, convirtiéndose de inmediato en un componente esencial de la medicina popular y la agricultura americana.",
+        "evolucion": "Es una planta bulbosa perenne que raramente produce semillas viables en la actualidad; su propagación ha evolucionado de manera estrictamente vegetativa (mediante \"dientes\" o bulbillos), lo que ha generado una amplia diversidad de ecotipos adaptados a distintas latitudes geográficas."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "China ejerce un monopolio y dominio absoluto sobre el mercado global del ajo, controlando más del 70% u 80% de las exportaciones mundiales de ajo fresco, deshidratado y procesado. Otros exportadores internacionales relevantes a gran escala incluyen a España (líder europeo en calidad), Argentina, India y México."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Los principales mercados de destino para el flujo comercial del ajo son la Unión Europea, Estados Unidos, Indonesia, Brasil, Malasia y diversas naciones de América Latina."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Alicina (Compuestos Azufrados)",
+          "detalle": "Al triturar o machacar el bulbo fresco, el aminoácido alíina entra en contacto con la enzima aliinasa, transformándose de inmediato en alicina. Este compuesto volátil es el responsable directo de su acción antimicrobiana, antifúngica y antiviral (antibiótico natural)."
+        },
+        {
+          "nombre": "Ajoenos y Vinilditiínas",
+          "detalle": "Moléculas estables derivadas de la degradación de la alicina que ejercen potentes efectos antitrombóticos, antiagregantes plaquetarios y reductores del colesterol sérico."
+        },
+        {
+          "nombre": "Oligoelementos",
+          "detalle": "Presencia de Selenio (Se) y Germanio (Ge), minerales esenciales acoplados a la protección antioxidante sistémica y al fortalecimiento celular."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783718477/Ajo_qbuxov.webp",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "ajo",
+      "descripcion": "El ajo (*Allium sativum*) constituye uno de los agentes etnobotánicos y fitoterapéuticos más antiguos, estudiados y venerados por la humanidad. Clasificado dentro de la familia Amaryllidaceae, este bulbo subterráneo trasciende su valor gastronómico global gracias a una compleja matriz química rica en compuestos azufrados volátiles. Estas características le confieren propiedades terapéuticas extraordinarias, consolidándolo en la medicina moderna como un potente y eficaz antibiótico natural de amplio espectro."
+    },
+    {
+      "nombreComun": "Aloe vera",
+      "nombreCientifico": "Aloe vera",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Asphodelaceae",
+        "genero": "Aloe"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal tradicional",
+        "parteUtilizada": "Gel foliar",
+        "usoTradicional": "Cicatrizante"
+      },
+      "perfilEtnobotanico": "La relevancia de Aloe vera dentro de la medicina tradicional se fundamenta en el aprovechamiento de su parénquima o gel foliar. Clasificada en la categoría de medicina tradicional, sus tejidos internos almacenan un mucílago de alto valor biológico de acción directa sobre la piel. Esta estructura le confiere propiedades curativas excepcionales, lo que consolida su uso principal como un potente agente cicatrizante, antiinflamatorio tópico y humectante celular, siendo un insumo crítico para tratamientos dermatológicos y la formulación de productos fitoterapéuticos avanzados.",
+      "historiaEvolucion": {
+        "origen": "Es nativa de la región sudoriental de la península arábiga, desarrollándose originalmente en climas cálidos y desérticos. Las menciones a sus propiedades se remontan a civilizaciones antiguas en tablillas de arcilla sumerias y papiros egipcios (como el Papiro de Ebers).",
+        "dispersion": "Fue extendida progresivamente por la cuenca del Mediterráneo, el norte de África y Asia por rutas comerciales antiguas. Los colonizadores ecorregionales y misioneros la introdujeron en el continente americano, donde se naturalizó con éxito en zonas áridas y subtropicales.",
+        "evolucion": "Pertenece a la familia Asphodelaceae y ha desarrollado adaptaciones fisiológicas complejas (como el metabolismo ácido de las crasuláceas - CAM) para maximizar la retención de agua y la síntesis de polisacáridos protectores en sus hojas carnosas."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "La producción global de materia prima procesada (polvo concentrado, gel estabilizado y extractos líquidos) está liderada a nivel internacional por economías como China, India, México y Estados Unidos (especialmente la región de Texas). México se posiciona como uno de los principales proveedores de hojas frescas y derivados hacia el mercado norteamericano debido a ventajas logísticas."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "La demanda global es absorbida de forma masiva por la Unión Europea (Alemania, Francia y Francia como centros de manufactura cosmética), Estados Unidos y potencias de Asia Oriental (Japón y Corea del Sur) para su incorporación en cadenas de valor de cuidado personal, alimentos funcionales y farmacéutica."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Polisacáridos",
+          "detalle": "El componente químico más importante del gel foliar es el acemanano, un polímero de glucosa y manosa que estimula la respuesta inmunológica local y acelera la proliferación celular durante la cicatrización."
+        },
+        {
+          "nombre": "Antraquinonas",
+          "detalle": "Presentes en el acíbar (látex amargo de los conductos de la corteza de la hoja), destacan la aloína y la emodina, compuestos con fuertes propiedades analgésicas y antimicrobianas en dosis bajas, y efectos laxantes potentes."
+        },
+        {
+          "nombre": "Vitaminas y Minerales",
+          "detalle": "Fuente directa de vitaminas antioxidantes (A, C, y E), vitaminas del complejo B, y minerales esenciales como zinc, calcio y magnesio, determinantes en los procesos enzimáticos de regeneración celular."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://plantas-ec.globalmarketmanager.com/images/8/aloe.jpg",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "aloe-vera",
+      "descripcion": "El Aloe vera es un recurso botánico invaluable y de reconocimiento global dentro de la medicina tradicional y la industria cosmética contemporánea. Esta planta suculenta no solo destaca por su extraordinaria resistencia a entornos áridos, sino por su matriz biológica concentrada en el tejido mucilaginoso de sus hojas. Su gel foliar provee una combinación única de agua, polisacáridos y compuestos bioactivos que actúan de forma sinérgica, consolidando su estatus como un agente terapéutico irreemplazable para la regeneración tisular y el cuidado dérmico tanto en la práctica popular como en la ciencia médica."
+    },
+    {
+      "nombreComun": "Apio",
+      "nombreCientifico": "Apium graveolens",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Apiaceae",
+        "genero": "Apium"
+      },
+      "etnobotanica": {
+        "clasificacion": "Alimenticia - Medicinal",
+        "parteUtilizada": "Tallos y hojas",
+        "usoTradicional": "Diurético y depurativo"
+      },
+      "perfilEtnobotanico": "El apio se clasifica como un recurso alimenticio-medicinal debido al uso simultáneo de sus tallos y hojas. En la medicina tradicional ha sido utilizado para estimular la función renal, aliviar la retención de líquidos y favorecer procesos digestivos. Su consumo frecuente se asocia con beneficios cardiovasculares y metabólicos.",
+      "historiaEvolucion": {
+        "origen": "Es una planta originaria de las zonas húmedas y pantanosas de la región mediterránea, el norte de África y algunas áreas de Asia Occidental. Los registros indican que era conocida por civilizaciones egipcias, griegas y romanas, inicialmente no como alimento sino con fines medicinales, ceremoniales y religiosos. Los griegos lo consideraban una planta sagrada.",
+        "dispersion": "Durante el período romano, el cultivo comenzó a expandirse por diferentes territorios europeos. Con las rutas medievales, se extendió hacia Europa central y otras regiones. En los siglos XVI y XVII fue introducido en América por colonizadores europeos, donde se adaptó exitosamente y pasó a ser una hortaliza de consumo cotidiano.",
+        "evolucion": "Pertenece a la familia Apiaceae (como el perejil, cilantro y zanahoria). Los procesos de selección permitieron diferenciar variedades; algunas para producir tallos gruesos, otras por sus semillas o propiedades medicinales."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "España y Estados Unidos figuran entre los principales exportadores."
+          },
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "México abastece una parte importante del mercado norteamericano."
+          },
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "Países Bajos destaca por la producción tecnificada destinada a Europa."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Alemania, Francia y Reino Unido son importantes importadores europeos."
+          },
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Canadá depende en gran medida de importaciones estacionales."
+          },
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Estados Unidos mantiene un flujo comercial constante para su mercado interno."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Apiol",
+          "detalle": "Compuesto aromático asociado a la actividad diurética."
+        },
+        {
+          "nombre": "Flavonoides",
+          "detalle": "Apigenina y luteolina con actividad antioxidante y antiinflamatoria."
+        },
+        {
+          "nombre": "Potasio",
+          "detalle": "Mineral fundamental para la regulación hídrica y cardiovascular."
+        },
+        {
+          "nombre": "Vitaminas A, C y K",
+          "detalle": "Participan en la función inmunológica y la coagulación sanguínea."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://imgproxy.infoflora.ch/aL2FZZOdZs41ig_5QBu1dQ/rs:fit:1000:800:1/g:ce/aHR0cHM6Ly9pbWFnZS5pbmZvZmxvcmEuY2gvZmlsZXMvV2lraXBlZGlhL0FwaXVtIGdyYXZlb2xlbnMgLSBILiBaZWxsLmpwZw.jpg",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "apio",
+      "descripcion": "El apio (Apium graveolens) es una planta herbácea ampliamente utilizada en la alimentación humana y en la medicina tradicional. Gracias a su elevado contenido de agua, minerales esenciales y compuestos aromáticos, constituye un recurso vegetal de gran importancia nutricional y terapéutica. Históricamente ha sido empleado como diurético natural para favorecer la eliminación de líquidos y toxinas."
+    },
+    {
+      "nombreComun": "Babaco",
+      "nombreCientifico": "Vasconcellea × heilbornii",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Caricaceae",
+        "genero": "Vasconcellea"
+      },
+      "etnobotanica": {
+        "clasificacion": "Alimenticia - Medicinal",
+        "parteUtilizada": "Fruto",
+        "usoTradicional": "Digestivo, antioxidante y antiinflamatorio"
+      },
+      "perfilEtnobotanico": "Posee categoría alimenticia-medicinal. Tradicionalmente usado para favorecer la digestión y aliviar molestias gastrointestinales gracias a sus enzimas proteolíticas.",
+      "historiaEvolucion": {
+        "origen": "Frutal de los Andes ecuatorianos. Se considera un híbrido natural relacionado con la papaya (Carica papaya). Las condiciones climáticas templadas favorecieron su desarrollo y aprovechamiento por comunidades andinas.",
+        "dispersion": "Se expandió a Colombia, Perú y Bolivia. En el siglo XX fue introducido en Nueva Zelanda, Italia, España y Norteamérica.",
+        "evolucion": "Se propaga vegetativamente mediante esquejes (conservando genética). Se investiga para mejorar la productividad y resistencia a enfermedades."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "Ecuador constituye el principal productor y exportador mundial."
+          },
+          {
+            "pais": "Destinos",
+            "detalle": "Europa, Norteamérica y mercados asiáticos especializados."
+          },
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "Nueva Zelanda y España tienen producciones comerciales complementarias."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Alemania, Italia y España presentan demanda constante."
+          },
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Estados Unidos y Canadá son mercados de creciente interés."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Papaína y Enzimas Proteolíticas",
+          "detalle": "Facilitan la digestión de proteínas."
+        },
+        {
+          "nombre": "Vitamina C",
+          "detalle": "Potente antioxidante."
+        },
+        {
+          "nombre": "Carotenoides",
+          "detalle": "Actividad antioxidante y salud visual."
+        },
+        {
+          "nombre": "Fibra Dietética",
+          "detalle": "Favorece tránsito intestinal."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://u.iplantz.com/1574/Vasconcellea%20heilbornii-7217.5362.jpg",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "babaco",
+      "descripcion": "El babaco (Vasconcellea × heilbornii) es una fruta andina originaria de Ecuador (familia Caricaceae). Se caracteriza por sus frutos alargados, aromáticos y de sabor agradable. Posee propiedades digestivas y antioxidantes derivadas de su composición nutricional y la presencia de enzimas naturales similares a la papaya."
+    },
+    {
+      "nombreComun": "Cebolla",
+      "nombreCientifico": "Allium cepa",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Amaryllidaceae",
+        "genero": "Allium"
+      },
+      "etnobotanica": {
+        "clasificacion": "Alimenticia - Medicinal",
+        "parteUtilizada": "Bulbo",
+        "usoTradicional": "Antimicrobiana, expectorante y antioxidante"
+      },
+      "perfilEtnobotanico": "Clasificada como alimenticia-medicinal debido al aprovechamiento de su bulbo. Tradicionalmente utilizada para aliviar afecciones respiratorias, favorecer la digestión y combatir infecciones leves (en infusiones y jarabes caseros). Su riqueza en compuestos sulfurados la hace muy valorada.",
+      "historiaEvolucion": {
+        "origen": "Tiene su origen en Asia Central y el suroeste asiático (Irán, Afganistán, Pakistán). Comenzó a cultivarse hace más de cinco mil años por su facilidad de conservación y nutrición.",
+        "dispersion": "Los egipcios la cultivaron de forma intensiva. Griegos y romanos la expandieron por Europa; en la Edad Media fue un alimento básico. Fue introducida exitosamente en América.",
+        "evolucion": "Pertenece a la familia Amaryllidaceae y género Allium. La selección originó variedades blancas, amarillas y moradas."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "China e India lideran la producción y exportación mundial."
+          },
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "Países Bajos es de los mayores exportadores por su logística."
+          },
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "España destaca en el mercado europeo."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Estados Unidos mantiene elevados volúmenes de importación."
+          },
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Alemania, Reino Unido y Francia son los principales compradores europeos."
+          },
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Países asiáticos y africanos participan activamente."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Compuestos Azufrados",
+          "detalle": "Alicina, sulfóxidos y tiosulfinatos (antimicrobianos)."
+        },
+        {
+          "nombre": "Quercetina",
+          "detalle": "Flavonoide (antioxidante y antiinflamatoria)."
+        },
+        {
+          "nombre": "Vitamina C",
+          "detalle": "Inmunológica y síntesis de colágeno."
+        },
+        {
+          "nombre": "Minerales",
+          "detalle": "Potasio, calcio y fósforo."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://www-static.antropocene.it/wp-content/uploads/2018/10/Allium_cepa-800x445.jpg?media=1780467786",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "cebolla",
+      "descripcion": "La cebolla (Allium cepa) constituye una de las especies hortícolas más antiguas e importantes cultivadas por la humanidad. Su presencia en la alimentación humana se remonta a miles de años. Más allá de su valor culinario, posee destacada importancia medicinal por sus compuestos bioactivos que le confieren propiedades antioxidantes, antimicrobianas y antiinflamatorias, aportando vitaminas, minerales y fitoquímicos."
+    },
+    {
+      "nombreComun": "Cedrón",
+      "nombreCientifico": "Aloysia citrodora",
+      "nombresAlternativos": [
+        "Hierbaluisa"
+      ],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Verbenaceae",
+        "genero": "Aloysia"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal aromática",
+        "parteUtilizada": "Hojas",
+        "usoTradicional": "Digestiva"
+      },
+      "perfilEtnobotanico": "Planta medicinal aromática. La infusión de sus hojas se consume tradicionalmente después de las comidas para facilitar la digestión, expulsar gases (carminativo) y aliviar dolores estomacales. También tiene propiedades relajantes que ayudan a combatir el estrés leve.",
+      "historiaEvolucion": {
+        "origen": "Endémico de Sudamérica (principalmente de Chile, Argentina, Perú y Uruguay).",
+        "dispersion": "Fue introducido en Europa a finales del siglo XVIII por botánicos españoles, popularizándose rápidamente en los jardines botánicos y como hierba aromática.",
+        "evolucion": "Familia Verbenaceae. Adaptable a climas soleados y suelos bien drenados."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Marruecos, Paraguay y Chile",
+            "detalle": "Destacan en la producción para exportación de hojas secas y aceites."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Francia y Alemania",
+            "detalle": "Importan el aceite esencial para la industria de la perfumería fina y aromaterapia."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Citral (Geranial y Neral)",
+          "detalle": "Responsable de su característico aroma a limón y de sus efectos antimicrobianos."
+        },
+        {
+          "nombre": "Limoneno y Linalol",
+          "detalle": "Aceites esenciales con propiedades sedantes y digestivas."
+        },
+        {
+          "nombre": "Verbascósido",
+          "detalle": "Potente compuesto antioxidante."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783713895/Cedr%C3%B3n_zng78l.webp",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "cedron",
+      "descripcion": "El cedrón (Aloysia citrodora), también conocido como hierbaluisa, es un arbusto caducifolio muy apreciado por el intenso aroma a limón de sus hojas. Es utilizado frecuentemente en la gastronomía, la perfumería y, de manera muy destacada, en la medicina tradicional sudamericana por sus propiedades digestivas y relajantes."
+    },
+    {
+      "nombreComun": "Cola de caballo",
+      "nombreCientifico": "Equisetum arvense",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Equisetaceae",
+        "genero": "Equisetum"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal tradicional",
+        "parteUtilizada": "Tallos",
+        "usoTradicional": "Diurética"
+      },
+      "perfilEtnobotanico": "Medicinal tradicional. Sus tallos estériles se cosechan en verano para preparar infusiones. Se emplea principalmente para aumentar la producción de orina en casos de retención de líquidos, infecciones urinarias leves, y para promover la regeneración del tejido conectivo y óseo por su riqueza mineral.",
+      "historiaEvolucion": {
+        "origen": "Originaria del hemisferio norte (Europa, Asia, América del Norte).",
+        "dispersion": "Muy apreciada por los antiguos griegos y romanos por sus propiedades astringentes y cicatrizantes en el tratamiento de heridas.",
+        "evolucion": "Familia Equisetaceae. Es una planta criptógama (sin flores ni semillas, se reproduce por esporas) que prefiere suelos arcillosos y húmedos, cerca de corrientes de agua."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Polonia, China e India",
+            "detalle": "Grandes recolectores y exportadores a nivel global."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Mercado Europeo y Norteamericano",
+            "detalle": "Destino principal para la formulación de tés diuréticos y suplementos para la belleza de piel/cabello."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Ácido Silícico (Sílice)",
+          "detalle": "Hasta un 10% de la planta seca, fundamental para la síntesis de colágeno y salud articular."
+        },
+        {
+          "nombre": "Equisetonina (Saponinas)",
+          "detalle": "Favorecen el efecto diurético."
+        },
+        {
+          "nombre": "Sales de Potasio",
+          "detalle": "Refuerzan la acción de eliminación hídrica sin desequilibrar los electrolitos."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/Equisetum_arvense_foliage.jpg",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "cola-de-caballo",
+      "descripcion": "La cola de caballo (Equisetum arvense) es un \"fósil viviente\" vegetal, descendiente de plantas prehistóricas. Destaca principalmente por ser una de las especies con mayor concentración de sílice, siendo empleada como un potente diurético natural y remineralizante para fortalecer huesos, uñas y cabello."
+    },
+    {
+      "nombreComun": "Culantro / Cilantro",
+      "nombreCientifico": "Coriandrum sativum",
+      "nombresAlternativos": [
+        "Cilantro"
+      ],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Apiaceae",
+        "genero": "Coriandrum"
+      },
+      "etnobotanica": {
+        "clasificacion": "Condimento medicinal",
+        "parteUtilizada": "Hojas, semillas",
+        "usoTradicional": "Digestiva"
+      },
+      "perfilEtnobotanico": "Clasificado formalmente como un condimento medicinal, el culantro destaca por el uso integral de sus estructuras vegetativas y reproductivas. Las hojas frescas aportan frescura y enzimas digestivas, mientras que las semillas secas concentran los aceites esenciales más estables. La medicina tradicional recurre a esta planta para aliviar espasmos estomacales, flatulencias, digestiones lentas y estimular el apetito.",
+      "historiaEvolucion": {
+        "origen": "Nativo de las regiones del sudeste de Europa, el norte de África y el suroeste de Asia. Sus semillas han sido descubiertas en antiguos yacimientos arqueológicos del Neolítico y en tumbas faraónicas del antiguo Egipto.",
+        "dispersion": "Fue introducido ampliamente en la India y China a través de las rutas de comercio antiguas, y posteriormente aclimatado en toda América Latina por los colonizadores europeos, convirtiéndose en un ingrediente botánico e identidad culinaria irremplazable de la cocina regional.",
+        "evolucion": "Pertenece a la familia Apiaceae. Presenta una plasticidad fenotípica notable, adaptándose con rapidez tanto a huertos caseros de pequeña escala como a cultivos agrícolas extensivos bajo diversas altitudes."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "India se posiciona como el productor, consumidor y exportador masivo número uno a nivel mundial de semillas de cilantro y sus derivados en polvo. En cuanto al comercio de hojas frescas, México, Marruecos, Canadá y los Países Bajos lideran las redes de comercialización internacional hacia centros urbanos de alta demanda."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Los flujos comerciales de importación están liderados por los Estados Unidos, los países de la Unión Europea, los mercados de Medio Oriente y el sudeste asiático."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Linalool (Aceite Esencial)",
+          "detalle": "Componente químico volátil dominante en las semillas (superando a menudo el 60% u 70% del total de aceites), responsable directo de relajar el músculo liso del tracto gastrointestinal (acción digestiva y antiespasmódica)."
+        },
+        {
+          "nombre": "Aldehídos Alifáticos (Hojas)",
+          "detalle": "Compuestos químicos de cadena larga presentes en las hojas frescas que determinan su aroma característico y poseen propiedades antibacterianas y antifúngicas naturales."
+        },
+        {
+          "nombre": "Ácidos Grasos Esenciales",
+          "detalle": "Las semillas contienen altas concentraciones de ácido petroselínico y ácido oleico, lípidos importantes para los procesos celulares."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://antropocene.it/wp-content/uploads/2017/05/Coriandrum_sativum.jpg",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "culantro",
+      "descripcion": "El culantro o cilantro (*Coriandrum sativum*) es otra de las umbelíferas de gran impacto etnobotánico mundial. Su estructura botánica provee un doble beneficio fitoterapéutico gracias al aprovechamiento sinérgico tanto de sus hojas frescas como de sus semillas (frutos secos). La composición rica en compuestos hidrocarburos monoterpénicos le confiere propiedades antiespasmódicas y carminativas excelentes, consolidando su uso principal como un agente tónico digestivo indispensable."
+    },
+    {
+      "nombreComun": "Dulcamara",
+      "nombreCientifico": "Solanum dulcamara",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Solanaceae",
+        "genero": "Solanum"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal tradicional",
+        "parteUtilizada": "Tallos",
+        "usoTradicional": "Antiinflamatoria"
+      },
+      "perfilEtnobotanico": "Bajo la clasificación de medicinal tradicional, la dulcamara ha sido empleada desde la antigüedad mediante decocciones de sus tallos secos. La etnobotánica registra su uso como un potente agente depurativo y analgésico, focalizado principalmente en mitigar inflamaciones osteoarticulares, reumatismo y afecciones dermatológicas severas como eccemas y psoriasis.",
+      "historiaEvolucion": {
+        "origen": "Nativa de la región de Eurasia y el norte de África, donde se desarrolla de forma silvestre en zonas húmedas, linderos de bosques y terrenos alterados.",
+        "dispersion": "Fue introducida y naturalizada en América del Norte y diversas regiones de América del Sur durante los procesos de colonización, adaptándose a ecosistemas templados y andinos debido a su resistencia biológica.",
+        "evolucion": "Su clasificación pertenece al género *Solanum*, uno de los linajes vegetales más diversos y complejos del planeta, caracterizado por sintetizar metabolitos secundarios alcaloides como mecanismo de defensa evolutivo."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "A diferencia de los cultivos alimentarios masivos, el comercio de *Solanum dulcamara* se maneja primordialmente a nivel de nicho industrial farmacéutico y de herbolaria especializada. Países de Europa central (como Alemania y Polonia) y algunos centros de acopio en América Latina procesan y exportan la materia prima seca o extractos estandarizados para laboratorios homeopáticos y fitoterapéuticos globales."
+          }
+        ],
+        "importacion": []
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Alcaloides Esteroideos",
+          "detalle": "Destaca la presencia de solanina, dulcamarina y solamargina. Estos compuestos químicos poseen propiedades analgésicas y citotóxicas bajo estricto control de dosificación médica."
+        },
+        {
+          "nombre": "Saponinas",
+          "detalle": "Concentra glucósidos esteroideos en los tallos que sustentan sus marcados efectos antiinflamatorios y su capacidad de modular respuestas inmunológicas epidérmicas."
+        },
+        {
+          "nombre": "Taninos y Flavonoides",
+          "detalle": "Polifenoles con propiedades astringentes y antioxidantes que coadyuvan en la cicatrización y desinflamación de tejidos."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783714219/Dulcamara_bjyhha.webp",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "dulcamara",
+      "descripcion": ""
+    },
+    {
+      "nombreComun": "Eucalipto",
+      "nombreCientifico": "Eucalyptus globulus",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Myrtaceae",
+        "genero": "Eucalyptus"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal respiratoria",
+        "parteUtilizada": "Hojas",
+        "usoTradicional": "Expectorante"
+      },
+      "perfilEtnobotanico": "Clasificado como una planta medicinal respiratoria. Tradicionalmente, sus hojas se utilizan en decocciones e inhalaciones (vahos) para tratar resfriados, bronquitis, asma y sinusitis, gracias a su capacidad para despejar las vías respiratorias y fluidificar las secreciones.",
+      "historiaEvolucion": {
+        "origen": "Es originario de Australia y Tasmania, donde crecía de forma silvestre y era utilizado por los aborígenes australianos para curar heridas y aliviar fiebres.",
+        "dispersion": "Fue introducido en Europa en el siglo XIX, principalmente para sanear zonas pantanosas y combatir la malaria, debido a su rápida absorción de agua. Posteriormente, se expandió por América y Asia.",
+        "evolucion": "Pertenece a la familia Myrtaceae. Se ha adaptado a diversos climas, destacando por su rápido crecimiento, aunque su cultivo intensivo a veces genera controversia por el impacto en los suelos locales."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "China, India y Australia",
+            "detalle": "Lideran la producción y exportación mundial de aceite esencial de eucalipto."
+          },
+          {
+            "pais": "España y Portugal",
+            "detalle": "Son importantes exportadores europeos, tanto de madera como de extractos."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Estados Unidos y Europa",
+            "detalle": "Representan los principales mercados importadores para la industria farmacéutica y cosmética."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Eucaliptol (1,8-cineol)",
+          "detalle": "Compuesto mayoritario responsable de la acción expectorante, mucolítica y antiinflamatoria."
+        },
+        {
+          "nombre": "Taninos",
+          "detalle": "Confieren propiedades astringentes."
+        },
+        {
+          "nombre": "Flavonoides",
+          "detalle": "Aportan acción antioxidante."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783716491/Eucalipto_fclu2y.webp",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "eucalipto",
+      "descripcion": "El eucalipto (Eucalyptus globulus) es un árbol perennifolio ampliamente reconocido por su intenso aroma y sus potentes propiedades medicinales, especialmente en el tratamiento de afecciones del tracto respiratorio. Su aceite esencial es un ingrediente fundamental en la industria farmacéutica para la elaboración de jarabes, ungüentos y pastillas descongestionantes."
+    },
+    {
+      "nombreComun": "Guanábana / Graviola",
+      "nombreCientifico": "Annona muricata",
+      "nombresAlternativos": [
+        "Graviola"
+      ],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Annonaceae",
+        "genero": "Annona"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal tradicional",
+        "parteUtilizada": "Hojas y fruto",
+        "usoTradicional": "Sedante, antioxidante, citotóxica y antiinflamatoria"
+      },
+      "perfilEtnobotanico": "Las preparaciones de sus hojas se administran oralmente como sedante natural y ansiolítico. El fruto aporta una robusta protección antioxidante frente al estrés celular.",
+      "historiaEvolucion": {
+        "origen": "Nativa de las regiones tropicales de América Central y del Sur, arraigada en las culturas precolombinas.",
+        "dispersion": "Dispersada hacia los territorios tropicales de Asia (Filipinas, Malasia) y África subsahariana en huertos tradicionales.",
+        "evolucion": ""
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "México es el principal exportador mundial de guanábana fresca. Colombia, Perú y Ecuador lideran los envíos de pulpa congelada congelada e insumos deshidratados para té."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Estados Unidos lidera la demanda debido al mercado de productos saludables. En Europa, España, los Países Bajos y Alemania concentran las importaciones de pulpa y derivados fitoterapéuticos."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Acetogeninas (Annonáceas)",
+          "detalle": "Exhiben propiedades citotóxicas selectivas al inhibir el complejo I mitocondrial."
+        },
+        {
+          "nombre": "Alcaloides Isoquinolínicos",
+          "detalle": "Interactúan con receptores de serotonina, justificando efectos sedantes tradicionales."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://cdn.lakpura.com/images/LK94006933-01-E.JPG",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "guanabana",
+      "descripcion": "La guanábana combina un fruto de alto consumo fresco con hojas ricas en compuestos bioactivos exclusivos, posicionándose a la vanguardia de la investigación fitoquímica moderna."
+    },
+    {
+      "nombreComun": "Guayaba / Guayabo",
+      "nombreCientifico": "Psidium guajava",
+      "nombresAlternativos": [
+        "Guayabo"
+      ],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Myrtaceae",
+        "genero": "Psidium"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal tradicional",
+        "parteUtilizada": "Hojas y fruto",
+        "usoTradicional": "Antidiarreica, antimicrobiana, espasmolítica y astringente"
+      },
+      "perfilEtnobotanico": "El uso principal de las hojas es antidiarreico, actuando de forma directa disminuyendo el peristaltismo intestinal. El fruto es un potente reconstituyente vitamínico.",
+      "historiaEvolucion": {
+        "origen": "Especie nativa de las zonas tropicales de América, extendiéndose desde México hasta Brasil.",
+        "dispersion": "Dispersada por españoles y portugueses hacia Filipinas, India y costas africanas, naturalizándose con gran éxito.",
+        "evolucion": ""
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "India y China son los mayores productores y exportadores de productos procesados de guayaba (purés, jugos y conservas). En América Latina, México y Brasil lideran las exportaciones de fruta fresca."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "El principal importador de guayaba fresca y procesada es Estados Unidos, seguido por mercados de la Unión Europea (vía Países Bajos y Alemania) y el Medio Oriente."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Taninos",
+          "detalle": "Alta concentración en hojas, responsables de la acción astringente y espasmolítica."
+        },
+        {
+          "nombre": "Ácido Ascórbico",
+          "detalle": "El fruto contiene de 3 a 5 veces más vitamina C que los cítricos comunes."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://datazone.darwinfoundation.org/images/checklist/00312_IF_Ch_Psidium_guajava.jpg",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "guayaba",
+      "descripcion": "La guayaba es una de las especies medicinales y alimenticias más valiosas del trópico. Las infusiones de sus hojas están sólidamente respaldadas en la farmacopea tradicional para problemas gastrointestinales."
+    },
+    {
+      "nombreComun": "Hierba luisa / Limonaria",
+      "nombreCientifico": "Cymbopogon citratus",
+      "nombresAlternativos": [
+        "Limonaria",
+        "Lemongrass"
+      ],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Poaceae",
+        "genero": "Cymbopogon"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal aromática",
+        "parteUtilizada": "Hojas",
+        "usoTradicional": "Sedante"
+      },
+      "perfilEtnobotanico": "La trascendencia de Cymbopogon citratus radica en su alto valor organoléptico y medicinal. Clasificada en la categoría de medicinal aromática, la porción vegetal empleada son sus hojas alargadas. Su particular perfil fitoquímico le concede propiedades biológicas eficaces, consolidando su uso medicinal principal como un sedante suave, ansiolítico, relajante muscular y un excelente tónico eupéptico/digestivo.",
+      "historiaEvolucion": {
+        "origen": "Es una especie nativa de las regiones tropicales y subtropicales del sur y sudeste de Asia (especialmente de la India y Sri Lanka). Su uso en la medicina ayurvédica y en la gastronomía asiática milenaria es fundamental.",
+        "dispersion": "Fue introducida a lo largo de las regiones tropicales de África, América Latina y el Caribe durante los flujos comerciales de la época colonial, adaptándose con rapidez gracias a los requerimientos de climas cálidos y húmedos.",
+        "evolucion": "Es un miembro destacado de la familia Poaceae (Gramíneas). Es una planta perenne de crecimiento en densas matas que rara vez produce flores bajo cultivo, por lo que su propagación es estrictamente vegetativa mediante la división de sus macollos."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "Los líderes globales en la producción masiva de biomasa deshidratada y de su valorado aceite esencial (conocido comercialmente como lemongrass oil) son India, China, Guatemala, Brasil y Paraguay. Guatemala destaca como un exportador premium en América Latina."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "La demanda internacional está concentrada en Estados Unidos, la Unión Europea (Reino Unido, Francia, Alemania) y Japón, destinados al desarrollo de infusiones comerciales, saborizantes de alimentos y aceites para aromaterapia."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Aldehídos Terpénicos (Aceite Esencial)",
+          "detalle": "Contiene citral (65-85%), que es una mezcla natural de los isómeros geranial y neral. El citral es el responsable directo del aroma a limón y posee efectos sedantes probados sobre el sistema nervioso central."
+        },
+        {
+          "nombre": "Monoterpenos",
+          "detalle": "Presencia de mirceno, un compuesto volátil que aporta propiedades analgésicas periféricas y coadyuva en la relajación muscular."
+        },
+        {
+          "nombre": "Compuestos Fenólicos",
+          "detalle": "Contiene flavonoides como la luteolina y ácidos fenólicos que le otorgan capacidades antioxidantes y antiinflamatorias adicionales."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783716503/Hierba_luisa_ih41sn.webp",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "hierba-luisa",
+      "descripcion": "La hierba luisa o limonaria (Cymbopogon citratus) destaca como una de las gramíneas medicinales de mayor impacto en la herbolaria contemporánea y la industria de bebidas a nivel global. Caracterizada por su intenso y agradable aroma cítrico, sus hojas perennes en forma de listón concentran una serie de aldehídos terpénicos bioactivos. Su capacidad para interactuar con los receptores neurotransmisores del organismo humano le confiere un valor fitoterapéutico sobresaliente como una opción natural y segura para mitigar estados de ansiedad, estrés y alteraciones del sueño."
+    },
+    {
+      "nombreComun": "Hortensia",
+      "nombreCientifico": "Hydrangea macrophylla",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "",
+        "clase": "",
+        "familia": "Hydrangeaceae",
+        "genero": ""
+      },
+      "etnobotanica": {
+        "clasificacion": "Ornamental y Medicinal",
+        "parteUtilizada": "Raíces y hojas (con mucha precaución debido a su toxicidad natural).",
+        "usoTradicional": ""
+      },
+      "perfilEtnobotanico": "Extractos de la raíz se emplea como diurético para limpiar las vías urinarias, ayudando a mitigar problemas de cistitis y cálculos renales. Posee compuestos antioxidantes y antiinflamatorios(no se recomienda su consumo casero sin supervisión experta)",
+      "historiaEvolucion": {
+        "origen": "",
+        "dispersion": "",
+        "evolucion": ""
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "",
+            "detalle": ""
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "",
+            "detalle": ""
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "",
+          "detalle": ""
+        },
+        {
+          "nombre": "",
+          "detalle": ""
+        },
+        {
+          "nombre": "",
+          "detalle": ""
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783454423/Hortensia_nffutx.webp",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": ""
+      },
+      "estado": "ACTIVO",
+      "slug": "hortensia",
+      "descripcion": ""
+    },
+    {
+      "nombreComun": "Jengibre",
+      "nombreCientifico": "Zingiber officinale",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Zingiberaceae",
+        "genero": "Zingiber"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal tradicional",
+        "parteUtilizada": "Rizoma",
+        "usoTradicional": "Antiinflamatorio"
+      },
+      "perfilEtnobotanico": "La trascendencia de Zingiber officinale radica en su versatilidad culinaria y terapéutica. Clasificado en la categoría de medicina tradicional, su parte utilizada es el rizoma. Sus componentes le confieren capacidades medicinales excepcionales, fijando su uso principal como un potente antiinflamatorio sistémico, un agente antiemético de alta eficacia (contra náuseas y mareos) y un estimulante de la circulación periférica.",
+      "historiaEvolucion": {
+        "origen": "Es nativo de los bosques tropicales del sudeste asiático, con una historia milenaria ligada de forma estrecha a la Medicina Tradicional China y al sistema Ayurveda de la India.",
+        "dispersion": "Fue uno de los primeros productos comercializados de Oriente hacia Europa a través de las rutas de especias controladas por mercaderes árabes y griegos. Posteriormente, fue introducido con éxito en el Caribe (Jamaica) y Sudamérica por los colonizadores en los siglos XVI y XVII.",
+        "evolucion": "Miembro destacado de la familia Zingiberaceae, es una planta herbácea perenne que se propaga casi exclusivamente de manera vegetativa por la división de sus rizomas, habiendo perdido su capacidad de producir semillas viables a causa de siglos de domesticación."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "China es el exportador dominante e indiscutible a nivel mundial de jengibre (tanto fresco como deshidratado), seguido por India, Perú y Nigeria. Perú ha ganado un terreno masivo en el mercado premium internacional gracias a su jengibre orgánico de alta intensidad aromática."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Los flujos comerciales de importación convergen principalmente en los mercados de Estados Unidos, los Países Bajos (que actúa como el principal puerto de redistribución de Europa), Japón y el Reino Unido."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Gingeroles",
+          "detalle": "Son los principios picantes más abundantes en el rizoma fresco; el [6]-gingerol posee potentes propiedades inhibidoras de las enzimas ciclooxigenasa (COX-2), actuando de manera similar a los antiinflamatorios convencionales."
+        },
+        {
+          "nombre": "Shogaoles",
+          "detalle": "Formados durante el proceso de secado o cocción del rizoma por la deshidratación de los gingeroles. El [6]-shogaol destaca por tener un poder antiinflamatorio y antioxidante aún mayor que su predecesor."
+        },
+        {
+          "nombre": "Sesquiterpenos (Aceites Volátiles)",
+          "detalle": "Contiene zingibereno y beta-bisaboleno, compuestos responsables del aroma característico y con marcadas propiedades antimicrobianas."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://www.monaconatureencyclopedia.com/wp-content/uploads/2009/01/2-Zingiber-officinale-%C2%A9-Thian-Yeo.jpg",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "jengibre",
+      "descripcion": "El jengibre (Zingiber officinale) es un recurso fitoterapéutico de primer orden, venerado durante milenios en los sistemas médicos orientales y hoy validado exhaustivamente por la bioquímica moderna. Su matriz biológica reside en un tallo subterráneo modificado, el rizoma, que actúa como un almacén concentrado de resinas oleosas y principios picantes. Estos compuestos ejercen potentes efectos fisiológicos a nivel celular, convirtiendo al jengibre en un elemento crítico tanto para la nutrición diaria como para el tratamiento de afecciones inflamatorias crónicas y trastornos del sistema digestivo."
+    },
+    {
+      "nombreComun": "Lazo de amor",
+      "nombreCientifico": "Episcia cupreata",
+      "nombresAlternativos": [
+        "Planta de fuego",
+        "Cirtodeira"
+      ],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "",
+        "clase": "",
+        "familia": "Gesneriaceae",
+        "genero": ""
+      },
+      "etnobotanica": {
+        "clasificacion": "Ornamental y Medicinal",
+        "parteUtilizada": "Hojas y flores",
+        "usoTradicional": ""
+      },
+      "perfilEtnobotanico": "Usada para aliviar malestares digestivos, dolores de cabeza (migrañas) y tos; el zumo o machacado de sus hojas se aplica para calmar la picazón e irritación provocada por picaduras de insectos.",
+      "historiaEvolucion": {
+        "origen": "",
+        "dispersion": "",
+        "evolucion": ""
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "",
+            "detalle": ""
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "",
+            "detalle": ""
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "",
+          "detalle": ""
+        },
+        {
+          "nombre": "",
+          "detalle": ""
+        },
+        {
+          "nombre": "",
+          "detalle": ""
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783454514/Lazo_de_amor_t7kwsf.webp",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": ""
+      },
+      "estado": "ACTIVO",
+      "slug": "lazo-de-amor",
+      "descripcion": ""
+    },
+    {
+      "nombreComun": "Limón / Limonero",
+      "nombreCientifico": "Citrus limon",
+      "nombresAlternativos": [
+        "Limonero"
+      ],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Rutaceae",
+        "genero": "Citrus"
+      },
+      "etnobotanica": {
+        "clasificacion": "Alimenticia - Medicinal",
+        "parteUtilizada": "Fruto (jugo y cáscara / pericarpio)",
+        "usoTradicional": "Antiséptico, antioxidante, astringente y depurativo"
+      },
+      "perfilEtnobotanico": "Su caracterización etnobotánica dual integra la pulpa ácida y la corteza. Tradicionalmente se emplea el jugo fresco como antimicrobiano y estimulante gástrico.",
+      "historiaEvolucion": {
+        "origen": "Regiones nororientales de la India, expandiéndose tempranamente hacia Asia Central.",
+        "dispersion": "Introducido en el Mediterráneo por los árabes durante la Edad Media y llevado a América en los viajes de Cristóbal Colón.",
+        "evolucion": ""
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "España lidera la exportación mundial de limones frescos, seguida de cerca por México (dominante en el mercado norteamericano) y Turquía. Argentina destaca como el principal procesador de derivados industriales."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Los Estados Unidos, los Países Bajos (como hub de distribución europeo), Alemania, Francia y Japón representan los mercados de importación más estables."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Ácidos Orgánicos Libres",
+          "detalle": "Alta concentración de ácido cítrico (5-7% en jugo), condicionando un pH bactericida."
+        },
+        {
+          "nombre": "Compuestos Fenólicos",
+          "detalle": "Presencia de eriocitrina y hesperidina con propiedades vasoprotectoras."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783662651/Limon_pqfdqt.webp",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "limon",
+      "descripcion": "El limón es un recurso fitoterapéutico global dotado de una versatilidad bioquímica excepcional. Su marcada acidez lo convierte en un potente agente antiséptico y antioxidante."
+    },
+    {
+      "nombreComun": "Llantén",
+      "nombreCientifico": "Plantago major",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Plantaginaceae",
+        "genero": "Plantago"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal tradicional",
+        "parteUtilizada": "Hojas",
+        "usoTradicional": "Cicatrizante"
+      },
+      "perfilEtnobotanico": "Medicinal tradicional. Las hojas frescas machacadas se aplican como emplasto sobre heridas, picaduras de insectos o quemaduras para frenar el sangrado y acelerar la cicatrización. En infusión, sus mucílagos actúan como un excelente expectorante y protector de las mucosas irritadas (garganta, estómago).",
+      "historiaEvolucion": {
+        "origen": "Nativo de Europa y Asia central y septentrional.",
+        "dispersion": "Introducido en América por los colonizadores europeos; los nativos americanos lo llamaban \"la huella del hombre blanco\" porque parecía crecer en cualquier lugar por donde ellos caminaran.",
+        "evolucion": "Pertenece a la familia Plantaginaceae. Crece en prados, bordes de caminos y terrenos pisoteados de todo el mundo."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Europa del Este (Bulgaria, Polonia)",
+            "detalle": "Lideran la exportación comercial de las hojas secas."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Europa Occidental y Estados Unidos",
+            "detalle": "Importan volúmenes significativos para la formulación de jarabes naturales para la tos y pomadas cicatrizantes."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Mucílagos",
+          "detalle": "Fibra soluble que ejerce un efecto calmante (emoliente) sobre las mucosas digestivas y respiratorias."
+        },
+        {
+          "nombre": "Aucubina (Iridoides)",
+          "detalle": "Compuesto antimicrobiano, antiinflamatorio y protector hepático."
+        },
+        {
+          "nombre": "Alantoína",
+          "detalle": "Estimula la proliferación celular, promoviendo una rápida cicatrización de los tejidos dañados."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://eunis.eea.europa.eu/images/species//177829/c0a30d2b052081c3d182d6abb0947d29.jpg",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "llanten",
+      "descripcion": "El llantén (Plantago major) es una pequeña planta herbácea extremadamente resiliente. Aunque a menudo pasa desapercibida, es considerada uno de los \"primeros auxilios\" naturales más efectivos por sus excepcionales propiedades cicatrizantes, antiinflamatorias y antibacterianas, aplicables tanto interna como externamente."
+    },
+    {
+      "nombreComun": "Madre de miles",
+      "nombreCientifico": "Kalanchoe daigremontiana",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "",
+        "clase": "",
+        "familia": "Crassulaceae",
+        "genero": ""
+      },
+      "etnobotanica": {
+        "clasificacion": "Ornamental y Medicinal",
+        "parteUtilizada": "Hojas",
+        "usoTradicional": ""
+      },
+      "perfilEtnobotanico": "Usada para reumatismos, heridas, quemaduras, dolores de cabeza, infecciones, tumores, inflamaciones, alergias.",
+      "historiaEvolucion": {
+        "origen": "",
+        "dispersion": "",
+        "evolucion": ""
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "",
+            "detalle": ""
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "",
+            "detalle": ""
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "",
+          "detalle": ""
+        },
+        {
+          "nombre": "",
+          "detalle": ""
+        },
+        {
+          "nombre": "",
+          "detalle": ""
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783454610/Madre_de_miles_ripwdu.webp",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": ""
+      },
+      "estado": "ACTIVO",
+      "slug": "madre-de-miles",
+      "descripcion": ""
+    },
+    {
+      "nombreComun": "Mandarina / Mandarino",
+      "nombreCientifico": "Citrus reticulata",
+      "nombresAlternativos": [
+        "Mandarino"
+      ],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Rutaceae",
+        "genero": "Citrus"
+      },
+      "etnobotanica": {
+        "clasificacion": "Alimenticia - Medicinal",
+        "parteUtilizada": "Fruto (pulpa, jugo y endocarpio)",
+        "usoTradicional": "Vitamínica, digestiva y moduladora metabólica"
+      },
+      "perfilEtnobotanico": "Valorada por su acción eúptica y procinética. El consumo de su pulpa se asocia directamente con el fortalecimiento inmunológico estacional, mientras que su corteza se emplea para mitigar la dispepsia.",
+      "historiaEvolucion": {
+        "origen": "Nativa de las regiones tropicales y subtropicales del sureste de China y de Indochina, con registros de cultivo milenarios.",
+        "dispersion": "Su introducción a Europa ocurrió a principios del siglo XIX a través de cargamentos comerciales ingleses, propagándose rápidamente por el Mediterráneo y América.",
+        "evolucion": ""
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "China lidera el volumen global de exportación de mandarinas y tangerinas. En el Hemisferio Sur, Sudáfrica y Perú registran picos de exportación en contraestación hacia mercados norteamericanos y europeos."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Estados Unidos, Rusia y la Unión Europea (liderada por Alemania y Francia) se consolidan como los principales importadores debido a la alta demanda de variedades fáciles de pelar (easy-peelers)."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Monoterpenos",
+          "detalle": "Aceite esencial del pericarpio rico en D-limoneno (65-75%) y gamma-terpineno."
+        },
+        {
+          "nombre": "Flavonoides Polietoxilados (PMFs)",
+          "detalle": "Contiene altas concentraciones de nobiletina y tangeretina con propiedades antioxidantes y neuroprotectoras."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41559-025-02822-4/MediaObjects/41559_2025_2822_Figa_HTML.png",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "mandarina",
+      "descripcion": "La mandarina es una especie ancestral pura del género Citrus. Su facilidad de pelado, perfil sensorial dulce y marcados atributos digestivos y vitamínicos la posicionan como un recurso etnobotánico y agroindustrial clave a nivel global."
+    },
+    {
+      "nombreComun": "Manzanilla",
+      "nombreCientifico": "Matricaria chamomilla",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Asteraceae",
+        "genero": "Matricaria"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal aromática",
+        "parteUtilizada": "Flores",
+        "usoTradicional": "Digestiva"
+      },
+      "perfilEtnobotanico": "Considerada una planta medicinal aromática. Las flores secas se emplean para aliviar trastornos digestivos (indigestión, cólicos, flatulencia), así como sedante suave para el insomnio leve y de forma tópica para desinflamar la piel y los ojos.",
+      "historiaEvolucion": {
+        "origen": "Originaria de Europa y el norte de Asia. Fue ampliamente utilizada en el antiguo Egipto, Grecia y Roma para tratar eritemas y fiebres.",
+        "dispersion": "Se introdujo en América con la colonización europea, naturalizándose rápidamente en climas templados.",
+        "evolucion": "Pertenece a la familia Asteraceae. Su cultivo es sencillo y se ha adaptado a múltiples ecosistemas alrededor del mundo."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Egipto, México y Alemania",
+            "detalle": "Principales productores y exportadores mundiales."
+          },
+          {
+            "pais": "Argentina",
+            "detalle": "Importante proveedor en Sudamérica."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Estados Unidos y la Unión Europea",
+            "detalle": "Consumen grandes volúmenes tanto para la industria alimentaria (tés) como cosmética."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Apigenina",
+          "detalle": "Flavonoide responsable de los efectos sedantes y ansiolíticos suaves."
+        },
+        {
+          "nombre": "Bisabolol y Camazuleno (Aceite esencial)",
+          "detalle": "Propiedades antiinflamatorias y antimicrobianas."
+        },
+        {
+          "nombre": "Cumarinas",
+          "detalle": "Efectos antiespasmódicos a nivel gástrico."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://joradahl.de/wp-content/uploads/2023/06/kamille.jpg",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "CLOUDINARY"
+      },
+      "estado": "ACTIVO",
+      "slug": "manzanilla",
+      "descripcion": "La manzanilla (Matricaria chamomilla) es una de las hierbas medicinales más consumidas a nivel mundial en forma de infusión. Sus pequeñas flores similares a margaritas concentran aceites esenciales que actúan como suaves relajantes musculares, antiespasmódicos y protectores de la mucosa gástrica."
+    },
+    {
+      "nombreComun": "Matico",
+      "nombreCientifico": "Piper aduncum",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Piperaceae",
+        "genero": "Piper"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal",
+        "parteUtilizada": "Hojas, tallos y aceites esenciales",
+        "usoTradicional": "Cicatrizante, antimicrobiano y antiinflamatorio"
+      },
+      "perfilEtnobotanico": "Destacado en medicina tradicional amazónica. Hojas usadas en infusiones, emplastos y lavados para heridas, inflamaciones y afecciones gastrointestinales.",
+      "historiaEvolucion": {
+        "origen": "Nativa de regiones tropicales (cuenca amazónica). Desde México hasta Sudamérica en bosques húmedos tropicales.",
+        "dispersion": "Se difundió entre culturas indígenas amazónicas y la medicina tradicional latinoamericana.\n- **Evolución y Adaptación:** Familia Piperaceae (como la pimienta negra). De rápida adaptación y colonización de terrenos perturbados.",
+        "evolucion": ""
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "Perú y Brasil participan activamente en comercialización de derivados."
+          },
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "Demanda internacional se concentra en extractos y aceites."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Estados Unidos y Europa son mercados relevantes."
+          },
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "El sector farmacéutico y cosmético impulsa la demanda."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Aceites Esenciales",
+          "detalle": "Ricos en dilapiol."
+        },
+        {
+          "nombre": "Flavonoides",
+          "detalle": "Antioxidantes y antiinflamatorios."
+        },
+        {
+          "nombre": "Taninos",
+          "detalle": "Cicatrizantes y astringentes."
+        },
+        {
+          "nombre": "Fenoles",
+          "detalle": "Antimicrobianos."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://d2seqvvyy3b8p2.cloudfront.net/5cd4a9b8b3d1808f6fc2dd43ac21bc0c.jpg",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "matico",
+      "descripcion": "El matico (Piper aduncum) es una planta medicinal de la Amazonía y regiones tropicales de América. Utilizada por comunidades indígenas por sus propiedades cicatrizantes, antimicrobianas y antiinflamatorias."
+    },
+    {
+      "nombreComun": "Menta",
+      "nombreCientifico": "Mentha piperita",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Lamiaceae",
+        "genero": "Mentha"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal aromática",
+        "parteUtilizada": "Hojas",
+        "usoTradicional": "Digestiva"
+      },
+      "perfilEtnobotanico": "La relevancia de Mentha piperita dentro de las Lamiáceas se evidencia en su versatilidad y extendido consumo popular. Clasificada bajo la categoría de medicinal aromática, destaca por el uso concentrado de sus hojas frescas o desecadas. Su rica composición fitoquímica le otorga propiedades terapéuticas notorias, consolidando su uso principal como una excelente alternativa digestiva, espasmolítica, carminativa y refrescante de las vías respiratorias superiores.",
+      "historiaEvolucion": {
+        "origen": "Es originaria de la región templada de Europa y del Norte de África. Es descrita históricamente en textos médicos del antiguo Egipto, Grecia y Roma, donde se utilizaba con fines digestivos y culinarios.",
+        "dispersion": "Su alta adaptabilidad facilitó su propagación rápida por las zonas templadas de Asia y, posteriormente, su introducción y cultivo extensivo en toda América del Norte y del Sur a partir del siglo XVII.",
+        "evolucion": "Genéticamente, Mentha piperita es un híbrido estéril natural obtenido del cruce entre Mentha aquatica (menta de agua) y Mentha spicata (hierbabuena). Pertenece a la familia Lamiaceae, caracterizada por sus tallos cuadrangulares y glándulas secretoras de aceites altamente aromáticos."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "Los líderes históricos en la producción y exportación de aceite esencial de menta de alta pureza y hojas secas son Estados Unidos (región del Noroeste del Pacífico), India, China y Marruecos. India controla una porción dominante del mercado de mentol natural procesado."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Los principales compradores internacionales son las naciones industrializadas de Europa Occidental (Alemania, Reino Unido, Países Bajos) y Estados Unidos, impulsados por sus robustas industrias de confitería, higiene oral (pastas dentales) y farmacia."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Monoterpenos (Aceite Esencial)",
+          "detalle": "El compuesto dominante absoluto es el mentol (35-55%), responsable del efecto refrescante característico por su interacción con los receptores de frío del cuerpo, acompañado de la mentona."
+        },
+        {
+          "nombre": "Ácidos Fenólicos",
+          "detalle": "Destaca la presencia de ácido rosmarínico, un polifenol que aporta potentes propiedades antioxidantes y efectos antiinflamatorios sistémicos."
+        },
+        {
+          "nombre": "Flavonoides",
+          "detalle": "Contiene luteolina y mentosido, compuestos que ejercen una acción espasmolítica directa sobre el músculo liso del estómago y los intestinos, aliviando cólicos y flatulencias."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783453898/Menta_piperita_xhh5uz.webp",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "CLOUDINARY"
+      },
+      "estado": "ACTIVO",
+      "slug": "menta-piperita",
+      "descripcion": "La menta (Mentha piperita) representa uno de los pilares fundamentales de las plantas medicinales aromáticas con mayor arraigo tanto en la etnobotánica clásica como en la industria fitofarmacéutica mundial. Su valor radica en la concentración de aceites esenciales volátiles localizados en los tricomas de sus hojas. Su matriz vegetal provee compuestos orgánicos capaces de interactuar directamente con los receptores del tracto gastrointestinal y el sistema nervioso, asegurando una acción terapéutica inmediata que justifica su enorme relevancia en infusiones, extractos y formulaciones médicas para el bienestar digestivo."
+    },
+    {
+      "nombreComun": "Naranja dulce / Naranjo",
+      "nombreCientifico": "Citrus sinensis",
+      "nombresAlternativos": [
+        "Naranjo"
+      ],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Rutaceae",
+        "genero": "Citrus"
+      },
+      "etnobotanica": {
+        "clasificacion": "Alimenticia - Medicinal",
+        "parteUtilizada": "Fruto (pulpa, jugo) y Cáscara (epicarpio / flavedo)",
+        "usoTradicional": "Antioxidante, digestiva, aromatizante y fitoterapéutica"
+      },
+      "perfilEtnobotanico": "La relevancia de Citrus sinensis dentro de la familia de las Rutáceas se manifiesta claramente al analizar su perfil botánico y de aprovechamiento integral. Clasificado bajo una categoría etnobotánica dual, este recurso vegetal destaca por el uso sinérgico de sus partes; tanto la pulpa y el jugo del fruto como los aceites y compuestos presentes en su cáscara poseen un alto valor biológico. Esta composición le confiere una versatilidad terapéutica excepcional, consolidando sus principales usos medicinales como un agente con marcadas propiedades antioxidantes, una excelente alternativa digestiva, un potente aromatizante natural y un insumo clave en el desarrollo de aplicaciones fitoterapéuticas avanzadas.",
+      "historiaEvolucion": {
+        "origen": "Nativa del sudeste asiático, abarcando las regiones entre el sur de China, el noreste de India y Birmania. Las primeras menciones en la literatura china datan de hace miles de años.",
+        "dispersion": "Llegó al Mediterráneo y Europa central a través de las rutas comerciales de la Seda impulsadas por mercaderes árabes y portugueses hacia el siglo XV. Fue introducida en el continente americano por los colonizadores españoles a lo largo del siglo XVI, donde encontró condiciones climáticas ideales para su propagación.\n- **Hibridación:** Estudios genéticos modernos confirman que la naranja dulce no es una especie silvestre nativa original, sino un híbrido natural antiguo derivado del cruce entre el pomelo (Citrus maxima) y la mandarina (Citrus reticulata).",
+        "evolucion": ""
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Egipto",
+            "detalle": "Consolidado fuertemente como el principal exportador mundial de naranjas frescas en volumen, abasteciendo de manera masiva a la Unión Europea, Rusia, Asia y Medio Oriente con una estructura de costos muy competitiva."
+          },
+          {
+            "pais": "Sudáfrica",
+            "detalle": "Lidera las exportaciones del Hemisferio Sur, registrando récords consecutivos de envío hacia mercados de alta exigencia fitosanitaria gracias a su producción en contraestación."
+          },
+          {
+            "pais": "España",
+            "detalle": "Se mantiene a la vanguardia europea y global en la exportación de cítricos frescos de calidad premium."
+          },
+          {
+            "pais": "Brasil",
+            "detalle": "Es el mayor productor del planeta, redirigiendo cerca del 75% al 80% de su cosecha masiva hacia la exportación procesada (Jugo de Naranja Concentrado Congelado - FCOJ)."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Los principales mercados compradores a nivel global son la Unión Europea (liderada por naciones no productoras como Alemania, Francia y Países Bajos), Estados Unidos (que ha incrementado sus importaciones para compensar pérdidas por problemas climáticos y fitopatológicos locales como el citrus greening), China, Canadá y el Reino Unido."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Ácidos Orgánicos",
+          "detalle": "Dominio absoluto del Ácido Ascórbico (Vitamina C), cofactor esencial para el sistema inmunológico y la síntesis de colágeno, acompañado de ácido cítrico que actúa como conservante natural y define su acidez."
+        },
+        {
+          "nombre": "Flavonoides",
+          "detalle": "Concentraciones elevadas de hesperidina y narirutina, polifenoles localizados tanto en la pulpa como en el albedo (la parte blanca de la cáscara) con marcados efectos antioxidantes, antiinflamatorios y cardioprotectores."
+        },
+        {
+          "nombre": "Aceites Esenciales (Cáscara)",
+          "detalle": "El flavedo o corteza exterior destaca por su riqueza en D-limoneno (superando el 90% del total del aceite volátil), un terpeno líquido con propiedades antimicrobianas, ampliamente explotado por las industrias cosmética, farmacéutica y de productos de limpieza ecológicos."
+        },
+        {
+          "nombre": "Carotenoides",
+          "detalle": "Presencia de betacaroteno, luteína y criptoxantina, compuestos liposolubles responsables de la coloración naranja de la piel y pulpa, precursores de la Vitamina A en el organismo."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVOlJWYVpVFnL596D631HeHh_sVR8H_NSrOyLU09EmNe8uHTUPz6V8Ro1B&s=10",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "naranja-dulce",
+      "descripcion": "El naranjo dulce (Citrus sinensis) es mucho más que uno de los cultivos frutales más emblemáticos y consumidos a nivel global; representa un puente perfecto entre la riqueza de la biodiversidad agrícola y el bienestar humano. Desde sus orígenes ancestrales en el sudeste asiático hasta consolidarse como un pilar del comercio internacional, este cítrico destaca por su versatilidad etnobotánica. Su matriz biológica no solo provee una fuente inestimable de nutrientes esenciales como la vitamina C, sino que sus subproductos especialmente la cáscara albergan compuestos químicos de alto valor industrial, farmacéutico y medicinal, consolidando su relevancia tanto en la mesa diaria como en la ciencia moderna."
+    },
+    {
+      "nombreComun": "Naranjo Amargo",
+      "nombreCientifico": "Citrus aurantium",
+      "nombresAlternativos": [
+        "Naranja amarga"
+      ],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Rutaceae",
+        "genero": "Citrus"
+      },
+      "etnobotanica": {
+        "clasificacion": "Alimenticia - Medicinal",
+        "parteUtilizada": "Flores (azahar) y fruto",
+        "usoTradicional": "Sedante suave y digestivo, flores destiladas en fitoterapia"
+      },
+      "perfilEtnobotanico": "Se ha utilizado tradicionalmente en la preparación de flores y frutos para aplicaciones digestivas y relajantes.",
+      "historiaEvolucion": {
+        "origen": "",
+        "dispersion": "",
+        "evolucion": "El naranjo amargo pertenece a Rutaceae y comparte el hábito arbóreo de los cítricos con flores aromáticas muy características."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Sostenibilidad",
+            "detalle": "Su cultivo es relevante en regiones mediterráneas, donde aporta valor cultural y económico en sistemas agrícolas diversos."
+          }
+        ],
+        "importacion": []
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Fitoquímica",
+          "detalle": "Su composición incluye flavonoides y terpenos asociados a su aroma distintivo y a posibles efectos antioxidantes."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Citrus_aurantium.jpg",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "CLOUDINARY"
+      },
+      "estado": "ACTIVO",
+      "slug": "naranjo-amargo",
+      "descripcion": "El naranjo amargo se utiliza por sus flores y fruto en preparaciones tradicionales de perfil digestivo y relajante."
+    },
+    {
+      "nombreComun": "Neem / Nim",
+      "nombreCientifico": "Azadirachta indica",
+      "nombresAlternativos": [
+        "Nim"
+      ],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Meliaceae",
+        "genero": "Azadirachta"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal y agroecológica",
+        "parteUtilizada": "Hojas, corteza, semillas y aceite",
+        "usoTradicional": "Antimicrobiana, antifúngica, antiparasitaria y antiinflamatoria"
+      },
+      "perfilEtnobotanico": "Las hojas y corteza se aplican tópicamente para afecciones dermatológicas severas. En agroecología, los extractos de sus semillas actúan como reguladores del crecimiento de insectos plaga.",
+      "historiaEvolucion": {
+        "origen": "Originario de las regiones áridas de la India, Myanmar y Pakistán, con registros milenarios en la medicina Ayurvédica.",
+        "dispersion": "Introducido en el siglo XX en regiones áridas de África y América Latina para mitigar la desertificación.",
+        "evolucion": ""
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "India mantiene un monopolio casi absoluto en la exportación de extracto puro de neem, aceite crudo y torta de neem para fertilización orgánica. Países del sudeste asiático muestran un crecimiento emergente."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Los mercados con regulaciones agrícolas verdes estrictas son los principales compradores, destacando la Unión Europea, Estados Unidos, Canadá y Brasil (para su sector agroindustrial extensivo)."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Limonoides (Azadiractina)",
+          "detalle": "Bloquea el sistema endocrino de los insectos y destruye paredes celulares de hongos fitopatógenos."
+        },
+        {
+          "nombre": "Compuestos Azufrados",
+          "detalle": "Otorgan al aceite de la semilla propiedades bactericidas y antisépticas."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783717446/Neem_qfxhoa.webp",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "neem",
+      "descripcion": "El Neem es un árbol perennifolio de valor extraordinario. Combina una potente acción medicinal humana con una revolucionaria aplicación agroecológica como biopesticida sistemático biodegradable."
+    },
+    {
+      "nombreComun": "Ortiga",
+      "nombreCientifico": "Urtica dioica",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Urticaceae",
+        "genero": "Urtica"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal tradicional",
+        "parteUtilizada": "Hojas",
+        "usoTradicional": "Antiinflamatoria"
+      },
+      "perfilEtnobotanico": "Medicinal tradicional. Al secarse o hervirse, la ortiga pierde su cualidad urticante. Se consume en infusiones o sopas para tratar la artritis, la gota, inflamaciones prostáticas (HPB) y como remineralizante en casos de anemia y fatiga debido a su alta concentración de hierro.",
+      "historiaEvolucion": {
+        "origen": "De distribución cosmopolita, nativa principalmente de Europa, Asia, norte de África y Norteamérica.",
+        "dispersion": "Utilizada desde la antigüedad (los romanos se frotaban con ella para mantener el calor corporal y mejorar la circulación).",
+        "evolucion": "Familia Urticaceae. Crece en suelos ricos en nitrógeno y materia orgánica, a menudo cerca de asentamientos humanos."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Europa del Este (Polonia, Bulgaria)",
+            "detalle": "Principales proveedores de hoja seca y raíces."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Alemania, Francia e Italia",
+            "detalle": "Grandes demandantes para la industria fitofarmacéutica y cosmética (lociones capilares)."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Histamina, Serotonina y Acetilcolina",
+          "detalle": "Presentes en los tricomas (pelos) responsables de la urticaria inicial."
+        },
+        {
+          "nombre": "Hierro, Calcio, Sílice y Potasio",
+          "detalle": "Alta carga mineral."
+        },
+        {
+          "nombre": "Ácidos Fenólicos y Flavonoides",
+          "detalle": "Confieren su potente acción antiinflamatoria y diurética."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/Brennnessel_1.JPG",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "ortiga",
+      "descripcion": "La ortiga (Urtica dioica) es frecuentemente considerada una \"mala hierba\" debido a los pelos urticantes de sus hojas y tallos. Sin embargo, es una de las plantas medicinales más completas, con un altísimo contenido de minerales, vitaminas y compuestos que le otorgan propiedades antiinflamatorias, depurativas y antianémicas."
+    },
+    {
+      "nombreComun": "Papaya",
+      "nombreCientifico": "Carica papaya",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Caricaceae",
+        "genero": "Carica"
+      },
+      "etnobotanica": {
+        "clasificacion": "Alimenticia-medicinal",
+        "parteUtilizada": "Fruto, látex",
+        "usoTradicional": "Digestiva"
+      },
+      "perfilEtnobotanico": "Clasificada bajo una categoría dual alimenticia-medicinal, la papaya es ampliamente valorada por su aprovechamiento integral. Mientras que la pulpa del fruto maduro actúa como un excelente nutriente digestivo y laxante suave, el látex extraído de los frutos verdes concentra enzimas claves que descomponen las proteínas. Esta versatilidad terapéutica la posiciona como un remedio natural predilecto para optimizar la salud gastrointestinal.",
+      "historiaEvolucion": {
+        "origen": "Nativa de las regiones tropicales de Mesoamérica (especialmente el sur de México y América Central).",
+        "dispersion": "Tras la colonización de América, fue dispersada rápidamente por los españoles y portugueses hacia el Caribe, las regiones tropicales de América del Sur, África y el sudeste asiático, adaptándose perfectamente a climas cálidos y húmedos de baja altitud.\nHibridación/Genética: Pertenece a la familia Caricaceae. Estudios genómicos modernos han permitido mapear su genoma diploide, identificando la evolución de sus cromosomas sexuales (plantas de tipos masculinas, femeninas y hermafroditas) y optimizando variedades comerciales tolerantes a virus como el de la mancha anular.",
+        "evolucion": ""
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "India y Brasil lideran la producción mundial masiva, orientando gran parte a sus mercados internos. Sin embargo, México se posiciona como el principal exportador global de fruta fresca, abasteciendo de forma masiva el mercado de los Estados Unidos. Otros exportadores clave en América Latina incluyen a Guatemala y Ecuador."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "El principal mercado comprador mundial es Estados Unidos, seguido por la Unión Europea (con países como Alemania, Países Bajos y España como principales receptores) y naciones asiáticas que demandan frutas exóticas tropicales."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Enzimas Proteolíticas",
+          "detalle": "El látex y el fruto contienen papaína y quimopapaína, potentes enzimas que facilitan la hidrólisis de proteínas, mejorando significativamente los procesos digestivos."
+        },
+        {
+          "nombre": "Vitaminas y Antioxidantes",
+          "detalle": "Posee concentraciones elevadas de Ácido Ascórbico (Vitamina C), Vitamina A (a través de precursores como el betacaroteno) y Vitamina E, que fortalecen la respuesta inmunológica y celular."
+        },
+        {
+          "nombre": "Carotenoides",
+          "detalle": "Dominio de licopeno y criptoxantina, polifenoles responsables de la coloración anaranjada-rojiza de la pulpa que actúan neutralizando los radicales libres."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://agrolink.ec/wp-content/uploads/2025/07/trtwertwrt-1024x559.jpg",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "papaya",
+      "descripcion": "La papaya (*Carica papaya*) es un fruto tropical de gran relevancia global, reconocido por su exquisito sabor y sus notables propiedades nutricionales y terapéuticas. Más allá de su alto valor en la industria alimentaria por su aporte de vitaminas y minerales, destaca en la etnobotánica gracias a la presencia de enzimas proteolíticas en su matriz biológica y látex, convirtiéndola en un elemento esencial tanto para la medicina tradicional como para el desarrollo de productos farmacéuticos y cosméticos."
+    },
+    {
+      "nombreComun": "Pepino",
+      "nombreCientifico": "Cucumis sativus",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Cucurbitaceae",
+        "genero": "Cucumis"
+      },
+      "etnobotanica": {
+        "clasificacion": "Alimenticia - Medicinal",
+        "parteUtilizada": "Fruto",
+        "usoTradicional": "Hidratante, diurético y antioxidante"
+      },
+      "perfilEtnobotanico": "Dentro de la categoría alimenticia-medicinal, el pepino destaca por el aprovechamiento directo de su fruto. Tradicionalmente ha sido empleado como alimento refrescante para combatir la deshidratación y aliviar molestias digestivas leves. Su alto contenido de agua, junto con vitaminas y minerales esenciales, lo convierten en un recurso de gran valor para la nutrición humana. Asimismo, las rodajas y extractos son ampliamente utilizados en la medicina tradicional y cosmética para disminuir inflamaciones cutáneas y favorecer la hidratación de la piel.",
+      "historiaEvolucion": {
+        "origen": "Es una de las hortalizas más antiguas cultivadas por la humanidad. Su origen se localiza en las regiones tropicales y subtropicales del sur de Asia, especialmente en el norte de la India y las zonas cercanas a las estribaciones del Himalaya. Diversas evidencias arqueológicas indican que esta especie ya era cultivada hace más de 3.000 años por antiguas civilizaciones asiáticas debido a su capacidad para producir frutos refrescantes y nutritivos en climas cálidos. Desde sus primeras etapas de domesticación, el pepino fue apreciado por su rápido crecimiento y por la facilidad con la que podía adaptarse a diferentes condiciones ambientales.",
+        "dispersion": "A través de las antiguas rutas comerciales terrestres y marítimas, el cultivo se expandió hacia Persia, Mesopotamia y Egipto. Los egipcios lo incorporaron a su alimentación cotidiana y posteriormente fue adoptado por las civilizaciones griega y romana, donde se convirtió en un alimento altamente valorado por las clases nobles. Durante la Edad Media, el cultivo se difundió ampliamente por toda Europa. Con la llegada de los exploradores europeos al continente americano durante los siglos XV y XVI, fue introducido en América, donde encontró condiciones favorables y se integró a la agricultura local.",
+        "evolucion": "Pertenece a la familia Cucurbitaceae, que incluye al melón, la sandía y los zapallos. A lo largo de los siglos, la selección permitió obtener variedades con diferentes tamaños, formas y características de sabor. En la actualidad, los programas modernos han desarrollado cultivares resistentes a enfermedades virales, bacterianas y fúngicas, además de variedades adaptadas al cultivo bajo invernadero."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "España",
+            "detalle": "Se mantiene entre los principales exportadores mundiales hacia los mercados europeos."
+          },
+          {
+            "pais": "México",
+            "detalle": "Lidera las exportaciones hacia Estados Unidos gracias a su producción durante todo el año."
+          },
+          {
+            "pais": "Países Bajos",
+            "detalle": "Destaca por su producción tecnificada en invernaderos de alta productividad."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Estados Unidos",
+            "detalle": "Es uno de los mayores importadores mundiales de pepino fresco."
+          },
+          {
+            "pais": "Alemania, Francia y Reino Unido",
+            "detalle": "Mantienen una elevada demanda dentro del mercado europeo."
+          },
+          {
+            "pais": "Canadá",
+            "detalle": "Importa grandes volúmenes para complementar su producción local limitada por factores climáticos."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Agua",
+          "detalle": "Representa aproximadamente el 95% del fruto, favoreciendo la hidratación corporal."
+        },
+        {
+          "nombre": "Vitamina C",
+          "detalle": "Actúa como antioxidante y contribuye al fortalecimiento del sistema inmunológico."
+        },
+        {
+          "nombre": "Flavonoides y Taninos",
+          "detalle": "Presentan propiedades antioxidantes y antiinflamatorias que ayudan a proteger las células frente al estrés oxidativo."
+        },
+        {
+          "nombre": "Cucurbitacinas",
+          "detalle": "Metabolitos secundarios característicos de las cucurbitáceas que han despertado interés científico por sus potenciales actividades biológicas."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://www.gardenia.net/wp-content/uploads/2023/05/cucumis-sativus.webp",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "pepino",
+      "descripcion": "El pepino (Cucumis sativus) es una de las hortalizas más cultivadas y consumidas en el mundo debido a su elevado contenido de agua, su bajo aporte calórico y sus propiedades nutricionales. Desde tiempos antiguos ha sido apreciado tanto como alimento refrescante como por sus aplicaciones medicinales tradicionales. Su fruto constituye una importante fuente de hidratación natural y aporta vitaminas, minerales y compuestos antioxidantes que contribuyen al mantenimiento de la salud humana. Además de su relevancia alimentaria, el pepino ha adquirido importancia en la industria cosmética y farmacéutica por sus efectos calmantes y regeneradores sobre la piel."
+    },
+    {
+      "nombreComun": "Perejil",
+      "nombreCientifico": "Petroselinum crispum",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Apiaceae",
+        "genero": "Petroselinum"
+      },
+      "etnobotanica": {
+        "clasificacion": "Condimento medicinal",
+        "parteUtilizada": "Hojas",
+        "usoTradicional": "Diurético"
+      },
+      "perfilEtnobotanico": "El perejil opera bajo la categoría etnobotánica de condimento medicinal. Sus hojas tiernas, consumidas frescas en infusiones, extractos o jugos, son la parte anatómica aprovechada terapéuticamente. La etnobotánica tradicional valida su efectividad para incrementar la diuresis, favorecer la expulsión de toxinas metabólicas a través de los riñones y aliviar la retención de líquidos sistémica.",
+      "historiaEvolucion": {
+        "origen": "Originario de la región central del Mediterráneo (sur de Europa, Cerdeña, Argelia y el Líbano), donde se utilizaba inicialmente en la antigua Grecia con fines puramente medicinales y ceremoniales antes de su adopción culinaria generalizada.",
+        "dispersion": "Su adaptabilidad biológica facilitó su rápida dispersión por toda Europa continental durante la Edad Media y su posterior introducción global en el continente americano, Asia y Oceanía, cultivándose en casi cualquier suelo templado o subtropical.\nVariedades: La evolución agrícola ha seleccionado principalmente dos quimiotipos comerciales dominantes: el perejil de hoja rizada (*P. crispum* var. *crispum*) y el perejil de hoja plana u de Italia (*P. crispum* var. *neapolitanum*), este último con mayores concentraciones de aceites volátiles.",
+        "evolucion": ""
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "El perejil fresco se comercializa intensamente a nivel local y regional debido a su naturaleza altamente perecedera. Para el mercado internacional, se exporta deshidratado o en forma de aceites esenciales destilados. Los principales países exportadores globales son Francia, Italia, Países Bajos, Alemania y Estados Unidos. Los flujos de importación están concentrados en las grandes urbes industrializadas del hemisferio norte y mercados asiáticos."
+          }
+        ],
+        "importacion": []
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Apiol y Miristicina (Aceites Esenciales)",
+          "detalle": "Compuestos químicos volátiles localizados en las hojas que interactúan con el epitelio renal, generando un efecto de estimulación que favorece el aumento de la diuresis."
+        },
+        {
+          "nombre": "Apiina (Flavonoides)",
+          "detalle": "Un glucósido flavónico con marcados efectos antioxidantes y antiinflamatorios sistémicos."
+        },
+        {
+          "nombre": "Densidad Nutricional",
+          "detalle": "Concentraciones sobresalientes de Vitamina K (esencial para la coagulación), Ácido Ascórbico (Vitamina C) y Hierro (Fe), superando los promedios de la mayoría de los vegetales comunes."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://www.gardenia.net/wp-content/uploads/2023/05/petroselinum-crispum-var-neapolitanum.webp",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "perejil",
+      "descripcion": "El perejil (*Petroselinum crispum*) es una planta herbácea bienal perteneciente a la familia Apiaceae, ampliamente distribuida por todo el mundo. Su perfil etnobotánico fusiona de manera perfecta el uso gastronómico como condimento con una sólida acción terapéutica. Sus hojas frescas albergan concentraciones elevadas de aceites esenciales y flavonoides específicos que estimulan las funciones de filtración renal, consolidando su principal aplicación medicinal como un potente agente diurético natural."
+    },
+    {
+      "nombreComun": "Pimiento",
+      "nombreCientifico": "Capsicum annuum var. grossum",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Solanaceae",
+        "genero": "Capsicum"
+      },
+      "etnobotanica": {
+        "clasificacion": "Alimenticia - Medicinal",
+        "parteUtilizada": "Fruto",
+        "usoTradicional": "Antioxidante"
+      },
+      "perfilEtnobotanico": "Es considerado una especie alimenticia-medicinal debido a su elevado valor nutricional. Su consumo contribuye a la protección celular, el fortalecimiento inmunológico y el mantenimiento de la salud cardiovascular. Las variedades rojas son apreciadas por su riqueza en pigmentos antioxidantes.",
+      "historiaEvolucion": {
+        "origen": "Tiene su origen en las especies silvestres de Capsicum annuum domesticadas por las antiguas civilizaciones de Mesoamérica. Estudios arqueológicos en México y Centroamérica demuestran su cultivo hace más de 6.000 años. La selección continua favoreció plantas con frutos más grandes, carnosos y menos picantes.",
+        "dispersion": "Los exploradores españoles introdujeron las semillas en Europa durante el siglo XV. Se difundió rápidamente por España, Portugal e Italia, y desde ahí al resto del mundo, convirtiéndose en una hortaliza esencial.",
+        "evolucion": "Pertenece a la familia Solanaceae. Los pimientos modernos presentan niveles extremadamente bajos de capsaicina (sin sabor picante). Los programas de mejoramiento en los siglos XIX y XX obtuvieron variedades de distintos colores (verdes, amarillos, naranjas, rojos)."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "España lidera las exportaciones europeas."
+          },
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "México abastece el mercado norteamericano durante todo el año."
+          },
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "Países Bajos destaca por la producción bajo invernadero."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Estados Unidos es uno de los mayores compradores mundiales."
+          },
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Alemania, Francia y Reino Unido mantienen una alta demanda."
+          },
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Canadá importa grandes volúmenes."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Carotenoides",
+          "detalle": "Capsantina, luteína y betacaroteno con potente actividad antioxidante."
+        },
+        {
+          "nombre": "Vitamina C",
+          "detalle": "Concentraciones superiores a muchos cítricos."
+        },
+        {
+          "nombre": "Vitamina A",
+          "detalle": "Fundamental para la salud visual y la inmunidad."
+        },
+        {
+          "nombre": "Polifenoles",
+          "detalle": "Participan en la protección frente al daño oxidativo celular."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://antropocene.it/wp-content/uploads/2020/07/Capsicum-annuum-var.-grossum.jpg",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "pimiento",
+      "descripcion": "El pimiento es una variedad no picante de Capsicum annuum ampliamente cultivada por su valor alimenticio y nutricional. Su fruto destaca por contener elevadas concentraciones de vitaminas, carotenoides y compuestos antioxidantes que contribuyen a la prevención del daño celular. Ocupa un lugar importante dentro de la alimentación saludable y la medicina preventiva moderna."
+    },
+    {
+      "nombreComun": "Romero",
+      "nombreCientifico": "Salvia rosmarinus (sinónimo Rosmarinus officinalis)",
+      "nombresAlternativos": [
+        "Rosmarinus officinalis"
+      ],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Lamiaceae",
+        "genero": "Salvia"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal aromática",
+        "parteUtilizada": "Hojas",
+        "usoTradicional": "Estimulante"
+      },
+      "perfilEtnobotanico": "La relevancia de Salvia rosmarinus se sostiene en su alto valor terapéutico y aromático. Catalogado dentro de la categoría medicinal aromática, la porción vegetal empleada son sus hojas. Su matriz molecular le otorga propiedades bioquímicas notables, estableciendo su uso principal como un estimulante del sistema circulatorio periférico y de las funciones cognitivas (memoria y concentración), además de actuar como un excelente tónico digestivo y antioxidante tisular.",
+      "historiaEvolucion": {
+        "origen": "Es nativo de la cuenca del Mediterráneo, creciendo de forma silvestre en laderas calcáreas expuestas al sol y brisas marinas. Su uso está documentado desde la antigüedad clásica en rituales, medicina y perfumería por griegos y romanos.",
+        "dispersion": "Se propagó por toda Europa durante la Edad Media gracias a los huertos monásticos. Con la colonización del siglo XVI, llegó a América, adaptándose óptimamente a climas templados y áridos.",
+        "evolucion": "Tradicionalmente conocido como Rosmarinus officinalis, revisiones filogenéticas recientes e investigaciones genéticas profundas reclasificaron la especie dentro del género Salvia. Pertenece a la familia Lamiaceae, habiendo desarrollado hojas coriáceas con estomas protegidos para minimizar la transpiración."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "Los principales países productores y exportadores de hojas de romero deshidratadas y aceites esenciales purificados son España, Marruecos, Túnez y Francia. Los países del norte de África dominan los mercados de volumen destinados a la extracción industrial."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "La demanda es liderada de forma persistente por los Estados Unidos, Alemania, Francia y Japón, donde el mercado requiere de manera creciente sus extractos purificados de ácido carnósico para actuar como conservantes naturales en la industria alimentaria moderna."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Diterpenos Fenólicos",
+          "detalle": "Destacan el ácido carnósico y el carnosol, potentes antioxidantes capaces de neutralizar radicales libres y proteger las membranas celulares del daño oxidativo."
+        },
+        {
+          "nombre": "Ácido Rosmarínico",
+          "detalle": "Éster polifenólico con marcadas acciones antiinflamatorias, antivirales y neuroprotectoras bien elucidadas en la ciencia biomédica."
+        },
+        {
+          "nombre": "Monoterpenos (Aceite Esencial)",
+          "detalle": "Contiene concentraciones elevadas de 1,8-cineol (eucaliptol), alfa-pineno y alcanfor, terpenos que ejercen efectos estimulantes sobre el sistema nervioso central y la microcirculación sanguínea."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783453766/Romero_lerue2.webp",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "CLOUDINARY"
+      },
+      "estado": "ACTIVO",
+      "slug": "romero",
+      "descripcion": "El romero (Salvia rosmarinus) es una especie vegetal emblemática del ecosistema mediterráneo, reconocida por su robustez biológica y su alta concentración de fitocompuestos activos. Sus hojas lineales, adaptadas para tolerar el estrés hídrico, constituyen una rica matriz de polifenoles y aceites esenciales. Su uso tradicional como estimulante celular y circulatorio cuenta hoy con un firme respaldo en la industria farmacéutica y biotecnológica, donde sus extractos se emplean como poderosos antioxidantes naturales y agentes neuroprotectores."
+    },
+    {
+      "nombreComun": "Ruda",
+      "nombreCientifico": "Ruta graveolens",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Rutaceae",
+        "genero": "Ruta"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal ritual",
+        "parteUtilizada": "Hojas",
+        "usoTradicional": "Antiespasmódica"
+      },
+      "perfilEtnobotanico": "La relevancia de Ruta graveolens se caracteriza por su fuerte dualidad de uso. Clasificada en la categoría de medicina ritual y tradicional, la parte utilizada son sus hojas. Su matriz fitoquímica le confiere propiedades fisiológicas drásticas, fijando su uso medicinal principal como un potente antiespasmódico (útil en dolores menstruales y cólicos digestivos) y emenagogo, además de sus aplicaciones tradicionales en rituales de protección etnomédica.",
+      "historiaEvolucion": {
+        "origen": "Es nativa del sur de Europa y de la región de los Balcanes. Era empleada de forma habitual en la medicina clásica grecorromana y es citada de forma recurrente en antiguos herbarios medievales europeos.",
+        "dispersion": "Se expandió con rapidez por todo el continente europeo y llegó a América en el siglo XVI. En el nuevo continente, se asimiló profundamente en las prácticas de la medicina tradicional indígena y mestiza, adquiriendo una fuerte dimensión mística.",
+        "evolucion": "Es un miembro perenne de la familia Rutaceae (la misma familia de los cítricos como la naranja). Desarrolló hojas de color verde glauco provistas de glándulas translúcidas que liberan un olor penetrante y amargo como mecanismo de defensa biológica contra herbívoros."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "A diferencia de otros cultivos masivos, el comercio de la ruda es más especializado y a menor escala. Los principales proveedores de hojas secas y extractos a nivel internacional son países de la cuenca mediterránea como Egipto, Marruecos, España, así como exportaciones locales intraregionales en Sudamérica (Perú, Ecuador y Colombia) hacia mercados comunitarios."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Los principales compradores son laboratorios de homeopatía, empresas productoras de fitofármacos en Europa Central (Alemania y Francia) y el mercado de herbolarios tradicionales en Norteamérica."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Flavonoides",
+          "detalle": "Posee altas concentraciones de rutina (un glucósido de quercetina), compuesto con una notable acción vasoprotectora que disminuye la permeabilidad y fragilidad capilar."
+        },
+        {
+          "nombre": "Alcaloides",
+          "detalle": "Contiene alcaloides quinolínicos y furanoquinolínicos (como la graveolina y la arborina) que actúan directamente bloqueando los canales de calcio, otorgando su fuerte efecto antiespasmódico sobre las fibras musculares de los órganos internos."
+        },
+        {
+          "nombre": "Furanocumarinas",
+          "detalle": "Presencia de psoraleno y bergapteno en sus hojas. Estos compuestos químicos son fototóxicos, lo que significa que pueden provocar dermatitis severa al contacto con la piel bajo exposición solar directa."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783716532/Ruda_e4seuk.webp",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "ruda",
+      "descripcion": "La ruda (Ruta graveolens) es un recurso fitoterapéutico singular que ocupa un lugar destacado en el folklore médico y la etnobotánica global. A pesar de sus potentes propiedades farmacológicas, es una planta de manejo delicado debido a la alta bioactividad y toxicidad potencial de sus metabolitos secundarios. Sus hojas contienen una compleja combinación de alcaloides y flavonoides que ejercen una acción directa sobre el músculo liso, lo que justifica su arraigado uso tradicional antiespasmódico, requiriendo siempre una dosificación estrictamente controlada."
+    },
+    {
+      "nombreComun": "Tomate de árbol",
+      "nombreCientifico": "Solanum betaceum",
+      "nombresAlternativos": [
+        "Tamarillo"
+      ],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Solanaceae",
+        "genero": "Solanum"
+      },
+      "etnobotanica": {
+        "clasificacion": "Alimenticia-medicinal",
+        "parteUtilizada": "Fruto",
+        "usoTradicional": "Cardioprotectora"
+      },
+      "perfilEtnobotanico": "Bajo una clasificación dual alimenticia-medicinal, el tomate de árbol destaca por el uso directo de su fruto. En la medicina tradicional de las regiones andinas, se consume habitualmente para el control de la hipertensión arterial, la reducción de lípidos en sangre y el fortalecimiento del sistema inmunitario, sirviendo como una herramienta natural cardioprotectora.",
+      "historiaEvolucion": {
+        "origen": "Originario de las zonas andinas de Sudamérica, específicamente de las regiones boscosas y templadas de Perú, Bolivia, Ecuador y el noroeste de Argentina.",
+        "dispersion": "Fue introducido globalmente a finales del siglo XIX y principios del XX. Nueva Zelanda adoptó el cultivo de manera intensiva, acuñó el nombre comercial \"tamarillo\" y desarrolló programas de mejoramiento genético para exportar variedades comerciales de pulpa roja y amarilla a todo el mundo.\nHibridación/Genética:** Pertenece a la familia Solanaceae. Los estudios botánicos modernos analizan su diversidad genética para contrarrestar plagas de nemátodos y optimizar el grosor de su cáscara con el fin de prolongar su vida útil poscosecha.",
+        "evolucion": ""
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "Nueva Zelanda se mantiene a la vanguardia tecnológica y comercial en la exportación de variedades de alta calidad. En América del Sur, Colombia y Ecuador son productores masivos clave, exportando pulpa congelada, concentrados y frutas frescas procesadas hacia mercados internacionales."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Los principales destinos comerciales de importación son los Estados Unidos, los mercados de Europa occidental (Francia, Países Bajos, Alemania) y ciertos mercados selectos del Medio Oriente y Asia Oriental."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Antocianinas y Carotenoides",
+          "detalle": "Compuestos polifenólicos solubles localizados intensamente en las variedades de pulpa roja y púrpura, ejerciendo una acción directa en la reducción de la oxidación del colesterol LDL (protección arterial)."
+        },
+        {
+          "nombre": "Fibra Soluble (Pectinas)",
+          "detalle": "** Matriz rica en fibras que ayudan a regular la absorción de glucosa y disminuyen la absorción del colesterol a nivel intestinal."
+        },
+        {
+          "nombre": "Minerales Esenciales",
+          "detalle": "** Concentraciones significativas de Potasio (K) y Magnesio (Mg), electrolitos fundamentales para la regulación de la presión arterial y la contracción miocárdica."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://www.quintadosouriques.com/wp-content/uploads/2026/03/cyphomandra-betacea-18280.jpg-1.webp",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "tomate-de-arbol",
+      "descripcion": "El tomate de árbol (*Solanum betaceum*), también denominado tamarillo, es un arbusto frutal perenne valorado por la densidad de micronutrientes presentes en su pulpa. Su matriz biológica destaca por integrar una baja densidad calórica con una concentración sobresaliente de fibra soluble, antocianinas y minerales, consolidando su relevancia etnobotánica como un excelente recurso terapéutico dietario enfocado en la salud metabólica y en la protección del sistema cardiovascular."
+    },
+    {
+      "nombreComun": "Tomate",
+      "nombreCientifico": "Solanum lycopersicum",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Solanaceae",
+        "genero": "Solanum"
+      },
+      "etnobotanica": {
+        "clasificacion": "Alimenticia - Medicinal",
+        "parteUtilizada": "Fruto",
+        "usoTradicional": "Cardioprotector"
+      },
+      "perfilEtnobotanico": "",
+      "historiaEvolucion": {
+        "origen": "Tiene su origen en la región andina de Sudamérica, especialmente en Perú, Ecuador y el norte de Chile. Sus ancestros silvestres crecían de forma natural antes de ser domesticados. Posteriormente, fue llevado hacia Mesoamérica, donde los aztecas realizaron importantes procesos de selección.",
+        "dispersion": "Introducido en Europa en el siglo XVI, inicialmente considerado una planta ornamental. Con el tiempo se incorporó a la gastronomía mediterránea (España e Italia) y se difundió hacia África, Asia y Oceanía.",
+        "evolucion": "Pertenece a la familia Solanaceae. La selección permitió desarrollar una enorme diversidad de variedades adaptadas a usos culinarios e industriales (consumo fresco, salsas, concentrados). Los programas modernos han logrado incrementar productividad, resistencia y contenido de compuestos bioactivos como el licopeno. (Nota: El texto original del tomate se cortaba en este punto)."
+      },
+      "comercio": {
+        "exportacion": [],
+        "importacion": []
+      },
+      "compuestosQuimicos": [],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://www.picturethisai.com/wiki-image/1080/348111888240246784.jpeg",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "tomate",
+      "descripcion": "El tomate (Solanum lycopersicum) constituye una de las especies hortícolas más importantes a nivel mundial debido a su amplio consumo y elevado valor nutricional. Representa una fuente significativa de vitaminas, minerales y compuestos antioxidantes. Su composición química ha despertado gran interés científico debido a la presencia de licopeno, un carotenoide asociado con la prevención de enfermedades cardiovasculares y diversos trastornos relacionados con el estrés oxidativo."
+    },
+    {
+      "nombreComun": "Tomillo",
+      "nombreCientifico": "Thymus vulgaris",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Lamiaceae",
+        "genero": "Thymus"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal aromática",
+        "parteUtilizada": "Hojas",
+        "usoTradicional": "Antisépica"
+      },
+      "perfilEtnobotanico": "La relevancia de Thymus vulgaris se fundamenta en su alta concentración de principios activos antibacterianos. Clasificado dentro de la categoría medicinal aromática, la porción vegetal empleada son sus hojas y sumidades floridas. Su perfil molecular le confiere notables propiedades defensivas, fijando su uso medicinal principal como un potente agente antiséptico, antibacteriano, antifúngico y un eficaz expectorante/antitusígeno en afecciones del aparato respiratorio.",
+      "historiaEvolucion": {
+        "origen": "Es nativo de las regiones templadas del sur de Europa y la cuenca del Mediterráneo occidental. Los antiguos egipcios lo usaban en los procesos de embalsamamiento, mientras que los griegos y romanos lo utilizaban por sus propiedades desinfectantes, medicinales y aromatizantes.",
+        "dispersion": "Se difundió por el centro y norte de Europa durante el Imperio Romano y la Edad Media. Con la colonización del siglo XVI, fue introducido en el continente americano, prosperando en suelos bien drenados y climas templados.",
+        "evolucion": "Perteneciente a la familia Lamiaceae, el tomillo ha evolucionado como un subarbusto leñoso con hojas pequeñas y densamente cubiertas de tricomas glandulares, optimizado para retener humedad y acumular compuestos volátiles altamente defensivos."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "España, Marruecos, Francia, Polonia y Egipto lideran la exportación global de tomillo deshidratado y sus aceites esenciales derivados. España se destaca por la excelente calidad fitosanitaria de sus cultivos destinados al mercado de especias y farmacia."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Las corrientes comerciales de importación fluyen principalmente hacia los Estados Unidos, Alemania, Francia, el Reino Unido y Japón, debido a la alta demanda de la industria cárnica (como conservante natural), farmacéutica (jarabes para la tos) y cosmética."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Fenoles Monoterpénicos",
+          "detalle": "El compuesto estelar absoluto es el timol (30-55%), un potente agente antiséptico con capacidad de disolver las membranas celulares de bacterias y hongos, acompañado por su isómero, el carvacrol."
+        },
+        {
+          "nombre": "Flavonoides",
+          "detalle": "Presencia de apigenina y luteolina, compuestos flavonoides que otorgan una acción espasmolítica sobre los bronquios, facilitando la expulsión de flemas y calmando la tos."
+        },
+        {
+          "nombre": "Ácidos Polifenólicos",
+          "detalle": "Contiene niveles significativos de ácido rosmarínico y ácido cafeico, que incrementan la respuesta antioxidante y antiinflamatoria de los tejidos respiratorios afectados."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://www.crocus.co.uk/images/products2/pl/20/00/01/88/pl2000018851.jpg",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "tomillo",
+      "descripcion": "El tomillo (Thymus vulgaris) es un recurso fitoterapéutico de primer orden con una de las actividades antimicrobianas más potentes documentadas en el reino vegetal. Esta pequeña planta arbustiva condensa en sus hojas una intrincada matriz de compuestos fenólicos volátiles desarrollados como barrera de defensa ambiental. Su capacidad para inhibir de manera efectiva la proliferación de patógenos le otorga una alta relevancia en la medicina tradicional y la farmacología moderna, destacando como un antiséptico natural e insumo clave en tratamientos para las vías respiratorias y desinfección biológica."
+    },
+    {
+      "nombreComun": "Uña de gato",
+      "nombreCientifico": "Uncaria tomentosa",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Rubiaceae",
+        "genero": "Uncaria"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal amazónica",
+        "parteUtilizada": "Corteza",
+        "usoTradicional": "Inmunomoduladora"
+      },
+      "perfilEtnobotanico": "De uso medicinal amazónico. Históricamente empleada en decocciones de su corteza interna para tratar inflamaciones crónicas, reumatismo, úlceras gástricas y como tónico general para prevenir infecciones y fortalecer las defensas.",
+      "historiaEvolucion": {
+        "origen": "Nativa de la Amazonía sudamericana (principalmente Perú, Colombia, Ecuador y Brasil).",
+        "dispersion": "Utilizada durante siglos por tribus indígenas como los Asháninkas en Perú. En las décadas de 1970 y 1980, investigadores europeos validaron científicamente sus usos, catapultándola al mercado global.",
+        "evolucion": "Pertenece a la familia Rubiaceae. Crece apoyándose en los árboles del dosel amazónico, requiriendo un manejo sostenible para evitar la sobreexplotación de su corteza."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Perú",
+            "detalle": "Es el principal productor y exportador mundial de corteza y extractos estandarizados."
+          },
+          {
+            "pais": "Brasil y Colombia",
+            "detalle": "Exportadores secundarios."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Estados Unidos, Alemania y Japón",
+            "detalle": "Son los mayores compradores para la industria de suplementos dietéticos y fitofármacos."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Alcaloides Oxindólicos (POA)",
+          "detalle": "Estimulan el sistema inmunológico (fagocitosis)."
+        },
+        {
+          "nombre": "Glucósidos del Ácido Quinóvico",
+          "detalle": "Potente acción antiinflamatoria."
+        },
+        {
+          "nombre": "Esteroles vegetales",
+          "detalle": "Contribuyen a la reducción del colesterol e inflamación."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://ask-ayurveda.com/media/uploads/wiki/Uncaria_tomentosa_-_U%C3%B1a_de_gato.png",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "una-de-gato",
+      "descripcion": "La uña de gato (Uncaria tomentosa) es una liana trepadora endémica de la selva amazónica. Debe su nombre a las espinas curvadas en forma de garra que presenta en sus tallos. Es mundialmente valorada en la fitoterapia moderna por su comprobada capacidad para estimular y regular el sistema inmunológico, además de sus potentes efectos antiinflamatorios."
+    },
+    {
+      "nombreComun": "Uvilla",
+      "nombreCientifico": "Physalis peruviana",
+      "nombresAlternativos": [
+        "Golden berry",
+        "Aguaymanto"
+      ],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Solanaceae",
+        "genero": "Physalis"
+      },
+      "etnobotanica": {
+        "clasificacion": "Alimenticia-medicinal andina",
+        "parteUtilizada": "Fruto",
+        "usoTradicional": "Antioxidante"
+      },
+      "perfilEtnobotanico": "La uvilla está categorizada como un recurso alimenticio-medicinal andino de primer orden. El consumo directo de su fruto fresco o procesado proporciona al organismo un arsenal de fitoquímicos terapéuticos. La etnobotánica local la registra tradicionalmente para limpiar la sangre, purificar las vías urinarias, mejorar la salud visual y actuar como un potente escudo celular antioxidante.",
+      "historiaEvolucion": {
+        "origen": "Nativa de la cordillera de los Andes, abarcando las regiones altoandinas de Perú, Ecuador, Colombia y Bolivia. Ha sido cultivada y venerada desde épocas preincas por sus propiedades alimenticias y curativas.",
+        "dispersion": "Durante los siglos XVIII y XIX fue llevada hacia Sudáfrica (en el Cabo de Buena Esperanza, adoptando el nombre de *Cape gooseberry*), Australia y posteriormente introducida con éxito en Europa y Asia Central.",
+        "evolucion": "Pertenece a la familia Solanaceae, y su estructura botánica destaca por su cáliz inflado (capacho), una adaptación evolutiva que resguarda al fruto de plagas, radiación ultravioleta extrema y condiciones climáticas adversas de la altura andina."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "Colombia se consolida firmemente como el principal productor y exportador mundial de uvilla fresca y deshidratada. Ecuador y Perú mantienen una participación creciente en el mercado de exportación andino, orientando sus envíos a mercados premium bajo certificaciones orgánicas."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Los principales compradores globales se concentran en la Unión Europea (liderada por Alemania, Países Bajos y el Reino Unido), seguidos por Estados Unidos y Canadá, donde se comercializa en el sector de alimentos saludables y \"superfoods\"."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Withanólidos",
+          "detalle": "Compuestos esteroideos específicos (fitoesteroles) presentes en el fruto que exhiben propiedades antiinflamatorias, antimicrobianas y potencialmente antiproliferativas."
+        },
+        {
+          "nombre": "Polifenoles y Flavonoides",
+          "detalle": "Concentraciones elevadas de quercetina y kaempferol, moléculas químicas responsables de su capacidad para neutralizar los radicales libres y frenar el estrés oxidativo celular."
+        },
+        {
+          "nombre": "Vitaminas Esenciales",
+          "detalle": "Alta densidad de Ácido Ascórbico (Vitamina C), complejo B (tiamina, niacina) y precursores de Vitamina A, esenciales para la regeneración tisular y la salud ocular."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/316253446/large.jpg",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "uvilla",
+      "descripcion": "La uvilla (*Physalis peruviana*), también conocida internacionalmente como *golden berry* o aguaymanto, es una fruta exótica de origen andino que encapsula un alto valor nutricional y etnobotánico. Protegida de manera natural por un cáliz persistente, la matriz de su fruto alberga una densidad excepcional de vitaminas, minerales y polifenoles bioactivos, lo que la posiciona como un superalimento de alto interés para la medicina preventiva por sus destacadas propiedades antioxidantes."
+    },
+    {
+      "nombreComun": "Valeriana",
+      "nombreCientifico": "Valeriana officinalis",
+      "nombresAlternativos": [],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Caprifoliaceae",
+        "genero": "Valeriana"
+      },
+      "etnobotanica": {
+        "clasificacion": "Medicinal sedante",
+        "parteUtilizada": "Raíz",
+        "usoTradicional": "Ansiolítica"
+      },
+      "perfilEtnobotanico": "Clasificada como medicinal sedante. La raíz y el rizoma se preparan en extractos, tinturas o infusiones para disminuir el tiempo necesario para conciliar el sueño, mejorar la calidad del descanso nocturno y aliviar estados de nerviosismo y ansiedad leve, sin causar dependencia severa.",
+      "historiaEvolucion": {
+        "origen": "Nativa de Europa y partes de Asia. Su uso medicinal se remonta a la antigua Grecia y Roma (recomendada por Hipócrates y Galeno).",
+        "dispersion": "Su popularidad como sedante creció en Europa durante el siglo XVI y posteriormente fue llevada a Norteamérica.",
+        "evolucion": "De la familia Caprifoliaceae (anteriormente Valerianaceae). Prefiere suelos húmedos y climas templados."
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Polonia, Alemania, Países Bajos y Francia",
+            "detalle": "Destacan en la producción europea."
+          },
+          {
+            "pais": "China",
+            "detalle": "Fuerte competidor en la exportación de extractos."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Estados Unidos, Reino Unido y Australia",
+            "detalle": "Grandes importadores para la industria de suplementos naturales."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Ácido Valerénico",
+          "detalle": "Compuesto que interactúa con los receptores GABA en el cerebro, produciendo el efecto sedante."
+        },
+        {
+          "nombre": "Valepotriatos",
+          "detalle": "Contribuyen a la actividad tranquilizante y antiespasmódica."
+        },
+        {
+          "nombre": "Aceites esenciales (Isovalerianato)",
+          "detalle": "Otorgan el olor característico de la raíz."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://upload.wikimedia.org/wikipedia/commons/a/af/Valeriana_officinalis_inflorescence_-_Niitv%C3%A4lja.jpg",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "valeriana",
+      "descripcion": "La valeriana (Valeriana officinalis) es una planta herbácea perenne cuya raíz posee un olor penetrante y característico. Es uno de los recursos fitoterapéuticos más estudiados y utilizados para el tratamiento de trastornos del sueño, la ansiedad y el estrés, actuando directamente sobre el sistema nervioso central."
+    },
+    {
+      "nombreComun": "Zapallo / Calabaza / Auyama",
+      "nombreCientifico": "Cucurbita maxima",
+      "nombresAlternativos": [
+        "Calabaza",
+        "Auyama"
+      ],
+      "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "familia": "Cucurbitaceae",
+        "genero": "Cucurbita"
+      },
+      "etnobotanica": {
+        "clasificacion": "Alimenticia - Medicinal",
+        "parteUtilizada": "Semillas y fruto (pulpa)",
+        "usoTradicional": "Antiparasitaria, antiinflamatoria prostática y demulcente"
+      },
+      "perfilEtnobotanico": "El uso principal de sus semillas es antiparasitario, paralizando los helmintos intestinales de manera segura. Su aceite regula y desinflama tejidos urológicos benignos.",
+      "historiaEvolucion": {
+        "origen": "Nativa de América del Sur, domesticada en la región andina a partir de variantes silvestres milenarias.",
+        "dispersion": "Difundida con rapidez mundial post-intercambio colombino, seleccionada en múltiples cultivares de gran resistencia de almacenamiento.",
+        "evolucion": ""
+      },
+      "comercio": {
+        "exportacion": [
+          {
+            "pais": "Dinámica de Exportación",
+            "detalle": "México, España y Nueva Zelanda son los exportadores dominantes a nivel mundial de calabazas y zapallos, cubriendo ventanas estacionales clave en hemisferios opuestos."
+          }
+        ],
+        "importacion": [
+          {
+            "pais": "Dinámica de Importación",
+            "detalle": "Los Estados Unidos representan el mercado de importación más grande. En Asia, Japón destaca como un comprador masivo de variedades dulces de Cucurbita maxima desde el Hemisferio Sur."
+          }
+        ]
+      },
+      "compuestosQuimicos": [
+        {
+          "nombre": "Cucurbitina",
+          "detalle": "Aminoácido pirrolidínico con probada acción antihelmíntica que paraliza los parásitos."
+        },
+        {
+          "nombre": "Fitosteroles (Beta-sitosterol)",
+          "detalle": "Bloquea de forma competitiva hormonas asociadas a la hiperplasia prostática benigna."
+        }
+      ],
+      "multimediaPrincipal": {
+        "imagenUrl": "https://res.cloudinary.com/hi6t0jpv/image/upload/v1783718821/Zapallo_de_mantequilla_k5n0tg.webp",
+        "imagenPublicId": "",
+        "videoUrl": "",
+        "videoPublicId": "",
+        "proveedor": "PICSUM"
+      },
+      "estado": "ACTIVO",
+      "slug": "zapallo",
+      "descripcion": "El zapallo es uno de los cultivos domesticados más antiguos de América. Sus semillas albergan compuestos fitoquímicos específicos de alta eficacia clínica contra parasitosis y problemas prostáticos."
+    }
+  ],
+  "blog": [
+    {
+      "title": "Guía inicial de la flora médica de Ecotec",
+      "description": "Una introducción breve a las plantas medicinales, su contexto y cómo organizar contenido útil alrededor de ellas.",
+      "pubDate": "2026-06-13",
+      "tags": [
+        "flora",
+        "etnobotánica",
+        "divulgación"
+      ],
+      "slug": "primer-post",
+      "contenido": "Esta es la primera entrada de ejemplo para la sección de blog. Sirve para validar la ruta, el listado y la plantilla de artículo.\n\nEn un sitio de contenido real, aquí irían referencias, fichas de especies, notas de uso responsable y enlaces a otros artículos relacionados."
+    }
+  ]
+}

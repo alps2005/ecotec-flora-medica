@@ -1,0 +1,29 @@
+# Gradle / build
+.gradle/
+build/
+app/build/
+*.apk
+*.aab
+
+# Android Studio / IDE
+.idea/
+*.iml
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Local config (rutas y secretos específicos de la máquina)
+local.properties
+keystore.properties
+*.jks
+*.keystore
+
+# Logs de build/emulador generados en este entorno
+build*.log
+emulator*.log
+*.png
+!app/src/main/res/**/*.png
+
+# Scratch
+scripts/__pycache__/
