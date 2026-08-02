@@ -1,18 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
 import { getSpeciesList } from "../lib/species-source";
 
-const posts = (await getCollection("blog")) as CollectionEntry<"blog">[];
 const { rows: species } = await getSpeciesList();
-posts.sort(
-  (left: CollectionEntry<"blog">, right: CollectionEntry<"blog">) =>
-    right.data.pubDate.valueOf() - left.data.pubDate.valueOf(),
-);
-
-const featuredPost = posts[0];
 const uniqueFamilies = new Set(
   species.map((entry) => entry.data.taxonomia.familia),
 );
@@ -79,9 +70,9 @@ const pageSectionSpacing = "px-4 py-24 sm:px-6 lg:px-30";
           </a>
           <a
             class="inline-flex items-center justify-center rounded-full border border-primary/15 bg-white/80 px-6 py-3 text-sm font-semibold text-tertiary transition hover:border-primary/25 hover:bg-white"
-            href="/blog"
+            href="/sobre-nosotros"
           >
-            Leer blogs
+            Sobre nosotros
           </a>
         </div>
       </div>
