@@ -297,7 +297,7 @@ export async function getSpeciesDetail(slug: string, mdData: SpeciesData | null)
 
 Esta capa **ya reemplaza** las llamadas directas a `getCollection('species')` mencionadas en versiones previas de este documento — sigue existiendo `getCollection()` únicamente *dentro* de `species-source.ts`, como fuente del `.md` de respaldo.
 
-### Base URL
+### URL base
 
 ```
 SITE_URL=http://localhost:4321        (astro.config.mjs, sitemap/canonical — sin cambios)

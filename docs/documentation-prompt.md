@@ -1,78 +1,78 @@
-# Documentation Generation Task
+# Tarea de Generación de Documentación
 
-Your objective is to document this entire repository.
+Tu objetivo es documentar por completo este repositorio.
 
-You have access to:
+Tienes acceso a:
 
-- the complete source code
-- every folder
-- every configuration file
-- every commit in Git history
-- every branch merged into main
-- package.json
-- Astro configuration
-- Tailwind configuration
-- assets
-- Markdown content
-- components
-- layouts
+- el código fuente completo
+- todas las carpetas
+- todos los archivos de configuración
+- cada commit del historial de Git
+- cada rama fusionada en `main`
+- `package.json`
+- la configuración de Astro
+- la configuración de Tailwind
+- los assets
+- el contenido Markdown
+- los componentes
+- los layouts
 
-Your job is to reverse engineer the project and produce professional documentation.
+Tu trabajo es analizar el proyecto y producir documentación profesional.
 
-## Analyze
+## Analizar
 
-Analyze every part of the repository including:
+Analiza todas las partes del repositorio, incluyendo:
 
-- Git history
-- Commit messages
-- Folder structure
-- Architecture
-- Components
-- Styling
-- Images
-- Icons
-- Content Collections
-- Markdown content
-- Astro pages
-- Public assets
-- Configuration files
+- historial de Git
+- mensajes de commit
+- estructura de carpetas
+- arquitectura
+- componentes
+- estilos
+- imágenes
+- íconos
+- colecciones de contenido
+- contenido Markdown
+- páginas de Astro
+- assets públicos
+- archivos de configuración
 
 ---
 
-## Produce
+## Producir
 
-Generate the following markdown documents.
+Genera los siguientes documentos en Markdown.
 
 ### PROJECT_DOCUMENTATION.md
 
-Include:
+Incluye:
 
-- Executive Summary
-- Purpose of the project
-- Technologies used
-- Project goals
-- Website overview
-- Major features
-- Current status
+- resumen ejecutivo
+- propósito del proyecto
+- tecnologías usadas
+- objetivos del proyecto
+- panorama general del sitio web
+- funcionalidades principales
+- estado actual
 
 ---
 
 ### DEVELOPMENT_HISTORY.md
 
-Read every Git commit.
+Lee cada commit de Git.
 
-Produce a chronological timeline explaining:
+Produce una línea de tiempo cronológica que explique:
 
-- major milestones
-- feature additions
+- hitos principales
+- funcionalidades agregadas
 - refactors
-- bug fixes
-- design changes
-- deployment improvements
+- correcciones de errores
+- cambios de diseño
+- mejoras de despliegue
 
-If information is missing, infer the most likely development sequence based on the repository.
+Si falta información, infiere la secuencia más probable según el repositorio.
 
-Clearly label inferred information.
+Marca con claridad toda información inferida.
 
 ---
 
@@ -80,87 +80,87 @@ Clearly label inferred information.
 
 Describe:
 
-- folder structure
-- routing
-- Astro architecture
+- estructura de carpetas
+- enrutamiento
+- arquitectura de Astro
 - layouts
-- components
-- content collections
+- componentes
+- colecciones de contenido
 - assets
-- public folder
+- carpeta `public`
 - scripts
-- utilities
+- utilidades
 
-Explain why each folder exists.
+Explica por qué existe cada carpeta.
 
 ---
 
 ### DESIGN_SYSTEM.md
 
-Document:
+Documenta:
 
-- color palette
-- typography
-- spacing
-- gradients
-- icons
-- buttons
-- cards
-- animations
-- responsive breakpoints
+- paleta de colores
+- tipografía
+- espaciado
+- gradientes
+- íconos
+- botones
+- tarjetas
+- animaciones
+- puntos de quiebre responsive
 
-If colors are not explicitly documented, infer them from the codebase.
+Si los colores no están documentados explícitamente, infiérelo del código base.
 
 ---
 
 ### CONTENT_STRUCTURE.md
 
-Explain:
+Explica:
 
-- Markdown collections
+- colecciones Markdown
 - frontmatter
-- schema
-- plant content
-- images
-- taxonomies
-- relationships
+- esquema
+- contenido de plantas
+- imágenes
+- taxonomías
+- relaciones
 
 ---
 
 ### DEPLOYMENT.md
 
-Explain:
+Explica:
 
-- build process
-- npm scripts
-- hosting
-- CI/CD (if any)
-- optimization
+- proceso de compilación
+- scripts de npm/pnpm
+- alojamiento
+- CI/CD, si existe
+- optimización
 
 ---
 
 ### CHANGELOG.md
 
-Generate a human-readable changelog from Git history.
+Genera un changelog legible para humanos a partir del historial de Git.
 
 ---
 
-## Documentation style
+## Estilo de la documentación
 
-Use professional technical writing.
+Usa escritura técnica profesional.
 
-Explain decisions.
+Explica las decisiones.
 
-Include Mermaid diagrams where appropriate.
+Incluye diagramas Mermaid cuando sea apropiado.
 
-Generate tables whenever useful.
+Genera tablas cuando sean útiles.
 
-Use Markdown only.
+Usa solo Markdown.
 
-If information cannot be found:
+Si no puedes encontrar información:
 
-- infer it from the repository
-- mark it as inferred
-- never invent impossible facts
+- infiérela desde el repositorio
+- márcala como inferida
+- nunca inventes hechos imposibles
 
-The final documentation should be detailed enough for a new developer to fully understand the project without speaking to its original authors.
+La documentación final debe ser lo suficientemente detallada para que un nuevo desarrollador entienda el proyecto sin hablar con sus autores originales.
