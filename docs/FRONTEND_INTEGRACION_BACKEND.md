@@ -1,8 +1,8 @@
 # Documentación Técnica Frontend — Guía de Integración con Backend
 
 > **Audiencia:** Desarrolladores Backend que necesitan conectar la API existente con este Frontend.
-> **Fecha de generación:** Julio 2026
-> **Estado:** Frontend funcional con datos locales (Content Collections). Listo para migración a API.
+> **Fecha de generación:** Julio 2026 · **Última actualización:** 2026-08-02
+> **Estado:** La integración avanzó desde la versión original de este documento (julio 2026). Ya **están conectados** a la API real: el formulario de suscripción (`POST /api/suscriptores`, desde el 2026-07-11) y las especies (`GET /api/plantas`, `GET /api/plantas/:slug`, desde el 2026-08-01, con *fallback* automático a Markdown si el backend no responde — ver [§5](#5-consumo-de-api)). **Siguen pendientes de integración directa:** el atlas de etnobotánica (deriva de especies, no llama a un endpoint propio) y las estadísticas del home (siguen hardcodeadas). El resto de este documento se actualizó para reflejar ese estado; las secciones 8/10/12 originales describían trabajo "a implementar" que en gran parte **ya se implementó** — se marcan explícitamente dónde.
 
 ---
 
@@ -18,8 +18,8 @@
 8. [Integración necesaria con Backend](#8-integración-necesaria-con-backend)
 9. [Componentes relacionados con Suscriptores](#9-componentes-relacionados-con-suscriptores)
 10. [Servicios HTTP](#10-servicios-http)
-11. [Flujo completo de Suscripción](#11-flujo-completo-de-suscripción)
-12. [Recomendaciones para integrar el Backend](#12-recomendaciones-para-integrar-el-backend)
+11. [Flujo de Suscripción (implementado)](#11-flujo-de-suscripción-implementado)
+12. [Cómo se resolvió la integración (y qué queda pendiente)](#12-cómo-se-resolvió-la-integración-y-qué-queda-pendiente)
 
 ---
 
@@ -48,13 +48,17 @@ pnpm preview       # previsualizar el build
 
 | Paquete | Versión | Función |
 |---|---|---|
-| `astro` | ^7.0.0 | Framework principal, Content Collections, SSG/SSR |
-| `tailwindcss` | ^4.3.1 | Sistema de estilos utilitarios |
-| `@tailwindcss/vite` | ^4.3.1 | Plugin de integración Tailwind con Vite |
+| `astro` | ^7.1.3 | Framework principal, Content Collections, SSG |
+| `@astrojs/react` | ^6.0.2 | Islas React (`client:load`), agregado 2026-07-31 |
+| `react` / `react-dom` | ^19.2.8 | Usadas únicamente por la isla `TradeExplorer.tsx` del panel de comercio |
+| `tailwindcss` | ^4.3.2 | Sistema de estilos utilitarios |
+| `@tailwindcss/vite` | ^4.3.2 | Plugin de integración Tailwind con Vite |
+| `shadcn` (CLI) + `class-variance-authority`, `clsx`, `tailwind-merge` | ^4.16.0 | Componentes React (`src/components/ui/*.tsx`) usados en el panel de comercio |
+| `recharts` | 3.8.0 | Gráfico de barras de exportación/importación |
 | `@astrojs/sitemap` | ^3.7.3 | Generación automática de sitemap XML |
 | `gsap` | ^3.15.0 | Animaciones (underlines del header) |
 
-**No hay:** React, Vue, Redux, Zustand, axios, fetch wrappers, React Query ni ninguna librería de gestión de estado o HTTP. Todo es Astro nativo + JS vanilla.
+**Actualizado (2026-07-31):** el proyecto **sí** tiene React desde `3129b4b`, pero acotado a una sola isla interactiva (`TradeExplorer.tsx`, con `client:load`). No hay Redux, Zustand, React Query ni `axios` — el cliente HTTP sigue siendo `fetch` nativo envuelto en `src/lib/api.ts`. El resto del sitio (catálogo, atlas, formularios) sigue siendo Astro + JS vanilla, sin cambios en ese patrón.
 
 ### Estructura general del proyecto
 
@@ -88,16 +92,17 @@ El enrutador de Astro. Cada archivo es una ruta pública del sitio. Los archivos
 
 ```
 src/pages/
-├── index.astro              → /
-├── especies.astro           → /especies
-├── etnobotanica.astro       → /etnobotanica
-├── robots.txt.ts            → /robots.txt
-├── especies/
-│   └── [slug].astro         → /especies/:slug
-└── blog/
-    ├── index.astro          → /blog
-    └── [slug].astro         → /blog/:slug
+├── index.astro                    → /
+├── especies.astro                 → /especies
+├── etnobotanica.astro              → /etnobotanica
+├── importacion-exportacion.astro   → /importacion-exportacion  (nueva, 2026-07-31)
+├── sobre-nosotros.astro            → /sobre-nosotros            (nueva, 2026-08-02)
+├── robots.txt.ts                  → /robots.txt
+└── especies/
+    └── [slug].astro               → /especies/:slug
 ```
+
+> La sección de Blog (`blog/index.astro`, `blog/[slug].astro`, colección `blog`, `rss.xml.js`) fue **eliminada el 2026-08-02** y reemplazada por `sobre-nosotros.astro`.
 
 ### `src/components/`
 
@@ -105,10 +110,16 @@ Componentes `.astro` sin estado propio (no tienen hooks, no manejan sesión). Re
 
 ```
 src/components/
-├── BaseHead.astro            # Meta tags SEO, OG, Twitter, canonical, RSS
-├── Header.astro              # Navegación principal fija (glassmorphism + GSAP)
+├── BaseHead.astro            # Meta tags SEO, OG, Twitter, canonical
+├── Header.astro              # Navegación principal fija (fondo blanco sólido + GSAP)
 ├── HeaderLink.astro          # Link de nav con underline animado y detección de ruta activa
 ├── Footer.astro              # Pie de página con copyright dinámico
+├── ui/                       # Componentes shadcn/ui (React) — nuevo, 2026-07-31
+│   ├── table.tsx, badge.tsx, select.tsx, card.tsx, tabs.tsx, button.tsx, chart.tsx
+├── importexport/             # Componentes del panel de comercio — nuevo, 2026-07-31
+│   ├── TradeKpiCards.astro
+│   ├── TradeTable.astro          # Con paginación de cliente (agregada 2026-08-01)
+│   └── TradeExplorer.tsx         # Isla React (client:load)
 ├── species/                  # Componentes del catálogo de especies
 │   ├── SpeciesCard.astro     # Tarjeta de especie individual
 │   ├── SpeciesGrid.astro     # Contenedor del listado
@@ -118,21 +129,22 @@ src/components/
 └── etnobotanicacomp/         # Componentes del atlas etnobotánico
     ├── Etnobotanicahero.astro     # Encabezado de sección
     ├── Etnobotanicafilters.astro  # Botones de filtro por categoría
-    ├── Etnobotanicagrid.astro     # Grid de tarjetas etnobotánicas
+    ├── Etnobotanicagrid.astro     # Grid de tarjetas etnobotánicas (deriva de species-source)
     ├── Etnobotanicacard.astro     # Tarjeta etnobotánica individual
+    ├── Etnobotanicamodal.astro    # Modal de detalle rápido — nuevo, 2026-07-31
     └── Etnobotanicapagination.astro # Paginación del atlas
 ```
 
 ### `src/content/`
 
-Datos locales en formato Markdown con frontmatter YAML. Actúan como sustituto temporal de la API. Esta es la carpeta que se eliminará/reemplazará al integrar el Backend real.
+Datos locales en formato Markdown con frontmatter YAML. **Ya no son la fuente principal de especies**: desde `59d646b` (2026-08-01) actúan como respaldo (`fallback`) de la API real, fusionados campo a campo por `src/lib/species-source.ts`.
 
 ```
 src/content/
-├── blog/                    # 1 post de ejemplo
-├── species/                 # 39 fichas completas de especies (schema complejo)
-└── etnobotanicacont/        # 43 entradas simplificadas del atlas etnobotánico
+└── species/                 # 41 fichas completas de especies (schema complejo) — contenido de respaldo
 ```
+
+> Las colecciones `blog` (1 post de ejemplo) y `etnobotanica` (43 entradas simplificadas) **ya no existen**: `etnobotanica` se eliminó el 2026-07-15 (el atlas deriva de `species`) y `blog` se eliminó el 2026-08-02 (reemplazado por `/sobre-nosotros`).
 
 ### `src/layouts/`
 
@@ -140,25 +152,26 @@ Contiene únicamente `Layout.astro`, el shell HTML base que todas las páginas u
 
 ### `src/styles/`
 
-Contiene `global.css` con la configuración de Tailwind v4 (`@import "tailwindcss"`), las fuentes de Google Fonts (EB Garamond + Hanken Grotesk) y los tokens de diseño personalizados (`--color-primary`, `--color-secondary`, etc.).
+Contiene `global.css` con Tailwind v4 (`@import "tailwindcss"`), el preset de shadcn/ui, Google Fonts (**Poppins**, única tipografía desde el 2026-08-01 — reemplazó a EB Garamond + Hanken Grotesk) y los tokens de diseño personalizados en escalas de 10 pasos (`--color-primary-500`, etc., con alias `--color-primary`, `--color-secondary`...). Ver `docs/DESIGN_SYSTEM.md` para el detalle completo.
 
 ### `src/assets/`
 
-Imágenes locales procesadas por el pipeline de Astro (optimización automática). Actualmente solo contiene una imagen de placeholder para la home. Las imágenes de las especies son URLs externas de Cloudinary.
+Imágenes locales procesadas por el pipeline de Astro (optimización automática): placeholder de la home, logo e isotipos institucionales del footer. Las imágenes de las especies son URLs externas (picsum.photos / Unsplash por ahora; el campo `imagenPublicId` sugiere una futura migración a Cloudinary).
 
-> **Nota:** No existen carpetas `services/`, `hooks/`, `contexts/`, `utils/` ni `stores/`. Toda la lógica de interacción está embebida como scripts `<script>` vanilla dentro de los archivos `.astro` de cada página.
+### `src/lib/` y `src/data/`
+
+> **Actualizado (2026-08-01/02):** a diferencia de lo que decía la versión original de esta sección, **sí existen** `src/lib/` (con `api.ts`, `species-source.ts`, `suscriptores.ts`, `trade-data.ts`, `utils.ts`) y `src/data/` (con `trade-data.json`, `hs-code-map.mjs`). No existen `hooks/`, `contexts/` ni `stores/` — la única gestión de estado en tiempo de ejecución sigue siendo local a cada `<script>`/isla React. Ver [§10](#10-servicios-http) para el detalle de cada servicio.
 
 ---
 
 ## 3. Flujo de navegación
 
-El sitio tiene 6 pantallas públicas. La navegación principal está en el `Header` con tres enlaces fijos.
+El sitio tiene 6 pantallas públicas. La navegación principal está en el `Header` con cuatro enlaces fijos: Especies, Etnobotánica, Comercio y Sobre nosotros.
 
 ```
 Inicio (/)
 ├── [botón "Explorar especies"] → /especies
-├── [botón "Leer blogs"]        → /blog
-└── [botón "SUSCRIBIRME"]       → (sin ruta, solo abre modal/pendiente)
+└── [formulario de suscripción] → POST /api/suscriptores (integrado, ver §7)
 
 Catálogo de Especies (/especies)
 └── [clic en tarjeta] → /especies/:slug
@@ -167,26 +180,28 @@ Detalle de Especie (/especies/:slug)
 └── [← Volver al catálogo] → /especies
 
 Atlas Etnobotánico (/etnobotanica)
-└── [clic en tarjeta] → /especies/:slug
-    (las tarjetas etnobotánicas enlazan al detalle de la colección species)
+├── [clic en tarjeta] → abre Etnobotanicamodal.astro (detalle rápido in-page)
+└── [enlace dentro del modal/tarjeta] → /especies/:slug
 
-Blog (/blog)
-└── [clic en artículo] → /blog/:slug
+Importación y Exportación (/importacion-exportacion)
+└── [selector de especie en TradeExplorer] → cambia el gráfico sin navegar (isla React)
 
-Detalle de Blog (/blog/:slug)
-└── [navegación del header] → cualquier sección
+Sobre Nosotros (/sobre-nosotros)
+└── [CTAs de cierre] → /especies, /etnobotanica
 ```
+
+> El botón "SUSCRIBIRME" del Header y la sección de Blog (`/blog`, `/blog/:slug`) mencionados en versiones previas de este documento **ya no existen**: el botón está comentado/oculto en el markup actual y el Blog se eliminó el 2026-08-02.
 
 ### Detalle por pantalla
 
 | Pantalla | Ruta | Archivo | Descripción |
 |---|---|---|---|
-| Inicio | `/` | `src/pages/index.astro` | Hero, estadísticas, formulario suscripción, marco de estudio |
-| Catálogo | `/especies` | `src/pages/especies.astro` | Listado con búsqueda, filtro taxonómico y paginación |
-| Detalle especie | `/especies/:slug` | `src/pages/especies/[slug].astro` | Ficha académica completa de una especie |
-| Etnobotánica | `/etnobotanica` | `src/pages/etnobotanica.astro` | Atlas con filtros por categoría y paginación |
-| Blog | `/blog` | `src/pages/blog/index.astro` | Listado de artículos del blog |
-| Detalle blog | `/blog/:slug` | `src/pages/blog/[slug].astro` | Artículo individual renderizado desde Markdown |
+| Inicio | `/` | `src/pages/index.astro` | Hero, estadísticas, formulario de suscripción (funcional), marco de estudio |
+| Catálogo | `/especies` | `src/pages/especies.astro` | Listado con búsqueda, filtro taxonómico y paginación; datos de `getSpeciesList()` |
+| Detalle especie | `/especies/:slug` | `src/pages/especies/[slug].astro` | Ficha académica completa; datos de `getSpeciesDetail()` |
+| Etnobotánica | `/etnobotanica` | `src/pages/etnobotanica.astro` | Atlas con filtros por categoría, paginación y modal de detalle |
+| Comercio | `/importacion-exportacion` | `src/pages/importacion-exportacion.astro` | Panel de comercio internacional (UN Comtrade) con KPIs, explorador React y tabla paginada |
+| Sobre nosotros | `/sobre-nosotros` | `src/pages/sobre-nosotros.astro` | Página institucional: misión, equipo, valores |
 
 ---
 
@@ -194,7 +209,7 @@ Detalle de Blog (/blog/:slug)
 
 ### Tipo de gestión
 
-Este Frontend **no utiliza ningún sistema de gestión de estado** (no hay Redux, Zustand, Context API, Recoil, ni React Query). Es un sitio Astro estático (SSG) con interactividad mínima implementada mediante JavaScript vanilla en bloques `<script>` dentro de los archivos `.astro`.
+Este Frontend **no utiliza ningún sistema de gestión de estado global** (no hay Redux, Zustand, Context API, Recoil, ni React Query). Es mayormente un sitio Astro estático (SSG) con interactividad implementada mediante JavaScript vanilla en bloques `<script>` dentro de los archivos `.astro`. La única excepción es la isla React `TradeExplorer.tsx` (panel de comercio), que usa `React.useState`/`React.useMemo` locales al componente para la especie seleccionada — sin ningún store compartido con el resto de la página.
 
 ### Estado del catálogo de Especies (`/especies`)
 
@@ -217,7 +232,7 @@ let currentCategory = 'GENERAL';
 
 ### Sesión de usuario
 
-**No existe gestión de sesión.** El sitio no tiene login, autenticación ni área de usuario. El botón "SUSCRIBIRME" del header actualmente no tiene ruta asignada — es el único punto donde se necesitará integrar una sesión/estado de usuario en el futuro.
+**No existe gestión de sesión.** El sitio no tiene login, autenticación ni área de usuario. El botón "SUSCRIBIRME" del header que aparecía en versiones previas de este documento está actualmente comentado/oculto en `Header.astro` (no se renderiza); el flujo de suscripción real vive en el formulario del home (ver §7).
 
 ### Comunicación entre componentes
 
@@ -242,47 +257,54 @@ data-etnobotanica-pagination → paginación del atlas
 
 ## 5. Consumo de API
 
-### Estado actual
+### Estado actual (actualizado 2026-08-02)
 
-**El Frontend NO consume ninguna API externa en este momento.** Todos los datos provienen de archivos Markdown locales procesados por Astro Content Collections en tiempo de build. No hay `fetch`, `axios`, interceptores ni cliente HTTP configurado.
+**El Frontend sí consume la API real**, en dos flujos independientes:
+
+1. **Especies** (`59d646b`, 2026-08-01) — en tiempo de **build**, `src/lib/species-source.ts` llama a `GET /api/plantas` y `GET /api/plantas/:slug`, y fusiona el resultado *campo a campo* con el contenido `.md` local. Si la API falla, no responde a tiempo (timeout de 5s) o devuelve algo inválido, el build cae automáticamente al `.md` sin romperse. Esto significa que **no hace falta que el backend esté siempre disponible** para que el sitio compile, pero cuando sí lo está, sus datos tienen prioridad campo por campo sobre el Markdown.
+2. **Suscripción** (`ce002ca`, 2026-07-11; corregido en `76cb87d`, 2026-07-27) — en tiempo de **ejecución del navegador**, el formulario de la home llama a `POST /api/suscriptores` vía `suscriptoresService.registrar()`.
+
+Lo que **sigue sin integrarse** directamente contra un endpoint propio:
+- El atlas de etnobotánica no llama a la API por separado — deriva sus datos de `getSpeciesList()` (la misma llamada a `/api/plantas` que usa el catálogo).
+- Las estadísticas del home (contador de especies/familias) siguen siendo valores calculados client-side sobre la lista ya cargada, no un endpoint `GET /api/stats` dedicado.
+- El panel de comercio (`/importacion-exportacion`) no llama a un endpoint de comercio del backend documentado aquí — cruza especies con un dataset de UN Comtrade pre-procesado (`src/data/trade-data.json`). El backend sí expone endpoints `/api/comtrade/*` (ver `docs/api_usage.md`), pero el frontend actual no los consulta en runtime; el dataset se generó aparte.
 
 ### Cómo se leen los datos actualmente
 
-Los datos se consumen mediante las APIs de Astro Content Collections:
-
 ```typescript
-// Obtener todas las especies (build time)
-import { getCollection } from 'astro:content';
-const species = await getCollection('species');
+// src/lib/species-source.ts — listado (usado por especies.astro, index.astro, Etnobotanicagrid.astro)
+export async function getSpeciesList(): Promise<{ rows: SpeciesEntry[]; source: 'api' | 'md' }> {
+  const mdBySlug = await getActiveMdBySlug(); // getCollection('species', estado ACTIVO)
+  let apiList = null;
+  try {
+    const data = await api.get('/api/plantas');
+    if (Array.isArray(data)) apiList = data.filter((p) => !p.estado || p.estado === 'ACTIVO');
+  } catch { apiList = null; } // fallback silencioso
+  if (!apiList) return { rows: sortByNombre([...mdBySlug.values()].map(toRow)), source: 'md' };
+  // slugs = unión API ∪ md; cada fila se fusiona campo a campo con mergeSpecies()
+  // ...
+}
 
-// Obtener una especie por slug (build time)
-import { getCollection, render } from 'astro:content';
-export async function getStaticPaths() {
-  const species = await getCollection('species');
-  return species.map((entry) => ({
-    params: { slug: entry.data.slug ?? entry.id },
-    props: { entry },
-  }));
+// src/lib/species-source.ts — detalle (usado por especies/[slug].astro)
+export async function getSpeciesDetail(slug: string, mdData: SpeciesData | null): Promise<SpeciesData> {
+  try {
+    const apiDetail = await api.get(`/api/plantas/${slug}`);
+    if (apiDetail && typeof apiDetail === 'object') return mergeSpecies(apiDetail, mdData);
+  } catch { /* fallthrough */ }
+  return mdData ?? skeleton(null);
 }
 ```
 
-Esta lógica de `getCollection()` es la que debe reemplazarse por llamadas a la API real.
+Esta capa **ya reemplaza** las llamadas directas a `getCollection('species')` mencionadas en versiones previas de este documento — sigue existiendo `getCollection()` únicamente *dentro* de `species-source.ts`, como fuente del `.md` de respaldo.
 
 ### Base URL
 
-La única variable de entorno configurada actualmente es:
-
 ```
-SITE_URL=http://localhost:4321  (valor por defecto en astro.config.mjs)
+SITE_URL=http://localhost:4321        (astro.config.mjs, sitemap/canonical — sin cambios)
+PUBLIC_API_URL=<url del backend>      (src/lib/api.ts — ya en uso, prefijo PUBLIC_ requerido por Astro)
 ```
 
-No existe una variable `API_URL` ni ninguna base URL para servicios externos. Debe crearse al integrar el Backend.
-
-### Dónde se configurará
-
-La Base URL de la API deberá configurarse en:
-1. Una nueva variable de entorno `PUBLIC_API_URL` (prefijo `PUBLIC_` para que sea accesible en el cliente con Astro)
-2. Un nuevo archivo de servicio HTTP, por ejemplo `src/lib/api.ts`
+`PUBLIC_API_URL` debe definirse en el entorno de build (`.env`, variables de CI, etc.) para que tanto la integración de especies (build time) como la de suscriptores (runtime del navegador) apunten al backend correcto. Si no está definida, `api.ts` usa `''` como base — las peticiones fallarán y todo caerá al fallback de Markdown (especies) o al mensaje de error del formulario (suscripción).
 
 ---
 
@@ -293,16 +315,16 @@ La Base URL de la API deberá configurarse en:
 | Variable | Dónde se usa | Valor por defecto | Función |
 |---|---|---|---|
 | `SITE_URL` | `astro.config.mjs` | `http://localhost:4321` | URL base del sitio para sitemap, canonical URLs y metadatos Open Graph. Solo se usa en build time. |
+| `PUBLIC_API_URL` | `src/lib/api.ts` (usado por `species-source.ts` en build time y por `suscriptores.ts` en runtime del navegador) | `''` (string vacío si no se define) | Base URL del backend. **Ya está en uso desde el 2026-07-11**, ampliada el 2026-08-01 para las especies. |
 
-> **Nota:** No existe archivo `.env` ni `.env.example` en el proyecto. `SITE_URL` se lee directamente en `astro.config.mjs` con `process.env.SITE_URL`.
+> **Nota:** sigue sin existir archivo `.env.example` en el repositorio (`.env` no se commitea, como es esperable). Ambas variables se leen con `import.meta.env.*` / `process.env.*` según el contexto (build vs. cliente).
 
-### Variables que deben crearse para la integración
+### Variables que podrían agregarse a futuro
 
 | Variable | Tipo | Ejemplo | Función |
 |---|---|---|---|
-| `PUBLIC_API_URL` | Pública (cliente + servidor) | `https://api.ecotec-flora.com` | Base URL de la API del Backend. El prefijo `PUBLIC_` es obligatorio en Astro para acceder a la variable desde scripts del cliente. |
-| `API_SECRET_KEY` | Privada (solo servidor) | `Bearer eyJ...` | Token de autenticación para las peticiones server-side (si aplica). Sin prefijo `PUBLIC_`. |
-| `PUBLIC_CLOUDINARY_BASE_URL` | Pública | `https://res.cloudinary.com/mi-cuenta` | Base URL de Cloudinary, si las URLs de imágenes pasan a construirse en el Frontend en lugar de venir completas del Backend. |
+| `API_SECRET_KEY` | Privada (solo servidor) | `Bearer eyJ...` | Token de autenticación para peticiones server-side, si el backend llega a requerir rutas de escritura desde el frontend (hoy no hace ninguna, solo lecturas `GET` y el `POST /api/suscriptores` público). |
+| `PUBLIC_CLOUDINARY_BASE_URL` | Pública | `https://res.cloudinary.com/mi-cuenta` | Base URL de Cloudinary, si las URLs de imágenes pasan a construirse en el Frontend en lugar de venir completas del Backend (hoy `multimediaPrincipal.imagenUrl` siempre viene completa). |
 
 ### Cómo declarar variables en Astro
 
@@ -331,54 +353,57 @@ El proyecto tiene **un único formulario** activo, ubicado en la página de inic
 
 ### Formulario 1 — Suscripción al boletín
 
+> **Actualizado 2026-08-02:** este formulario **ya está integrado** con el backend desde `ce002ca` (2026-07-11), corregido en `76cb87d` (2026-07-27) para dejar de apuntar a una URL localhost fija. La descripción siguiente refleja el estado real, no una recomendación pendiente.
+
 | Atributo | Valor |
 |---|---|
-| **Componente / archivo** | `src/pages/index.astro` (inline, sin componente propio) |
-| **Ruta donde aparece** | `/` (página de inicio, sección "Únete a nuestro blog") |
+| **Componente / archivo** | `src/pages/index.astro` (inline, sin componente propio) + handler en `src/scripts/suscripcion.js` |
+| **Ruta donde aparece** | `/` (página de inicio, sección de suscripción) |
 | **Método del `<form>`** | `method="post"` |
-| **Action del `<form>`** | `action="#"` (apunta a `#`, no tiene endpoint real aún) |
+| **Action del `<form>`** | `action="#"` (irrelevante: el submit se intercepta con `preventDefault()` antes de que el navegador lo use) |
+| **Atributo de enganche** | `data-suscripcion-form` — usado por `suscripcion.js` para encontrar el formulario, en vez de un selector genérico |
 
 #### Campos
 
-| Campo | `id` | `name` | `type` | `placeholder` | Requerido |
-|---|---|---|---|---|---|
-| Nombre completo | `full-name` | `fullName` | `text` | `Dr. Elena Garro` | No (no tiene `required` en el HTML) |
-| Correo institucional | `email` | `email` | `email` | `investigacion@flormedica.org` | No (no tiene `required` en el HTML) |
-
-#### Botón de envío
-
-```html
-<button type="submit">Suscribirme al boletín</button>
-```
+| Campo | `id` | `name` | `type` | Requerido |
+|---|---|---|---|---|
+| Nombre completo | `full-name` | `fullName` | `text` | No a nivel HTML; sí se valida en JS (ver abajo) |
+| Correo institucional | `email` | `email` | `email` | No a nivel HTML; sí se valida en JS |
 
 #### Validaciones actuales
 
-**No hay validaciones** implementadas. El formulario no tiene:
-- Atributos HTML `required`
-- Validación de formato de email (más allá del type="email" nativo del navegador)
-- Validación JavaScript personalizada
-- Mensajes de error
-- Feedback de éxito o error
+Implementadas en `src/scripts/suscripcion.js`: si `nombre` o `correo` (tras `.trim()`) vienen vacíos, se muestra `alert("Complete todos los campos.")` y no se envía la petición. No hay validación de formato de email más allá del `type="email"` nativo del navegador, ni mensajes de error inline (el feedback usa `alert()`, no elementos del DOM).
 
-#### Función de submit
+#### Función de submit (implementada)
 
-**No existe.** El formulario tiene `action="#"` y recarga la página al enviarse. No hay un `addEventListener('submit', ...)` ni ningún `fetch`/`axios` que intercepte el envío.
+```javascript
+// src/scripts/suscripcion.js
+import { suscriptoresService } from "../lib/suscriptores";
 
-#### Código actual del formulario
+document.addEventListener("DOMContentLoaded", () => {
+  const formulario = document.querySelector("[data-suscripcion-form]");
+  if (!(formulario instanceof HTMLFormElement)) return;
 
-```html
-<form class="w-full space-y-8" action="#" method="post">
-  <div class="w-full space-y-3">
-    <label for="full-name">Nombre completo</label>
-    <input id="full-name" type="text" name="fullName" placeholder="Dr. Elena Garro" />
-  </div>
-  <div class="w-full space-y-3">
-    <label for="email">Correo institucional</label>
-    <input id="email" type="email" name="email" placeholder="investigacion@flormedica.org" />
-  </div>
-  <button type="submit">Suscribirme al boletín</button>
-</form>
+  formulario.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const nombre = formulario.querySelector("#full-name")?.value.trim();
+    const correo = formulario.querySelector("#email")?.value.trim();
+    if (!nombre || !correo) { alert("Complete todos los campos."); return; }
+
+    try {
+      await suscriptoresService.registrar({ nombre, correo });
+      alert("¡Suscripción realizada correctamente!");
+      formulario.reset();
+    } catch (error) {
+      alert(error instanceof Error ? error.message : "No fue posible registrar la suscripción.");
+    }
+  });
+});
 ```
+
+**Nota para el backend:** el payload usa las claves `nombre`/`correo` (español), no `fullName`/`email` como sugerían los `name` de los inputs HTML o versiones previas de este documento — `suscriptoresService.registrar()` hace ese mapeo. Confirmar que `POST /api/suscriptores` espera `{ nombre?, correo }` (ver `SuscriptorDTO` en `src/lib/suscriptores.ts` y el contrato documentado en `docs/api_usage.md`).
+
+**Pendiente (no implementado aún):** feedback inline en el DOM en vez de `alert()`, estados de carga en el botón, confirmación por email y flujo de cancelación de suscripción — si el backend los expone, valdría la pena mejorarlo, pero no son bloqueantes para la integración actual.
 
 ---
 
@@ -390,53 +415,50 @@ El proyecto tiene **un único formulario** activo, ubicado en la página de inic
 
 ### Botón "SUSCRIBIRME" del Header
 
-Adicional al formulario anterior, el `Header.astro` contiene un botón con la etiqueta "SUSCRIBIRME":
+El `Header.astro` conservaba un botón con la etiqueta "SUSCRIBIRME" en versiones previas del sitio; actualmente está **comentado en el markup** (no se renderiza):
 
 ```html
 <!-- src/components/Header.astro -->
-<button class="border border-[#1B6D24] ...">
+<!-- <button class="border border-[#0049A4] ...">
   SUSCRIBIRME
-</button>
+</button> -->
 ```
 
-Este botón **no tiene evento asociado** actualmente. No tiene `onclick`, no abre un modal, no navega a ninguna ruta. Es un elemento visual pendiente de implementación.
+No requiere integración porque no está visible; si se reactiva en el futuro, seguirá sin tener evento asociado hasta que se le asigne uno (scroll a la sección del formulario o modal).
 
 ---
 
 ## 8. Integración necesaria con Backend
 
-La tabla siguiente cubre todas las pantallas del sitio y los endpoints que cada una necesita consumir del Backend.
+La tabla siguiente cubre todas las pantallas del sitio y su estado real de integración con el Backend (actualizado 2026-08-02). El contrato de endpoints vigente está en `docs/api_usage.md` (reemplaza a la referencia `REFERENCIA_SCHEMA_BACKEND.md` citada en versiones previas de este documento, que ya no existe en el repositorio).
 
-> El contrato de API documentado por el equipo Backend se encuentra en `docs/REFERENCIA_SCHEMA_BACKEND.md`.
-
-| Pantalla | Componente / Archivo | Endpoint necesario | Método HTTP | Estado actual | Prioridad |
+| Pantalla | Componente / Archivo | Endpoint | Método | Estado actual | Prioridad de lo pendiente |
 |---|---|---|---|---|---|
-| Catálogo de Especies | `src/pages/especies.astro` + `SpeciesGrid.astro` | `GET /api/plantas` | GET | Usa `getCollection('species')` local | Alta |
-| Catálogo de Especies (filtro por familia) | `src/pages/especies.astro` | `GET /api/plantas?familia=Asteraceae` | GET | Filtrado client-side sobre datos locales | Alta |
-| Detalle de Especie | `src/pages/especies/[slug].astro` | `GET /api/plantas/:slug` | GET | Usa `getCollection('species')` + `render()` local | Alta |
-| Atlas Etnobotánico | `src/pages/etnobotanica.astro` + `Etnobotanicagrid.astro` | `GET /api/plantas` o endpoint dedicado `/api/etnobotanica` | GET | Usa `getCollection('etnobotanica')` local | Alta |
-| Inicio — Estadísticas | `src/pages/index.astro` | `GET /api/stats` (ej: total especies, familias) | GET | Valores hardcodeados (27, 10, 4, 3) | Media |
-| Inicio — Suscripción | `src/pages/index.astro` (formulario inline) | `POST /api/suscriptores` | POST | Sin endpoint, `action="#"` | Alta |
-| Blog — Listado | `src/pages/blog/index.astro` | `GET /api/blog` o Content Collections local | GET | Usa `getCollection('blog')` local | Baja |
-| Blog — Detalle | `src/pages/blog/[slug].astro` | `GET /api/blog/:slug` | GET | Usa Content Collections local | Baja |
-| Cancelar suscripción | No existe aún | `PATCH /api/suscriptores/cancelar` o `DELETE /api/suscriptores/:id` | PATCH / DELETE | Sin implementar | Media |
-| Confirmar suscripción (email) | No existe aún | `POST /api/suscriptores/confirmar` | POST | Sin implementar | Media |
+| Catálogo de Especies | `especies.astro` → `species-source.ts` | `GET /api/plantas` | GET | **Integrado** (2026-08-01), con fallback a `.md` | — |
+| Detalle de Especie | `especies/[slug].astro` → `species-source.ts` | `GET /api/plantas/:slug` | GET | **Integrado**, con fallback a `.md` | — |
+| Atlas Etnobotánico | `Etnobotanicagrid.astro` → `species-source.ts` | (ninguno propio; reusa `GET /api/plantas`) | GET | Integrado indirectamente vía especies; no se prevé un endpoint dedicado | — |
+| Inicio — Estadísticas | `index.astro` | `GET /api/stats` (o calcular sobre `getSpeciesList()`) | GET | Sin integrar — valores calculados/hardcodeados en el cliente | Media |
+| Inicio — Suscripción | `index.astro` (formulario) + `suscripcion.js` | `POST /api/suscriptores` | POST | **Integrado** desde 2026-07-11 | — (ver mejoras opcionales en §7) |
+| Panel de Comercio | `importacion-exportacion.astro` → `trade-data.ts` | `GET /api/comtrade/*` (existe en el backend, no consumido aún) | GET | Usa dataset pre-procesado `trade-data.json`, no llama al backend en runtime/build | Baja — ver nota abajo |
+| Cancelar suscripción | No existe pantalla | `PATCH/DELETE /api/suscriptores/:id` | PATCH/DELETE | Sin implementar en frontend | Media |
+| Confirmar suscripción (email) | No existe pantalla | `POST /api/suscriptores/confirmar` | POST | Sin implementar en frontend | Media |
+
+> La sección de Blog fue eliminada el 2026-08-02; ya no aplica ninguna integración de `/api/blog` o `/api/noticias` a una pantalla equivalente del frontend (el backend sí expone `/api/noticias`, ver `docs/api_usage.md`, pero el frontend no la consume).
 
 ### Notas sobre el contrato de API de Plantas
 
-Según `docs/REFERENCIA_SCHEMA_BACKEND.md`, los endpoints documentados son:
+Endpoints reales, según pruebas documentadas en `docs/api_usage.md` (2026-07-31):
 
 ```
-GET /api/plantas
-  Query param opcional: ?familia=Asteraceae
-  Campos devueltos: slug, nombreComun, nombreCientifico,
-                    taxonomia.familia, multimediaPrincipal.imagenUrl
-
-GET /api/plantas/:slug
-  Respuesta: objeto completo (ver sección 9 de este documento)
+GET /api/plantas           — sin auth. Listado liviano (no incluye `estado` en algunos casos;
+                              species-source.ts trata la ausencia de estado como ACTIVO).
+GET /api/plantas/:slug     — sin auth. 404 si no existe.
+POST/PUT/DELETE /api/plantas/... — requieren rol SUPER_ADMIN o EDITOR.
 ```
 
-El schema del Frontend (`src/content.config.ts`) ya está alineado con este contrato. El campo `analisisAcademico` del Backend equivale al cuerpo Markdown de los archivos `.md` actuales (renderizado con `render(entry)`).
+El esquema del Frontend (`src/content.config.ts`) sigue alineado con este contrato. El campo `analisisAcademico` (con subcampos `taxonomia`, `etnobotanica`, `fitoquimica`, `sostenibilidad`) es exclusivo de la respuesta de la API — no existe en el frontmatter `.md` — y `species-source.ts` lo agrega tal cual venga de la API (`analisisAcademico: apiData.analisisAcademico ?? base.analisisAcademico`), sin fallback local porque no hay equivalente en Markdown.
+
+**Sobre el panel de comercio:** el backend ya expone `GET /api/comtrade/catalogo`, `GET /api/comtrade/:plantaSlug` y `GET /api/comtrade/consulta/:plantaSlug` (probados end-to-end contra la API real de UN Comtrade, ver `docs/api_usage.md`), pero el frontend actual no los llama — el panel `/importacion-exportacion` lee de un archivo `src/data/trade-data.json` generado aparte. Consumir esos endpoints directamente en build time sería la evolución natural de esta sección, siguiendo el mismo patrón de fallback que `species-source.ts`.
 
 ---
 
@@ -444,312 +466,146 @@ El schema del Frontend (`src/content.config.ts`) ya está alineado con este cont
 
 ### 9.1 Formulario de suscripción (inline en index.astro)
 
-**Archivo:** `src/pages/index.astro`
+**Archivos:** `src/pages/index.astro` (markup) + `src/scripts/suscripcion.js` (lógica) + `src/lib/suscriptores.ts` (servicio).
 
-El formulario no es un componente independiente. Está escrito directamente en la sección de la página de inicio, dentro de un `<div>` con fondo oscuro.
-
-#### Props
-
-No aplica — el formulario es inline, no tiene props porque no es un componente `.astro` separado.
-
-#### Campos del formulario
-
-```typescript
-// Campos que el Frontend enviaría al Backend
-{
-  fullName: string,   // input#full-name, name="fullName"
-  email: string       // input#email, name="email"
-}
-```
-
-#### Eventos
-
-No hay eventos configurados actualmente. El `<form>` tiene `method="post"` y `action="#"`, lo que provoca un reload de página sin enviar datos a ningún endpoint.
-
-#### Función de submit
-
-**No existe.** Para implementar la integración se necesita:
-
-```javascript
-// Lo que debe implementarse en src/pages/index.astro
-document.querySelector('form').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const formData = new FormData(e.target);
-  const response = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/suscriptores`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      fullName: formData.get('fullName'),
-      email: formData.get('email'),
-    }),
-  });
-  // Manejar respuesta y mostrar feedback al usuario
-});
-```
-
----
+El formulario sigue sin ser un componente `.astro` independiente — está escrito directamente en la sección de suscripción del home — pero su lógica de envío **ya está implementada e importada como script externo** (`src/scripts/suscripcion.js`), no inline. Ver el código completo en [§7](#7-formularios).
 
 ### 9.2 Botón "SUSCRIBIRME" del Header
 
-**Archivo:** `src/components/Header.astro`
-
-```html
-<button
-  class="border border-[#1B6D24] text-[12px] ... rounded-4xl px-6 py-2.5 ..."
->
-  SUSCRIBIRME
-</button>
-```
-
-| Atributo | Valor actual |
-|---|---|
-| `type` | No definido (por defecto `submit`, debería ser `button`) |
-| `onclick` | No existe |
-| Props | Ninguna |
-| Evento | Ninguno |
-| Función | Ninguna |
-
-Este botón debería abrir un modal con el formulario de suscripción o navegar a una sección de la home. Actualmente no hace nada.
-
----
+**Archivo:** `src/components/Header.astro` — el botón existe en el markup pero está **comentado** (no se renderiza). Ver detalle en [§7](#7-formularios).
 
 ### 9.3 Mensajes de feedback
 
-**No existen.** No hay elementos en el DOM para mostrar mensajes de éxito, error, carga ni confirmación tras el envío del formulario. Deben implementarse junto con la lógica del submit.
+Implementados con `window.alert()` en `suscripcion.js` (éxito: "¡Suscripción realizada correctamente!"; error: el mensaje de la excepción o un genérico). No hay elementos inline en el DOM para mostrar los mensajes — sería la mejora más visible pendiente sobre este flujo.
 
 ---
 
 ## 10. Servicios HTTP
 
-### Estado actual
+### Estado actual (actualizado 2026-08-02)
 
-**No existen servicios HTTP.** No hay carpeta `src/services/`, `src/lib/`, `src/api/` ni ningún archivo con funciones de fetch. No se usa `axios` ni ninguna librería HTTP.
+**Sí existen servicios HTTP**, en `src/lib/`:
 
-Todo el consumo de datos ocurre en build time a través de `getCollection()` de Astro Content Collections, no mediante peticiones HTTP en runtime.
+| Archivo | Rol | Estado |
+|---|---|---|
+| `src/lib/api.ts` | Cliente HTTP base: `api.get(endpoint, { timeoutMs })` (con `AbortController`) y `api.post(endpoint, body)` | Implementado |
+| `src/lib/species-source.ts` | Servicio de especies: `getSpeciesList()`, `getSpeciesDetail(slug, mdData)`, con merge por campo API+`.md` | Implementado (ver [§5](#5-consumo-de-api)) |
+| `src/lib/suscriptores.ts` | Servicio de suscriptores: `SuscriptorDTO`, `suscriptoresService.registrar(datos)` | Implementado |
+| `src/lib/trade-data.ts` | Cruce de especies con el dataset de comercio (`trade-data.json`), no llama a la API de comercio del backend | Implementado, sin consumir `/api/comtrade/*` todavía |
+| `src/lib/utils.ts` | Helper `cn()` para componentes shadcn/ui — no es un servicio HTTP | Implementado |
 
-### Servicios que deben crearse para la integración
-
-Se recomienda crear los siguientes archivos:
-
----
-
-#### `src/lib/api.ts` — Cliente HTTP base
-
-```typescript
-// Archivo a crear: src/lib/api.ts
-const BASE_URL = import.meta.env.PUBLIC_API_URL;
-
-export async function apiFetch<T>(path: string, options?: RequestInit): Promise<T> {
-  const res = await fetch(`${BASE_URL}${path}`, {
-    headers: {
-      'Content-Type': 'application/json',
-      ...options?.headers,
-    },
-    ...options,
-  });
-
-  if (!res.ok) {
-    throw new Error(`API error ${res.status}: ${path}`);
-  }
-
-  return res.json() as Promise<T>;
-}
-```
-
----
-
-#### `src/lib/species.ts` — Servicio de especies
+No se usa `axios` ni ninguna librería HTTP externa — todo es `fetch` nativo. La sección siguiente (`src/lib/api.ts` real) reemplaza el diseño propuesto en versiones previas de este documento (`apiFetch<T>()`), que nunca llegó a implementarse tal cual — la implementación real difiere en nombres y forma:
 
 ```typescript
-// Archivo a crear: src/lib/species.ts
-import { apiFetch } from './api';
+// src/lib/api.ts — implementación real
+const API_URL = import.meta.env.PUBLIC_API_URL ?? "";
 
-export interface PlantaResumen {
-  slug: string;
-  nombreComun: string;
-  nombreCientifico: string;
-  taxonomia: { familia: string };
-  multimediaPrincipal: { imagenUrl: string };
-}
-
-export interface PlantaDetalle extends PlantaResumen {
-  nombresAlternativos: string[];
-  taxonomia: {
-    reino: string; division: string; clase: string;
-    familia: string; genero: string;
-  };
-  etnobotanica: {
-    clasificacion: string; parteUtilizada: string;
-    usoTradicional: string; compuestosQuimicos: string[];
-  };
-  analisisAcademico: {
-    taxonomia: string; etnobotanica: string;
-    fitoquimica: string; sostenibilidad: string;
-  };
-  estado: string;
-}
-
-export const getAllPlantas = (familia?: string) => {
-  const query = familia ? `?familia=${encodeURIComponent(familia)}` : '';
-  return apiFetch<PlantaResumen[]>(`/api/plantas${query}`);
+export const api = {
+  get: async (endpoint: string, { timeoutMs = 5000 }: { timeoutMs?: number } = {}) => {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const response = await fetch(`${API_URL}${endpoint}`, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+        signal: controller.signal,
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data?.message || "Error en la petición");
+      return data;
+    } finally {
+      clearTimeout(timer);
+    }
+  },
+  post: async (endpoint: string, body: any) => {
+    const response = await fetch(`${API_URL}${endpoint}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.message || "Error en la petición");
+    return data;
+  },
 };
-
-export const getPlantaBySlug = (slug: string) =>
-  apiFetch<PlantaDetalle>(`/api/plantas/${slug}`);
 ```
+
+`species-source.ts` usa `api.get()`; `suscriptores.ts` usa `api.post()`. No existe un `src/lib/species.ts` separado como sugería una versión previa de este documento — su rol lo cumple `species-source.ts`, que además hace el merge con Markdown (no es un simple wrapper de fetch).
+
+**Si el backend agrega endpoints de comercio consumibles en build time**, el patrón a seguir sería el mismo de `species-source.ts`: intentar `api.get('/api/comtrade/...')`, fusionar o reemplazar el dataset pre-procesado, y caer al `trade-data.json` local ante error.
 
 ---
 
-#### `src/lib/suscriptores.ts` — Servicio de suscripción
+## 11. Flujo de Suscripción (implementado)
 
-```typescript
-// Archivo a crear: src/lib/suscriptores.ts
-import { apiFetch } from './api';
-
-export interface SuscriptorPayload {
-  fullName: string;
-  email: string;
-}
-
-export interface SuscriptorResponse {
-  id: string;
-  email: string;
-  estado: 'pendiente' | 'activo';
-}
-
-export const suscribirse = (data: SuscriptorPayload) =>
-  apiFetch<SuscriptorResponse>('/api/suscriptores', {
-    method: 'POST',
-    body: JSON.stringify(data),
-  });
-
-export const cancelarSuscripcion = (id: string) =>
-  apiFetch<void>(`/api/suscriptores/${id}/cancelar`, { method: 'PATCH' });
-```
-
----
-
-## 11. Flujo completo de Suscripción
-
-### Flujo actual (sin integración)
+> Esta sección describía un flujo "objetivo" pendiente de implementar; a 2026-08-02 el flujo ya está en producción. Se deja como referencia del comportamiento real.
 
 ```
 Usuario ve el formulario en la Home (/)
         ↓
-Escribe nombre y email
+Escribe nombre y correo
         ↓
 Hace clic en "Suscribirme al boletín"
         ↓
-El <form action="#"> recarga la página
+JavaScript intercepta el submit (preventDefault) — src/scripts/suscripcion.js
         ↓
-Los datos se pierden. No hay envío, no hay feedback.
+Valida que nombre y correo no estén vacíos (trim)
+        ↓
+[Si falla] → alert("Complete todos los campos.")
+        ↓
+[Si pasa] → suscriptoresService.registrar({ nombre, correo })
+        ↓
+POST /api/suscriptores   Body: { nombre?, correo }
+        ↓
+[Si respuesta ok] → alert("¡Suscripción realizada correctamente!") + formulario.reset()
+[Si respuesta no-ok / error de red] → alert(mensaje de error del backend o genérico)
 ```
 
-### Flujo objetivo (con integración completa)
+### Mejoras pendientes (no bloqueantes)
 
-```
-Usuario ve el formulario en la Home (/)
-        ↓
-Escribe nombre y email
-        ↓
-Hace clic en "Suscribirme al boletín"
-        ↓
-[JavaScript intercepta el submit con preventDefault()]
-        ↓
-Validar que nombre y email no estén vacíos
-Validar formato de email
-        ↓
-[Si validación falla]
-  → Mostrar mensaje de error inline bajo el campo correspondiente
-        ↓
-[Si validación pasa]
-  → Mostrar estado de carga en el botón ("Enviando...")
-        ↓
-POST /api/suscriptores
-  Body: { fullName: "...", email: "..." }
-        ↓
-[Si respuesta 2xx]
-  → Ocultar formulario
-  → Mostrar mensaje de éxito: "¡Suscripción exitosa! Revisa tu correo para confirmar."
-        ↓
-[Si respuesta 4xx / 5xx]
-  → Mostrar mensaje de error: "Ocurrió un error. Por favor intenta de nuevo."
-  → Rehabilitar el botón
-```
-
-### Partes que faltan implementar
-
-1. **Interceptor del submit** — `addEventListener('submit', ...)` en el `<form>` de `src/pages/index.astro`
-2. **Validación de campos** — `required` en los inputs + validación JS para formato de email
-3. **Llamada HTTP** — `fetch` o servicio `suscriptores.ts` al endpoint `POST /api/suscriptores`
-4. **Estados de carga** — Deshabilitar botón y cambiar texto durante el request
-5. **Feedback de éxito** — Elemento HTML para confirmar la suscripción
-6. **Feedback de error** — Elemento HTML para mostrar errores de API
-7. **Botón "SUSCRIBIRME" del Header** — Asignar acción (abrir modal o scroll a la sección del formulario)
-8. **Confirmación por email** — El Backend envía email; el Frontend podría necesitar una página `/suscripcion/confirmar?token=...` que llame a `POST /api/suscriptores/confirmar`
-9. **Cancelación** — Página o flujo para `PATCH /api/suscriptores/:id/cancelar`
+1. **Feedback inline** — reemplazar los `alert()` por elementos del DOM (mensajes de éxito/error, estado de carga en el botón).
+2. **Validación de formato de email** — más allá del `type="email"` nativo del navegador.
+3. **Confirmación por email** — si el backend la implementa, se necesitaría una página `/suscripcion/confirmar?token=...` que llame a `POST /api/suscriptores/confirmar`.
+4. **Cancelación** — página o flujo para `PATCH`/`DELETE /api/suscriptores/:id`.
+5. **Botón "SUSCRIBIRME" del Header** — si se reactiva, asignarle una acción (scroll al formulario o modal).
 
 ---
 
-## 12. Recomendaciones para integrar el Backend
+## 12. Cómo se resolvió la integración (y qué queda pendiente)
 
-La integración requiere cambios en el modo de renderizado (de SSG puro a SSR o fetch en cliente), además de nuevos archivos de servicio. A continuación se lista todo lo necesario ordenado por módulo.
+> Esta sección listaba recomendaciones para una integración que, a 2026-08-02, ya ocurrió parcialmente. Se reescribe para documentar **la estrategia real elegida** (útil para replicarla en las partes que faltan) en vez de un plan genérico.
 
-### 12.1 Configuración general
+### 12.1 Decisión clave: build-time fetch + fallback, no SSR/ISR
 
-| Archivo a modificar | Cambio necesario |
-|---|---|
-| `astro.config.mjs` | Agregar `output: 'hybrid'` o `output: 'server'` si se necesitan rutas SSR. Para fetch en cliente con SSG puro no es necesario. |
-| `.env` (crear) | Agregar `PUBLIC_API_URL`, `SITE_URL` de producción y opcionalmente `API_SECRET_KEY` |
-| `package.json` | Opcional: agregar adaptador SSR (`@astrojs/node`) si se necesita renderizado server-side dinámico |
+El equipo **no** cambió `astro.config.mjs` a `output: 'hybrid'`/`'server'` ni agregó un adaptador SSR, como sugería la versión anterior de este documento. En su lugar, `species-source.ts` hace el `fetch` a la API **dentro del build estático** (`getSpeciesList()`/`getSpeciesDetail()` corren en el frontmatter de las páginas, no en el navegador) y cae al contenido `.md` si la API no responde. Esto mantiene el sitio 100% SSG — sin servidor Node corriendo en producción — a costa de que el catálogo solo se actualiza en cada rebuild/redeploy, no en tiempo real. Si el catálogo necesita reflejar cambios del backend sin rebuild, ahí sí valdría la pena evaluar SSR/ISR para las rutas de especies específicamente.
 
-### 12.2 Nuevos archivos a crear
+### 12.2 Archivos que ya existen (no hace falta crearlos)
 
-| Archivo | Función |
-|---|---|
-| `src/lib/api.ts` | Cliente HTTP base (ver sección 10) |
-| `src/lib/species.ts` | Servicio para `GET /api/plantas` y `GET /api/plantas/:slug` |
-| `src/lib/suscriptores.ts` | Servicio para `POST /api/suscriptores` y `PATCH /api/suscriptores/:id/cancelar` |
-| `src/lib/types.ts` | Interfaces TypeScript compartidas (`PlantaResumen`, `PlantaDetalle`, `SuscriptorPayload`) |
-| `.env` | Variables de entorno (no commitear) |
-| `.env.example` | Plantilla de variables de entorno (sí commitear) |
+| Archivo | Función | Nota |
+|---|---|---|
+| `src/lib/api.ts` | Cliente HTTP base (`get` con timeout, `post`) | Implementado — ver [§10](#10-servicios-http) |
+| `src/lib/species-source.ts` | Fuente de especies con merge API+`.md` | Implementado — cumple el rol que se había propuesto para `src/lib/species.ts` |
+| `src/lib/suscriptores.ts` | Servicio de suscriptores | Implementado |
+| `.env` | Variables de entorno (no commiteado, como corresponde) | En uso local/CI |
 
-### 12.3 Páginas a modificar
+No existe `src/lib/types.ts` ni `.env.example` — si se quiere formalizar la integración para nuevos desarrolladores, `.env.example` con `PUBLIC_API_URL=` sería la adición de menor esfuerzo y mayor valor.
 
-| Archivo | Cambio necesario |
-|---|---|
-| `src/pages/index.astro` | Reemplazar `action="#"` del formulario por lógica JS que llame a `POST /api/suscriptores`. Agregar validaciones y mensajes de feedback. Añadir campos `required`. Opcionalmente: reemplazar estadísticas hardcodeadas (27 especies, 10 familias) con datos de `GET /api/stats`. |
-| `src/pages/especies.astro` | Reemplazar `getCollection('species')` por `fetch(PUBLIC_API_URL + '/api/plantas')`. En SSG: fetch en build time. En SSR: fetch en cada request. |
-| `src/pages/especies/[slug].astro` | Reemplazar `getCollection('species')` y `render()` por `fetch(PUBLIC_API_URL + '/api/plantas/' + slug)`. El análisis académico vendrá como string HTML o Markdown desde el Backend; adaptar el renderizado. |
-| `src/pages/etnobotanica.astro` | Reemplazar `getCollection('etnobotanica')` por el endpoint correspondiente del Backend. |
+### 12.3 Lo que falta (pendiente real, no historia)
 
-### 12.4 Componentes a modificar
+| Ítem | Dónde | Prioridad |
+|---|---|---|
+| Estadísticas del home vía `GET /api/stats` (o derivarlas de `getSpeciesList()` en vez de hardcodearlas) | `src/pages/index.astro` | Media |
+| Consumir `GET /api/comtrade/*` en vez de (o adicionalmente a) `trade-data.json` pre-procesado | `src/lib/trade-data.ts` | Baja |
+| Feedback inline (no `alert()`) en el formulario de suscripción | `src/scripts/suscripcion.js`, `index.astro` | Baja |
+| `.env.example` documentando `PUBLIC_API_URL` | raíz del repo | Baja |
+| Confirmación y cancelación de suscripción (si el backend los expone) | Nuevas páginas/flujos | Media |
 
-| Archivo | Cambio necesario |
-|---|---|
-| `src/components/Header.astro` | Asignar funcionalidad al botón "SUSCRIBIRME": scroll a la sección del formulario (`#suscripcion`) o abrir un modal. Añadir `type="button"` para evitar submit accidental. |
-| `src/components/species/SpeciesGrid.astro` | Actualizar la interface `Props` para que acepte el tipo `PlantaResumen[]` del Backend. El campo `analisisAcademico` (texto largo) ya no vendrá en el listado. |
-| `src/components/species/SpeciesCard.astro` | Sin cambios en la interfaz si el Backend sigue devolviendo `slug`, `nombreComun`, `nombreCientifico`, `taxonomia.familia`, `multimediaPrincipal.imagenUrl`. |
-| `src/components/etnobotanicacomp/Etnobotanicagrid.astro` | Reemplazar las dos llamadas a `getCollection()` por datos del Backend. |
+### 12.4 Consideraciones que siguen aplicando
 
-### 12.5 Consideraciones importantes
+**Análisis académico (cuerpo Markdown):** en la página de detalle (`[slug].astro`) se sigue usando `<Content />` de Astro para renderizar el cuerpo del `.md`. El campo `analisisAcademico` que llega de la API (`taxonomia`, `etnobotanica`, `fitoquimica`, `sostenibilidad`) es **independiente** de ese cuerpo Markdown — no lo reemplaza, se agrega como dato adicional cuando la API lo provee (`species-source.ts` lo pasa tal cual, sin fallback porque no existe en el `.md`). Confirmar con el backend el formato exacto (texto plano vs. HTML) antes de renderizarlo con `set:html`.
 
-**Renderizado estático vs dinámico:**
-- Actualmente todo el sitio es SSG (generado en build). Funciona mientras las especies no cambien frecuentemente.
-- Si el catálogo se actualiza con frecuencia, considerar cambiar las páginas de especies a SSR (`export const prerender = false`) o agregar ISR (Incremental Static Regeneration con un adaptador de Astro).
+**CORS:** el Backend debe permitir requests desde el dominio de build/preview del Frontend — aunque hoy la mayoría del tráfico a la API ocurre en build time (servidor a servidor), el `POST /api/suscriptores` sí ocurre desde el navegador del usuario final, así que CORS sigue siendo necesario para ese endpoint como mínimo.
 
-**Análisis académico (cuerpo Markdown):**
-- El Backend devuelve `analisisAcademico` como strings de texto plano o HTML (ver `REFERENCIA_SCHEMA_BACKEND.md`), no como Markdown renderizable con `render()`.
-- En la página de detalle (`[slug].astro`) se usa `<Content />` que renderiza el cuerpo del archivo `.md`. Al migrar a API, este bloque deberá reemplazarse por `<Fragment set:html={data.analisisAcademico.taxonomia} />` u otro método de renderizado según el formato que devuelva el Backend.
+**Paginación:** sigue siendo 100% client-side sobre todos los datos ya cargados (catálogo, atlas, tabla de comercio). No se implementó paginación server-side — con volúmenes de datos moderados (decenas de especies) no ha sido necesario, pero sería lo primero a revisar si el catálogo crece significativamente.
 
-**CORS:**
-- El Backend debe permitir requests desde el dominio del Frontend. Si se usa fetch desde el cliente (browser), el Backend necesita los headers CORS correctos.
-
-**Paginación:**
-- La paginación actual es 100% client-side sobre todos los datos cargados de golpe. Con la API, se recomienda implementar paginación server-side: `GET /api/plantas?page=1&limit=9`.
-
-**Imágenes:**
-- Las URLs de Cloudinary actualmente vienen completas en los datos locales (`https://res.cloudinary.com/...`). El Backend debe seguir devolviendo URLs absolutas en `multimediaPrincipal.imagenUrl` para que los componentes funcionen sin cambios adicionales.
-
-**Formulario de suscripción — campo `id` del formulario:**
-- Se recomienda agregar `id="suscripcion"` al `<form>` o a su sección contenedora para permitir scroll directo desde el botón del Header: `<a href="/#suscripcion">`.
+**Imágenes:** las URLs siguen viniendo completas en `multimediaPrincipal.imagenUrl` (hoy picsum.photos/Unsplash, Cloudinary planificado a futuro vía `imagenPublicId`). Sin cambios respecto a la recomendación original.

@@ -6,6 +6,33 @@ Derivado del historial de Git. Los commits se listan del más reciente al más a
 
 ## [Sin Publicar] — Rama `dev`
 
+### 2026-08-02
+
+- `a979739` **feat:** Reemplazar sección de blog por página "Sobre nosotros" — se elimina por completo la funcionalidad de blog: colección de contenido `blog`, páginas `src/pages/blog/index.astro` y `src/pages/blog/[slug].astro`, el endpoint `rss.xml.js` (agregado apenas el 27-07) y las referencias a RSS en `BaseHead.astro`. En su lugar se agrega `src/pages/sobre-nosotros.astro`: página institucional con hero, misión, banda de departamentos colaboradores, tarjetas "flip" del equipo (con LinkedIn/correo al hover) y grid de valores. `Header.astro` cambia el enlace "Blog" por "Sobre nosotros" y el `index.astro` ajusta sus CTAs.
+
+### 2026-08-01
+
+- `07782b6` **feat:** Renovar sistema de diseño y agregar paginación a la tabla de comercio — **segundo cambio de identidad visual global**: la paleta pasa del azul institucional plano (`#0049A4`) a escalas completas de 10 pasos `primary`/`secondary`/`neutral` (`#0A5CA5`/`#2BBAE2`/`#1A2843`) y la tipografía se unifica en Poppins (reemplaza EB Garamond + Hanken Grotesk). Se corrige el layout de `Etnobotanicacard.astro` y se agrega paginación del lado del cliente (10 filas por página) a `TradeTable.astro`. Documentado en `docs/design-system.md` (nota: superseded — ver `docs/DESIGN_SYSTEM.md`).
+- `580adf5` (stexc7) **feat:** Mejoras app móvil: legibilidad, detalle etnobotánica, silueta pro, animaciones, release minificado — se agrega la pantalla `EtnobotanicaDetailScreen.kt` con su ruta propia, se mejora `BodySilhouette.kt` y se agregan animaciones (`Animations.kt`) y ajustes de tipografía/color en la app Android.
+- `f727945` (stexc7) **feat:** App móvil Android (Kotlin + Compose) — fase 1 datos locales — primera versión de la app nativa Android en `mobile/`: arquitectura por capas (`data/model`, `data/repository` con patrón Repository), navegación con Compose Navigation, pantallas de inicio/especies/detalle/etnobotánica/autores, y un dataset local (`assets/content.json`) extraído del contenido del sitio. No depende del backend en esta fase. Ver `mobile/README.md`.
+- `59d646b` **feat:** Integrar datos de especies desde la API con respaldo en Markdown — se agrega `src/lib/species-source.ts`, la nueva fuente única de especies: intenta `GET /api/plantas`/`GET /api/plantas/:slug` y hace *merge por campo* con el contenido `.md` existente, cayendo a este último ante cualquier error o timeout. `src/lib/api.ts` gana un método `get()` con `AbortController`/timeout de 5s. Todas las páginas y componentes que antes llamaban a `getCollection('species')` directamente (`especies.astro`, `especies/[slug].astro`, `index.astro`, `Etnobotanicagrid.astro`) pasan a usar `getSpeciesList()`/`getSpeciesDetail()`.
+
+### 2026-07-31
+
+- `e04f354` **chore:** Api usage manual update — actualización de `docs/api_usage.md` con hallazgos de pruebas contra el backend real (bugs de validación, colecciones de Mongo desalineadas, endpoints verificados).
+- `7559d39` **chore:** Agregar manual de uso de la API del backend — creación inicial de `docs/api_usage.md`: base URL, autenticación JWT, tabla de endpoints por módulo (auth, configuración, fuentes, auditoría, plantas, usuarios admin, multimedia, noticias, Comtrade).
+- `d0a387e` **feat:** Agregar sección de importación y exportación con datos de UN Comtrade — nueva página `src/pages/importacion-exportacion.astro` con panel de comercio internacional: `TradeKpiCards.astro`, `TradeTable.astro` y la isla React `TradeExplorer.tsx` (selector de especie + gráfico Recharts + paneles narrativos). Se agrega `src/lib/trade-data.ts` (cruce del dataset `src/data/trade-data.json` con las especies) y `src/data/hs-code-map.mjs`. `Header.astro` gana el enlace "Comercio".
+- `3129b4b` **chore:** Configurar React, shadcn/ui y Tailwind v4 en el proyecto — se agregan `@astrojs/react`, React 19, shadcn/ui (`components.json`, estilo `base-nova`), `class-variance-authority`, `clsx`, `tailwind-merge`, `tw-animate-css` y los primeros componentes generados en `src/components/ui/` (table, badge, select, card, tabs, button, chart). `astro.config.mjs` agrega la integración `react()`. Sienta la base para el panel de comercio del commit siguiente.
+- `874c6d4` **fix:** Corregir colores del panel de etnobotánica en la ficha de especie — ajuste de clases de color en la barra lateral del perfil etnobotánico de `especies/[slug].astro`.
+- `c6281ee` **fix:** Forzar `NODE_ENV=development` en el script `dev` para evitar el bug de jsxDEV — `package.json`: `"dev": "NODE_ENV=development astro dev"`.
+- `cef74d5` **feat:** Nueva pantalla modal para etnobotánica con detalles de la planta — se agrega `Etnobotanicamodal.astro`: modal de detalle rápido que se abre desde `Etnobotanicacard.astro` sin salir de `/etnobotanica`.
+- `4ba325d` **chore:** Link de foto de zapallo actualizado — corrección puntual de `multimediaPrincipal.imagenUrl` en `zapallo.md`.
+
+### 2026-07-27
+
+- `8f1a789` **chore:** Minor changes — se elimina `src/content/species/aji.md` (especie retirada del catálogo) y ajustes menores de `package.json`/lockfile.
+- `76cb87d` **fix:** Iconos de etnobotánica, feed RSS, formulario de suscripción y filtrado de especies activas — corrige varios cabos sueltos: carga la fuente de íconos Tabler (CDN) que faltaba para los badges de etnobotánica; agrega `@astrojs/rss` y `src/pages/rss.xml.js` para el feed que `BaseHead` ya anunciaba (eliminado más tarde junto con el blog, el 02-08); reescribe `src/scripts/suscripcion.js` para usar `suscriptoresService`/`api.ts` en vez de una URL localhost fija; aplica el filtro `estado === 'ACTIVO'` de forma consistente en `especies.astro`, `especies/[slug].astro` e `index.astro` (antes solo se aplicaba en `Etnobotanicagrid`); corrige el shuffle sesgado de imágenes del home (Fisher-Yates); valida `multimediaPrincipal.imagenUrl` como URL y evita colisiones de slug en `getStaticPaths`.
+
 ### 2026-07-16
 
 - `80b49fb` **chore:** Actualización de astro config — se revirtió la integración `astro-icon` que se había agregado el día anterior, dejando la configuración en su estado base con `sitemap()` únicamente.

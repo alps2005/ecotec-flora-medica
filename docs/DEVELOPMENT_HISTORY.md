@@ -38,6 +38,14 @@ gantt
     Migración de MD de especies y nuevo esquema     :done, 2026-07-03, 3d
     Actualización del layout de página de especie   :done, 2026-07-05, 1d
     Limpieza de documentación                       :done, 2026-07-06, 1d
+
+    section Integración de Backend y Nuevas Secciones
+    Correcciones de RSS/íconos/filtrado activos     :done, 2026-07-27, 1d
+    React + shadcn/ui + panel de comercio Comtrade  :done, 2026-07-31, 1d
+    Integración de especies con API + fallback MD   :done, 2026-08-01, 1d
+    App móvil Android fase 1 (Kotlin + Compose)      :done, 2026-08-01, 1d
+    Renovación del sistema de diseño (azul/Poppins)  :done, 2026-08-01, 1d
+    Blog reemplazado por página "Sobre nosotros"     :done, 2026-08-02, 1d
 ```
 
 ---
@@ -197,20 +205,73 @@ Se eliminaron archivos obsoletos o redundantes para limpiar el repositorio en pr
 
 ---
 
+## Fase 7 — Integración de Backend, Nuevas Secciones y App Móvil (2026-07-27 al 2026-08-02)
+
+Tras casi tres semanas sin cambios sustanciales (última entrada de la Fase 6 el 06-07), el proyecto retoma actividad intensa el 27 de julio con una serie de commits que cierran brechas entre el frontend y el backend real, agregan dos secciones nuevas y arrancan un cliente móvil nativo.
+
+### Correcciones Pendientes y Primer Intento de RSS
+**Commit:** `fix: iconos de etnobotanica, feed RSS, formulario de suscripcion y filtrado de especies activas` (`76cb87d`, 2026-07-27)
+
+Se resuelven varios cabos sueltos acumulados: falta la fuente de íconos Tabler (los badges de etnobotánica se veían rotos), `BaseHead.astro` anunciaba un feed RSS que no existía (se agrega `@astrojs/rss` y `src/pages/rss.xml.js` — eliminado una semana después junto con el blog), el formulario de suscripción todavía apuntaba a una URL localhost fija en vez del servicio real, y el filtro `estado === 'ACTIVO'` solo se aplicaba en el atlas de etnobotánica y no en el catálogo de especies ni en el home.
+
+### Configuración de React y shadcn/ui
+**Commit:** `chore: configurar React, shadcn/ui y Tailwind v4 en el proyecto` (`3129b4b`, 2026-07-31)
+
+Se agrega `@astrojs/react`, React 19 y la CLI de shadcn/ui (estilo `base-nova`), sentando la base para el primer componente interactivo con estado del sitio. **[inferido]** Esta fue una decisión deliberada de introducir React solo donde el patrón "Astro + `<script>` vanilla" no alcanzaba (un selector con estado y un gráfico), sin migrar el resto del sitio.
+
+### Panel de Comercio Internacional (Comtrade)
+**Commit:** `feat: agregar sección de importación y exportación con datos de UN Comtrade` (`d0a387e`, 2026-07-31)
+
+Nueva página `/importacion-exportacion` que cruza las fichas de especie con cifras reales de UN Comtrade (pre-procesadas en `src/data/trade-data.json`): KPIs, un explorador interactivo con gráfico de barras (primera isla React del proyecto, `TradeExplorer.tsx`) y una tabla completa. Documentado en profundidad en `docs/api_usage.md`, agregado el mismo día (`7559d39`) con un manual completo de la API del backend, incluyendo hallazgos de pruebas reales contra el backend (bugs de validación entre Mongoose y los validadores de esquema de MongoDB).
+
+### Modal de Etnobotánica y Correcciones Menores
+**Commits:** `feat: nueva pantalla modal para etnobotanica...` (`cef74d5`), `fix: forzar NODE_ENV=development...` (`c6281ee`), `fix: corregir colores del panel de etnobotánica...` (`874c6d4`) — todos 2026-07-31
+
+Se agrega un modal de detalle rápido a las tarjetas del atlas de etnobotánica (`Etnobotanicamodal.astro`) y se corrigen un bug de `NODE_ENV` que rompía `jsxDEV` en desarrollo y colores inconsistentes en la barra lateral etnobotánica del detalle de especie.
+
+### Integración Real de Especies con la API
+**Commit:** `feat: integrar datos de especies desde la API con respaldo en Markdown` (`59d646b`, 2026-08-01)
+
+El cambio más significativo de arquitectura desde la eliminación de la colección `etnobotanica`: se agrega `src/lib/species-source.ts`, que intenta `GET /api/plantas` y fusiona el resultado *campo a campo* con el contenido `.md` local, cayendo a este último si el backend no responde. Todas las páginas que antes llamaban a `getCollection('species')` directamente pasan a usar esta capa. Es la primera vez que el sitio consume datos reales del backend para algo más que el formulario de suscripción.
+
+### App Móvil Android — Fase 1
+**Commits:** `[feat] app movil Android (Kotlin + Compose) - fase 1 datos locales` (`f727945`), `[feat] mejoras app movil...` (`580adf5`) — ambos 2026-08-01, por Raúl Stephano Coello Albán (`stexc7`)
+
+Arranca un cliente nativo Android independiente en `mobile/` (proyecto Gradle propio), con arquitectura por capas (patrón Repository) y un dataset local extraído del contenido del sitio (`assets/content.json`), sin depender del backend todavía. El segundo commit agrega la pantalla de detalle de etnobotánica, mejora la silueta corporal interactiva y pule tipografía/animaciones. Ver `mobile/README.md` para el detalle completo.
+
+### Renovación del Sistema de Diseño
+**Commit:** `feat: renovar sistema de diseño y agregar paginación a la tabla de comercio` (`07782b6`, 2026-08-01)
+
+Segunda migración de paleta del proyecto (la primera fue verde → azul plano el 13-07): de azul plano a escalas completas `primary`/`secondary`/`neutral` de 10 pasos, y de EB Garamond + Hanken Grotesk a Poppins como tipografía única. Se agrega también paginación del lado del cliente a la tabla del panel de comercio.
+
+### Blog Reemplazado por "Sobre Nosotros"
+**Commit:** `feat: reemplazar sección de blog por página "Sobre nosotros"` (`a979739`, 2026-08-02)
+
+Se retira por completo la funcionalidad de blog (colección de contenido, páginas, feed RSS) — que había existido desde el scaffold inicial con una única entrada de ejemplo y nunca llegó a usarse editorialmente — y se reemplaza por una página institucional con misión, equipo y valores, más alineada con el propósito del proyecto de vinculación universitaria.
+
+---
+
 ## Colaboradores
 
 | Nombre | Rol |
 |---|---|
-| Adrian Palma | Líder del proyecto, arquitectura, página de inicio, animaciones del header, coordinación |
-| SebastianAllauca | Catálogo de especies, páginas de detalle de especies, definición del esquema del backend |
-| Jean | Sección de etnobotánica (página del atlas, filtros, paginación) |
+| Adrian Leniel Palma Santana | Líder de Diseño; arquitectura, página de inicio, sistema de diseño, panel de comercio, integración de especies con la API, coordinación |
+| Luis David Aurea Ramírez | Líder de Base de Datos |
+| Luis Anibal Eraso Viteri | Líder de Desarrollo; integración de suscriptores con el backend |
+| Raúl Stephano Coello Albán (`stexc7`) | Líder de Infraestructura; app móvil Android nativa |
+| Nestor Camilo Ruiz Conforme | Docente de Vinculación |
+| SebastianAllauca | Catálogo de especies, páginas de detalle de especies, definición del esquema del backend (fase temprana) |
+| Jean | Sección de etnobotánica — página del atlas, filtros, paginación (fase temprana; funcionalidad luego refactorizada para derivar de `species`) |
 | Astic / Luis | Contribuciones experimentales (2 commits el 17-06-2026) |
+
+> Los roles y nombres completos provienen de la página `/sobre-nosotros` (agregada el 2026-08-02); el rol de Líder de Documentación figura vacante ahí.
 
 ---
 
 ## Decisiones Arquitectónicas Clave (Inferidas del Historial)
 
-1. **Sin framework de frontend (React/Vue/Svelte)** — Toda la interactividad es TypeScript puro en etiquetas `<script>` de Astro. Esto mantiene el bundle mínimo y el despliegue muy sencillo.
-2. **Colecciones de contenido en lugar de base de datos** — El equipo usó las colecciones de contenido con tipado de Astro como capa de datos local desde el inicio, con la intención explícita de intercambiarlas por una API real más adelante.
-3. **Tailwind v4 (nativo de CSS)** — Elegido al inicio del proyecto; refleja el conocimiento de la dirección del ecosistema.
-4. **Estrategia de ramas paralelas** — Las funcionalidades se desarrollaron de forma aislada (`sebas`, `jean`, `adrian`) y se fusionaron, coherente con el flujo de trabajo de un equipo universitario donde los miembros trabajan de forma independiente.
+1. **Astro puro con islas de React puntuales** — Toda la interactividad del catálogo/atlas sigue siendo TypeScript vanilla en `<script>`. React se introdujo el 31-07-2026 (`3129b4b`) únicamente para el panel de comercio, que necesitaba estado de UI (selector) y un gráfico (Recharts) — un caso donde el patrón vanilla ya no alcanzaba. El resto del sitio deliberadamente no migró a React.
+2. **Colecciones de contenido como respaldo, no como fuente única** — El equipo usó las colecciones de contenido con tipado de Astro como capa de datos local desde el inicio, con la intención explícita de intercambiarlas por una API real más adelante. Esa migración arrancó el 01-08-2026 (`59d646b`) con una estrategia de *merge por campo* (API primero, `.md` como fallback) en vez de un corte abrupto, lo que permite desplegar la integración sin que una caída del backend rompa el sitio.
+3. **Tailwind v4 (nativo de CSS)** — Elegido al inicio del proyecto; refleja el conocimiento de la dirección del ecosistema. shadcn/ui se sumó después sobre la misma base de Tailwind v4 sin fricción.
+4. **Derivar en vez de duplicar contenido** — Tanto el atlas de etnobotánica (desde 15-07) como el panel de comercio (desde 31-07) se construyen derivando datos de la colección/fuente `species` en vez de mantener su propio contenido, evitando desincronización entre secciones.
+5. **Estrategia de ramas paralelas** — Las funcionalidades se desarrollaron de forma aislada (`sebas`, `jean`, `adrian`) y se fusionaron, coherente con el flujo de trabajo de un equipo universitario donde los miembros trabajan de forma independiente. El mismo patrón se repite en la fase reciente con el trabajo de app móvil de Raúl/`stexc7` desarrollado en paralelo a la integración de API y el rediseño de Adrian.

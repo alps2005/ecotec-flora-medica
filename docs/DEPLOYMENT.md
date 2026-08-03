@@ -4,7 +4,7 @@
 
 ## Descripción General
 
-El proyecto es un **sitio Astro completamente estático** sin tiempo de ejecución del lado del servidor. La salida de la compilación es un directorio de archivos HTML, CSS y JS que puede desplegarse en cualquier proveedor de alojamiento estático sin configuración adicional.
+El proyecto es un **sitio Astro completamente estático** (SSG) sin tiempo de ejecución del lado del servidor — la isla React del panel de comercio (`TradeExplorer.tsx`) se hidrata en el navegador (`client:load`), no requiere un servidor Node. La salida de la compilación es un directorio de archivos HTML, CSS y JS que puede desplegarse en cualquier proveedor de alojamiento estático sin configuración adicional. La única dependencia de red en **tiempo de build** es opcional: si `PUBLIC_API_URL` apunta a un backend disponible, la compilación consulta especies reales; si no, usa el contenido Markdown de respaldo (ver [Variables de Entorno](#variables-de-entorno)).
 
 ---
 
@@ -24,13 +24,15 @@ Definidos en `package.json`:
 ```json
 {
   "scripts": {
-    "dev": "astro dev",
+    "dev": "NODE_ENV=development astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   }
 }
 ```
+
+> `NODE_ENV=development` se forzó explícitamente en `dev` el 2026-07-31 (`c6281ee`) para evitar un bug de `jsxDEV` relacionado con la integración de React.
 
 | Comando | Descripción |
 |---|---|
@@ -44,16 +46,17 @@ Definidos en `package.json`:
 ```mermaid
 flowchart LR
     A[pnpm build] --> B[Carga astro.config.mjs]
-    B --> C[Escanea src/content/ con cargadores glob]
-    C --> D[Valida todo el frontmatter\nde Markdown con Zod]
+    B --> C[Escanea src/content/species\ncon cargador glob]
+    C --> D[Valida frontmatter con Zod]
     D --> E{¿Validación exitosa?}
     E -->|No| F[La compilación falla con\nerror de esquema]
-    E -->|Sí| G[Renderiza todas las páginas\ngetStaticPaths para rutas dinámicas]
-    G --> H[Procesa src/assets/\nvía pipeline de imágenes de Vite]
-    H --> I[Empaqueta CSS de Tailwind\nvía @tailwindcss/vite]
-    I --> J[Empaqueta scripts del cliente\nGSAP + JS de filtros]
-    J --> K[Genera /sitemap-index.xml\nvía @astrojs/sitemap]
-    K --> L[Salida en /dist]
+    E -->|Sí| G["species-source.ts: intenta\nGET /api/plantas (fallback a .md)"]
+    G --> H[Renderiza todas las páginas\ngetStaticPaths para rutas dinámicas]
+    H --> I[Procesa src/assets/\nvía pipeline de imágenes de Vite]
+    I --> J[Empaqueta CSS de Tailwind + shadcn/ui\nvía @tailwindcss/vite]
+    J --> K[Empaqueta scripts del cliente\nGSAP + JS de filtros + isla React]
+    K --> L[Genera /sitemap-index.xml\nvía @astrojs/sitemap]
+    L --> M[Salida en /dist]
 ```
 
 ### Estructura de la Salida de Compilación
@@ -67,13 +70,13 @@ dist/
 │   │   └── index.html         ← Página de detalle por especie
 │   ├── ajo/
 │   │   └── index.html
-│   └── ... (39 páginas de especies)
+│   └── ... (41 páginas de especies)
 ├── etnobotanica/
 │   └── index.html
-├── blog/
-│   ├── index.html
-│   └── primer-post/
-│       └── index.html
+├── importacion-exportacion/
+│   └── index.html              ← Panel de comercio (incluye la isla React hidratada)
+├── sobre-nosotros/
+│   └── index.html
 ├── robots.txt
 ├── sitemap-index.xml
 ├── favicon-02.ico
@@ -81,8 +84,10 @@ dist/
 ├── favicon.svg
 └── _astro/
     ├── [hash].css              ← Bundle de CSS de Tailwind
-    └── [hash].js               ← Bundle de scripts del cliente
+    └── [hash].js               ← Bundles de scripts del cliente (vanilla + isla React de TradeExplorer)
 ```
+
+> La ruta `blog/` (con `primer-post/`) formaba parte de esta salida hasta el 2026-08-02, cuando la sección de Blog fue eliminada y reemplazada por `sobre-nosotros/`.
 
 ---
 
@@ -91,11 +96,15 @@ dist/
 | Variable | Valor Predeterminado | Descripción |
 |---|---|---|
 | `SITE_URL` | `http://localhost:4321` | Usada por Astro como URL base `site` para URLs canónicas, etiquetas OG, sitemap y robots.txt |
+| `PUBLIC_API_URL` | `''` (string vacío) | Base URL del backend, usada en **build time** por la integración de especies (`src/lib/species-source.ts`) y en **runtime del navegador** por el formulario de suscripción (`src/lib/suscriptores.ts`). Ver `docs/FRONTEND_INTEGRACION_BACKEND.md`. |
 
-**Establece esta variable en tu entorno de alojamiento** para que coincida con tu dominio de producción. Por ejemplo:
+**Establece ambas variables en tu entorno de alojamiento/CI** para que coincidan con tu dominio de producción y tu backend real. Por ejemplo:
 ```
 SITE_URL=https://flora.ecotec.edu.ec
+PUBLIC_API_URL=https://api.ecotec-flora.com
 ```
+
+> **Importante para el build:** si `PUBLIC_API_URL` no está definida o el backend no responde durante `astro build`, la integración de especies **no falla** — cae automáticamente al contenido Markdown de respaldo (`src/content/species/`). Esto hace que el build sea resiliente a una caída del backend, a costa de servir datos desactualizados hasta el siguiente rebuild.
 
 Esta variable fluye hacia:
 - `<link>` canónico en el head de cada página
@@ -207,6 +216,7 @@ Actualmente, todas las imágenes de especies se cargan desde CDN externos (picsu
 
 ### Consideraciones de Rendimiento
 
-- GSAP se carga como dependencia JS del lado del cliente en cada página (animación del encabezado). Con ~70KB minimizado+comprimido, este es el payload de JavaScript más grande.
-- La fuente de íconos Tabler (usada en la sección de etnobotánica) se carga desde un CDN. **[inferido]** Esta fuente probablemente se referencia en `Etnobotanicafilters.astro` mediante una etiqueta `<link>` — no se importa como paquete — lo que significa que no está empaquetada.
-- Las Google Fonts (`EB Garamond`, `Hanken Grotesk`) se cargan en tiempo de ejecución desde `fonts.googleapis.com`. Para producción, se deberían considerar sugerencias de preconexión y subconjuntos de fuentes.
+- GSAP se carga como dependencia JS del lado del cliente en **cada** página (animación del encabezado). Con ~70KB minimizado+comprimido, sigue siendo el payload compartido por todo el sitio.
+- La página `/importacion-exportacion` carga adicionalmente React + Recharts + los componentes shadcn/ui para hidratar `TradeExplorer.tsx` (`client:load`) — un payload notablemente mayor que el resto del sitio, pero **acotado a esa sola página**: el resto del sitio no paga ese costo.
+- La fuente de íconos Tabler (usada en etnobotánica y en "Sobre nosotros") se carga desde un CDN vía `<link>` en `global.css`/componentes — no se empaqueta. Los componentes `shadcn/ui` usan en cambio `lucide-react`, que sí se empaqueta como parte del bundle de la isla React.
+- La Google Font `Poppins` (única tipografía del sitio desde el 2026-08-01) se carga en tiempo de ejecución desde `fonts.googleapis.com`. Para producción, se deberían considerar sugerencias de preconexión y subconjuntos de fuentes.

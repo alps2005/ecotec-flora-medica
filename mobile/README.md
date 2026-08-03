@@ -1,24 +1,35 @@
 # Ecotec Flora Médica — App Android
 
 App nativa Android (Kotlin + Jetpack Compose) que replica el sitio web de Ecotec Flora Médica
-(nginx + Astro) para el proyecto de vinculación. **Fase 1**: todo el contenido vive local en el
+(Astro) para el proyecto de vinculación. **Fase 1**: todo el contenido vive local en el
 dispositivo (no depende del backend, que hoy no está desplegado ni tiene URL pública estable).
+Es un proyecto Gradle independiente dentro del monorepo — no comparte build ni dependencias con
+el sitio web.
 
 ## Qué incluye
 
-- Datos **reales** del sitio: se extrajeron las 42 fichas de especies, las 39 fichas
-  etnobotánicas y el post de blog directamente de las content collections de Astro
-  (`src/content/species`, `src/content/etnobotanicacont`, `src/content/blog`) y se empaquetaron
-  en `app/src/main/assets/content.json`. No es contenido de relleno.
-- 6 pantallas: Inicio, Catálogo de especies, Detalle de especie, Etnobotánica, Blog (lista) y
-  Blog (detalle), con navegación por bottom bar (Inicio / Especies / Etnobotánica / Blog).
-- Paleta y tipografía calcadas del sitio (navy `#142347`, azul `#2454C9`, teal `#4FD1C5`, serif
-  para títulos + sans para cuerpo).
+- Datos **reales** del sitio: se extrajeron las fichas de especies directamente de la content
+  collection de Astro (`src/content/species`) y se empaquetaron en
+  `app/src/main/assets/content.json` (41 especies + 1 entrada de blog heredada de una foto previa
+  del contenido; el sitio web ya no tiene sección de blog). No es contenido de relleno.
+- 6 pantallas con navegación por bottom bar (Inicio / Especies / Etnobotánica / Autores):
+  - **Inicio** (`HomeScreen`)
+  - **Catálogo de especies** (`EspeciesListScreen`) y **Detalle de especie** (`EspecieDetailScreen`)
+  - **Etnobotánica** (`EtnobotanicaScreen`, derivada del mismo dataset de especies — igual que en
+    el sitio web) y **Detalle etnobotánico** (`EtnobotanicaDetailScreen`), con una silueta corporal
+    interactiva (`BodySilhouette.kt`) para explorar por zona del cuerpo
+  - **Autores** (`AutoresScreen`)
+
+  No hay pantallas de blog — el dataset trae una entrada heredada sin pantalla que la muestre.
+- Paleta y tipografía propias de la app, inspiradas en el sitio (navy `#142347`, azul `#2454C9`,
+  teal `#4FD1C5`, fuentes del sistema serif/sans) — **no** siguen la paleta azul/teal + Poppins
+  actual del sitio web (renovada el 2026-08-01 en `docs/DESIGN_SYSTEM.md`); están desincronizadas
+  a propósito por ahora, pendiente de una pasada de diseño dedicada a la app.
 - Arquitectura con patrón Repository (`ContentRepository` interface + `LocalContentRepository`)
   para que pasar a una API remota en Fase 2 sea un cambio contenido.
-- Imágenes cargadas con Coil directamente desde las URLs originales (ej. Wikipedia Commons) —
-  el **texto** funciona 100% offline, las **imágenes** necesitan algo de internet (cualquiera,
-  no dependen del túnel/servidor propio).
+- Imágenes cargadas con Coil directamente desde las URLs originales (ej. Wikipedia Commons,
+  picsum.photos) — el **texto** funciona 100% offline, las **imágenes** necesitan algo de
+  internet (cualquiera, no dependen del túnel/servidor propio).
 
 ## Requisitos
 
@@ -39,15 +50,19 @@ No hace falta configurar nada más — no hay claves de API ni backend que levan
 
 ```
 app/src/main/java/com/ecotec/floramedica/
-  data/model/          Species, BlogPost, EtnobotanicaFicha (mismo schema que content.config.ts)
-  data/repository/      ContentRepository (interfaz) + LocalContentRepository (JSON local)
-  navigation/            Routes + NavHost
-  ui/theme/              Color.kt, Type.kt, Theme.kt
-  ui/components/         Pill, SpeciesCard, StatsBanner (reutilizables)
-  ui/screens/            home/, especies/, etnobotanica/, blog/
-  MainActivity.kt        Scaffold (TopAppBar + bottom nav) + arranque
+  data/model/            Species, ContentBundle (mismo schema de especie que content.config.ts)
+  data/repository/       ContentRepository (interfaz) + LocalContentRepository (JSON local)
+  data/BodyMapping.kt    Mapeo de zonas del cuerpo → especies relacionadas (silueta interactiva)
+  data/ImageUrl.kt        Helpers de resolución de URL de imagen
+  navigation/             Routes + EcotecNavGraph (NavHost)
+  ui/theme/               Color.kt, Type.kt, Theme.kt
+  ui/components/          Pill, SpeciesCard, SpeciesImage, StatsBanner, BodySilhouette,
+                          BodyRegionsDialog, Animations (reutilizables)
+  ui/screens/             home/, especies/ (lista + detalle), etnobotanica/ (lista + detalle),
+                          autores/
+  MainActivity.kt         Scaffold (TopAppBar + bottom nav: Inicio/Especies/Etnobotánica/Autores)
 app/src/main/assets/
-  content.json           Dataset real (42 especies, 39 fichas, 1 post)
+  content.json            Dataset real (41 especies; una clave "blog" heredada se ignora)
 ```
 
 ## Fase 2 — conectar a la API real

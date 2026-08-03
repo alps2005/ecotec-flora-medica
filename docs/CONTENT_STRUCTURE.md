@@ -4,68 +4,33 @@
 
 ## Descripción General
 
-El sitio usa el sistema de **Colecciones de Contenido** de Astro para gestionar tres fuentes de datos independientes basadas en Markdown. Todas las colecciones están definidas en `src/content.config.ts` y se validan en tiempo de construcción usando esquemas Zod.
+El sitio usa el sistema de **Colecciones de Contenido** de Astro para gestionar los datos de especies en Markdown, pero **ya no es la única fuente de datos**: desde el `59d646b` (2026-08-01/02), toda página o componente lee especies a través de `src/lib/species-source.ts`, que primero intenta el backend real (`GET /api/plantas`) y usa la colección `species` como respaldo cuando la API no responde. La colección se define en `src/content.config.ts` y se valida en tiempo de construcción usando un esquema Zod.
+
+Históricamente el proyecto tuvo tres colecciones (`blog`, `species`, `etnobotanica`); las otras dos fueron eliminadas:
+- **`etnobotanica`** (43 archivos en `src/content/etnobotanicacont/`) — eliminada el 2026-07-15. El atlas de etnobotánica deriva sus datos de `species` desde entonces.
+- **`blog`** (1 archivo, `primer-post.md`) — eliminada el 2026-08-02 junto con las páginas `/blog`, `/blog/[slug]` y el endpoint `rss.xml.js`, reemplazada por la página institucional `/sobre-nosotros`.
 
 ```mermaid
 graph TD
-    CONFIG["src/content.config.ts\n(esquemas Zod)"] --> BLOG["colección blog\nsrc/content/blog/"]
-    CONFIG --> SPECIES["colección species\nsrc/content/species/"]
-    CONFIG --> ETNO["colección etnobotanica\nsrc/content/etnobotanicacont/"]
+    CONFIG["src/content.config.ts\n(esquema Zod)"] --> SPECIESCOL["colección species\nsrc/content/species/"]
+    BACKAPI["API Backend\nGET /api/plantas(/:slug)"] --> SRC
+    SPECIESCOL --> SRC["species-source.ts\nmerge por campo"]
 
-    SPECIES -->|"getCollection('species')"| ESPPAGE["src/pages/especies.astro"]
-    SPECIES -->|"getStaticPaths()"| ESPDETAIL["src/pages/especies/[slug].astro"]
-    ETNO -->|"getCollection('etnobotanica')"| EGRID["Etnobotanicagrid.astro"]
-    SPECIES -->|"unión cruzada para ordenamiento"| EGRID
-    BLOG -->|"getCollection('blog')"| BLOGLIST["src/pages/blog/index.astro"]
-    BLOG -->|"getStaticPaths()"| BLOGPOST["src/pages/blog/[slug].astro"]
+    SRC -->|"getSpeciesList()"| ESPPAGE["src/pages/especies.astro"]
+    SRC -->|"getSpeciesDetail(slug)"| ESPDETAIL["src/pages/especies/[slug].astro"]
+    SRC -->|"getSpeciesList()"| EGRID["Etnobotanicagrid.astro"]
+    SRC -->|"getSpeciesList()"| HOME["src/pages/index.astro"]
+    SRC -->|"getSpeciesList()"| TRADE["src/lib/trade-data.ts\n→ /importacion-exportacion"]
 ```
 
 ---
 
-## Colección 1: `blog`
-
-**Directorio:** `src/content/blog/`
-**Cargador:** `glob({ pattern: '**/*.md' })`
-
-### Esquema del Frontmatter
-
-```typescript
-z.object({
-  title: z.string(),
-  description: z.string(),
-  pubDate: z.date(),
-  updatedDate: z.date().optional(),
-  tags: z.array(z.string()).default([]),
-})
-```
-
-| Campo | Tipo | Requerido | Descripción |
-|---|---|---|---|
-| `title` | string | Sí | Título del artículo, usado en `<title>` de página y encabezado del listado |
-| `description` | string | Sí | Texto de resumen, usado en meta descripción y extracto del listado |
-| `pubDate` | date | Sí | Fecha de publicación; los posts se ordenan de forma descendente por este campo |
-| `updatedDate` | date | No | Fecha de última actualización; se renderiza si está presente |
-| `tags` | string[] | No (predeterminado: []) | Etiquetas de tema renderizadas como insignias de pastilla en las páginas de listado y detalle |
-
-### Enrutamiento
-El blog usa `entry.id` (el nombre de archivo sin extensión) como slug de URL. Por ejemplo, `primer-post.md` → `/blog/primer-post`.
-
-### Entradas Actuales
-
-| ID | Título | Fecha | Etiquetas |
-|---|---|---|---|
-| `primer-post` | *(post de ejemplo)* | 2026-06-13 | flora, etnobotánica, divulgación |
-
-La infraestructura del blog es completamente funcional con solo un post de ejemplo. El esquema y las plantillas están listos para cualquier número de artículos.
-
----
-
-## Colección 2: `species`
+## Colección: `species`
 
 **Directorio:** `src/content/species/`
-**Cargador:** `glob({ pattern: '**/*.md' })`
+**Cargador:** `glob({ pattern: '**/*.md', base: './src/content/species' })`
 
-Esta es la colección de datos científicos principal. Cada archivo representa una especie medicinal con un perfil rico y estructurado.
+Esta es la única colección de contenido del proyecto y la fuente de respaldo de datos científicos. Cada archivo representa una especie medicinal con un perfil rico y estructurado. El esquema no ha cambiado desde su definición original (`c41a8ec`, julio 2026).
 
 ### Esquema del Frontmatter
 
@@ -102,7 +67,7 @@ z.object({
     detalle: z.string(),
   })),
   multimediaPrincipal: z.object({
-    imagenUrl: z.string(),
+    imagenUrl: z.string().url(),
     imagenPublicId: z.string().optional(),
     videoUrl: z.string().optional(),
     videoPublicId: z.string().optional(),
@@ -125,65 +90,67 @@ z.object({
 | `taxonomia.clase` | string | Sí | Clase (p. ej., "Magnoliopsida") |
 | `taxonomia.familia` | string | Sí | Familia — campo clave para filtrado (p. ej., "Asteraceae") |
 | `taxonomia.genero` | string | Sí | Género (p. ej., "Matricaria") |
-| `etnobotanica.clasificacion` | string | Sí | Etiqueta corta de clasificación (p. ej., "Medicinal aromática") |
+| `etnobotanica.clasificacion` | string | Sí | Etiqueta corta de clasificación (p. ej., "Medicinal aromática") — también usada por `Etnobotanicagrid.astro` para inferir la categoría del atlas |
 | `etnobotanica.parteUtilizada` | string | Sí | Parte de la planta usada (p. ej., "Flores", "Bulbo", "Semillas") |
 | `etnobotanica.usoTradicional` | string | Sí | Uso tradicional — también usado como descripción de tarjeta |
 | `perfilEtnobotanico` | string | Sí | Perfil etnobotánico de 1–3 párrafos |
 | `historiaEvolucion.origen` | string | Sí | Origen geográfico y uso precolonial |
 | `historiaEvolucion.dispersion` | string | Sí | Cómo se dispersó la planta globalmente |
 | `historiaEvolucion.evolucion` | string | Sí | Clasificación botánica y notas de adaptación |
-| `comercio.exportacion` | array | Sí | Principales países exportadores con detalles |
-| `comercio.importacion` | array | Sí | Principales países importadores con detalles |
+| `comercio.exportacion` | array | Sí | Principales países exportadores con detalles — también alimenta el relato "cualitativo" del panel de comercio cuando no hay cifras de Comtrade |
+| `comercio.importacion` | array | Sí | Principales países importadores con detalles — ídem |
 | `compuestosQuimicos` | array | Sí | Compuestos químicos activos con nombres y descripciones |
-| `multimediaPrincipal.imagenUrl` | string | Sí | URL de la imagen principal |
+| `multimediaPrincipal.imagenUrl` | string (URL) | Sí | URL de la imagen principal |
 | `multimediaPrincipal.imagenPublicId` | string | No | ID de activo CMS/CDN (Cloudinary) |
 | `multimediaPrincipal.videoUrl` | string | No | URL de video opcional |
 | `multimediaPrincipal.videoPublicId` | string | No | ID de video CMS/CDN |
 | `multimediaPrincipal.proveedor` | string | Sí | Proveedor de la imagen (p. ej., "PICSUM", "CLOUDINARY") |
-| `estado` | enum | Sí | Estado de publicación: `ACTIVO`, `INACTIVO` o `BORRADOR` |
+| `estado` | enum | Sí | Estado de publicación: `ACTIVO`, `INACTIVO` o `BORRADOR` — solo entran a `getSpeciesList()` las que tengan `ACTIVO` |
 
 ### Cuerpo en Markdown
 Cada archivo de especie tiene un cuerpo en Markdown que se renderiza en la sección "Análisis académico / Introducción y Contexto" de la página de detalle. Es una introducción en prosa a la especie.
 
 ### Enrutamiento
-`getStaticPaths()` mapea cada entrada a `/especies/[slug]`, usando `entry.data.slug ?? entry.id` como parámetro de URL.
+`getStaticPaths()` en `src/pages/especies/[slug].astro` mapea cada entrada a `/especies/[slug]`, usando `entry.data.slug ?? entry.id` como parámetro de URL. Los slugs enumerados son la **unión** de los que existen en la API y en el `.md` local (ver `species-source.ts`), no solo los archivos Markdown.
 
 ### Número de Entradas del Catálogo
 
-Actualmente hay 39 especies catalogadas:
+Actualmente hay 41 especies en `src/content/species/`:
 
 | Slug | Nombre Común | Nombre Científico | Familia |
 |---|---|---|---|
 | achiote | Achiote | *Bixa orellana* | Bixaceae |
-| aji | Ají | *Capsicum annuum* | Solanaceae |
 | ajo | Ajo | *Allium sativum* | Amaryllidaceae |
-| aloe-vera | Aloe Vera | *Aloe barbadensis* | Asphodelaceae |
+| aloe-vera | Aloe vera | *Aloe vera* | Asphodelaceae |
 | apio | Apio | *Apium graveolens* | Apiaceae |
 | babaco | Babaco | *Vasconcellea × heilbornii* | Caricaceae |
 | cebolla | Cebolla | *Allium cepa* | Amaryllidaceae |
 | cedron | Cedrón | *Aloysia citrodora* | Verbenaceae |
 | cola-de-caballo | Cola de Caballo | *Equisetum arvense* | Equisetaceae |
-| culantro | Culantro | *Coriandrum sativum* | Apiaceae |
+| culantro | Culantro / Cilantro | *Coriandrum sativum* | Apiaceae |
 | dulcamara | Dulcamara | *Solanum dulcamara* | Solanaceae |
 | eucalipto | Eucalipto | *Eucalyptus globulus* | Myrtaceae |
-| guanabana | Guanábana | *Annona muricata* | Annonaceae |
-| guayaba | Guayaba | *Psidium guajava* | Myrtaceae |
-| hierba-luisa | Hierba Luisa | *Cymbopogon citratus* | Poaceae |
+| guanabana | Guanábana / Graviola | *Annona muricata* | Annonaceae |
+| guayaba | Guayaba / Guayabo | *Psidium guajava* | Myrtaceae |
+| hierba-luisa | Hierba Luisa / Limonaria | *Cymbopogon citratus* | Poaceae |
+| hortensia | Hortensia | *Hydrangea macrophylla* | Hydrangeaceae |
 | jengibre | Jengibre | *Zingiber officinale* | Zingiberaceae |
-| limon | Limón | *Citrus limon* | Rutaceae |
+| lazo-de-amor | Lazo de Amor | *Episcia cupreata* | Gesneriaceae |
+| limon | Limón / Limonero | *Citrus limon* | Rutaceae |
 | llanten | Llantén | *Plantago major* | Plantaginaceae |
-| mandarina | Mandarina | *Citrus reticulata* | Rutaceae |
+| madre-de-miles | Madre de Miles | *Kalanchoe daigremontiana* | Crassulaceae |
+| mandarina | Mandarina / Mandarino | *Citrus reticulata* | Rutaceae |
 | manzanilla | Manzanilla | *Matricaria chamomilla* | Asteraceae |
 | matico | Matico | *Piper aduncum* | Piperaceae |
-| menta-piperita | Menta Piperita | *Mentha × piperita* | Lamiaceae |
-| naranja-dulce | Naranja Dulce | *Citrus sinensis* | Rutaceae |
+| menta-piperita | Menta | *Mentha piperita* | Lamiaceae |
+| naranja-dulce | Naranja Dulce / Naranjo | *Citrus sinensis* | Rutaceae |
 | naranjo-amargo | Naranjo Amargo | *Citrus aurantium* | Rutaceae |
-| neem | Neem | *Azadirachta indica* | Meliaceae |
+| neem | Neem / Nim | *Azadirachta indica* | Meliaceae |
 | ortiga | Ortiga | *Urtica dioica* | Urticaceae |
 | papaya | Papaya | *Carica papaya* | Caricaceae |
-| pepino | Pepino | *Solanum muricatum* | Solanaceae |
+| pepino | Pepino | *Cucumis sativus* | Cucurbitaceae |
 | perejil | Perejil | *Petroselinum crispum* | Apiaceae |
-| pimiento | Pimiento | *Capsicum annuum* | Solanaceae |
+| pimiento | Pimiento | *Capsicum annuum var. grossum* | Solanaceae |
 | romero | Romero | *Salvia rosmarinus* | Lamiaceae |
 | ruda | Ruda | *Ruta graveolens* | Rutaceae |
 | tomate-de-arbol | Tomate de Árbol | *Solanum betaceum* | Solanaceae |
@@ -192,119 +159,70 @@ Actualmente hay 39 especies catalogadas:
 | una-de-gato | Uña de Gato | *Uncaria tomentosa* | Rubiaceae |
 | uvilla | Uvilla | *Physalis peruviana* | Solanaceae |
 | valeriana | Valeriana | *Valeriana officinalis* | Caprifoliaceae |
-| zapallo | Zapallo | *Cucurbita maxima* | Cucurbitaceae |
+| zapallo | Zapallo / Calabaza / Auyama | *Cucurbita maxima* | Cucurbitaceae |
+
+> **Nota:** este conteo refleja solo los archivos `.md` locales. En producción, `getSpeciesList()` puede mostrar más o menos entradas según lo que exponga `GET /api/plantas` en cada momento (slugs = unión API ∪ `.md`).
 
 ### Familias Botánicas Representadas
 
 | Familia | Nº de Especies | Ejemplo |
 |---|---|---|
-| Solanaceae | 6 | Tomate, Ají, Dulcamara |
-| Rutaceae | 4 | Limón, Mandarina, Ruda |
-| Amaryllidaceae | 2 | Ajo, Cebolla |
+| Solanaceae | 5 | Tomate, Dulcamara, Pimiento |
+| Rutaceae | 5 | Limón, Mandarina, Ruda |
 | Lamiaceae | 3 | Romero, Tomillo, Menta |
 | Apiaceae | 3 | Apio, Culantro, Perejil |
-| Asteraceae | 1 | Manzanilla |
 | Myrtaceae | 2 | Eucalipto, Guayaba |
+| Cucurbitaceae | 2 | Pepino, Zapallo |
 | Caricaceae | 2 | Papaya, Babaco |
-| Otras | 16 | Varias |
+| Amaryllidaceae | 2 | Ajo, Cebolla |
+| Otras (16 familias) | 1 c/u | Bixaceae, Asteraceae, Verbenaceae, etc. |
 
 ---
 
-## Colección 3: `etnobotanica`
+## Datos Derivados: Atlas Etnobotánico
 
-**Directorio:** `src/content/etnobotanicacont/`
-**Cargador:** `glob({ pattern: '**/*.md' })`
-
-Esta es una colección simplificada enfocada en las tarjetas etnobotánicas para la página del Atlas Etnobotánico. Contiene menos detalle que la colección `species` y probablemente fue diseñada para ser consumida por una vista diferente.
-
-### Esquema del Frontmatter
-
-```typescript
-z.object({
-  nombre: z.string(),
-  cientifico: z.string(),
-  categoria: z.string(),
-  parteUsada: z.string(),
-  uso: z.string(),
-  compuestos: z.string(),
-  img: z.string().url(),
-})
-```
-
-| Campo | Tipo | Requerido | Descripción |
-|---|---|---|---|
-| `nombre` | string | Sí | Nombre común |
-| `cientifico` | string | Sí | Nombre científico |
-| `categoria` | string | Sí | Categoría para filtrado (MEDICINAL, ALIMENTICIA, etc.) |
-| `parteUsada` | string | Sí | Parte de la planta (cadena única, no estructurada) |
-| `uso` | string | Sí | Descripción del uso principal |
-| `compuestos` | string | Sí | Compuestos químicos como una única cadena formateada |
-| `img` | string (URL) | Sí | URL de la imagen (debe ser una URL válida) |
-
-### Categorías
-
-| Categoría | Color de Insignia | Ícono |
-|---|---|---|
-| MEDICINAL | `text-emerald-800 bg-emerald-50` | `ti-heart-plus` |
-| RITUAL | `text-purple-700 bg-purple-50` | `ti-sparkles` |
-| ALIMENTICIA | `text-amber-700 bg-amber-50` | `ti-tools-kitchen-2` |
-| ESTIMULANTE | `text-blue-700 bg-blue-50` | `ti-bolt` |
-| AROMÁTICA | `text-emerald-700 bg-emerald-50` | `ti-flower` |
-| AGROECOLÓGICA | `text-green-700 bg-green-50` | `ti-seeding` |
-
-### Número de Entradas
-
-43 entradas — 4 más que la colección `species`. Especies con entradas de etnobotánica pero sin página de detalle de especie: amaranto, guayusa, higuerilla, salvia.
-
----
-
-## Relación Entre Colecciones
-
-Las colecciones `etnobotanica` y `species` están **vinculadas por ID de archivo compartido (slug)**. El componente `Etnobotanicagrid.astro` implementa esta relación:
+El atlas de `/etnobotanica` **no tiene datos propios** — `Etnobotanicagrid.astro` construye cada tarjeta a partir de la especie correspondiente:
 
 ```javascript
-// 1. Obtener colección de especies para establecer el orden
-const species = await getCollection('species');
-const speciesOrder = new Map(species.map((entry, index) => [entry.id, index]));
+// src/components/etnobotanicacomp/Etnobotanicagrid.astro
+const { rows: activeSpecies } = await getSpeciesList();
 
-// 2. Filtrar y ordenar entradas de etnobotanica según el orden de especies
-const plantas = (await getCollection('etnobotanica'))
-  .filter((planta) => speciesOrder.has(planta.id))  // solo mostrar si existe la especie
-  .sort((a, b) => (speciesOrder.get(a.id) ?? 0) - (speciesOrder.get(b.id) ?? 0));
+const plantas = activeSpecies.map((especie) => {
+  const categorias = getCategories(
+    especie.data.etnobotanica.clasificacion,
+    especie.data.etnobotanica.usoTradicional,
+  ); // parsea texto libre → MEDICINAL | ALIMENTICIA | ESTIMULANTE | AROMÁTICA | RITUAL | AGROECOLÓGICA
+  // ...arma badge, ícono, compuestos, etc. desde el mismo esquema de species
+});
 ```
 
-Esto significa que:
-- Una entrada de `etnobotanica` sin una entrada `species` coincidente **no aparecerá** en la página de etnobotánica.
-- El orden de visualización sigue el orden de la colección `species` (alfabético por `nombreComun`).
-- Ambas tarjetas enlazan a `/especies/[slug]` para el detalle completo.
+### Categorías del Atlas
 
-```mermaid
-erDiagram
-    SPECIES {
-        string id
-        string nombreComun
-        string nombreCientifico
-        string taxonomia_familia
-        string etnobotanica_usoTradicional
-        string estado
-    }
-    ETNOBOTANICA {
-        string id
-        string nombre
-        string categoria
-        string parteUsada
-        string uso
-    }
-    BLOG {
-        string id
-        string title
-        date pubDate
-        string[] tags
-    }
-    SPECIES ||--o| ETNOBOTANICA : "coincidencia de id (unión cruzada)"
-    SPECIES ||--|| SPECIES_PAGE : "genera /especies/[slug]"
-    BLOG ||--|| BLOG_PAGE : "genera /blog/[id]"
+| Categoría | Ícono Tabler | Cómo se infiere |
+|---|---|---|
+| MEDICINAL | `ti-heart-plus` | `clasificacion`/`usoTradicional` contiene "medicinal" (también es el valor por defecto si no matchea ninguna) |
+| ALIMENTICIA | `ti-tools-kitchen-2` | contiene "alimenticia" o "condimento" |
+| ESTIMULANTE | `ti-bolt` | contiene "estimulante" |
+| AROMÁTICA | `ti-flower` | contiene "aromática"/"aromatica" |
+| RITUAL | `ti-sparkles` | contiene "ritual" |
+| AGROECOLÓGICA | `ti-seeding` | contiene "agroecológica"/"agroecologica" |
+
+Una especie puede matchear varias categorías (el filtro las considera todas); la primera categoría matcheada define el color/ícono principal de la tarjeta. Esto significa que:
+- El atlas de etnobotánica siempre está sincronizado con el catálogo de especies — no puede haber una entrada huérfana en un lado y no en el otro.
+- El campo `etnobotanica.clasificacion` de cada `.md` funciona, en la práctica, como un campo de texto libre parseado por palabras clave — vale la pena mantenerlo consistente (usar "medicinal", "alimenticia", etc. explícitamente) para que la categorización automática funcione como se espera.
+
+---
+
+## Datos Derivados: Panel de Comercio Internacional
+
+`src/lib/trade-data.ts` cruza `getSpeciesList()` con `src/data/trade-data.json` (dataset de UN Comtrade pre-procesado fuera del ciclo de build normal, con año de generación y códigos HS por especie) usando el `slug` como llave:
+
+```javascript
+const trade = (tradeData.species as Record<string, any>)[slug];
+if (!trade) return null; // especie sin fila en el dataset de Comtrade → no aparece en el panel
 ```
+
+Para las especies que sí tienen fila, el `narrative` (relato cualitativo mostrado cuando no hay cifras numéricas, o como complemento) se toma directamente de `comercio.exportacion`/`comercio.importacion` de la ficha `.md`/API — es la misma información que ya se muestra en la página de detalle de la especie, reutilizada aquí sin duplicarla.
 
 ---
 
@@ -314,7 +232,7 @@ erDiagram
 
 | Proveedor | Patrón | Usado En |
 |---|---|---|
-| picsum.photos | `https://picsum.photos/seed/[nombre]/1200/800` | La mayoría de las especies (39 entradas) |
+| picsum.photos | `https://picsum.photos/seed/[nombre]/1200/800` | La mayoría de las especies |
 | Unsplash | `https://images.unsplash.com/...` | Algunas especies (manzanilla, menta-piperita, romero, naranjo-amargo) |
 | Cloudinary | Campo `imagenPublicId` poblado | Proveedor futuro planificado |
 
@@ -351,12 +269,12 @@ El campo `familia` es el único rango taxonómico usado para filtrado en la UI. 
 Independiente de la taxonomía, cada especie lleva una clasificación etnobotánica:
 
 ```
-clasificacion  → etiqueta de clasificación legible por humanos
+clasificacion  → etiqueta de clasificación legible por humanos (y fuente de la categorización del atlas)
 parteUtilizada → órgano vegetal usado terapéuticamente
 usoTradicional → aplicación tradicional principal
 ```
 
-La colección `etnobotanica` usa un sistema categórico más granular (MEDICINAL, ALIMENTICIA, ESTIMULANTE, AROMÁTICA, RITUAL, AGROECOLÓGICA) que se mapea a los botones de filtro en la página del atlas.
+El atlas de etnobotánica usa un sistema categórico más granular (MEDICINAL, ALIMENTICIA, ESTIMULANTE, AROMÁTICA, RITUAL, AGROECOLÓGICA) que se mapea a los botones de filtro en la página, inferido a partir de `clasificacion`/`usoTradicional` como se describe arriba.
 
 ---
 
