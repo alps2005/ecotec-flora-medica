@@ -241,8 +241,8 @@ Para las especies que sí tienen fila, el `narrative` (relato cualitativo mostra
 ### Dimensiones de Imágenes
 
 Las imágenes de especies se solicitan a `1200×800px` desde picsum.photos. Se renderizan en:
-- Relación de aspecto `aspect-[4/3]` en tarjetas de especies
-- Altura completa `h-[520px]` en el hero del detalle de especie
+- Relación de aspecto `aspect-4/3` en tarjetas de especies
+- Altura completa `h-130` (32.5rem ≈ 520px, migrado desde el valor arbitrario `h-[520px]` en `f1f756f`/`7e1d267`) en el hero del detalle de especie
 - Altura fija `h-48` en tarjetas de etnobotánica
 
 ---

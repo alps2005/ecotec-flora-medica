@@ -54,6 +54,7 @@ pnpm preview       # previsualizar el build
 | `tailwindcss` | ^4.3.2 | Sistema de estilos utilitarios |
 | `@tailwindcss/vite` | ^4.3.2 | Plugin de integración Tailwind con Vite |
 | `shadcn` (CLI) + `class-variance-authority`, `clsx`, `tailwind-merge` | ^4.16.0 | Componentes React (`src/components/ui/*.tsx`) usados en el panel de comercio |
+| `@base-ui/react` | ^1.6.0 | Primitivas headless (sin estilos) que usan internamente los componentes shadcn/ui del estilo `base-nova` (`select.tsx`, `tabs.tsx`, `button.tsx`, `badge.tsx`) — agregada junto con shadcn/ui en `3129b4b`, no se importa directamente fuera de `src/components/ui/` |
 | `recharts` | 3.8.0 | Gráfico de barras de exportación/importación |
 | `@astrojs/sitemap` | ^3.7.3 | Generación automática de sitemap XML |
 | `gsap` | ^3.15.0 | Animaciones (underlines del header) |

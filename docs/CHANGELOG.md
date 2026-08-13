@@ -6,6 +6,19 @@ Derivado del historial de Git. Los commits se listan del más reciente al más a
 
 ## [Sin Publicar] — Rama `dev`
 
+### 2026-08-13
+
+- `f1f756f` **fix:** Tailwind classes — se reemplazan valores arbitrarios (`max-w-[1480px]`, `min-h-[26rem]`, `w-[480px]`/`h-[600px]`, `bg-gradient-to-r`) por las utilidades nativas de Tailwind v4 equivalentes (`max-w-370`, `min-h-104`, `w-120`/`h-125`, `bg-linear-to-r`) en `especies.astro`, `importacion-exportacion.astro` e `index.astro`.
+
+### 2026-08-12
+
+- `eff9c9d` **content:** Completar información faltante en fichas de especies — se investiga y redacta taxonomía, historia/evolución, compuestos químicos y comercio (exportación/importación) para 17 especies con campos vacíos (hortensia, lazo-de-amor, madre-de-miles, dulcamara, tomate, naranjo-amargo, perejil, y 10 especies a las que solo les faltaba el texto de evolución). No cambia el esquema ni el conteo de especies (sigue en 41).
+
+### 2026-08-03
+
+- `955871a` **chore:** Actualización de la documentación — pasada de actualización sobre `docs/` para reflejar el estado del proyecto a esa fecha.
+- `7e1d267` **chore:** Actualización de la sintaxis de Tailwind para la página "Sobre nosotros" — se migran valores arbitrarios de transformación 3D (`[perspective:1200px]`, `[transform-style:preserve-3d]`, `[backface-visibility:hidden]`, `bg-gradient-to-r/br`) a las utilidades nativas de Tailwind v4 (`perspective-distant`, `transform-3d`, `backface-hidden`, `bg-linear-to-r/br`) en la tarjeta "flip" del equipo y la banda de departamentos.
+
 ### 2026-08-02
 
 - `a979739` **feat:** Reemplazar sección de blog por página "Sobre nosotros" — se elimina por completo la funcionalidad de blog: colección de contenido `blog`, páginas `src/pages/blog/index.astro` y `src/pages/blog/[slug].astro`, el endpoint `rss.xml.js` (agregado apenas el 27-07) y las referencias a RSS en `BaseHead.astro`. En su lugar se agrega `src/pages/sobre-nosotros.astro`: página institucional con hero, misión, banda de departamentos colaboradores, tarjetas "flip" del equipo (con LinkedIn/correo al hover) y grid de valores. `Header.astro` cambia el enlace "Blog" por "Sobre nosotros" y el `index.astro` ajusta sus CTAs.

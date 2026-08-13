@@ -154,7 +154,7 @@ Astro usa **enrutamiento basado en archivos**. Cada archivo `.astro` o `.ts` en 
 
 Las rutas dinámicas usan `getStaticPaths()` para enumerar todas las entradas en tiempo de construcción, produciendo un archivo HTML por especie.
 
-> **Nota:** la sección de Blog (`/blog`, `/blog/[slug]`) fue **eliminada el 2026-08-02** (`a979739`) junto con la colección de contenido `blog` y el endpoint `rss.xml.js`, y reemplazada por la página institucional `/sobre-nosotros`. El enlace al feed RSS ya no se referencia en `BaseHead.astro`.
+> **Nota:** la sección de Blog (`/blog`, `/blog/[slug]`) fue **eliminada el 2026-08-02** (`a979739`) junto con la colección de contenido `blog` y el endpoint `rss.xml.js`, y reemplazada por la página institucional `/sobre-nosotros`. El enlace al feed RSS ya no se referencia en `BaseHead.astro`. **[inferido]** La dependencia `@astrojs/rss` sigue en `package.json` sin usarse en ningún archivo del proyecto — quedó huérfana de esa eliminación y sería candidata a retirarse.
 
 ---
 

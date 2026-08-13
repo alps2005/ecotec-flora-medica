@@ -170,7 +170,7 @@ El proyecto usa la escala de espaciado predeterminada de Tailwind (múltiplos de
 | Padding vertical de sección | `py-24` (6rem) | Ritmo estándar de sección |
 | Padding de tarjeta | `p-6`–`p-8` (1.5–2rem) | Tarjetas y contenedores |
 | Separación entre tarjetas | `gap-6`–`gap-8` (1.5–2rem) | Espacio de cuadrícula entre tarjetas |
-| Ancho máximo del contenido | `max-w-[1280px]`–`max-w-[1480px]` | Detalle de especie, catálogo, panel de comercio |
+| Ancho máximo del contenido | `max-w-3xl` (encabezados) · `max-w-370` (≈1480px) | Catálogo, etnobotánica, panel de comercio usan `max-w-370` desde el `f1f756f` (2026-08-13), que reemplazó el valor arbitrario `max-w-[1480px]` por la utilidad de escala de Tailwind v4 |
 | Padding horizontal del cuerpo | `px-6` / `lg:px-8` | Padding responsive estándar |
 
 ---
@@ -280,7 +280,7 @@ Este patrón se repite en la paginación del catálogo de especies, del atlas de
 ### Tarjeta de Especie (`SpeciesCard.astro`)
 - Exterior: `rounded-[1.75rem] border border-slate-200/80 bg-white shadow-sm`
 - Hover: `-translate-y-1 shadow-[0_24px_70px_-28px_rgba(0,73,164,0.25)]`
-- Imagen: relación de aspecto `aspect-[4/3]`, `object-cover`, escala al `105%` en hover de grupo
+- Imagen: relación de aspecto `aspect-4/3`, `object-cover`, escala al `105%` en hover de grupo
 
 ### Tarjeta de Etnobotánica (`Etnobotanicacard.astro`)
 - `rounded-2xl border border-slate-200 bg-white`
@@ -289,7 +289,7 @@ Este patrón se repite en la paginación del catálogo de especies, del atlas de
 - Insignia de categoría: posicionada en la esquina superior derecha con colores mapeados por categoría
 
 ### Tarjeta Flip del Equipo (`sobre-nosotros.astro`)
-- Contenedor con `[perspective:1200px]`; la cara interna gira 180° en `group-hover`/`group-focus-within` mediante `[transform-style:preserve-3d]` y `[backface-visibility:hidden]`.
+- Contenedor con `perspective-distant`; la cara interna gira 180° en `group-hover`/`group-focus-within` mediante `transform-3d` y `backface-hidden` — sintaxis nativa de utilidades 3D de Tailwind v4 (migrada desde los valores arbitrarios `[perspective:1200px]`/`[transform-style:preserve-3d]`/`[backface-visibility:hidden]` en `7e1d267`, 2026-08-03).
 - Cara frontal: iniciales o foto sobre fondo pastel (`bg-primary/10` / `bg-secondary/15` alternado), nombre y rol.
 - Cara trasera: degradado `from-tertiary to-primary` con enlaces a LinkedIn y correo.
 

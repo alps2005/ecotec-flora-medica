@@ -46,6 +46,12 @@ gantt
     App móvil Android fase 1 (Kotlin + Compose)      :done, 2026-08-01, 1d
     Renovación del sistema de diseño (azul/Poppins)  :done, 2026-08-01, 1d
     Blog reemplazado por página "Sobre nosotros"     :done, 2026-08-02, 1d
+
+    section Contenido y Migración de Sintaxis Tailwind v4
+    Actualización de documentación                  :done, 2026-08-03, 1d
+    Migración a utilidades nativas Tailwind v4       :done, 2026-08-03, 1d
+    Completar fichas de especies (17 especies)       :done, 2026-08-12, 1d
+    Segunda pasada de sintaxis Tailwind v4           :done, 2026-08-13, 1d
 ```
 
 ---
@@ -248,6 +254,22 @@ Segunda migración de paleta del proyecto (la primera fue verde → azul plano e
 **Commit:** `feat: reemplazar sección de blog por página "Sobre nosotros"` (`a979739`, 2026-08-02)
 
 Se retira por completo la funcionalidad de blog (colección de contenido, páginas, feed RSS) — que había existido desde el scaffold inicial con una única entrada de ejemplo y nunca llegó a usarse editorialmente — y se reemplaza por una página institucional con misión, equipo y valores, más alineada con el propósito del proyecto de vinculación universitaria.
+
+---
+
+## Fase 8 — Contenido y Migración de Sintaxis Tailwind v4 (2026-08-03 al 2026-08-13)
+
+Tras la renovación del sistema de diseño (Fase 7), una segunda pasada corta se enfocó en completar contenido pendiente y limpiar deuda de sintaxis acumulada de la migración a Tailwind v4.
+
+### Completar Información Faltante en Fichas de Especies
+**Commit:** `content: completar información faltante en fichas de especies` (`eff9c9d`, 2026-08-12)
+
+Se investigó y redactó taxonomía, historia/evolución, compuestos químicos y comercio (exportación/importación) para 17 especies que tenían campos vacíos desde la migración masiva de contenido de la Fase 6: hortensia, lazo-de-amor, madre-de-miles, dulcamara, tomate, naranjo-amargo y perejil (campos completos faltantes), más 10 especies a las que solo les faltaba el texto de evolución (guanábana, guayaba, limón, mandarina, matico, naranja dulce, neem, papaya, tomate de árbol, zapallo). No cambia el esquema de contenido ni el conteo total de especies (permanece en 41).
+
+### Migración a Utilidades Nativas de Tailwind v4
+**Commits:** `chore: actualización de la sintaxis de tailwind para la pagina sobre nosotros` (`7e1d267`, 2026-08-03), `fix: tailwind classes` (`f1f756f`, 2026-08-13)
+
+Dos pasadas que reemplazan valores arbitrarios (`[1480px]`, `[26rem]`, `[520px]`, `[calc(...)]` de transformación 3D, `bg-gradient-to-*`) por las utilidades de escala nativas que Tailwind v4 agregó para estos casos (`max-w-370`, `min-h-104`, `h-130`, `aspect-4/3`, `perspective-distant`, `transform-3d`, `backface-hidden`, `bg-linear-to-*`). Afecta `index.astro`, `especies.astro`, `especies/[slug].astro`, `etnobotanica.astro`, `importacion-exportacion.astro` y `sobre-nosotros.astro`. Cambio puramente sintáctico — sin impacto visual ni de comportamiento.
 
 ---
 
