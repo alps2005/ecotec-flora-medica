@@ -24,7 +24,8 @@ historiaEvolucion:
       Se difundió entre culturas indígenas amazónicas y la medicina tradicional latinoamericana.
       - **Evolución y Adaptación:** Familia Piperaceae (como la pimienta negra). De rápida adaptación y colonización de terrenos perturbados.
   evolucion:
-    ""
+    |
+      Pertenece a la familia Piperaceae, la misma de la pimienta negra (*Piper nigrum*), un linaje de angiospermas ancestrales conocido por su síntesis de metabolitos secundarios aromáticos como defensa antimicrobiana. Es una especie pionera de rápido crecimiento, adaptada a colonizar claros y terrenos alterados de bosque tropical.
 comercio:
   exportacion:
     - pais: "Dinámica de Exportación"

@@ -23,7 +23,8 @@ historiaEvolucion:
     |
       Dispersada por españoles y portugueses hacia Filipinas, India y costas africanas, naturalizándose con gran éxito.
   evolucion:
-    ""
+    |
+      Pertenece a la familia Myrtaceae, orden Myrtales, caracterizada por hojas ricas en glándulas oleíferas que sintetizan aceites esenciales y taninos como defensa química. El género *Psidium* desarrolló frutos carnosos con abundantes semillas para favorecer la dispersión por fauna silvestre, lo que explica su rápida naturalización en climas tropicales de todo el mundo.
 comercio:
   exportacion:
     - pais: "Dinámica de Exportación"

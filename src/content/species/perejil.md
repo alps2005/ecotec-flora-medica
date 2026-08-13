@@ -24,13 +24,15 @@ historiaEvolucion:
       Su adaptabilidad biológica facilitó su rápida dispersión por toda Europa continental durante la Edad Media y su posterior introducción global en el continente americano, Asia y Oceanía, cultivándose en casi cualquier suelo templado o subtropical.
       Variedades: La evolución agrícola ha seleccionado principalmente dos quimiotipos comerciales dominantes: el perejil de hoja rizada (*P. crispum* var. *crispum*) y el perejil de hoja plana u de Italia (*P. crispum* var. *neapolitanum*), este último con mayores concentraciones de aceites volátiles.
   evolucion:
-    ""
+    |
+      Pertenece a la familia Apiaceae, un linaje herbáceo que desarrolló canales secretores esquizógenos en tallos y hojas para acumular aceites esenciales ricos en furanocumarinas y compuestos volátiles como defensa química. Su cultivo domesticado, con más de tres mil años de antigüedad, ha derivado en dos quimiotipos principales: la hoja rizada y la hoja plana o de Italia.
 comercio:
   exportacion:
     - pais: "Dinámica de Exportación"
       detalle: "El perejil fresco se comercializa intensamente a nivel local y regional debido a su naturaleza altamente perecedera. Para el mercado internacional, se exporta deshidratado o en forma de aceites esenciales destilados. Los principales países exportadores globales son Francia, Italia, Países Bajos, Alemania y Estados Unidos. Los flujos de importación están concentrados en las grandes urbes industrializadas del hemisferio norte y mercados asiáticos."
   importacion:
-    []
+    - pais: "Dinámica de Importación"
+      detalle: "Alemania, el Reino Unido y Estados Unidos concentran la mayor demanda de perejil deshidratado y aceite esencial para las industrias alimentaria y farmacéutica. Los Países Bajos actúan además como centro logístico de reexportación hacia el resto de la Unión Europea."
 compuestosQuimicos:
   - nombre: "Apiol y Miristicina (Aceites Esenciales)"
     detalle: "Compuestos químicos volátiles localizados en las hojas que interactúan con el epitelio renal, generando un efecto de estimulación que favorece el aumento de la diuresis."

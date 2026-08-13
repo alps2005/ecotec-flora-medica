@@ -23,7 +23,8 @@ historiaEvolucion:
     |
       Dispersada hacia los territorios tropicales de Asia (Filipinas, Malasia) y África subsahariana en huertos tradicionales.
   evolucion:
-    ""
+    |
+      Pertenece a la familia Annonaceae, uno de los linajes de angiospermas basales más antiguos, caracterizado por flores primitivas de carpelos numerosos. El género *Annona* desarrolló frutos compuestos (sincárpicos) y una alta concentración de acetogeninas como mecanismo de defensa química frente a herbívoros y patógenos.
 comercio:
   exportacion:
     - pais: "Dinámica de Exportación"

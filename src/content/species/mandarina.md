@@ -23,7 +23,8 @@ historiaEvolucion:
     |
       Su introducción a Europa ocurrió a principios del siglo XIX a través de cargamentos comerciales ingleses, propagándose rápidamente por el Mediterráneo y América.
   evolucion:
-    ""
+    |
+      Pertenece a la familia Rutaceae y es considerada, junto al pomelo, la cidra y la mandarina papeda, una de las especies fundadoras "verdaderas" del género *Citrus*, a partir de la cual se originaron por hibridación natural numerosos cítricos comerciales modernos. Su cáscara laxa y fácilmente desprendible es una adaptación que favorece la dispersión de semillas por fauna frugívora.
 comercio:
   exportacion:
     - pais: "Dinámica de Exportación"

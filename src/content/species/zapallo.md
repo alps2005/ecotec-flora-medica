@@ -23,7 +23,8 @@ historiaEvolucion:
     |
       Difundida con rapidez mundial post-intercambio colombino, seleccionada en múltiples cultivares de gran resistencia de almacenamiento.
   evolucion:
-    ""
+    |
+      Pertenece a la familia Cucurbitaceae. El género *Cucurbita* fue domesticado de forma independiente en varias regiones de América, seleccionando frutos de mayor tamaño y menor amargor (reducción de cucurbitacinas) respecto a sus ancestros silvestres, sin perder la síntesis de cucurbitina en las semillas, compuesto clave de su acción antiparasitaria.
 comercio:
   exportacion:
     - pais: "Dinámica de Exportación"

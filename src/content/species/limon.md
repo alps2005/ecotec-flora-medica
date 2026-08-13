@@ -23,7 +23,8 @@ historiaEvolucion:
     |
       Introducido en el Mediterráneo por los árabes durante la Edad Media y llevado a América en los viajes de Cristóbal Colón.
   evolucion:
-    ""
+    |
+      Pertenece a la familia Rutaceae. Los análisis genómicos modernos confirman que *Citrus limon* es un híbrido natural antiguo derivado del cruce entre la cidra (*Citrus medica*) y la naranja amarga (*Citrus aurantium*), lo que explica su elevada acidez y su capacidad de adaptación a climas subtropicales secos.
 comercio:
   exportacion:
     - pais: "Dinámica de Exportación"

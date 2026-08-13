@@ -24,7 +24,8 @@ historiaEvolucion:
       Llegó al Mediterráneo y Europa central a través de las rutas comerciales de la Seda impulsadas por mercaderes árabes y portugueses hacia el siglo XV. Fue introducida en el continente americano por los colonizadores españoles a lo largo del siglo XVI, donde encontró condiciones climáticas ideales para su propagación.
       - **Hibridación:** Estudios genéticos modernos confirman que la naranja dulce no es una especie silvestre nativa original, sino un híbrido natural antiguo derivado del cruce entre el pomelo (Citrus maxima) y la mandarina (Citrus reticulata).
   evolucion:
-    ""
+    |
+      Pertenece a la familia Rutaceae. Como híbrido estabilizado por siglos de propagación vegetativa (injertos), su diversidad genética es limitada en comparación con especies fundadoras del género *Citrus*, aunque las mutaciones somáticas espontáneas han permitido seleccionar numerosas variedades comerciales (ombligo, sanguinas, valencias) adaptadas a distintos climas y usos industriales.
 comercio:
   exportacion:
     - pais: "Egipto"

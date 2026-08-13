@@ -30,7 +30,8 @@ comercio:
     - pais: "Dinámica de Exportación"
       detalle: "A diferencia de los cultivos alimentarios masivos, el comercio de *Solanum dulcamara* se maneja primordialmente a nivel de nicho industrial farmacéutico y de herbolaria especializada. Países de Europa central (como Alemania y Polonia) y algunos centros de acopio en América Latina procesan y exportan la materia prima seca o extractos estandarizados para laboratorios homeopáticos y fitoterapéuticos globales."
   importacion:
-    []
+    - pais: "Dinámica de Importación"
+      detalle: "Los laboratorios homeopáticos y fitofarmacéuticos de Alemania, Francia y otros países de Europa central, así como distribuidores especializados en Colombia, Perú y Ecuador, importan materia prima seca y tinturas madre estandarizadas de dulcamara para su transformación industrial."
 compuestosQuimicos:
   - nombre: "Alcaloides Esteroideos"
     detalle: "Destaca la presencia de solanina, dulcamarina y solamargina. Estos compuestos químicos poseen propiedades analgésicas y citotóxicas bajo estricto control de dosificación médica."
@@ -47,4 +48,4 @@ multimediaPrincipal:
 estado: "ACTIVO"
 ---
 
-
+La dulcamara (Solanum dulcamara) es una planta trepadora semileñosa perteneciente a la familia Solanaceae, reconocida en la medicina tradicional europea por el uso de sus tallos secos en decocciones depurativas. Su perfil fitoquímico, dominado por alcaloides esteroideos y saponinas, le confiere propiedades antiinflamatorias y analgésicas de interés fitoterapéutico, aunque su manejo requiere control estricto de dosificación debido a la toxicidad de sus principios activos.

@@ -24,7 +24,8 @@ historiaEvolucion:
       Tras la colonización de América, fue dispersada rápidamente por los españoles y portugueses hacia el Caribe, las regiones tropicales de América del Sur, África y el sudeste asiático, adaptándose perfectamente a climas cálidos y húmedos de baja altitud.
       Hibridación/Genética: Pertenece a la familia Caricaceae. Estudios genómicos modernos han permitido mapear su genoma diploide, identificando la evolución de sus cromosomas sexuales (plantas de tipos masculinas, femeninas y hermafroditas) y optimizando variedades comerciales tolerantes a virus como el de la mancha anular.
   evolucion:
-    ""
+    |
+      Pertenece a la familia Caricaceae. Es una especie dioica y trioica poco común entre las angiospermas cultivadas, con plantas masculinas, femeninas y hermafroditas determinadas por un par de cromosomas sexuales incipientes, un sistema genético que los programas de mejoramiento modernos aprovechan para estabilizar variedades comerciales de alto rendimiento.
 comercio:
   exportacion:
     - pais: "Dinámica de Exportación"

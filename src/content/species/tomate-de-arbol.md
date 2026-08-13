@@ -24,7 +24,8 @@ historiaEvolucion:
       Fue introducido globalmente a finales del siglo XIX y principios del XX. Nueva Zelanda adoptó el cultivo de manera intensiva, acuñó el nombre comercial "tamarillo" y desarrolló programas de mejoramiento genético para exportar variedades comerciales de pulpa roja y amarilla a todo el mundo.
       Hibridación/Genética:** Pertenece a la familia Solanaceae. Los estudios botánicos modernos analizan su diversidad genética para contrarrestar plagas de nemátodos y optimizar el grosor de su cáscara con el fin de prolongar su vida útil poscosecha.
   evolucion:
-    ""
+    |
+      Pertenece a la familia Solanaceae. Como muchas especies del género *Solanum*, sintetiza alcaloides y compuestos fenólicos como defensa química, además de haber desarrollado un fruto carnoso rico en pigmentos (antocianinas y carotenoides) que favorece su dispersión por aves en los bosques andinos de altura donde se originó.
 comercio:
   exportacion:
     - pais: "Dinámica de Exportación"

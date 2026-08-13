@@ -23,7 +23,8 @@ historiaEvolucion:
     |
       Introducido en el siglo XX en regiones áridas de África y América Latina para mitigar la desertificación.
   evolucion:
-    ""
+    |
+      Pertenece a la familia Meliaceae, un linaje de árboles tropicales conocido por la síntesis de limonoides, metabolitos secundarios de defensa que evolucionaron como mecanismo de protección frente a insectos herbívoros y hongos fitopatógenos. Esta adaptación bioquímica es la base de su moderno aprovechamiento como biopesticida natural.
 comercio:
   exportacion:
     - pais: "Dinámica de Exportación"
